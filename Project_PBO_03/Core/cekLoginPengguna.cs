@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
 
-namespace Project_PBO_Main.App.Core
+namespace Project_PBO_03.Model
 {
     internal class cekLoginPengguna
     {
