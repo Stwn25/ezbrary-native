@@ -1,3 +1,5 @@
+using Project_PBO_03.View;
+
 namespace Project_PBO_03
 {
     internal static class Program
@@ -11,7 +13,7 @@ namespace Project_PBO_03
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new v_loginDaftar());
+            Application.Run(new V_SuperAdmin());
         }
     }
 }
