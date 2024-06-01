@@ -93,7 +93,7 @@ namespace Project_PBO_03
             pnlAdmin.Font = new Font("Nunito", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             pnlAdmin.Location = new Point(0, 0);
             pnlAdmin.Name = "pnlAdmin";
-            pnlAdmin.Size = new Size(416, 1033);
+            pnlAdmin.Size = new Size(416, 1080);
             pnlAdmin.TabIndex = 0;
             // 
             // pnlTambahBuku
@@ -240,7 +240,7 @@ namespace Project_PBO_03
             lblDaftarBuku.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDaftarBuku.Location = new Point(23, 29);
             lblDaftarBuku.Name = "lblDaftarBuku";
-            lblDaftarBuku.Size = new Size(125, 28);
+            lblDaftarBuku.Size = new Size(126, 28);
             lblDaftarBuku.TabIndex = 5;
             lblDaftarBuku.Text = "Daftar Buku";
             // 
@@ -372,7 +372,7 @@ namespace Project_PBO_03
             lblNoteleponProfileAdmin.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNoteleponProfileAdmin.Location = new Point(58, 413);
             lblNoteleponProfileAdmin.Name = "lblNoteleponProfileAdmin";
-            lblNoteleponProfileAdmin.Size = new Size(117, 28);
+            lblNoteleponProfileAdmin.Size = new Size(118, 28);
             lblNoteleponProfileAdmin.TabIndex = 13;
             lblNoteleponProfileAdmin.Text = "No.Telepon";
             // 
@@ -462,7 +462,7 @@ namespace Project_PBO_03
             controlBox1.EnableMaximizeButton = true;
             controlBox1.EnableMinimizeButton = true;
             controlBox1.ForeColor = Color.FromArgb(155, 155, 155);
-            controlBox1.Location = new Point(1812, 0);
+            controlBox1.Location = new Point(1830, 0);
             controlBox1.MaximizeHoverColor = Color.FromArgb(74, 74, 74);
             controlBox1.MinimizeHoverColor = Color.FromArgb(63, 63, 65);
             controlBox1.Name = "controlBox1";
@@ -474,7 +474,7 @@ namespace Project_PBO_03
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1902, 1033);
+            ClientSize = new Size(1920, 1080);
             Controls.Add(controlBox1);
             Controls.Add(pnlProfileAdmin);
             Controls.Add(pnlRiwayatPeminjaman);

@@ -1,4 +1,6 @@
 ﻿
+using Project_PBO_03.Core;
+
 namespace Project_PBO_03
 {
     partial class V_Login
@@ -116,6 +118,7 @@ namespace Project_PBO_03
             // pnlAwal
             // 
             pnlAwal.BackColor = Color.White;
+            pnlAwal.BorderStyle = BorderStyle.FixedSingle;
             pnlAwal.Controls.Add(btDaftar);
             pnlAwal.Controls.Add(btMasuk);
             pnlAwal.Controls.Add(label1);
@@ -739,6 +742,7 @@ namespace Project_PBO_03
             Controls.Add(pbDekor);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_Login";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "V_Login";
             Load += V_Login_Load;
             pnlAwal.ResumeLayout(false);
@@ -779,17 +783,30 @@ namespace Project_PBO_03
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+
         }
 
         private void V_Login_Load(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            
         }
 
-        private void btMasukM_Click(object sender, EventArgs e)
+        private void BtMasukM_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            string username_pengguna = tbUsernameM.Text;
+            string pass_pengguna = tbPasswordD.Text;
+
+            bool loginResult = cekLoginPengguna.Login(username_pengguna, pass_pengguna);
+
+            if (loginResult)
+            {
+                V_Admin admin = new V_Admin();
+                admin.Show();
+            }
+            else
+            {
+                MessageBox.Show("Login gagal, harap cek username dan password", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         #endregion

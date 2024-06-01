@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_PBO_03.Core;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -107,6 +108,24 @@ namespace Project_PBO_03
             this.pnlMasuk.Show();
             this.pnlDaftar.Hide();
             this.pnlAwal.Hide();
+        }
+
+        private void btMasukM_Click(object sender, EventArgs e)
+        {
+            string username_pengguna = tbUsernameM.Text;
+            string pass_pengguna = tbPasswordD.Text;
+
+            bool loginResult = cekLoginPengguna.Login(username_pengguna, pass_pengguna);
+
+            if (loginResult)
+            {
+                V_Admin admin = new V_Admin();
+                admin.Show();
+            }
+            else
+            {
+                MessageBox.Show("Login gagal, harap cek username dan password", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
