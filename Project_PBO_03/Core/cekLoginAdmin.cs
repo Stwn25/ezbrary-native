@@ -5,17 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
-using Project_PBO_03.Model;
 
 namespace Project_PBO_03.Core
 {
-    internal class cekLoginPengguna
+    internal class cekLoginAdmin
     {
         public static bool Login(string username_pengguna, string pass_pengguna)
         {
             try
             {
-                string query = "SELECT * FROM pengguna WHERE usrnmeuser = @username AND pwuser = @password";
+                string query = "SELECT * FROM pengguna WHERE usrnmeadmin = @username AND pwadmin = @password";
 
                 NpgsqlParameter[] parameters = new NpgsqlParameter[]
                 {
