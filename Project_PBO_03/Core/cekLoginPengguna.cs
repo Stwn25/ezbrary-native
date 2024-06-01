@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
-using Project_PBO_03.Model;
 
 namespace Project_PBO_03.Core
 {
