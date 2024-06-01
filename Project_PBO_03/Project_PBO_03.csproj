@@ -10,8 +10,11 @@
 
   <ItemGroup>
     <Folder Include="Model\" />
-    <Folder Include="Core\" />
     <Folder Include="Context\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Npgsql" Version="8.0.3" />
   </ItemGroup>
 
 </Project>
