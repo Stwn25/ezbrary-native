@@ -197,7 +197,7 @@ namespace Project_PBO_03
             pnlMasukSA.Controls.Add(tbPasswdMSA);
             pnlMasukSA.Controls.Add(tbUsernameMSA);
             pnlMasukSA.Controls.Add(pictureBox4);
-            pnlMasukSA.Location = new Point(55, 184);
+            pnlMasukSA.Location = new Point(49, 193);
             pnlMasukSA.Name = "pnlMasukSA";
             pnlMasukSA.Size = new Size(620, 1080);
             pnlMasukSA.TabIndex = 5;
@@ -280,10 +280,11 @@ namespace Project_PBO_03
             pnlKodevAdmin.Controls.Add(tbKodevAdmin);
             pnlKodevAdmin.Controls.Add(label4);
             pnlKodevAdmin.Controls.Add(pictureBox12);
-            pnlKodevAdmin.Location = new Point(73, 69);
+            pnlKodevAdmin.Location = new Point(361, 12);
             pnlKodevAdmin.Name = "pnlKodevAdmin";
             pnlKodevAdmin.Size = new Size(620, 1080);
             pnlKodevAdmin.TabIndex = 3;
+            pnlKodevAdmin.Paint += pnlKodevAdmin_Paint;
             // 
             // btSubmitAdmin
             // 
@@ -297,6 +298,7 @@ namespace Project_PBO_03
             btSubmitAdmin.TabIndex = 3;
             btSubmitAdmin.Text = "Submit";
             btSubmitAdmin.UseVisualStyleBackColor = false;
+            btSubmitAdmin.Click += btSubmitAdmin_Click;
             // 
             // tbKodevAdmin
             // 
@@ -394,6 +396,7 @@ namespace Project_PBO_03
             btMasuksbgadmin.TabIndex = 6;
             btMasuksbgadmin.Text = "Masuk Sebagai Admin";
             btMasuksbgadmin.UseVisualStyleBackColor = false;
+            btMasuksbgadmin.Click += btMasuksbgadmin_Click;
             // 
             // btMasukM
             // 

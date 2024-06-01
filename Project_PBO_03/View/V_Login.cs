@@ -119,12 +119,52 @@ namespace Project_PBO_03
 
             if (loginResult)
             {
+                V_User User = new V_User();
+                User.Show();
+            }
+            else
+            {
+                MessageBox.Show("Login gagal, harap cek username dan password", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btMasuksbgadmin_Click(object sender, EventArgs e)
+        {
+            string username_admin = tbUsernameM.Text;
+            string pass_admin = tbPasswordD.Text;
+            
+
+            bool loginResult = cekLoginAdmin.Login(username_admin, pass_admin);
+
+            if (loginResult)
+            {
+                this.pnlMasuk.Hide();
+                this.pnlKodevAdmin.Show();
+                this.pnlKodevAdmin.Dock = DockStyle.Left;
+            }
+            else
+            {
+                MessageBox.Show("Login gagal, harap cek username dan password", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void pnlKodevAdmin_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btSubmitAdmin_Click(object sender, EventArgs e)
+        {
+            string kode_verif = "1234567890";
+
+            if (tbKodevAdmin.Text == kode_verif)
+            {
                 V_Admin admin = new V_Admin();
                 admin.Show();
             }
             else
             {
-                MessageBox.Show("Login gagal, harap cek username dan password", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Verifikasi salah!", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

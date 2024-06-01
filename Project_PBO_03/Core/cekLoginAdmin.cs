@@ -10,16 +10,16 @@ namespace Project_PBO_03.Core
 {
     internal class cekLoginAdmin
     {
-        public static bool Login(string username_pengguna, string pass_pengguna)
+        public static bool Login(string username_admin, string pass_admin)
         {
             try
             {
-                string query = "SELECT * FROM pengguna WHERE usrnmeadmin = @username AND pwadmin = @password";
+                string query = "SELECT * FROM administrator WHERE usrnmeadmin = @username AND pwadmin = @password";
 
                 NpgsqlParameter[] parameters = new NpgsqlParameter[]
                 {
-                    new NpgsqlParameter("@username", NpgsqlTypes.NpgsqlDbType.Varchar) { Value = username_pengguna },
-                    new NpgsqlParameter("@password", NpgsqlTypes.NpgsqlDbType.Varchar) { Value = pass_pengguna },
+                    new NpgsqlParameter("@username", NpgsqlTypes.NpgsqlDbType.Varchar) { Value = username_admin },
+                    new NpgsqlParameter("@password", NpgsqlTypes.NpgsqlDbType.Varchar) { Value = pass_admin },
                 };
 
                 DataTable result = DBconnection.queryExecutor(query, parameters);
