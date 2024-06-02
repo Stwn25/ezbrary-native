@@ -235,7 +235,7 @@ namespace Project_PBO_03
             pnlPeminjamanUser.Controls.Add(tbPeminjamanUser);
             pnlPeminjamanUser.Controls.Add(dgvPeminjamanUser);
             pnlPeminjamanUser.Controls.Add(lblPeminjamanUser);
-            pnlPeminjamanUser.Location = new Point(422, 281);
+            pnlPeminjamanUser.Location = new Point(422, 284);
             pnlPeminjamanUser.Name = "pnlPeminjamanUser";
             pnlPeminjamanUser.Size = new Size(1507, 805);
             pnlPeminjamanUser.TabIndex = 9;
@@ -244,10 +244,10 @@ namespace Project_PBO_03
             // 
             tbPeminjamanUser.BackColor = Color.Silver;
             tbPeminjamanUser.Font = new Font("Nunito Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tbPeminjamanUser.Location = new Point(58, 76);
+            tbPeminjamanUser.Location = new Point(439, 74);
             tbPeminjamanUser.Multiline = true;
             tbPeminjamanUser.Name = "tbPeminjamanUser";
-            tbPeminjamanUser.Size = new Size(1400, 34);
+            tbPeminjamanUser.Size = new Size(741, 34);
             tbPeminjamanUser.TabIndex = 12;
             // 
             // dgvPeminjamanUser

@@ -234,7 +234,7 @@ namespace Project_PBO_03
             // pictureBox10
             // 
             pictureBox10.Image = (Image)resources.GetObject("pictureBox10.Image");
-            pictureBox10.Location = new Point(150, 415);
+            pictureBox10.Location = new Point(154, 450);
             pictureBox10.Name = "pictureBox10";
             pictureBox10.Size = new Size(39, 44);
             pictureBox10.TabIndex = 10;
@@ -243,7 +243,7 @@ namespace Project_PBO_03
             // pictureBox9
             // 
             pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(145, 365);
+            pictureBox9.Location = new Point(153, 400);
             pictureBox9.Name = "pictureBox9";
             pictureBox9.Size = new Size(44, 44);
             pictureBox9.TabIndex = 5;
@@ -251,21 +251,21 @@ namespace Project_PBO_03
             // 
             // tbPasswdMSA
             // 
-            tbPasswdMSA.Location = new Point(195, 415);
+            tbPasswdMSA.Location = new Point(203, 450);
             tbPasswdMSA.Multiline = true;
             tbPasswdMSA.Name = "tbPasswdMSA";
+            tbPasswdMSA.PlaceholderText = "Password";
             tbPasswdMSA.Size = new Size(249, 44);
             tbPasswdMSA.TabIndex = 4;
-            tbPasswdMSA.Text = "Password";
             // 
             // tbUsernameMSA
             // 
-            tbUsernameMSA.Location = new Point(195, 365);
+            tbUsernameMSA.Location = new Point(203, 400);
             tbUsernameMSA.Multiline = true;
             tbUsernameMSA.Name = "tbUsernameMSA";
+            tbUsernameMSA.PlaceholderText = "Username";
             tbUsernameMSA.Size = new Size(249, 44);
             tbUsernameMSA.TabIndex = 3;
-            tbUsernameMSA.Text = "Username";
             tbUsernameMSA.TextChanged += tbUsernameMSA_TextChanged;
             // 
             // pictureBox4
@@ -441,18 +441,18 @@ namespace Project_PBO_03
             tbPasswordD.Location = new Point(195, 415);
             tbPasswordD.Multiline = true;
             tbPasswordD.Name = "tbPasswordD";
+            tbPasswordD.PlaceholderText = "Password";
             tbPasswordD.Size = new Size(249, 44);
             tbPasswordD.TabIndex = 2;
-            tbPasswordD.Text = "Password";
             // 
             // tbUsernameM
             // 
             tbUsernameM.Location = new Point(195, 365);
             tbUsernameM.Multiline = true;
             tbUsernameM.Name = "tbUsernameM";
+            tbUsernameM.PlaceholderText = "Username/Email/No.Telepon";
             tbUsernameM.Size = new Size(249, 44);
             tbUsernameM.TabIndex = 1;
-            tbUsernameM.Text = "Username/Email/No.Telepon";
             // 
             // pictureBox1
             // 
@@ -494,10 +494,11 @@ namespace Project_PBO_03
             // 
             // pictureBox14
             // 
-            pictureBox14.Image = (Image)resources.GetObject("pictureBox14.Image");
-            pictureBox14.Location = new Point(148, 515);
+            pictureBox14.Image = Properties.Resources.mail;
+            pictureBox14.Location = new Point(150, 515);
             pictureBox14.Name = "pictureBox14";
-            pictureBox14.Size = new Size(41, 33);
+            pictureBox14.Size = new Size(32, 44);
+            pictureBox14.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox14.TabIndex = 18;
             pictureBox14.TabStop = false;
             // 
@@ -506,9 +507,9 @@ namespace Project_PBO_03
             tbEmailD.Location = new Point(195, 515);
             tbEmailD.Multiline = true;
             tbEmailD.Name = "tbEmailD";
+            tbEmailD.PlaceholderText = "example@gmail.com";
             tbEmailD.Size = new Size(249, 44);
             tbEmailD.TabIndex = 17;
-            tbEmailD.Text = "Email";
             tbEmailD.TextChanged += tbEmailD_TextChanged;
             // 
             // label5
@@ -571,9 +572,9 @@ namespace Project_PBO_03
             // pictureBox8
             // 
             pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
-            pictureBox8.Location = new Point(148, 465);
+            pictureBox8.Location = new Point(150, 473);
             pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(41, 33);
+            pictureBox8.Size = new Size(32, 33);
             pictureBox8.TabIndex = 11;
             pictureBox8.TabStop = false;
             // 
@@ -609,6 +610,7 @@ namespace Project_PBO_03
             tbMasukkanpasswdD.Location = new Point(195, 615);
             tbMasukkanpasswdD.Multiline = true;
             tbMasukkanpasswdD.Name = "tbMasukkanpasswdD";
+            tbMasukkanpasswdD.PlaceholderText = "Konfirmasi Password";
             tbMasukkanpasswdD.Size = new Size(249, 44);
             tbMasukkanpasswdD.TabIndex = 7;
             tbMasukkanpasswdD.TextChanged += tbMasukkanpasswdD_TextChanged;
@@ -618,18 +620,18 @@ namespace Project_PBO_03
             tbNotelpD.Location = new Point(195, 465);
             tbNotelpD.Multiline = true;
             tbNotelpD.Name = "tbNotelpD";
+            tbNotelpD.PlaceholderText = "No.Telepon";
             tbNotelpD.Size = new Size(249, 44);
             tbNotelpD.TabIndex = 6;
-            tbNotelpD.Text = "No.Telepon";
             // 
             // tbNamaD
             // 
             tbNamaD.Location = new Point(195, 365);
             tbNamaD.Multiline = true;
             tbNamaD.Name = "tbNamaD";
+            tbNamaD.PlaceholderText = "Nama Lengkap";
             tbNamaD.Size = new Size(249, 44);
             tbNamaD.TabIndex = 5;
-            tbNamaD.Text = "Nama";
             tbNamaD.TextChanged += textBox3_TextChanged;
             // 
             // pictureBox2
@@ -646,6 +648,7 @@ namespace Project_PBO_03
             tbPasswD.Location = new Point(195, 565);
             tbPasswD.Multiline = true;
             tbPasswD.Name = "tbPasswD";
+            tbPasswD.PlaceholderText = "Password";
             tbPasswD.Size = new Size(249, 44);
             tbPasswD.TabIndex = 3;
             tbPasswD.TextChanged += tbPasswD_TextChanged;
@@ -655,9 +658,9 @@ namespace Project_PBO_03
             tbUsernameD.Location = new Point(195, 415);
             tbUsernameD.Multiline = true;
             tbUsernameD.Name = "tbUsernameD";
+            tbUsernameD.PlaceholderText = "Username";
             tbUsernameD.Size = new Size(249, 44);
             tbUsernameD.TabIndex = 2;
-            tbUsernameD.Text = "Username";
             // 
             // pictureBox5
             // 
@@ -677,7 +680,7 @@ namespace Project_PBO_03
             pnlKodevSA.Controls.Add(tbKodevSA);
             pnlKodevSA.Controls.Add(labelKodevSA);
             pnlKodevSA.Controls.Add(pictureBox13);
-            pnlKodevSA.Location = new Point(22, 261);
+            pnlKodevSA.Location = new Point(442, 110);
             pnlKodevSA.Name = "pnlKodevSA";
             pnlKodevSA.Size = new Size(620, 1080);
             pnlKodevSA.TabIndex = 16;
@@ -701,9 +704,9 @@ namespace Project_PBO_03
             tbKodevSA.Location = new Point(201, 542);
             tbKodevSA.Multiline = true;
             tbKodevSA.Name = "tbKodevSA";
+            tbKodevSA.PlaceholderText = "Masukkan Kode Verifikasi...";
             tbKodevSA.Size = new Size(247, 48);
             tbKodevSA.TabIndex = 2;
-            tbKodevSA.Text = "Masukkan Kode Verifikasi...";
             // 
             // labelKodevSA
             // 
