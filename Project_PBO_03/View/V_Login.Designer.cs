@@ -611,7 +611,6 @@ namespace Project_PBO_03
             tbMasukkanpasswdD.Name = "tbMasukkanpasswdD";
             tbMasukkanpasswdD.Size = new Size(249, 44);
             tbMasukkanpasswdD.TabIndex = 7;
-            tbMasukkanpasswdD.Text = "Masukkan Kembali Password";
             tbMasukkanpasswdD.TextChanged += tbMasukkanpasswdD_TextChanged;
             // 
             // tbNotelpD
@@ -649,7 +648,6 @@ namespace Project_PBO_03
             tbPasswD.Name = "tbPasswD";
             tbPasswD.Size = new Size(249, 44);
             tbPasswD.TabIndex = 3;
-            tbPasswD.Text = "Password";
             tbPasswD.TextChanged += tbPasswD_TextChanged;
             // 
             // tbUsernameD

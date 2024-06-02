@@ -1,4 +1,6 @@
-﻿using Project_PBO_03.Core;
+﻿using Project_PBO_03.Context;
+using Project_PBO_03.Core;
+using Project_PBO_03.Model;
 using Project_PBO_03.View;
 using System;
 using System.Collections.Generic;
@@ -255,6 +257,35 @@ namespace Project_PBO_03
 
         private void btDaftarD_Click(object sender, EventArgs e)
         {
+            string nama = tbNamaD.Text;
+            string username = tbUsernameD.Text;
+            string telepon = tbNotelpD.Text;
+            string email = tbEmailD.Text;
+            string password = tbPasswD.Text;
+            string kpass = tbMasukkanpasswdD.Text;
+
+            m_Pengguna penggunaBaru = new m_Pengguna
+            {
+                nama_pengguna = nama,
+                username_pengguna = username,
+                telp_pengguna = telepon,
+                email_pengguna = email,
+                pass_pengguna = password
+            };
+
+            if (password == kpass)
+            {
+                PenggunaContext.create(penggunaBaru);
+                DialogResult message = MessageBox.Show("Data berhasil ditambahkan", "Sukses", MessageBoxButtons.OK);
+                if (message == DialogResult.OK)
+                {
+                    this.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Konfirmasi password salah!", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
