@@ -254,6 +254,7 @@ namespace Project_PBO_03
             tbPasswdMSA.Location = new Point(203, 450);
             tbPasswdMSA.Multiline = true;
             tbPasswdMSA.Name = "tbPasswdMSA";
+            tbPasswdMSA.PasswordChar = '*';
             tbPasswdMSA.PlaceholderText = "Password";
             tbPasswdMSA.Size = new Size(249, 44);
             tbPasswdMSA.TabIndex = 4;
@@ -441,6 +442,7 @@ namespace Project_PBO_03
             tbPasswordD.Location = new Point(195, 415);
             tbPasswordD.Multiline = true;
             tbPasswordD.Name = "tbPasswordD";
+            tbPasswordD.PasswordChar = '*';
             tbPasswordD.PlaceholderText = "Password";
             tbPasswordD.Size = new Size(249, 44);
             tbPasswordD.TabIndex = 2;

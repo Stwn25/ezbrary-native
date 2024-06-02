@@ -341,7 +341,7 @@ namespace Project_PBO_03
             pnlProfileAdmin.Controls.Add(lblUsernameProfileAdmin);
             pnlProfileAdmin.Controls.Add(tbUsernameAdmin);
             pnlProfileAdmin.Controls.Add(lblProfileAdmin);
-            pnlProfileAdmin.Location = new Point(546, 64);
+            pnlProfileAdmin.Location = new Point(494, 123);
             pnlProfileAdmin.Name = "pnlProfileAdmin";
             pnlProfileAdmin.Size = new Size(1507, 805);
             pnlProfileAdmin.TabIndex = 10;

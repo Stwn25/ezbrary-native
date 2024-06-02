@@ -123,7 +123,7 @@ namespace Project_PBO_03
 
         private void btKeluarUser_Click_1(object sender, EventArgs e)
         {
-            btPeminjamanUser.BackColor = Color.CornflowerBlue;
+            /*btPeminjamanUser.BackColor = Color.CornflowerBlue;
             btBukuFavUser.BackColor = Color.CornflowerBlue;
             btRiwayatPeminjamanUser.BackColor = Color.CornflowerBlue;
             btProfileUser.BackColor = Color.CornflowerBlue;
@@ -132,7 +132,9 @@ namespace Project_PBO_03
             this.pnlBukuFavUser.Hide();
             this.pnlRiwayatUser.Hide();
             this.pnlProfileUser.Hide();
-            Application.Exit();
+            Application.Exit();*/
+            V_Login login = new V_Login();
+            login.Show();
         }
     }
 }
