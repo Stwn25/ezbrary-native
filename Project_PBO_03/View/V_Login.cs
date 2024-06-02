@@ -132,7 +132,7 @@ namespace Project_PBO_03
         {
             string username_admin = tbUsernameM.Text;
             string pass_admin = tbPasswordD.Text;
-            
+
 
             bool loginResult = cekLoginAdmin.Login(username_admin, pass_admin);
 
@@ -166,6 +166,47 @@ namespace Project_PBO_03
             {
                 MessageBox.Show("Verifikasi salah!", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void tbPasswD_TextChanged(object sender, EventArgs e)
+        {
+            int Hitung_Karakter = tbPasswD.Text.Length;
+
+            if (Hitung_Karakter < 8)
+            {
+                label5.Text = "Karakter Password Anda Kurang";
+            }
+            else if (Hitung_Karakter < 12)
+            {
+                label5.Text = "Jumlah Karakter Password Anda Sesuai";
+            }
+            else if (Hitung_Karakter > 12)
+            {
+                label5.Text = "Password anda terlalu banyak karakter";
+                tbPasswD.MaxLength = 20;
+            }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbMasukkanpasswdD_TextChanged(object sender, EventArgs e)
+        {
+            string Password = tbPasswD.Text;
+            string KonfirmasiPassword = tbMasukkanpasswdD.Text;
+            tbMasukkanpasswdD.MaxLength = 20;
+
+            if (Password != KonfirmasiPassword)
+            {
+                label5.Text = "Password anda tidak sesuai";
+            }
+            else
+            {
+                label5.Text = "Password anda sudah sesuai";
+            }
+
         }
     }
 }

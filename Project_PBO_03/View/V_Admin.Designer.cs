@@ -90,7 +90,7 @@ namespace Project_PBO_03
             pnlAdmin.Controls.Add(lblGmail);
             pnlAdmin.Controls.Add(lblUsername);
             pnlAdmin.Dock = DockStyle.Left;
-            pnlAdmin.Font = new Font("Nunito", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            pnlAdmin.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             pnlAdmin.Location = new Point(0, 0);
             pnlAdmin.Name = "pnlAdmin";
             pnlAdmin.Size = new Size(416, 1080);
@@ -107,7 +107,7 @@ namespace Project_PBO_03
             // 
             btKeluarAdmin.BackColor = SystemColors.HotTrack;
             btKeluarAdmin.FlatStyle = FlatStyle.Popup;
-            btKeluarAdmin.Font = new Font("Nunito ExtraBold", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btKeluarAdmin.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btKeluarAdmin.ForeColor = Color.White;
             btKeluarAdmin.Location = new Point(68, 943);
             btKeluarAdmin.Name = "btKeluarAdmin";
@@ -120,7 +120,7 @@ namespace Project_PBO_03
             // 
             btProfileAdmin.BackColor = SystemColors.HotTrack;
             btProfileAdmin.FlatStyle = FlatStyle.Popup;
-            btProfileAdmin.Font = new Font("Nunito ExtraBold", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btProfileAdmin.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btProfileAdmin.ForeColor = Color.White;
             btProfileAdmin.Location = new Point(68, 872);
             btProfileAdmin.Name = "btProfileAdmin";
@@ -134,7 +134,7 @@ namespace Project_PBO_03
             // 
             btRiwayatPeminjaman.BackColor = SystemColors.HotTrack;
             btRiwayatPeminjaman.FlatStyle = FlatStyle.Popup;
-            btRiwayatPeminjaman.Font = new Font("Nunito ExtraBold", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btRiwayatPeminjaman.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btRiwayatPeminjaman.ForeColor = Color.White;
             btRiwayatPeminjaman.Location = new Point(68, 527);
             btRiwayatPeminjaman.Name = "btRiwayatPeminjaman";
@@ -148,7 +148,7 @@ namespace Project_PBO_03
             // 
             btPeminjaman.BackColor = SystemColors.HotTrack;
             btPeminjaman.FlatStyle = FlatStyle.Popup;
-            btPeminjaman.Font = new Font("Nunito ExtraBold", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btPeminjaman.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btPeminjaman.ForeColor = Color.White;
             btPeminjaman.Location = new Point(68, 453);
             btPeminjaman.Name = "btPeminjaman";
@@ -162,7 +162,7 @@ namespace Project_PBO_03
             // 
             btKelolaBuku.BackColor = SystemColors.HotTrack;
             btKelolaBuku.FlatStyle = FlatStyle.Popup;
-            btKelolaBuku.Font = new Font("Nunito ExtraBold", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btKelolaBuku.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btKelolaBuku.ForeColor = Color.White;
             btKelolaBuku.Location = new Point(68, 380);
             btKelolaBuku.Name = "btKelolaBuku";
@@ -175,21 +175,21 @@ namespace Project_PBO_03
             // lblGmail
             // 
             lblGmail.AutoSize = true;
-            lblGmail.Font = new Font("Nunito", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblGmail.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblGmail.Location = new Point(119, 284);
             lblGmail.Name = "lblGmail";
-            lblGmail.Size = new Size(184, 23);
+            lblGmail.Size = new Size(197, 20);
             lblGmail.TabIndex = 1;
             lblGmail.Text = "Jamaludin@gmail.com";
             // 
             // lblUsername
             // 
             lblUsername.AutoSize = true;
-            lblUsername.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblUsername.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblUsername.ForeColor = Color.White;
             lblUsername.Location = new Point(154, 256);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(108, 28);
+            lblUsername.Size = new Size(110, 25);
             lblUsername.TabIndex = 0;
             lblUsername.Text = "Username";
             // 
@@ -217,30 +217,30 @@ namespace Project_PBO_03
             // lblhaiAdmin
             // 
             lblhaiAdmin.AutoSize = true;
-            lblhaiAdmin.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblhaiAdmin.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblhaiAdmin.Location = new Point(438, 24);
             lblhaiAdmin.Name = "lblhaiAdmin";
-            lblhaiAdmin.Size = new Size(169, 28);
+            lblhaiAdmin.Size = new Size(172, 25);
             lblhaiAdmin.TabIndex = 3;
             lblhaiAdmin.Text = "Selamat Datang,";
             // 
             // lblhai1Admin
             // 
             lblhai1Admin.AutoSize = true;
-            lblhai1Admin.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblhai1Admin.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblhai1Admin.Location = new Point(438, 64);
             lblhai1Admin.Name = "lblhai1Admin";
-            lblhai1Admin.Size = new Size(74, 28);
+            lblhai1Admin.Size = new Size(73, 25);
             lblhai1Admin.TabIndex = 4;
             lblhai1Admin.Text = "Admin";
             // 
             // lblDaftarBuku
             // 
             lblDaftarBuku.AutoSize = true;
-            lblDaftarBuku.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDaftarBuku.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDaftarBuku.Location = new Point(23, 29);
             lblDaftarBuku.Name = "lblDaftarBuku";
-            lblDaftarBuku.Size = new Size(126, 28);
+            lblDaftarBuku.Size = new Size(125, 25);
             lblDaftarBuku.TabIndex = 5;
             lblDaftarBuku.Text = "Daftar Buku";
             // 
@@ -293,10 +293,10 @@ namespace Project_PBO_03
             // lblBookingAdmin
             // 
             lblBookingAdmin.AutoSize = true;
-            lblBookingAdmin.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBookingAdmin.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblBookingAdmin.Location = new Point(23, 29);
             lblBookingAdmin.Name = "lblBookingAdmin";
-            lblBookingAdmin.Size = new Size(294, 28);
+            lblBookingAdmin.Size = new Size(302, 25);
             lblBookingAdmin.TabIndex = 5;
             lblBookingAdmin.Text = "Booking dan Sedang Dipinjam";
             // 
@@ -321,10 +321,10 @@ namespace Project_PBO_03
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(23, 29);
             label1.Name = "label1";
-            label1.Size = new Size(210, 28);
+            label1.Size = new Size(211, 25);
             label1.TabIndex = 5;
             label1.Text = "Riwayat Peminjaman";
             // 
@@ -350,10 +350,10 @@ namespace Project_PBO_03
             // lblPasswordProfileAdmin
             // 
             lblPasswordProfileAdmin.AutoSize = true;
-            lblPasswordProfileAdmin.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPasswordProfileAdmin.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPasswordProfileAdmin.Location = new Point(58, 503);
             lblPasswordProfileAdmin.Name = "lblPasswordProfileAdmin";
-            lblPasswordProfileAdmin.Size = new Size(105, 28);
+            lblPasswordProfileAdmin.Size = new Size(106, 25);
             lblPasswordProfileAdmin.TabIndex = 15;
             lblPasswordProfileAdmin.Text = "Password";
             // 
@@ -369,10 +369,10 @@ namespace Project_PBO_03
             // lblNoteleponProfileAdmin
             // 
             lblNoteleponProfileAdmin.AutoSize = true;
-            lblNoteleponProfileAdmin.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNoteleponProfileAdmin.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNoteleponProfileAdmin.Location = new Point(58, 413);
             lblNoteleponProfileAdmin.Name = "lblNoteleponProfileAdmin";
-            lblNoteleponProfileAdmin.Size = new Size(118, 28);
+            lblNoteleponProfileAdmin.Size = new Size(124, 25);
             lblNoteleponProfileAdmin.TabIndex = 13;
             lblNoteleponProfileAdmin.Text = "No.Telepon";
             // 
@@ -388,10 +388,10 @@ namespace Project_PBO_03
             // lblEmailProfileAdmin
             // 
             lblEmailProfileAdmin.AutoSize = true;
-            lblEmailProfileAdmin.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblEmailProfileAdmin.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblEmailProfileAdmin.Location = new Point(58, 311);
             lblEmailProfileAdmin.Name = "lblEmailProfileAdmin";
-            lblEmailProfileAdmin.Size = new Size(64, 28);
+            lblEmailProfileAdmin.Size = new Size(65, 25);
             lblEmailProfileAdmin.TabIndex = 11;
             lblEmailProfileAdmin.Text = "Email";
             // 
@@ -407,10 +407,10 @@ namespace Project_PBO_03
             // lblNamaProfileAdmin
             // 
             lblNamaProfileAdmin.AutoSize = true;
-            lblNamaProfileAdmin.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNamaProfileAdmin.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNamaProfileAdmin.Location = new Point(58, 218);
             lblNamaProfileAdmin.Name = "lblNamaProfileAdmin";
-            lblNamaProfileAdmin.Size = new Size(67, 28);
+            lblNamaProfileAdmin.Size = new Size(68, 25);
             lblNamaProfileAdmin.TabIndex = 9;
             lblNamaProfileAdmin.Text = "Nama";
             // 
@@ -426,10 +426,10 @@ namespace Project_PBO_03
             // lblUsernameProfileAdmin
             // 
             lblUsernameProfileAdmin.AutoSize = true;
-            lblUsernameProfileAdmin.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblUsernameProfileAdmin.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblUsernameProfileAdmin.Location = new Point(58, 125);
             lblUsernameProfileAdmin.Name = "lblUsernameProfileAdmin";
-            lblUsernameProfileAdmin.Size = new Size(108, 28);
+            lblUsernameProfileAdmin.Size = new Size(110, 25);
             lblUsernameProfileAdmin.TabIndex = 7;
             lblUsernameProfileAdmin.Text = "Username";
             // 
@@ -445,10 +445,10 @@ namespace Project_PBO_03
             // lblProfileAdmin
             // 
             lblProfileAdmin.AutoSize = true;
-            lblProfileAdmin.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblProfileAdmin.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblProfileAdmin.Location = new Point(23, 29);
             lblProfileAdmin.Name = "lblProfileAdmin";
-            lblProfileAdmin.Size = new Size(74, 28);
+            lblProfileAdmin.Size = new Size(73, 25);
             lblProfileAdmin.TabIndex = 5;
             lblProfileAdmin.Text = "Profile";
             // 

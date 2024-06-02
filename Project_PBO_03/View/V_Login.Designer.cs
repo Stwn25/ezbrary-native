@@ -63,6 +63,7 @@ namespace Project_PBO_03
             tbUsernameM = new TextBox();
             pictureBox1 = new PictureBox();
             pnlDaftar = new Panel();
+            label5 = new Label();
             pbSAD = new PictureBox();
             linkMasuk = new LinkLabel();
             label3 = new Label();
@@ -134,7 +135,7 @@ namespace Project_PBO_03
             // 
             btDaftar.BackColor = SystemColors.HotTrack;
             btDaftar.FlatStyle = FlatStyle.Flat;
-            btDaftar.Font = new Font("Nunito", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btDaftar.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btDaftar.ForeColor = Color.White;
             btDaftar.Location = new Point(189, 668);
             btDaftar.Name = "btDaftar";
@@ -148,7 +149,7 @@ namespace Project_PBO_03
             // 
             btMasuk.BackColor = SystemColors.HotTrack;
             btMasuk.FlatStyle = FlatStyle.Flat;
-            btMasuk.Font = new Font("Nunito", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btMasuk.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btMasuk.ForeColor = Color.White;
             btMasuk.Location = new Point(189, 609);
             btMasuk.Name = "btMasuk";
@@ -161,11 +162,11 @@ namespace Project_PBO_03
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Nunito", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.GrayText;
             label1.Location = new Point(274, 565);
             label1.Name = "label1";
-            label1.Size = new Size(131, 20);
+            label1.Size = new Size(129, 18);
             label1.TabIndex = 2;
             label1.Text = "Masuk atau Daftar";
             // 
@@ -217,7 +218,7 @@ namespace Project_PBO_03
             // 
             button1.BackColor = SystemColors.HotTrack;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Nunito", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
             button1.Location = new Point(150, 576);
             button1.Name = "button1";
@@ -290,7 +291,7 @@ namespace Project_PBO_03
             // 
             btSubmitAdmin.BackColor = Color.DarkGray;
             btSubmitAdmin.FlatStyle = FlatStyle.Flat;
-            btSubmitAdmin.Font = new Font("Nunito", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btSubmitAdmin.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btSubmitAdmin.ForeColor = Color.Black;
             btSubmitAdmin.Location = new Point(266, 635);
             btSubmitAdmin.Name = "btSubmitAdmin";
@@ -312,11 +313,11 @@ namespace Project_PBO_03
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.Black;
             label4.Location = new Point(248, 486);
             label4.Name = "label4";
-            label4.Size = new Size(151, 28);
+            label4.Size = new Size(158, 25);
             label4.TabIndex = 1;
             label4.Text = "Kode Verifikasi";
             // 
@@ -363,11 +364,11 @@ namespace Project_PBO_03
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Font = new Font("Nunito", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            linkLabel1.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             linkLabel1.LinkColor = SystemColors.HotTrack;
             linkLabel1.Location = new Point(272, 1010);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(59, 23);
+            linkLabel1.Size = new Size(56, 20);
             linkLabel1.TabIndex = 8;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Daftar";
@@ -376,11 +377,11 @@ namespace Project_PBO_03
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Nunito", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.GrayText;
             label2.Location = new Point(230, 990);
             label2.Name = "label2";
-            label2.Size = new Size(144, 20);
+            label2.Size = new Size(140, 18);
             label2.TabIndex = 7;
             label2.Text = "Belum Punya Akun?";
             // 
@@ -388,7 +389,7 @@ namespace Project_PBO_03
             // 
             btMasuksbgadmin.BackColor = SystemColors.HotTrack;
             btMasuksbgadmin.FlatStyle = FlatStyle.Flat;
-            btMasuksbgadmin.Font = new Font("Nunito", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btMasuksbgadmin.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btMasuksbgadmin.ForeColor = Color.White;
             btMasuksbgadmin.Location = new Point(150, 633);
             btMasuksbgadmin.Name = "btMasuksbgadmin";
@@ -402,7 +403,7 @@ namespace Project_PBO_03
             // 
             btMasukM.BackColor = SystemColors.HotTrack;
             btMasukM.FlatStyle = FlatStyle.Flat;
-            btMasukM.Font = new Font("Nunito", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btMasukM.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btMasukM.ForeColor = Color.White;
             btMasukM.Location = new Point(150, 576);
             btMasukM.Name = "btMasukM";
@@ -462,6 +463,7 @@ namespace Project_PBO_03
             // 
             pnlDaftar.BackColor = Color.White;
             pnlDaftar.BorderStyle = BorderStyle.FixedSingle;
+            pnlDaftar.Controls.Add(label5);
             pnlDaftar.Controls.Add(pbSAD);
             pnlDaftar.Controls.Add(linkMasuk);
             pnlDaftar.Controls.Add(label3);
@@ -483,6 +485,15 @@ namespace Project_PBO_03
             pnlDaftar.Size = new Size(620, 1080);
             pnlDaftar.TabIndex = 2;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(154, 630);
+            label5.Name = "label5";
+            label5.Size = new Size(0, 20);
+            label5.TabIndex = 16;
+            label5.Click += label5_Click;
+            // 
             // pbSAD
             // 
             pbSAD.Image = (Image)resources.GetObject("pbSAD.Image");
@@ -496,11 +507,11 @@ namespace Project_PBO_03
             // linkMasuk
             // 
             linkMasuk.AutoSize = true;
-            linkMasuk.Font = new Font("Nunito", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            linkMasuk.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             linkMasuk.LinkColor = SystemColors.HotTrack;
             linkMasuk.Location = new Point(276, 1010);
             linkMasuk.Name = "linkMasuk";
-            linkMasuk.Size = new Size(60, 23);
+            linkMasuk.Size = new Size(58, 20);
             linkMasuk.TabIndex = 14;
             linkMasuk.TabStop = true;
             linkMasuk.Text = "Masuk";
@@ -509,11 +520,11 @@ namespace Project_PBO_03
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Nunito", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.GrayText;
             label3.Location = new Point(230, 990);
             label3.Name = "label3";
-            label3.Size = new Size(144, 20);
+            label3.Size = new Size(140, 18);
             label3.TabIndex = 13;
             label3.Text = "Sudah Punya Akun?";
             // 
@@ -521,7 +532,7 @@ namespace Project_PBO_03
             // 
             btDaftarD.BackColor = SystemColors.HotTrack;
             btDaftarD.FlatStyle = FlatStyle.Flat;
-            btDaftarD.Font = new Font("Nunito", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btDaftarD.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btDaftarD.ForeColor = Color.White;
             btDaftarD.Location = new Point(150, 700);
             btDaftarD.Name = "btDaftarD";
@@ -574,6 +585,7 @@ namespace Project_PBO_03
             tbMasukkanpasswdD.Size = new Size(249, 44);
             tbMasukkanpasswdD.TabIndex = 7;
             tbMasukkanpasswdD.Text = "Masukkan Kembali Password";
+            tbMasukkanpasswdD.TextChanged += tbMasukkanpasswdD_TextChanged;
             // 
             // tbNotelpD
             // 
@@ -611,6 +623,7 @@ namespace Project_PBO_03
             tbPasswD.Size = new Size(249, 44);
             tbPasswD.TabIndex = 3;
             tbPasswD.Text = "Password";
+            tbPasswD.TextChanged += tbPasswD_TextChanged;
             // 
             // tbUsernameD
             // 
@@ -648,7 +661,7 @@ namespace Project_PBO_03
             // 
             btSubmitSA.BackColor = Color.DarkGray;
             btSubmitSA.FlatStyle = FlatStyle.Flat;
-            btSubmitSA.Font = new Font("Nunito", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btSubmitSA.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btSubmitSA.ForeColor = Color.Black;
             btSubmitSA.Location = new Point(266, 635);
             btSubmitSA.Name = "btSubmitSA";
@@ -669,11 +682,11 @@ namespace Project_PBO_03
             // labelKodevSA
             // 
             labelKodevSA.AutoSize = true;
-            labelKodevSA.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelKodevSA.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelKodevSA.ForeColor = Color.Black;
             labelKodevSA.Location = new Point(248, 486);
             labelKodevSA.Name = "labelKodevSA";
-            labelKodevSA.Size = new Size(151, 28);
+            labelKodevSA.Size = new Size(158, 25);
             labelKodevSA.TabIndex = 1;
             labelKodevSA.Text = "Kode Verifikasi";
             // 
@@ -868,5 +881,6 @@ namespace Project_PBO_03
         private PictureBox pbDekor;
         private PictureBox pbDekorText;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
+        private Label label5;
     }
 }
