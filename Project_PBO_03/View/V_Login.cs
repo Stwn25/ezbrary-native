@@ -1,4 +1,5 @@
 ﻿using Project_PBO_03.Core;
+using Project_PBO_03.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -112,10 +113,10 @@ namespace Project_PBO_03
 
         private void btMasukM_Click(object sender, EventArgs e)
         {
-            string username_pengguna = tbUsernameM.Text;
+            string input_pengguna = tbUsernameM.Text;
             string pass_pengguna = tbPasswordD.Text;
 
-            bool loginResult = cekLoginPengguna.Login(username_pengguna, pass_pengguna);
+            bool loginResult = cekLoginPengguna.Login(input_pengguna, pass_pengguna);
 
             if (loginResult)
             {
@@ -206,6 +207,59 @@ namespace Project_PBO_03
             {
                 label5.Text = "Password anda sudah sesuai";
             }
+
+        }
+
+        private void buttonMasukSA_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btMasukSA_Click(object sender, EventArgs e)
+        {
+            string username_sa = tbUsernameMSA.Text;
+            string pass_sa = tbPasswdMSA.Text;
+
+            bool loginResult = cekLoginSuperAdmin.Login(username_sa, pass_sa);
+            if (loginResult)
+            {
+                this.pnlMasukSA.Hide();
+                this.pnlKodevSA.Show();
+                this.pnlKodevSA.Dock = DockStyle.Left;
+            }
+            else
+            {
+                MessageBox.Show("Login gagal, harap cek username dan password", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btSubmitSA_Click(object sender, EventArgs e)
+        {
+            string kode_verif = "0987654321";
+
+            if (tbKodevSA.Text == kode_verif)
+            {
+                V_SuperAdmin superadmin = new V_SuperAdmin();
+                superadmin.Show();
+            }
+            else
+            {
+                MessageBox.Show("Verifikasi salah!", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void tbEmailD_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btDaftarD_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbUsernameMSA_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

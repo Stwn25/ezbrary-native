@@ -1,25 +1,25 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Npgsql;
 
 namespace Project_PBO_03.Core
 {
-    internal class cekLoginPengguna
+    internal class cekLoginSuperAdmin
     {
-        public static bool Login(string input_pengguna, string pass_pengguna)
+        public static bool Login(string username_sa, string pass_sa)
         {
             try
             {
-                string query = "SELECT * FROM pengguna WHERE usrnmeuser = @username or telpuser = @username or emailuser = @username AND pwuser = @password";
+                string query = "SELECT * FROM superadmin WHERE usrnmesa = @username AND passwordsa = @password";
 
                 NpgsqlParameter[] parameters = new NpgsqlParameter[]
                 {
-                    new NpgsqlParameter("@username", NpgsqlTypes.NpgsqlDbType.Varchar) { Value = input_pengguna },
-                    new NpgsqlParameter("@password", NpgsqlTypes.NpgsqlDbType.Varchar) { Value = pass_pengguna },
+                    new NpgsqlParameter("@username", NpgsqlTypes.NpgsqlDbType.Varchar) { Value = username_sa },
+                    new NpgsqlParameter("@password", NpgsqlTypes.NpgsqlDbType.Varchar) { Value = pass_sa },
                 };
 
                 DataTable result = DBconnection.queryExecutor(query, parameters);
@@ -42,3 +42,4 @@ namespace Project_PBO_03.Core
         }
     }
 }
+

@@ -63,6 +63,8 @@ namespace Project_PBO_03
             tbUsernameM = new TextBox();
             pictureBox1 = new PictureBox();
             pnlDaftar = new Panel();
+            pictureBox14 = new PictureBox();
+            tbEmailD = new TextBox();
             label5 = new Label();
             pbSAD = new PictureBox();
             linkMasuk = new LinkLabel();
@@ -103,6 +105,7 @@ namespace Project_PBO_03
             ((System.ComponentModel.ISupportInitialize)pbUsernameM).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlDaftar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbSAD).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
@@ -125,7 +128,7 @@ namespace Project_PBO_03
             pnlAwal.Controls.Add(label1);
             pnlAwal.Controls.Add(pbEzbrary);
             pnlAwal.Controls.Add(pbBuku);
-            pnlAwal.Location = new Point(699, 70);
+            pnlAwal.Location = new Point(658, 83);
             pnlAwal.Name = "pnlAwal";
             pnlAwal.Size = new Size(680, 935);
             pnlAwal.TabIndex = 0;
@@ -198,7 +201,7 @@ namespace Project_PBO_03
             pnlMasukSA.Controls.Add(tbPasswdMSA);
             pnlMasukSA.Controls.Add(tbUsernameMSA);
             pnlMasukSA.Controls.Add(pictureBox4);
-            pnlMasukSA.Location = new Point(49, 193);
+            pnlMasukSA.Location = new Point(12, 170);
             pnlMasukSA.Name = "pnlMasukSA";
             pnlMasukSA.Size = new Size(620, 1080);
             pnlMasukSA.TabIndex = 5;
@@ -226,6 +229,7 @@ namespace Project_PBO_03
             button1.TabIndex = 13;
             button1.Text = "Masuk Sebagai Super Admin";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += btMasukSA_Click;
             // 
             // pictureBox10
             // 
@@ -261,7 +265,8 @@ namespace Project_PBO_03
             tbUsernameMSA.Name = "tbUsernameMSA";
             tbUsernameMSA.Size = new Size(249, 44);
             tbUsernameMSA.TabIndex = 3;
-            tbUsernameMSA.Text = "Username/Email/No.Telepon";
+            tbUsernameMSA.Text = "Username";
+            tbUsernameMSA.TextChanged += tbUsernameMSA_TextChanged;
             // 
             // pictureBox4
             // 
@@ -281,7 +286,7 @@ namespace Project_PBO_03
             pnlKodevAdmin.Controls.Add(tbKodevAdmin);
             pnlKodevAdmin.Controls.Add(label4);
             pnlKodevAdmin.Controls.Add(pictureBox12);
-            pnlKodevAdmin.Location = new Point(361, 12);
+            pnlKodevAdmin.Location = new Point(32, 212);
             pnlKodevAdmin.Name = "pnlKodevAdmin";
             pnlKodevAdmin.Size = new Size(620, 1080);
             pnlKodevAdmin.TabIndex = 3;
@@ -463,6 +468,8 @@ namespace Project_PBO_03
             // 
             pnlDaftar.BackColor = Color.White;
             pnlDaftar.BorderStyle = BorderStyle.FixedSingle;
+            pnlDaftar.Controls.Add(pictureBox14);
+            pnlDaftar.Controls.Add(tbEmailD);
             pnlDaftar.Controls.Add(label5);
             pnlDaftar.Controls.Add(pbSAD);
             pnlDaftar.Controls.Add(linkMasuk);
@@ -484,6 +491,25 @@ namespace Project_PBO_03
             pnlDaftar.Name = "pnlDaftar";
             pnlDaftar.Size = new Size(620, 1080);
             pnlDaftar.TabIndex = 2;
+            // 
+            // pictureBox14
+            // 
+            pictureBox14.Image = (Image)resources.GetObject("pictureBox14.Image");
+            pictureBox14.Location = new Point(148, 515);
+            pictureBox14.Name = "pictureBox14";
+            pictureBox14.Size = new Size(41, 33);
+            pictureBox14.TabIndex = 18;
+            pictureBox14.TabStop = false;
+            // 
+            // tbEmailD
+            // 
+            tbEmailD.Location = new Point(195, 515);
+            tbEmailD.Multiline = true;
+            tbEmailD.Name = "tbEmailD";
+            tbEmailD.Size = new Size(249, 44);
+            tbEmailD.TabIndex = 17;
+            tbEmailD.Text = "Email";
+            tbEmailD.TextChanged += tbEmailD_TextChanged;
             // 
             // label5
             // 
@@ -540,6 +566,7 @@ namespace Project_PBO_03
             btDaftarD.TabIndex = 12;
             btDaftarD.Text = "Daftar";
             btDaftarD.UseVisualStyleBackColor = false;
+            btDaftarD.Click += btDaftarD_Click;
             // 
             // pictureBox8
             // 
@@ -553,7 +580,7 @@ namespace Project_PBO_03
             // pictureBox7
             // 
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(150, 558);
+            pictureBox7.Location = new Point(150, 608);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(39, 44);
             pictureBox7.TabIndex = 10;
@@ -562,7 +589,7 @@ namespace Project_PBO_03
             // pictureBox6
             // 
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(150, 515);
+            pictureBox6.Location = new Point(150, 565);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(39, 44);
             pictureBox6.TabIndex = 9;
@@ -571,7 +598,7 @@ namespace Project_PBO_03
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(145, 415);
+            pictureBox3.Location = new Point(145, 365);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(44, 44);
             pictureBox3.TabIndex = 8;
@@ -579,7 +606,7 @@ namespace Project_PBO_03
             // 
             // tbMasukkanpasswdD
             // 
-            tbMasukkanpasswdD.Location = new Point(195, 565);
+            tbMasukkanpasswdD.Location = new Point(195, 615);
             tbMasukkanpasswdD.Multiline = true;
             tbMasukkanpasswdD.Name = "tbMasukkanpasswdD";
             tbMasukkanpasswdD.Size = new Size(249, 44);
@@ -598,7 +625,7 @@ namespace Project_PBO_03
             // 
             // tbNamaD
             // 
-            tbNamaD.Location = new Point(195, 415);
+            tbNamaD.Location = new Point(195, 365);
             tbNamaD.Multiline = true;
             tbNamaD.Name = "tbNamaD";
             tbNamaD.Size = new Size(249, 44);
@@ -609,7 +636,7 @@ namespace Project_PBO_03
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(145, 365);
+            pictureBox2.Location = new Point(145, 415);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(44, 44);
             pictureBox2.TabIndex = 4;
@@ -617,7 +644,7 @@ namespace Project_PBO_03
             // 
             // tbPasswD
             // 
-            tbPasswD.Location = new Point(195, 515);
+            tbPasswD.Location = new Point(195, 565);
             tbPasswD.Multiline = true;
             tbPasswD.Name = "tbPasswD";
             tbPasswD.Size = new Size(249, 44);
@@ -627,12 +654,12 @@ namespace Project_PBO_03
             // 
             // tbUsernameD
             // 
-            tbUsernameD.Location = new Point(195, 365);
+            tbUsernameD.Location = new Point(195, 415);
             tbUsernameD.Multiline = true;
             tbUsernameD.Name = "tbUsernameD";
             tbUsernameD.Size = new Size(249, 44);
             tbUsernameD.TabIndex = 2;
-            tbUsernameD.Text = "Username/Email/No.Telepon";
+            tbUsernameD.Text = "Username";
             // 
             // pictureBox5
             // 
@@ -669,6 +696,7 @@ namespace Project_PBO_03
             btSubmitSA.TabIndex = 3;
             btSubmitSA.Text = "Submit";
             btSubmitSA.UseVisualStyleBackColor = false;
+            btSubmitSA.Click += btSubmitSA_Click;
             // 
             // tbKodevSA
             // 
@@ -782,6 +810,7 @@ namespace Project_PBO_03
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             pnlDaftar.ResumeLayout(false);
             pnlDaftar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbSAD).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
@@ -882,5 +911,7 @@ namespace Project_PBO_03
         private PictureBox pbDekorText;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
         private Label label5;
+        private PictureBox pictureBox14;
+        private TextBox tbEmailD;
     }
 }
