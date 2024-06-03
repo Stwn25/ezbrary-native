@@ -69,7 +69,6 @@ namespace Project_PBO_03
             lblProfileAdmin = new Label();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             pnlTambahBukuAdmin = new Panel();
-            ucPenerbitTambahBukuAdmin1 = new ucPenerbitTambahBukuAdmin();
             comboBox5 = new ComboBox();
             comboBox6 = new ComboBox();
             comboBox3 = new ComboBox();
@@ -84,8 +83,6 @@ namespace Project_PBO_03
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
-            ucPenulisTambahBukuAdmin1 = new ucPenulisTambahBukuAdmin();
-            ucJenisBukuTambahBukuAdmin1 = new ucJenisBukuTambahBukuAdmin();
             pnlAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxVektoradmin).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPerpusAdmin).BeginInit();
@@ -379,7 +376,7 @@ namespace Project_PBO_03
             pnlProfileAdmin.Controls.Add(lblUsernameProfileAdmin);
             pnlProfileAdmin.Controls.Add(tbUsernameAdmin);
             pnlProfileAdmin.Controls.Add(lblProfileAdmin);
-            pnlProfileAdmin.Location = new Point(422, 911);
+            pnlProfileAdmin.Location = new Point(423, 284);
             pnlProfileAdmin.Name = "pnlProfileAdmin";
             pnlProfileAdmin.Size = new Size(1507, 805);
             pnlProfileAdmin.TabIndex = 10;
@@ -388,14 +385,13 @@ namespace Project_PBO_03
             // btSimpanPerubahanA
             // 
             btSimpanPerubahanA.BackColor = SystemColors.HotTrack;
-            btSimpanPerubahanA.Cursor = Cursors.Hand;
-            btSimpanPerubahanA.FlatStyle = FlatStyle.Flat;
-            btSimpanPerubahanA.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btSimpanPerubahanA.FlatStyle = FlatStyle.Popup;
+            btSimpanPerubahanA.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btSimpanPerubahanA.ForeColor = Color.White;
-            btSimpanPerubahanA.Location = new Point(682, 620);
+            btSimpanPerubahanA.Location = new Point(625, 631);
             btSimpanPerubahanA.Name = "btSimpanPerubahanA";
-            btSimpanPerubahanA.Size = new Size(292, 46);
-            btSimpanPerubahanA.TabIndex = 23;
+            btSimpanPerubahanA.Size = new Size(286, 52);
+            btSimpanPerubahanA.TabIndex = 16;
             btSimpanPerubahanA.Text = "Simpan Perubahan";
             btSimpanPerubahanA.UseVisualStyleBackColor = false;
             // 
@@ -530,9 +526,6 @@ namespace Project_PBO_03
             // 
             // pnlTambahBukuAdmin
             // 
-            pnlTambahBukuAdmin.Controls.Add(ucJenisBukuTambahBukuAdmin1);
-            pnlTambahBukuAdmin.Controls.Add(ucPenulisTambahBukuAdmin1);
-            pnlTambahBukuAdmin.Controls.Add(ucPenerbitTambahBukuAdmin1);
             pnlTambahBukuAdmin.Controls.Add(comboBox5);
             pnlTambahBukuAdmin.Controls.Add(comboBox6);
             pnlTambahBukuAdmin.Controls.Add(comboBox3);
@@ -547,18 +540,10 @@ namespace Project_PBO_03
             pnlTambahBukuAdmin.Controls.Add(label5);
             pnlTambahBukuAdmin.Controls.Add(label6);
             pnlTambahBukuAdmin.Controls.Add(label7);
-            pnlTambahBukuAdmin.Location = new Point(426, 109);
+            pnlTambahBukuAdmin.Location = new Point(547, 2);
             pnlTambahBukuAdmin.Name = "pnlTambahBukuAdmin";
             pnlTambahBukuAdmin.Size = new Size(1507, 805);
             pnlTambahBukuAdmin.TabIndex = 16;
-            // 
-            // ucPenerbitTambahBukuAdmin1
-            // 
-            ucPenerbitTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
-            ucPenerbitTambahBukuAdmin1.Location = new Point(523, 82);
-            ucPenerbitTambahBukuAdmin1.Name = "ucPenerbitTambahBukuAdmin1";
-            ucPenerbitTambahBukuAdmin1.Size = new Size(499, 627);
-            ucPenerbitTambahBukuAdmin1.TabIndex = 24;
             // 
             // comboBox5
             // 
@@ -691,23 +676,6 @@ namespace Project_PBO_03
             label7.Size = new Size(146, 25);
             label7.TabIndex = 5;
             label7.Text = "Tambah Buku";
-            // 
-            // ucPenulisTambahBukuAdmin1
-            // 
-            ucPenulisTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
-            ucPenulisTambahBukuAdmin1.Location = new Point(42, 131);
-            ucPenulisTambahBukuAdmin1.Name = "ucPenulisTambahBukuAdmin1";
-            ucPenulisTambahBukuAdmin1.Size = new Size(499, 567);
-            ucPenulisTambahBukuAdmin1.TabIndex = 25;
-            ucPenulisTambahBukuAdmin1.Load += ucPenulisTambahBukuAdmin1_Load;
-            // 
-            // ucJenisBukuTambahBukuAdmin1
-            // 
-            ucJenisBukuTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
-            ucJenisBukuTambahBukuAdmin1.Location = new Point(793, 42);
-            ucJenisBukuTambahBukuAdmin1.Name = "ucJenisBukuTambahBukuAdmin1";
-            ucJenisBukuTambahBukuAdmin1.Size = new Size(499, 542);
-            ucJenisBukuTambahBukuAdmin1.TabIndex = 26;
             // 
             // V_Admin
             // 
@@ -851,5 +819,6 @@ namespace Project_PBO_03
         private ucPenerbitTambahBukuAdmin ucPenerbitTambahBukuAdmin1;
         private ucJenisBukuTambahBukuAdmin ucJenisBukuTambahBukuAdmin1;
         private ucPenulisTambahBukuAdmin ucPenulisTambahBukuAdmin1;
+        private Button btSimpanPerubahanA;
     }
 }
