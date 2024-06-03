@@ -22,7 +22,7 @@ namespace Project_PBO_03.View
             btAdminSA.BackColor = Color.CornflowerBlue;
             btAdminSA1.BackColor = Color.CornflowerBlue;
             this.pnlUserSA.Show();
-/*            this.pnlUserSA.Dock = DockStyle.Bottom;*/
+            /*            this.pnlUserSA.Dock = DockStyle.Bottom;*/
             this.pnlAdminSA.Hide();
             this.pnlDaftarAdminSA.Hide();
         }
@@ -32,7 +32,7 @@ namespace Project_PBO_03.View
             btKelolaAkunSA.BackColor = Color.Black;
             btKeluarSA.BackColor = Color.CornflowerBlue;
             this.pnlUserSA.Show();
-/*            this.pnlUserSA.Dock = DockStyle.Bottom;*/
+            /*            this.pnlUserSA.Dock = DockStyle.Bottom;*/
             this.pnlAdminSA.Hide();
             this.pnlDaftarAdminSA.Hide();
         }
@@ -46,7 +46,7 @@ namespace Project_PBO_03.View
             btAdminSA.BackColor = Color.CornflowerBlue;
             btAdminSA1.BackColor = Color.CornflowerBlue;
             this.pnlUserSA.Show();
-/*            this.pnlUserSA.Dock = DockStyle.Bottom;*/
+            /*            this.pnlUserSA.Dock = DockStyle.Bottom;*/
             this.pnlAdminSA.Hide();
             this.pnlDaftarAdminSA.Hide();
         }
@@ -61,7 +61,7 @@ namespace Project_PBO_03.View
             btAdminSA1.BackColor = Color.Black;
             this.pnlUserSA.Hide();
             this.pnlAdminSA.Show();
-/*            this.pnlAdminSA.Dock = DockStyle.Bottom;*/
+            /*            this.pnlAdminSA.Dock = DockStyle.Bottom;*/
             this.pnlDaftarAdminSA.Hide();
         }
 
@@ -74,7 +74,7 @@ namespace Project_PBO_03.View
             btAdminSA1.BackColor = Color.CornflowerBlue;
             btAdminSA.BackColor = Color.CornflowerBlue;
             this.pnlUserSA.Show();
-/*            this.pnlUserSA.Dock = DockStyle.Bottom;*/
+            /*            this.pnlUserSA.Dock = DockStyle.Bottom;*/
             this.pnlAdminSA.Hide();
             this.pnlDaftarAdminSA.Hide();
         }
@@ -89,7 +89,7 @@ namespace Project_PBO_03.View
             btAdminSA.BackColor = Color.Black;
             this.pnlUserSA.Hide();
             this.pnlAdminSA.Show();
-/*            this.pnlAdminSA.Dock = DockStyle.Bottom;*/
+            /*            this.pnlAdminSA.Dock = DockStyle.Bottom;*/
             this.pnlDaftarAdminSA.Hide();
         }
 
@@ -111,6 +111,12 @@ namespace Project_PBO_03.View
         private void V_SuperAdmin_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btKeluarSA_Click(object sender, EventArgs e)
+        {
+            V_Login login = new V_Login();
+            login.Show();
         }
     }
 }

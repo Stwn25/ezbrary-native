@@ -23,6 +23,7 @@ namespace Project_PBO_03
             btProfileAdmin.BackColor = Color.CornflowerBlue;
             btKeluarAdmin.BackColor = Color.CornflowerBlue;
             this.pnlDaftarBukuAdmin.Show();
+            this.pnlDaftarBukuAdmin.Dock = DockStyle.Bottom;
             this.pnlPeminjamanAdmin.Hide();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Hide();
@@ -46,7 +47,6 @@ namespace Project_PBO_03
 
         private void btProfileAdmin_Click(object sender, EventArgs e)
         {
-            InitializeComponent();
             btKelolaBuku.BackColor = Color.CornflowerBlue;
             btPeminjaman.BackColor = Color.CornflowerBlue;
             btRiwayatPeminjaman.BackColor = Color.CornflowerBlue;
@@ -62,8 +62,6 @@ namespace Project_PBO_03
 
         private void btRiwayatPeminjaman_Click(object sender, EventArgs e)
         {
-            /* throw new NotImplementedException();*/
-            InitializeComponent();
             btKelolaBuku.BackColor = Color.CornflowerBlue;
             btPeminjaman.BackColor = Color.CornflowerBlue;
             btRiwayatPeminjaman.BackColor = Color.Black;
@@ -79,8 +77,6 @@ namespace Project_PBO_03
 
         private void btPeminjamanAdmin_Click(object sender, EventArgs e)
         {
-            /* throw new NotImplementedException();*/
-            InitializeComponent();
             btKelolaBuku.BackColor = Color.CornflowerBlue;
             btPeminjaman.BackColor = Color.Black;
             btRiwayatPeminjaman.BackColor = Color.CornflowerBlue;
@@ -96,8 +92,6 @@ namespace Project_PBO_03
 
         private void btKelolaBukuAdmin_Click(object sender, EventArgs e)
         {
-            /*throw new NotImplementedException();*/
-            InitializeComponent();
             btKelolaBuku.BackColor = Color.Black;
             btPeminjaman.BackColor = Color.CornflowerBlue;
             btRiwayatPeminjaman.BackColor = Color.CornflowerBlue;
@@ -113,6 +107,17 @@ namespace Project_PBO_03
         private void controlBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tbUsernameAdmin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btKeluarAdmin_Click(object sender, EventArgs e)
+        {
+            V_Login login = new V_Login();
+            login.Show();
         }
     }
 

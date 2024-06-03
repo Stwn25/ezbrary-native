@@ -90,6 +90,7 @@
             // btKeluarSA
             // 
             btKeluarSA.BackColor = SystemColors.HotTrack;
+            btKeluarSA.Cursor = Cursors.Hand;
             btKeluarSA.FlatStyle = FlatStyle.Popup;
             btKeluarSA.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold);
             btKeluarSA.ForeColor = Color.White;
@@ -99,10 +100,12 @@
             btKeluarSA.TabIndex = 6;
             btKeluarSA.Text = "Keluar";
             btKeluarSA.UseVisualStyleBackColor = false;
+            btKeluarSA.Click += btKeluarSA_Click;
             // 
             // btKelolaAkunSA
             // 
             btKelolaAkunSA.BackColor = SystemColors.HotTrack;
+            btKelolaAkunSA.Cursor = Cursors.Hand;
             btKelolaAkunSA.FlatStyle = FlatStyle.Popup;
             btKelolaAkunSA.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold);
             btKelolaAkunSA.ForeColor = Color.White;
@@ -356,6 +359,7 @@
             // btDaftarSA
             // 
             btDaftarSA.BackColor = Color.CornflowerBlue;
+            btDaftarSA.Cursor = Cursors.Hand;
             btDaftarSA.FlatStyle = FlatStyle.Popup;
             btDaftarSA.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btDaftarSA.ForeColor = Color.White;
