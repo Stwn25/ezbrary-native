@@ -128,7 +128,7 @@ namespace Project_PBO_03
             pnlAwal.Controls.Add(label1);
             pnlAwal.Controls.Add(pbEzbrary);
             pnlAwal.Controls.Add(pbBuku);
-            pnlAwal.Location = new Point(658, 83);
+            pnlAwal.Location = new Point(638, 74);
             pnlAwal.Name = "pnlAwal";
             pnlAwal.Size = new Size(680, 935);
             pnlAwal.TabIndex = 0;
@@ -137,6 +137,7 @@ namespace Project_PBO_03
             // btDaftar
             // 
             btDaftar.BackColor = SystemColors.HotTrack;
+            btDaftar.Cursor = Cursors.Hand;
             btDaftar.FlatStyle = FlatStyle.Flat;
             btDaftar.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btDaftar.ForeColor = Color.White;
@@ -151,6 +152,7 @@ namespace Project_PBO_03
             // btMasuk
             // 
             btMasuk.BackColor = SystemColors.HotTrack;
+            btMasuk.Cursor = Cursors.Hand;
             btMasuk.FlatStyle = FlatStyle.Flat;
             btMasuk.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btMasuk.ForeColor = Color.White;
@@ -287,7 +289,7 @@ namespace Project_PBO_03
             pnlKodevAdmin.Controls.Add(tbKodevAdmin);
             pnlKodevAdmin.Controls.Add(label4);
             pnlKodevAdmin.Controls.Add(pictureBox12);
-            pnlKodevAdmin.Location = new Point(32, 212);
+            pnlKodevAdmin.Location = new Point(311, 38);
             pnlKodevAdmin.Name = "pnlKodevAdmin";
             pnlKodevAdmin.Size = new Size(620, 1080);
             pnlKodevAdmin.TabIndex = 3;
@@ -296,6 +298,7 @@ namespace Project_PBO_03
             // btSubmitAdmin
             // 
             btSubmitAdmin.BackColor = Color.DarkGray;
+            btSubmitAdmin.Cursor = Cursors.Hand;
             btSubmitAdmin.FlatStyle = FlatStyle.Flat;
             btSubmitAdmin.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btSubmitAdmin.ForeColor = Color.Black;
@@ -312,9 +315,9 @@ namespace Project_PBO_03
             tbKodevAdmin.Location = new Point(201, 542);
             tbKodevAdmin.Multiline = true;
             tbKodevAdmin.Name = "tbKodevAdmin";
+            tbKodevAdmin.PlaceholderText = "Masukkan Kode Verifikasi...";
             tbKodevAdmin.Size = new Size(247, 48);
             tbKodevAdmin.TabIndex = 2;
-            tbKodevAdmin.Text = "Masukkan Kode Verifikasi...";
             // 
             // label4
             // 
@@ -352,7 +355,7 @@ namespace Project_PBO_03
             pnlMasuk.Controls.Add(tbPasswordD);
             pnlMasuk.Controls.Add(tbUsernameM);
             pnlMasuk.Controls.Add(pictureBox1);
-            pnlMasuk.Location = new Point(1084, 0);
+            pnlMasuk.Location = new Point(1008, 39);
             pnlMasuk.Name = "pnlMasuk";
             pnlMasuk.Size = new Size(620, 1080);
             pnlMasuk.TabIndex = 1;
@@ -370,6 +373,7 @@ namespace Project_PBO_03
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
+            linkLabel1.Cursor = Cursors.Hand;
             linkLabel1.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             linkLabel1.LinkColor = SystemColors.HotTrack;
             linkLabel1.Location = new Point(272, 1010);
@@ -394,6 +398,7 @@ namespace Project_PBO_03
             // btMasuksbgadmin
             // 
             btMasuksbgadmin.BackColor = SystemColors.HotTrack;
+            btMasuksbgadmin.Cursor = Cursors.Hand;
             btMasuksbgadmin.FlatStyle = FlatStyle.Flat;
             btMasuksbgadmin.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btMasuksbgadmin.ForeColor = Color.White;
@@ -408,6 +413,7 @@ namespace Project_PBO_03
             // btMasukM
             // 
             btMasukM.BackColor = SystemColors.HotTrack;
+            btMasukM.Cursor = Cursors.Hand;
             btMasukM.FlatStyle = FlatStyle.Flat;
             btMasukM.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btMasukM.ForeColor = Color.White;
@@ -489,7 +495,7 @@ namespace Project_PBO_03
             pnlDaftar.Controls.Add(tbUsernameD);
             pnlDaftar.Controls.Add(pictureBox5);
             pnlDaftar.ForeColor = SystemColors.GrayText;
-            pnlDaftar.Location = new Point(1385, 149);
+            pnlDaftar.Location = new Point(1334, 12);
             pnlDaftar.Name = "pnlDaftar";
             pnlDaftar.Size = new Size(620, 1080);
             pnlDaftar.TabIndex = 2;
@@ -536,6 +542,7 @@ namespace Project_PBO_03
             // linkMasuk
             // 
             linkMasuk.AutoSize = true;
+            linkMasuk.Cursor = Cursors.Hand;
             linkMasuk.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             linkMasuk.LinkColor = SystemColors.HotTrack;
             linkMasuk.Location = new Point(276, 1010);
@@ -560,6 +567,7 @@ namespace Project_PBO_03
             // btDaftarD
             // 
             btDaftarD.BackColor = SystemColors.HotTrack;
+            btDaftarD.Cursor = Cursors.Hand;
             btDaftarD.FlatStyle = FlatStyle.Flat;
             btDaftarD.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btDaftarD.ForeColor = Color.White;
@@ -682,7 +690,7 @@ namespace Project_PBO_03
             pnlKodevSA.Controls.Add(tbKodevSA);
             pnlKodevSA.Controls.Add(labelKodevSA);
             pnlKodevSA.Controls.Add(pictureBox13);
-            pnlKodevSA.Location = new Point(442, 110);
+            pnlKodevSA.Location = new Point(8, 149);
             pnlKodevSA.Name = "pnlKodevSA";
             pnlKodevSA.Size = new Size(620, 1080);
             pnlKodevSA.TabIndex = 16;
@@ -690,6 +698,7 @@ namespace Project_PBO_03
             // btSubmitSA
             // 
             btSubmitSA.BackColor = Color.DarkGray;
+            btSubmitSA.Cursor = Cursors.Hand;
             btSubmitSA.FlatStyle = FlatStyle.Flat;
             btSubmitSA.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btSubmitSA.ForeColor = Color.Black;

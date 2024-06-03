@@ -53,6 +53,7 @@ namespace Project_PBO_03
             dataGridView2 = new DataGridView();
             label2 = new Label();
             pnlProfileUser = new Panel();
+            btSimpanPerubahan = new Button();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
@@ -98,6 +99,7 @@ namespace Project_PBO_03
             // btKeluarUser
             // 
             btKeluarUser.BackColor = SystemColors.HotTrack;
+            btKeluarUser.Cursor = Cursors.Hand;
             btKeluarUser.FlatStyle = FlatStyle.Popup;
             btKeluarUser.Font = new Font("Nunito ExtraBold", 11.999999F, FontStyle.Bold);
             btKeluarUser.ForeColor = Color.White;
@@ -112,6 +114,7 @@ namespace Project_PBO_03
             // btProfileUser
             // 
             btProfileUser.BackColor = SystemColors.HotTrack;
+            btProfileUser.Cursor = Cursors.Hand;
             btProfileUser.FlatStyle = FlatStyle.Popup;
             btProfileUser.Font = new Font("Nunito ExtraBold", 11.999999F, FontStyle.Bold);
             btProfileUser.ForeColor = Color.White;
@@ -126,6 +129,7 @@ namespace Project_PBO_03
             // btRiwayatPeminjamanUser
             // 
             btRiwayatPeminjamanUser.BackColor = SystemColors.HotTrack;
+            btRiwayatPeminjamanUser.Cursor = Cursors.Hand;
             btRiwayatPeminjamanUser.FlatStyle = FlatStyle.Popup;
             btRiwayatPeminjamanUser.Font = new Font("Nunito ExtraBold", 11.999999F, FontStyle.Bold);
             btRiwayatPeminjamanUser.ForeColor = Color.White;
@@ -140,6 +144,7 @@ namespace Project_PBO_03
             // btBukuFavUser
             // 
             btBukuFavUser.BackColor = SystemColors.HotTrack;
+            btBukuFavUser.Cursor = Cursors.Hand;
             btBukuFavUser.FlatStyle = FlatStyle.Popup;
             btBukuFavUser.Font = new Font("Nunito ExtraBold", 11.999999F, FontStyle.Bold);
             btBukuFavUser.ForeColor = Color.White;
@@ -154,6 +159,7 @@ namespace Project_PBO_03
             // btPeminjamanUser
             // 
             btPeminjamanUser.BackColor = SystemColors.HotTrack;
+            btPeminjamanUser.Cursor = Cursors.Hand;
             btPeminjamanUser.FlatStyle = FlatStyle.Popup;
             btPeminjamanUser.Font = new Font("Nunito ExtraBold", 11.999999F, FontStyle.Bold);
             btPeminjamanUser.ForeColor = Color.White;
@@ -207,6 +213,7 @@ namespace Project_PBO_03
             pictureBoxPerpusUser.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxPerpusUser.TabIndex = 1;
             pictureBoxPerpusUser.TabStop = false;
+            pictureBoxPerpusUser.Click += pictureBoxPerpusUser_Click;
             // 
             // lblHaiUser
             // 
@@ -235,14 +242,16 @@ namespace Project_PBO_03
             pnlPeminjamanUser.Controls.Add(tbPeminjamanUser);
             pnlPeminjamanUser.Controls.Add(dgvPeminjamanUser);
             pnlPeminjamanUser.Controls.Add(lblPeminjamanUser);
-            pnlPeminjamanUser.Location = new Point(422, 284);
+            pnlPeminjamanUser.Location = new Point(422, 301);
             pnlPeminjamanUser.Name = "pnlPeminjamanUser";
             pnlPeminjamanUser.Size = new Size(1507, 805);
             pnlPeminjamanUser.TabIndex = 9;
+            pnlPeminjamanUser.Paint += pnlPeminjamanUser_Paint_1;
             // 
             // tbPeminjamanUser
             // 
             tbPeminjamanUser.BackColor = Color.Silver;
+            tbPeminjamanUser.Cursor = Cursors.IBeam;
             tbPeminjamanUser.Font = new Font("Nunito Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tbPeminjamanUser.Location = new Point(439, 74);
             tbPeminjamanUser.Multiline = true;
@@ -303,7 +312,7 @@ namespace Project_PBO_03
             // 
             pnlRiwayatUser.Controls.Add(dataGridView2);
             pnlRiwayatUser.Controls.Add(label2);
-            pnlRiwayatUser.Location = new Point(461, 245);
+            pnlRiwayatUser.Location = new Point(461, 253);
             pnlRiwayatUser.Name = "pnlRiwayatUser";
             pnlRiwayatUser.Size = new Size(1507, 805);
             pnlRiwayatUser.TabIndex = 14;
@@ -330,6 +339,7 @@ namespace Project_PBO_03
             // 
             // pnlProfileUser
             // 
+            pnlProfileUser.Controls.Add(btSimpanPerubahan);
             pnlProfileUser.Controls.Add(label8);
             pnlProfileUser.Controls.Add(label7);
             pnlProfileUser.Controls.Add(label6);
@@ -346,6 +356,20 @@ namespace Project_PBO_03
             pnlProfileUser.Size = new Size(1507, 805);
             pnlProfileUser.TabIndex = 15;
             pnlProfileUser.Paint += pnlProfileUser_Paint;
+            // 
+            // btSimpanPerubahan
+            // 
+            btSimpanPerubahan.BackColor = SystemColors.HotTrack;
+            btSimpanPerubahan.Cursor = Cursors.Hand;
+            btSimpanPerubahan.FlatStyle = FlatStyle.Flat;
+            btSimpanPerubahan.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btSimpanPerubahan.ForeColor = Color.White;
+            btSimpanPerubahan.Location = new Point(627, 586);
+            btSimpanPerubahan.Name = "btSimpanPerubahan";
+            btSimpanPerubahan.Size = new Size(292, 46);
+            btSimpanPerubahan.TabIndex = 22;
+            btSimpanPerubahan.Text = "Simpan Perubahan";
+            btSimpanPerubahan.UseVisualStyleBackColor = false;
             // 
             // label8
             // 
@@ -600,5 +624,6 @@ namespace Project_PBO_03
         private TextBox textBox1;
         private Label label3;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
+        private Button btSimpanPerubahan;
     }
 }

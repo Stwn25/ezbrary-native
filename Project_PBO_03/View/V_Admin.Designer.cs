@@ -65,7 +65,7 @@ namespace Project_PBO_03
             lblUsernameProfileAdmin = new Label();
             tbUsernameAdmin = new TextBox();
             lblProfileAdmin = new Label();
-            controlBox1 = new ReaLTaiizor.Controls.ControlBox();
+            nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             pnlAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxVektoradmin).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPerpusAdmin).BeginInit();
@@ -115,6 +115,7 @@ namespace Project_PBO_03
             btKeluarAdmin.TabIndex = 6;
             btKeluarAdmin.Text = "Keluar";
             btKeluarAdmin.UseVisualStyleBackColor = false;
+            btKeluarAdmin.Click += btKeluarAdmin_Click;
             // 
             // btProfileAdmin
             // 
@@ -258,7 +259,7 @@ namespace Project_PBO_03
             pnlDaftarBukuAdmin.Controls.Add(dgvKelolaBukuAdmin);
             pnlDaftarBukuAdmin.Controls.Add(tbDaftarBukuAdmin);
             pnlDaftarBukuAdmin.Controls.Add(lblDaftarBuku);
-            pnlDaftarBukuAdmin.Location = new Point(415, 275);
+            pnlDaftarBukuAdmin.Location = new Point(418, 318);
             pnlDaftarBukuAdmin.Name = "pnlDaftarBukuAdmin";
             pnlDaftarBukuAdmin.Size = new Size(1507, 805);
             pnlDaftarBukuAdmin.TabIndex = 7;
@@ -276,7 +277,7 @@ namespace Project_PBO_03
             // 
             pnlPeminjamanAdmin.Controls.Add(dataGridView1);
             pnlPeminjamanAdmin.Controls.Add(lblBookingAdmin);
-            pnlPeminjamanAdmin.Location = new Point(438, 216);
+            pnlPeminjamanAdmin.Location = new Point(438, 309);
             pnlPeminjamanAdmin.Name = "pnlPeminjamanAdmin";
             pnlPeminjamanAdmin.Size = new Size(1507, 805);
             pnlPeminjamanAdmin.TabIndex = 8;
@@ -304,7 +305,7 @@ namespace Project_PBO_03
             // 
             pnlRiwayatPeminjaman.Controls.Add(dataGridView2);
             pnlRiwayatPeminjaman.Controls.Add(label1);
-            pnlRiwayatPeminjaman.Location = new Point(461, 175);
+            pnlRiwayatPeminjaman.Location = new Point(461, 288);
             pnlRiwayatPeminjaman.Name = "pnlRiwayatPeminjaman";
             pnlRiwayatPeminjaman.Size = new Size(1507, 805);
             pnlRiwayatPeminjaman.TabIndex = 9;
@@ -341,7 +342,7 @@ namespace Project_PBO_03
             pnlProfileAdmin.Controls.Add(lblUsernameProfileAdmin);
             pnlProfileAdmin.Controls.Add(tbUsernameAdmin);
             pnlProfileAdmin.Controls.Add(lblProfileAdmin);
-            pnlProfileAdmin.Location = new Point(494, 123);
+            pnlProfileAdmin.Location = new Point(501, 280);
             pnlProfileAdmin.Name = "pnlProfileAdmin";
             pnlProfileAdmin.Size = new Size(1507, 805);
             pnlProfileAdmin.TabIndex = 10;
@@ -441,6 +442,7 @@ namespace Project_PBO_03
             tbUsernameAdmin.Name = "tbUsernameAdmin";
             tbUsernameAdmin.Size = new Size(1400, 34);
             tbUsernameAdmin.TabIndex = 6;
+            tbUsernameAdmin.TextChanged += tbUsernameAdmin_TextChanged;
             // 
             // lblProfileAdmin
             // 
@@ -452,35 +454,40 @@ namespace Project_PBO_03
             lblProfileAdmin.TabIndex = 5;
             lblProfileAdmin.Text = "Profile";
             // 
-            // controlBox1
+            // nightControlBox1
             // 
-            controlBox1.BackColor = Color.White;
-            controlBox1.CloseHoverColor = Color.FromArgb(230, 17, 35);
-            controlBox1.DefaultLocation = true;
-            controlBox1.Dock = DockStyle.Right;
-            controlBox1.EnableHoverHighlight = true;
-            controlBox1.EnableMaximizeButton = true;
-            controlBox1.EnableMinimizeButton = true;
-            controlBox1.ForeColor = Color.FromArgb(155, 155, 155);
-            controlBox1.Location = new Point(1830, 0);
-            controlBox1.MaximizeHoverColor = Color.FromArgb(74, 74, 74);
-            controlBox1.MinimizeHoverColor = Color.FromArgb(63, 63, 65);
-            controlBox1.Name = "controlBox1";
-            controlBox1.Size = new Size(90, 25);
-            controlBox1.TabIndex = 17;
-            controlBox1.Text = "controlBox1";
+            nightControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            nightControlBox1.BackColor = Color.Transparent;
+            nightControlBox1.CloseHoverColor = Color.FromArgb(199, 80, 80);
+            nightControlBox1.CloseHoverForeColor = Color.White;
+            nightControlBox1.DefaultLocation = true;
+            nightControlBox1.DisableMaximizeColor = Color.FromArgb(105, 105, 105);
+            nightControlBox1.DisableMinimizeColor = Color.FromArgb(105, 105, 105);
+            nightControlBox1.EnableCloseColor = Color.FromArgb(160, 160, 160);
+            nightControlBox1.EnableMaximizeButton = true;
+            nightControlBox1.EnableMaximizeColor = Color.FromArgb(160, 160, 160);
+            nightControlBox1.EnableMinimizeButton = true;
+            nightControlBox1.EnableMinimizeColor = Color.FromArgb(160, 160, 160);
+            nightControlBox1.Location = new Point(424, 0);
+            nightControlBox1.MaximizeHoverColor = Color.FromArgb(15, 255, 255, 255);
+            nightControlBox1.MaximizeHoverForeColor = Color.White;
+            nightControlBox1.MinimizeHoverColor = Color.FromArgb(15, 255, 255, 255);
+            nightControlBox1.MinimizeHoverForeColor = Color.White;
+            nightControlBox1.Name = "nightControlBox1";
+            nightControlBox1.Size = new Size(139, 31);
+            nightControlBox1.TabIndex = 11;
             // 
             // V_Admin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1920, 1080);
-            Controls.Add(controlBox1);
+            Controls.Add(nightControlBox1);
             Controls.Add(pnlProfileAdmin);
             Controls.Add(pnlRiwayatPeminjaman);
-            Controls.Add(pnlPeminjamanAdmin);
             Controls.Add(pnlDaftarBukuAdmin);
             Controls.Add(lblhai1Admin);
+            Controls.Add(pnlPeminjamanAdmin);
             Controls.Add(lblhaiAdmin);
             Controls.Add(pictureBoxPerpusAdmin);
             Controls.Add(pictureBoxVektoradmin);
@@ -510,7 +517,7 @@ namespace Project_PBO_03
 
         private void V_Admin_Load(object sender, EventArgs e)
         {
-            /* throw new NotImplementedException();*/
+            
            
            
         }
@@ -523,14 +530,31 @@ namespace Project_PBO_03
 
         private void btPeminjaman_Click(object sender, EventArgs e)
         {
-            /* throw new NotImplementedException();*/
-            
+            btKelolaBuku.BackColor = Color.CornflowerBlue;
+            btPeminjaman.BackColor = Color.Black;
+            btRiwayatPeminjaman.BackColor = Color.CornflowerBlue;
+            btProfileAdmin.BackColor = Color.CornflowerBlue;
+            btKeluarAdmin.BackColor = Color.CornflowerBlue;
+            this.pnlDaftarBukuAdmin.Hide();
+            this.pnlPeminjamanAdmin.Show();
+            this.pnlPeminjamanAdmin.Dock = DockStyle.Bottom;
+            this.pnlRiwayatPeminjaman.Hide();
+            this.pnlProfileAdmin.Hide();
         }
 
         private void btKelolaBuku_Click(object sender, EventArgs e)
         {
-            /*throw new NotImplementedException();*/
-           
+            btKelolaBuku.BackColor = Color.Black;
+            btPeminjaman.BackColor = Color.CornflowerBlue;
+            btRiwayatPeminjaman.BackColor = Color.CornflowerBlue;
+            btProfileAdmin.BackColor = Color.CornflowerBlue;
+            btKeluarAdmin.BackColor = Color.CornflowerBlue;
+            this.pnlDaftarBukuAdmin.Show();
+            this.pnlDaftarBukuAdmin.Dock = DockStyle.Bottom;
+            this.pnlPeminjamanAdmin.Hide();
+            this.pnlRiwayatPeminjaman.Hide();
+            this.pnlProfileAdmin.Hide();
+
         }
 
         #endregion
@@ -570,6 +594,6 @@ namespace Project_PBO_03
         private TextBox tbNoTeleponProfileAdmin;
         private Label lblEmailProfileAdmin;
         private TextBox tbEmailProfileAdmin;
-        private ReaLTaiizor.Controls.ControlBox controlBox1;
+        private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
     }
 }
