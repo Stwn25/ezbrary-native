@@ -27,7 +27,7 @@ namespace Project_PBO_03.Context
             string query = $"SELECT * FROM {table} WHERE iduser = @iduser";
             NpgsqlParameter[] parameters =
             {
-                new NpgsqlParameter("iduser", NpgsqlDbType.Integer){Value = id},
+                new NpgsqlParameter("@iduser", NpgsqlDbType.Integer){Value = id},
             };
             DataTable dataPengguna = queryExecutor(query, parameters);
             return dataPengguna;
@@ -43,6 +43,16 @@ namespace Project_PBO_03.Context
                 new NpgsqlParameter ("@pwuser", NpgsqlDbType.Varchar){Value = penggunaBaru.pass_pengguna},
                 new NpgsqlParameter ("@telpuser", NpgsqlDbType.Varchar){Value = penggunaBaru.telp_pengguna},
                 new NpgsqlParameter ("@emailuser", NpgsqlDbType.Varchar){Value = penggunaBaru.email_pengguna},
+            };
+            commandExecutor(query, parameters);
+        }
+
+        public static void delete(int id)
+        {
+            string query = $"DELETE FROM {table} WHERE iduser = @iduser";
+            NpgsqlParameter[] parameters =
+            {
+                new NpgsqlParameter("@iduser", NpgsqlDbType.Integer){Value = id},
             };
             commandExecutor(query, parameters);
         }
