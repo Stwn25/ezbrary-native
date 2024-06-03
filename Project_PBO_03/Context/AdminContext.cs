@@ -27,7 +27,7 @@ namespace Project_PBO_03.Context
             string query = $"SELECT * FROM {table} WHERE idadmin = @idadmin";
             NpgsqlParameter[] parameters =
             {
-                new NpgsqlParameter("@id", NpgsqlDbType.Integer) { Value = idadmin }
+                new NpgsqlParameter("@idadmin", NpgsqlDbType.Integer) { Value = idadmin }
             };
             DataTable dataAdministrator = queryExecutor(query, parameters);
             return dataAdministrator;

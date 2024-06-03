@@ -203,7 +203,7 @@ namespace Project_PBO_03
             pnlMasukSA.Controls.Add(tbPasswdMSA);
             pnlMasukSA.Controls.Add(tbUsernameMSA);
             pnlMasukSA.Controls.Add(pictureBox4);
-            pnlMasukSA.Location = new Point(12, 170);
+            pnlMasukSA.Location = new Point(43, 136);
             pnlMasukSA.Name = "pnlMasukSA";
             pnlMasukSA.Size = new Size(620, 1080);
             pnlMasukSA.TabIndex = 5;

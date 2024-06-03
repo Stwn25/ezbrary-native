@@ -26,8 +26,8 @@ namespace Project_PBO_03.View
             /*            this.pnlUserSA.Dock = DockStyle.Bottom;*/
             this.pnlAdminSA.Hide();
             this.pnlDaftarAdminSA.Hide();
-            dataGridView1.DataSource = PenggunaContext.all();
-            dataGridView2.DataSource = AdminContext.all();
+            dataGridView1.DataSource = AdminContext.all();
+            dataGridView2.DataSource = PenggunaContext.all();
         }
 
         private void btKelolaAkunSA_Click(object sender, EventArgs e)

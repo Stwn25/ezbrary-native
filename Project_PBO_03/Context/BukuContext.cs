@@ -25,8 +25,6 @@ namespace Project_PBO_03.Context
         /*public static DataTable showByJenis()
         {
             string query;
-
-            return D
         }
 
         public static DataTable showBySearch()

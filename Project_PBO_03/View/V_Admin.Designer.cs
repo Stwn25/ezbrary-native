@@ -54,6 +54,7 @@ namespace Project_PBO_03
             dataGridView2 = new DataGridView();
             label1 = new Label();
             pnlProfileAdmin = new Panel();
+            btSimpanPerubahanA = new Button();
             lblPasswordProfileAdmin = new Label();
             btPasswordProfileAdmin = new TextBox();
             lblNoteleponProfileAdmin = new Label();
@@ -331,6 +332,7 @@ namespace Project_PBO_03
             // 
             // pnlProfileAdmin
             // 
+            pnlProfileAdmin.Controls.Add(btSimpanPerubahanA);
             pnlProfileAdmin.Controls.Add(lblPasswordProfileAdmin);
             pnlProfileAdmin.Controls.Add(btPasswordProfileAdmin);
             pnlProfileAdmin.Controls.Add(lblNoteleponProfileAdmin);
@@ -347,6 +349,20 @@ namespace Project_PBO_03
             pnlProfileAdmin.Size = new Size(1507, 805);
             pnlProfileAdmin.TabIndex = 10;
             pnlProfileAdmin.Paint += pnlProfileAdmin_Paint;
+            // 
+            // btSimpanPerubahanA
+            // 
+            btSimpanPerubahanA.BackColor = SystemColors.HotTrack;
+            btSimpanPerubahanA.Cursor = Cursors.Hand;
+            btSimpanPerubahanA.FlatStyle = FlatStyle.Flat;
+            btSimpanPerubahanA.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btSimpanPerubahanA.ForeColor = Color.White;
+            btSimpanPerubahanA.Location = new Point(682, 620);
+            btSimpanPerubahanA.Name = "btSimpanPerubahanA";
+            btSimpanPerubahanA.Size = new Size(292, 46);
+            btSimpanPerubahanA.TabIndex = 23;
+            btSimpanPerubahanA.Text = "Simpan Perubahan";
+            btSimpanPerubahanA.UseVisualStyleBackColor = false;
             // 
             // lblPasswordProfileAdmin
             // 
@@ -595,5 +611,6 @@ namespace Project_PBO_03
         private Label lblEmailProfileAdmin;
         private TextBox tbEmailProfileAdmin;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
+        private Button btSimpanPerubahanA;
     }
 }

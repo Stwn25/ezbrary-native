@@ -53,7 +53,7 @@ namespace Project_PBO_03
             dataGridView2 = new DataGridView();
             label2 = new Label();
             pnlProfileUser = new Panel();
-            btSimpanPerubahan = new Button();
+            btSimpanPerubahanU = new Button();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
@@ -339,7 +339,7 @@ namespace Project_PBO_03
             // 
             // pnlProfileUser
             // 
-            pnlProfileUser.Controls.Add(btSimpanPerubahan);
+            pnlProfileUser.Controls.Add(btSimpanPerubahanU);
             pnlProfileUser.Controls.Add(label8);
             pnlProfileUser.Controls.Add(label7);
             pnlProfileUser.Controls.Add(label6);
@@ -357,19 +357,19 @@ namespace Project_PBO_03
             pnlProfileUser.TabIndex = 15;
             pnlProfileUser.Paint += pnlProfileUser_Paint;
             // 
-            // btSimpanPerubahan
+            // btSimpanPerubahanU
             // 
-            btSimpanPerubahan.BackColor = SystemColors.HotTrack;
-            btSimpanPerubahan.Cursor = Cursors.Hand;
-            btSimpanPerubahan.FlatStyle = FlatStyle.Flat;
-            btSimpanPerubahan.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btSimpanPerubahan.ForeColor = Color.White;
-            btSimpanPerubahan.Location = new Point(627, 586);
-            btSimpanPerubahan.Name = "btSimpanPerubahan";
-            btSimpanPerubahan.Size = new Size(292, 46);
-            btSimpanPerubahan.TabIndex = 22;
-            btSimpanPerubahan.Text = "Simpan Perubahan";
-            btSimpanPerubahan.UseVisualStyleBackColor = false;
+            btSimpanPerubahanU.BackColor = SystemColors.HotTrack;
+            btSimpanPerubahanU.Cursor = Cursors.Hand;
+            btSimpanPerubahanU.FlatStyle = FlatStyle.Flat;
+            btSimpanPerubahanU.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btSimpanPerubahanU.ForeColor = Color.White;
+            btSimpanPerubahanU.Location = new Point(627, 586);
+            btSimpanPerubahanU.Name = "btSimpanPerubahanU";
+            btSimpanPerubahanU.Size = new Size(292, 46);
+            btSimpanPerubahanU.TabIndex = 22;
+            btSimpanPerubahanU.Text = "Simpan Perubahan";
+            btSimpanPerubahanU.UseVisualStyleBackColor = false;
             // 
             // label8
             // 
@@ -624,6 +624,6 @@ namespace Project_PBO_03
         private TextBox textBox1;
         private Label label3;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
-        private Button btSimpanPerubahan;
+        private Button btSimpanPerubahanU;
     }
 }
