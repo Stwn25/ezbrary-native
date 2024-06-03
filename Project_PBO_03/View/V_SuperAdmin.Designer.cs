@@ -35,6 +35,12 @@
             lblEmailUser = new Label();
             lblUsernameUser = new Label();
             pictureBoxVectorUser = new PictureBox();
+            pnlAdminSA = new Panel();
+            btDaftarAdminSA = new Button();
+            btAdminSA1 = new Button();
+            btUserSA1 = new Button();
+            dataGridView1 = new DataGridView();
+            label1 = new Label();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             lblHai1SA = new Label();
             lblHaiSA = new Label();
@@ -44,12 +50,6 @@
             btUserSA = new Button();
             dataGridView2 = new DataGridView();
             lblDaftarPenggunaSA = new Label();
-            pnlAdminSA = new Panel();
-            btDaftarAdminSA = new Button();
-            btAdminSA1 = new Button();
-            btUserSA1 = new Button();
-            dataGridView1 = new DataGridView();
-            label1 = new Label();
             pnlDaftarAdminSA = new Panel();
             btDaftarSA = new Button();
             label8 = new Label();
@@ -65,11 +65,11 @@
             label3 = new Label();
             pnlSA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxVectorUser).BeginInit();
+            pnlAdminSA.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPerpusSA).BeginInit();
             pnlUserSA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            pnlAdminSA.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             pnlDaftarAdminSA.SuspendLayout();
             SuspendLayout();
             // 
@@ -86,6 +86,7 @@
             pnlSA.Name = "pnlSA";
             pnlSA.Size = new Size(416, 1080);
             pnlSA.TabIndex = 1;
+            pnlSA.Paint += pnlSA_Paint;
             // 
             // btKeluarSA
             // 
@@ -148,6 +149,82 @@
             pictureBoxVectorUser.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxVectorUser.TabIndex = 0;
             pictureBoxVectorUser.TabStop = false;
+            // 
+            // pnlAdminSA
+            // 
+            pnlAdminSA.Controls.Add(btDaftarAdminSA);
+            pnlAdminSA.Controls.Add(btAdminSA1);
+            pnlAdminSA.Controls.Add(btUserSA1);
+            pnlAdminSA.Controls.Add(dataGridView1);
+            pnlAdminSA.Controls.Add(label1);
+            pnlAdminSA.Location = new Point(416, 276);
+            pnlAdminSA.Name = "pnlAdminSA";
+            pnlAdminSA.Size = new Size(1507, 805);
+            pnlAdminSA.TabIndex = 18;
+            pnlAdminSA.Paint += pnlAdminSA_Paint;
+            // 
+            // btDaftarAdminSA
+            // 
+            btDaftarAdminSA.BackColor = Color.CornflowerBlue;
+            btDaftarAdminSA.FlatStyle = FlatStyle.Popup;
+            btDaftarAdminSA.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btDaftarAdminSA.ForeColor = Color.White;
+            btDaftarAdminSA.Location = new Point(1215, 734);
+            btDaftarAdminSA.Name = "btDaftarAdminSA";
+            btDaftarAdminSA.Size = new Size(268, 49);
+            btDaftarAdminSA.TabIndex = 14;
+            btDaftarAdminSA.Text = "Daftar Admin";
+            btDaftarAdminSA.UseVisualStyleBackColor = false;
+            btDaftarAdminSA.Click += btDaftarAdminSA_Click;
+            // 
+            // btAdminSA1
+            // 
+            btAdminSA1.BackColor = Color.Black;
+            btAdminSA1.FlatStyle = FlatStyle.Popup;
+            btAdminSA1.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btAdminSA1.ForeColor = Color.White;
+            btAdminSA1.Location = new Point(137, 64);
+            btAdminSA1.Name = "btAdminSA1";
+            btAdminSA1.Size = new Size(114, 34);
+            btAdminSA1.TabIndex = 13;
+            btAdminSA1.Text = "Admin";
+            btAdminSA1.UseVisualStyleBackColor = false;
+            btAdminSA1.Click += btAdminSA1_Click;
+            // 
+            // btUserSA1
+            // 
+            btUserSA1.BackColor = Color.CornflowerBlue;
+            btUserSA1.FlatStyle = FlatStyle.Popup;
+            btUserSA1.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btUserSA1.ForeColor = Color.White;
+            btUserSA1.Location = new Point(23, 64);
+            btUserSA1.Name = "btUserSA1";
+            btUserSA1.Size = new Size(114, 34);
+            btUserSA1.TabIndex = 12;
+            btUserSA1.Text = "User";
+            btUserSA1.UseVisualStyleBackColor = false;
+            btUserSA1.Click += btUserSA1_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(23, 127);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(1460, 591);
+            dataGridView1.TabIndex = 11;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(23, 29);
+            label1.Name = "label1";
+            label1.Size = new Size(174, 25);
+            label1.TabIndex = 10;
+            label1.Text = "Daftar Pengguna";
             // 
             // nightControlBox1
             // 
@@ -245,6 +322,7 @@
             // 
             // dataGridView2
             // 
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Location = new Point(23, 127);
             dataGridView2.Name = "dataGridView2";
@@ -263,80 +341,6 @@
             lblDaftarPenggunaSA.TabIndex = 10;
             lblDaftarPenggunaSA.Text = "Daftar Pengguna";
             // 
-            // pnlAdminSA
-            // 
-            pnlAdminSA.Controls.Add(btDaftarAdminSA);
-            pnlAdminSA.Controls.Add(btAdminSA1);
-            pnlAdminSA.Controls.Add(btUserSA1);
-            pnlAdminSA.Controls.Add(dataGridView1);
-            pnlAdminSA.Controls.Add(label1);
-            pnlAdminSA.Location = new Point(416, 275);
-            pnlAdminSA.Name = "pnlAdminSA";
-            pnlAdminSA.Size = new Size(1507, 805);
-            pnlAdminSA.TabIndex = 18;
-            // 
-            // btDaftarAdminSA
-            // 
-            btDaftarAdminSA.BackColor = Color.CornflowerBlue;
-            btDaftarAdminSA.FlatStyle = FlatStyle.Popup;
-            btDaftarAdminSA.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btDaftarAdminSA.ForeColor = Color.White;
-            btDaftarAdminSA.Location = new Point(1215, 734);
-            btDaftarAdminSA.Name = "btDaftarAdminSA";
-            btDaftarAdminSA.Size = new Size(268, 49);
-            btDaftarAdminSA.TabIndex = 14;
-            btDaftarAdminSA.Text = "Daftar Admin";
-            btDaftarAdminSA.UseVisualStyleBackColor = false;
-            btDaftarAdminSA.Click += btDaftarAdminSA_Click;
-            // 
-            // btAdminSA1
-            // 
-            btAdminSA1.BackColor = Color.Black;
-            btAdminSA1.FlatStyle = FlatStyle.Popup;
-            btAdminSA1.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btAdminSA1.ForeColor = Color.White;
-            btAdminSA1.Location = new Point(137, 64);
-            btAdminSA1.Name = "btAdminSA1";
-            btAdminSA1.Size = new Size(114, 34);
-            btAdminSA1.TabIndex = 13;
-            btAdminSA1.Text = "Admin";
-            btAdminSA1.UseVisualStyleBackColor = false;
-            btAdminSA1.Click += btAdminSA1_Click;
-            // 
-            // btUserSA1
-            // 
-            btUserSA1.BackColor = Color.CornflowerBlue;
-            btUserSA1.FlatStyle = FlatStyle.Popup;
-            btUserSA1.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btUserSA1.ForeColor = Color.White;
-            btUserSA1.Location = new Point(23, 64);
-            btUserSA1.Name = "btUserSA1";
-            btUserSA1.Size = new Size(114, 34);
-            btUserSA1.TabIndex = 12;
-            btUserSA1.Text = "User";
-            btUserSA1.UseVisualStyleBackColor = false;
-            btUserSA1.Click += btUserSA1_Click;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(23, 127);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1460, 591);
-            dataGridView1.TabIndex = 11;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(23, 29);
-            label1.Name = "label1";
-            label1.Size = new Size(174, 25);
-            label1.TabIndex = 10;
-            label1.Text = "Daftar Pengguna";
-            // 
             // pnlDaftarAdminSA
             // 
             pnlDaftarAdminSA.Controls.Add(btDaftarSA);
@@ -351,10 +355,11 @@
             pnlDaftarAdminSA.Controls.Add(tbNamaSA);
             pnlDaftarAdminSA.Controls.Add(tbUsernameSA);
             pnlDaftarAdminSA.Controls.Add(label3);
-            pnlDaftarAdminSA.Location = new Point(416, 275);
+            pnlDaftarAdminSA.Location = new Point(638, 132);
             pnlDaftarAdminSA.Name = "pnlDaftarAdminSA";
             pnlDaftarAdminSA.Size = new Size(1507, 805);
             pnlDaftarAdminSA.TabIndex = 17;
+            pnlDaftarAdminSA.Paint += pnlDaftarAdminSA_Paint;
             // 
             // btDaftarSA
             // 
@@ -507,13 +512,13 @@
             pnlSA.ResumeLayout(false);
             pnlSA.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxVectorUser).EndInit();
+            pnlAdminSA.ResumeLayout(false);
+            pnlAdminSA.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPerpusSA).EndInit();
             pnlUserSA.ResumeLayout(false);
             pnlUserSA.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            pnlAdminSA.ResumeLayout(false);
-            pnlAdminSA.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             pnlDaftarAdminSA.ResumeLayout(false);
             pnlDaftarAdminSA.PerformLayout();
             ResumeLayout(false);

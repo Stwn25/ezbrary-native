@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_PBO_03.Context;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,6 +26,8 @@ namespace Project_PBO_03.View
             /*            this.pnlUserSA.Dock = DockStyle.Bottom;*/
             this.pnlAdminSA.Hide();
             this.pnlDaftarAdminSA.Hide();
+            dataGridView1.DataSource = PenggunaContext.all();
+            dataGridView2.DataSource = AdminContext.all();
         }
 
         private void btKelolaAkunSA_Click(object sender, EventArgs e)
@@ -74,7 +77,7 @@ namespace Project_PBO_03.View
             btAdminSA1.BackColor = Color.CornflowerBlue;
             btAdminSA.BackColor = Color.CornflowerBlue;
             this.pnlUserSA.Show();
-            /*            this.pnlUserSA.Dock = DockStyle.Bottom;*/
+            /*this.pnlUserSA.Dock = DockStyle.Bottom;*/
             this.pnlAdminSA.Hide();
             this.pnlDaftarAdminSA.Hide();
         }
@@ -117,6 +120,21 @@ namespace Project_PBO_03.View
         {
             V_Login login = new V_Login();
             login.Show();
+        }
+
+        private void pnlDaftarAdminSA_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnlAdminSA_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnlSA_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
