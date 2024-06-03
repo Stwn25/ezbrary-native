@@ -359,6 +359,7 @@ namespace Project_PBO_03
             pnlMasuk.Name = "pnlMasuk";
             pnlMasuk.Size = new Size(620, 1080);
             pnlMasuk.TabIndex = 1;
+            pnlMasuk.Paint += pnlMasuk_Paint;
             // 
             // pbSAM
             // 

@@ -118,8 +118,7 @@ namespace Project_PBO_03.View
 
         private void btKeluarSA_Click(object sender, EventArgs e)
         {
-            V_Login login = new V_Login();
-            login.Show();
+            this.Close();
         }
 
         private void pnlDaftarAdminSA_Paint(object sender, PaintEventArgs e)

@@ -116,8 +116,7 @@ namespace Project_PBO_03
 
         private void btKeluarAdmin_Click(object sender, EventArgs e)
         {
-            V_Login login = new V_Login();
-            login.Show();
+            this.Close();
         }
     }
 
