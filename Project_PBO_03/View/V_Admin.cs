@@ -12,8 +12,6 @@ namespace Project_PBO_03
 {
     public partial class V_Admin : Form
     {
-        private object btBukuFav;
-
         public V_Admin()
         {
             InitializeComponent();
@@ -24,13 +22,13 @@ namespace Project_PBO_03
             btKeluarAdmin.BackColor = Color.CornflowerBlue;
             this.pnlDaftarBukuAdmin.Show();
             this.pnlTambahBukuAdmin.Hide();
-            this.pnlDaftarBukuAdmin.Dock = DockStyle.Bottom;
+            /*this.pnlDaftarBukuAdmin.Dock = DockStyle.Bottom;*/
             this.pnlPeminjamanAdmin.Hide();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Hide();
         }
 
-        private void btKelolaBukuAdmin(object sender, EventArgs e)
+        private void btKelolaBuku_Click(object sender, EventArgs e)
         {
 
             btKelolaBuku.BackColor = Color.Black;
@@ -40,7 +38,7 @@ namespace Project_PBO_03
             btKeluarAdmin.BackColor = Color.CornflowerBlue;
             this.pnlDaftarBukuAdmin.Show();
             this.pnlTambahBukuAdmin.Hide();
-            this.pnlDaftarBukuAdmin.Dock = DockStyle.Bottom;
+            /*this.pnlDaftarBukuAdmin.Dock = DockStyle.Bottom;*/
             this.pnlPeminjamanAdmin.Hide();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Hide();
@@ -58,7 +56,7 @@ namespace Project_PBO_03
             this.pnlPeminjamanAdmin.Hide();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Show();
-            this.pnlProfileAdmin.Dock = DockStyle.Bottom;
+            /*this.pnlProfileAdmin.Dock = DockStyle.Bottom;*/
 
         }
 
@@ -73,7 +71,7 @@ namespace Project_PBO_03
             this.pnlTambahBukuAdmin.Hide();
             this.pnlPeminjamanAdmin.Hide();
             this.pnlRiwayatPeminjaman.Show();
-            this.pnlRiwayatPeminjaman.Dock = DockStyle.Bottom;
+            /*this.pnlRiwayatPeminjaman.Dock = DockStyle.Bottom;*/
             this.pnlProfileAdmin.Hide();
 
         }
@@ -88,7 +86,7 @@ namespace Project_PBO_03
             this.pnlDaftarBukuAdmin.Hide();
             this.pnlTambahBukuAdmin.Hide();
             this.pnlPeminjamanAdmin.Show();
-            this.pnlPeminjamanAdmin.Dock = DockStyle.Bottom;
+            /*this.pnlPeminjamanAdmin.Dock = DockStyle.Bottom;*/
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Hide();
 
@@ -103,7 +101,7 @@ namespace Project_PBO_03
             btKeluarAdmin.BackColor = Color.CornflowerBlue;
             this.pnlTambahBukuAdmin.Hide();
             this.pnlDaftarBukuAdmin.Show();
-            this.pnlDaftarBukuAdmin.Dock = DockStyle.Bottom;
+            /*this.pnlDaftarBukuAdmin.Dock = DockStyle.Bottom;*/
             this.pnlPeminjamanAdmin.Hide();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Hide();
@@ -128,11 +126,12 @@ namespace Project_PBO_03
         {
             this.pnlTambahBukuAdmin.Show();
             this.pnlDaftarBukuAdmin.Hide();
-            this.pnlTambahBukuAdmin.Dock = DockStyle.Bottom;
+            /*this.pnlTambahBukuAdmin.Dock = DockStyle.Bottom;*/
             this.pnlPeminjamanAdmin.Hide();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Hide();
         }
+
 
         private void btTBAdmin_Click(object sender, EventArgs e)
         {
@@ -142,6 +141,21 @@ namespace Project_PBO_03
         private void ucPenulisTambahBukuAdmin1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBoxVektoradmin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlTambahBukuAdmin_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void V_Admin_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 

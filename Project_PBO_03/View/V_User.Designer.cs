@@ -43,6 +43,8 @@ namespace Project_PBO_03
             lblHaiUser = new Label();
             lblHai1User = new Label();
             pnlPeminjamanUser = new Panel();
+            button1 = new Button();
+            dungeonComboBox1 = new ReaLTaiizor.Controls.DungeonComboBox();
             tbPeminjamanUser = new TextBox();
             dgvPeminjamanUser = new DataGridView();
             lblPeminjamanUser = new Label();
@@ -66,8 +68,6 @@ namespace Project_PBO_03
             tbUsernameProfileU = new TextBox();
             label3 = new Label();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
-            dungeonComboBox1 = new ReaLTaiizor.Controls.DungeonComboBox();
-            button1 = new Button();
             pnlUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxVectorUser).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPerpusUser).BeginInit();
@@ -251,6 +251,45 @@ namespace Project_PBO_03
             pnlPeminjamanUser.Size = new Size(1507, 805);
             pnlPeminjamanUser.TabIndex = 9;
             pnlPeminjamanUser.Paint += pnlPeminjamanUser_Paint_1;
+            // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.Highlight;
+            button1.FlatStyle = FlatStyle.Popup;
+            button1.Font = new Font("Nunito ExtraBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(1160, 70);
+            button1.Name = "button1";
+            button1.Size = new Size(72, 36);
+            button1.TabIndex = 14;
+            button1.Text = "Search";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // dungeonComboBox1
+            // 
+            dungeonComboBox1.BackColor = Color.Black;
+            dungeonComboBox1.ColorA = Color.FromArgb(246, 132, 85);
+            dungeonComboBox1.ColorB = Color.FromArgb(231, 108, 57);
+            dungeonComboBox1.ColorC = Color.FromArgb(242, 241, 240);
+            dungeonComboBox1.ColorD = Color.FromArgb(253, 252, 252);
+            dungeonComboBox1.ColorE = Color.FromArgb(239, 237, 236);
+            dungeonComboBox1.ColorF = Color.FromArgb(180, 180, 180);
+            dungeonComboBox1.ColorG = Color.FromArgb(119, 119, 118);
+            dungeonComboBox1.ColorH = Color.FromArgb(224, 222, 220);
+            dungeonComboBox1.ColorI = Color.FromArgb(250, 249, 249);
+            dungeonComboBox1.DrawMode = DrawMode.OwnerDrawFixed;
+            dungeonComboBox1.DropDownHeight = 100;
+            dungeonComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            dungeonComboBox1.Font = new Font("Segoe UI", 10F);
+            dungeonComboBox1.ForeColor = Color.Black;
+            dungeonComboBox1.FormattingEnabled = true;
+            dungeonComboBox1.HoverSelectionColor = Color.Empty;
+            dungeonComboBox1.IntegralHeight = false;
+            dungeonComboBox1.ItemHeight = 20;
+            dungeonComboBox1.Location = new Point(148, 78);
+            dungeonComboBox1.Name = "dungeonComboBox1";
+            dungeonComboBox1.Size = new Size(169, 26);
+            dungeonComboBox1.StartIndex = 0;
+            dungeonComboBox1.TabIndex = 13;
             // 
             // tbPeminjamanUser
             // 
@@ -521,45 +560,6 @@ namespace Project_PBO_03
             nightControlBox1.TabIndex = 7;
             nightControlBox1.Click += nightControlBox1_Click;
             // 
-            // dungeonComboBox1
-            // 
-            dungeonComboBox1.BackColor = Color.Black;
-            dungeonComboBox1.ColorA = Color.FromArgb(246, 132, 85);
-            dungeonComboBox1.ColorB = Color.FromArgb(231, 108, 57);
-            dungeonComboBox1.ColorC = Color.FromArgb(242, 241, 240);
-            dungeonComboBox1.ColorD = Color.FromArgb(253, 252, 252);
-            dungeonComboBox1.ColorE = Color.FromArgb(239, 237, 236);
-            dungeonComboBox1.ColorF = Color.FromArgb(180, 180, 180);
-            dungeonComboBox1.ColorG = Color.FromArgb(119, 119, 118);
-            dungeonComboBox1.ColorH = Color.FromArgb(224, 222, 220);
-            dungeonComboBox1.ColorI = Color.FromArgb(250, 249, 249);
-            dungeonComboBox1.DrawMode = DrawMode.OwnerDrawFixed;
-            dungeonComboBox1.DropDownHeight = 100;
-            dungeonComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            dungeonComboBox1.Font = new Font("Segoe UI", 10F);
-            dungeonComboBox1.ForeColor = Color.Black;
-            dungeonComboBox1.FormattingEnabled = true;
-            dungeonComboBox1.HoverSelectionColor = Color.Empty;
-            dungeonComboBox1.IntegralHeight = false;
-            dungeonComboBox1.ItemHeight = 20;
-            dungeonComboBox1.Location = new Point(148, 78);
-            dungeonComboBox1.Name = "dungeonComboBox1";
-            dungeonComboBox1.Size = new Size(169, 26);
-            dungeonComboBox1.StartIndex = 0;
-            dungeonComboBox1.TabIndex = 13;
-            // 
-            // button1
-            // 
-            button1.BackColor = SystemColors.Highlight;
-            button1.FlatStyle = FlatStyle.Popup;
-            button1.Font = new Font("Nunito ExtraBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(1160, 70);
-            button1.Name = "button1";
-            button1.Size = new Size(72, 36);
-            button1.TabIndex = 14;
-            button1.Text = "Search";
-            button1.UseVisualStyleBackColor = false;
-            // 
             // V_User
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -577,6 +577,7 @@ namespace Project_PBO_03
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_User";
             Text = "V_User";
+            Load += V_User_Load;
             pnlUser.ResumeLayout(false);
             pnlUser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxVectorUser).EndInit();

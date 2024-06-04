@@ -222,6 +222,7 @@ namespace Project_PBO_03
             pictureBoxVektoradmin.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxVektoradmin.TabIndex = 1;
             pictureBoxVektoradmin.TabStop = false;
+            pictureBoxVektoradmin.Click += pictureBoxVektoradmin_Click;
             // 
             // pictureBoxPerpusAdmin
             // 
@@ -278,7 +279,7 @@ namespace Project_PBO_03
             pnlDaftarBukuAdmin.Controls.Add(dgvKelolaBukuAdmin);
             pnlDaftarBukuAdmin.Controls.Add(tbDaftarBukuAdmin);
             pnlDaftarBukuAdmin.Controls.Add(lblDaftarBuku);
-            pnlDaftarBukuAdmin.Location = new Point(468, 106);
+            pnlDaftarBukuAdmin.Location = new Point(417, 276);
             pnlDaftarBukuAdmin.Name = "pnlDaftarBukuAdmin";
             pnlDaftarBukuAdmin.Size = new Size(1507, 805);
             pnlDaftarBukuAdmin.TabIndex = 7;
@@ -310,7 +311,7 @@ namespace Project_PBO_03
             // 
             pnlPeminjamanAdmin.Controls.Add(dataGridView1);
             pnlPeminjamanAdmin.Controls.Add(lblBookingAdmin);
-            pnlPeminjamanAdmin.Location = new Point(426, 941);
+            pnlPeminjamanAdmin.Location = new Point(417, 275);
             pnlPeminjamanAdmin.Name = "pnlPeminjamanAdmin";
             pnlPeminjamanAdmin.Size = new Size(1507, 805);
             pnlPeminjamanAdmin.TabIndex = 8;
@@ -338,7 +339,7 @@ namespace Project_PBO_03
             // 
             pnlRiwayatPeminjaman.Controls.Add(dataGridView2);
             pnlRiwayatPeminjaman.Controls.Add(label1);
-            pnlRiwayatPeminjaman.Location = new Point(471, 885);
+            pnlRiwayatPeminjaman.Location = new Point(416, 275);
             pnlRiwayatPeminjaman.Name = "pnlRiwayatPeminjaman";
             pnlRiwayatPeminjaman.Size = new Size(1507, 805);
             pnlRiwayatPeminjaman.TabIndex = 9;
@@ -376,7 +377,7 @@ namespace Project_PBO_03
             pnlProfileAdmin.Controls.Add(lblUsernameProfileAdmin);
             pnlProfileAdmin.Controls.Add(tbUsernameAdmin);
             pnlProfileAdmin.Controls.Add(lblProfileAdmin);
-            pnlProfileAdmin.Location = new Point(423, 284);
+            pnlProfileAdmin.Location = new Point(416, 275);
             pnlProfileAdmin.Name = "pnlProfileAdmin";
             pnlProfileAdmin.Size = new Size(1507, 805);
             pnlProfileAdmin.TabIndex = 10;
@@ -407,7 +408,8 @@ namespace Project_PBO_03
             // 
             // btPasswordProfileAdmin
             // 
-            btPasswordProfileAdmin.BackColor = Color.Silver;
+            btPasswordProfileAdmin.BackColor = Color.White;
+            btPasswordProfileAdmin.BorderStyle = BorderStyle.FixedSingle;
             btPasswordProfileAdmin.Location = new Point(58, 534);
             btPasswordProfileAdmin.Multiline = true;
             btPasswordProfileAdmin.Name = "btPasswordProfileAdmin";
@@ -426,7 +428,8 @@ namespace Project_PBO_03
             // 
             // tbNoTeleponProfileAdmin
             // 
-            tbNoTeleponProfileAdmin.BackColor = Color.Silver;
+            tbNoTeleponProfileAdmin.BackColor = Color.White;
+            tbNoTeleponProfileAdmin.BorderStyle = BorderStyle.FixedSingle;
             tbNoTeleponProfileAdmin.Location = new Point(58, 444);
             tbNoTeleponProfileAdmin.Multiline = true;
             tbNoTeleponProfileAdmin.Name = "tbNoTeleponProfileAdmin";
@@ -445,7 +448,8 @@ namespace Project_PBO_03
             // 
             // tbEmailProfileAdmin
             // 
-            tbEmailProfileAdmin.BackColor = Color.Silver;
+            tbEmailProfileAdmin.BackColor = Color.White;
+            tbEmailProfileAdmin.BorderStyle = BorderStyle.FixedSingle;
             tbEmailProfileAdmin.Location = new Point(58, 342);
             tbEmailProfileAdmin.Multiline = true;
             tbEmailProfileAdmin.Name = "tbEmailProfileAdmin";
@@ -464,7 +468,8 @@ namespace Project_PBO_03
             // 
             // tbNamaProfileAdmin
             // 
-            tbNamaProfileAdmin.BackColor = Color.Silver;
+            tbNamaProfileAdmin.BackColor = Color.White;
+            tbNamaProfileAdmin.BorderStyle = BorderStyle.FixedSingle;
             tbNamaProfileAdmin.Location = new Point(58, 249);
             tbNamaProfileAdmin.Multiline = true;
             tbNamaProfileAdmin.Name = "tbNamaProfileAdmin";
@@ -483,7 +488,8 @@ namespace Project_PBO_03
             // 
             // tbUsernameAdmin
             // 
-            tbUsernameAdmin.BackColor = Color.Silver;
+            tbUsernameAdmin.BackColor = Color.White;
+            tbUsernameAdmin.BorderStyle = BorderStyle.FixedSingle;
             tbUsernameAdmin.Location = new Point(58, 156);
             tbUsernameAdmin.Multiline = true;
             tbUsernameAdmin.Name = "tbUsernameAdmin";
@@ -540,10 +546,11 @@ namespace Project_PBO_03
             pnlTambahBukuAdmin.Controls.Add(label5);
             pnlTambahBukuAdmin.Controls.Add(label6);
             pnlTambahBukuAdmin.Controls.Add(label7);
-            pnlTambahBukuAdmin.Location = new Point(547, 2);
+            pnlTambahBukuAdmin.Location = new Point(416, 275);
             pnlTambahBukuAdmin.Name = "pnlTambahBukuAdmin";
             pnlTambahBukuAdmin.Size = new Size(1507, 805);
             pnlTambahBukuAdmin.TabIndex = 16;
+            pnlTambahBukuAdmin.Paint += pnlTambahBukuAdmin_Paint;
             // 
             // comboBox5
             // 
@@ -682,17 +689,17 @@ namespace Project_PBO_03
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1920, 1080);
-            Controls.Add(pnlTambahBukuAdmin);
-            Controls.Add(pnlProfileAdmin);
             Controls.Add(nightControlBox1);
-            Controls.Add(pnlRiwayatPeminjaman);
-            Controls.Add(pnlDaftarBukuAdmin);
             Controls.Add(lblhai1Admin);
-            Controls.Add(pnlPeminjamanAdmin);
             Controls.Add(lblhaiAdmin);
             Controls.Add(pictureBoxPerpusAdmin);
             Controls.Add(pictureBoxVektoradmin);
             Controls.Add(pnlAdmin);
+            Controls.Add(pnlPeminjamanAdmin);
+            Controls.Add(pnlRiwayatPeminjaman);
+            Controls.Add(pnlProfileAdmin);
+            Controls.Add(pnlDaftarBukuAdmin);
+            Controls.Add(pnlTambahBukuAdmin);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_Admin";
             Text = "V_Admin";
@@ -718,16 +725,8 @@ namespace Project_PBO_03
             PerformLayout();
         }
 
-        private void V_Admin_Load(object sender, EventArgs e)
-        {
-            
-           
-           
-        }
-
         private void pnlProfileAdmin_Paint(object sender, PaintEventArgs e)
         {
-            /*throw new NotImplementedException();*/
           
         }
 
@@ -739,29 +738,14 @@ namespace Project_PBO_03
             btProfileAdmin.BackColor = Color.CornflowerBlue;
             btKeluarAdmin.BackColor = Color.CornflowerBlue;
             this.pnlTambahBukuAdmin.Hide();
-            this.pnlDaftarBukuAdmin.Hide();
             this.pnlPeminjamanAdmin.Show();
             this.pnlPeminjamanAdmin.Dock = DockStyle.Bottom;
+            this.pnlDaftarBukuAdmin.Hide();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Hide();
         }
 
-        private void btKelolaBuku_Click(object sender, EventArgs e)
-        {
-            btKelolaBuku.BackColor = Color.Black;
-            btPeminjaman.BackColor = Color.CornflowerBlue;
-            btRiwayatPeminjaman.BackColor = Color.CornflowerBlue;
-            btProfileAdmin.BackColor = Color.CornflowerBlue;
-            btKeluarAdmin.BackColor = Color.CornflowerBlue;
-            this.pnlTambahBukuAdmin.Hide();
-            this.pnlDaftarBukuAdmin.Show();
-            this.pnlDaftarBukuAdmin.Dock = DockStyle.Bottom;
-            this.pnlPeminjamanAdmin.Hide();
-            this.pnlRiwayatPeminjaman.Hide();
-            this.pnlProfileAdmin.Hide();
-
-        }
-
+       
         #endregion
 
         private Panel pnlAdmin;
