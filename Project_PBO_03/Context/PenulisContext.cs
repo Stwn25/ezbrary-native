@@ -13,12 +13,12 @@ namespace Project_PBO_03.Context
 {
     internal class PenulisContext: DBconnection
     {
-        private string table : "penulis"
+        public static string table = "penulis";
 
         public static DataTable all()
         {
-            string query = $"SELECT * FROM {table}"
-            Datatable dataPenulis = queryExecutor(query);
+            string query = $"SELECT * FROM {table}";
+            DataTable dataPenulis = queryExecutor(query);
             return dataPenulis;
         }
 
