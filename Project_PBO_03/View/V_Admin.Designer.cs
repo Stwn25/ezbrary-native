@@ -69,12 +69,12 @@ namespace Project_PBO_03
             lblProfileAdmin = new Label();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             pnlTambahBukuAdmin = new Panel();
-            comboBox5 = new ComboBox();
-            comboBox6 = new ComboBox();
-            comboBox3 = new ComboBox();
-            comboBox4 = new ComboBox();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
+            tbTahunTerbit = new TextBox();
+            tbSinopsisBuku = new RichTextBox();
+            tbNamaBuku = new TextBox();
+            cbJenisBuku = new ComboBox();
+            cbPenerbit = new ComboBox();
+            cbPenulis = new ComboBox();
             btTBAdmin = new Button();
             label8 = new Label();
             label2 = new Label();
@@ -532,12 +532,12 @@ namespace Project_PBO_03
             // 
             // pnlTambahBukuAdmin
             // 
-            pnlTambahBukuAdmin.Controls.Add(comboBox5);
-            pnlTambahBukuAdmin.Controls.Add(comboBox6);
-            pnlTambahBukuAdmin.Controls.Add(comboBox3);
-            pnlTambahBukuAdmin.Controls.Add(comboBox4);
-            pnlTambahBukuAdmin.Controls.Add(comboBox2);
-            pnlTambahBukuAdmin.Controls.Add(comboBox1);
+            pnlTambahBukuAdmin.Controls.Add(tbTahunTerbit);
+            pnlTambahBukuAdmin.Controls.Add(tbSinopsisBuku);
+            pnlTambahBukuAdmin.Controls.Add(tbNamaBuku);
+            pnlTambahBukuAdmin.Controls.Add(cbJenisBuku);
+            pnlTambahBukuAdmin.Controls.Add(cbPenerbit);
+            pnlTambahBukuAdmin.Controls.Add(cbPenulis);
             pnlTambahBukuAdmin.Controls.Add(btTBAdmin);
             pnlTambahBukuAdmin.Controls.Add(label8);
             pnlTambahBukuAdmin.Controls.Add(label2);
@@ -552,53 +552,55 @@ namespace Project_PBO_03
             pnlTambahBukuAdmin.TabIndex = 16;
             pnlTambahBukuAdmin.Paint += pnlTambahBukuAdmin_Paint;
             // 
-            // comboBox5
+            // tbTahunTerbit
             // 
-            comboBox5.FormattingEnabled = true;
-            comboBox5.Location = new Point(58, 634);
-            comboBox5.Name = "comboBox5";
-            comboBox5.Size = new Size(1400, 28);
-            comboBox5.TabIndex = 23;
+            tbTahunTerbit.BorderStyle = BorderStyle.FixedSingle;
+            tbTahunTerbit.Location = new Point(59, 444);
+            tbTahunTerbit.Name = "tbTahunTerbit";
+            tbTahunTerbit.Size = new Size(619, 27);
+            tbTahunTerbit.TabIndex = 26;
             // 
-            // comboBox6
+            // tbSinopsisBuku
             // 
-            comboBox6.FormattingEnabled = true;
-            comboBox6.Location = new Point(58, 539);
-            comboBox6.Name = "comboBox6";
-            comboBox6.Size = new Size(1400, 28);
-            comboBox6.TabIndex = 22;
+            tbSinopsisBuku.BorderStyle = BorderStyle.FixedSingle;
+            tbSinopsisBuku.Location = new Point(58, 237);
+            tbSinopsisBuku.Name = "tbSinopsisBuku";
+            tbSinopsisBuku.Size = new Size(619, 156);
+            tbSinopsisBuku.TabIndex = 25;
+            tbSinopsisBuku.Text = "";
             // 
-            // comboBox3
+            // tbNamaBuku
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(58, 444);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(1400, 28);
-            comboBox3.TabIndex = 21;
+            tbNamaBuku.BorderStyle = BorderStyle.FixedSingle;
+            tbNamaBuku.Location = new Point(58, 156);
+            tbNamaBuku.Name = "tbNamaBuku";
+            tbNamaBuku.Size = new Size(619, 27);
+            tbNamaBuku.TabIndex = 24;
             // 
-            // comboBox4
+            // cbJenisBuku
             // 
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(58, 348);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(1400, 28);
-            comboBox4.TabIndex = 20;
+            cbJenisBuku.FormattingEnabled = true;
+            cbJenisBuku.Location = new Point(808, 444);
+            cbJenisBuku.Name = "cbJenisBuku";
+            cbJenisBuku.Size = new Size(618, 28);
+            cbJenisBuku.TabIndex = 23;
             // 
-            // comboBox2
+            // cbPenerbit
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(58, 265);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(1400, 28);
-            comboBox2.TabIndex = 19;
+            cbPenerbit.FormattingEnabled = true;
+            cbPenerbit.Location = new Point(808, 155);
+            cbPenerbit.Name = "cbPenerbit";
+            cbPenerbit.Size = new Size(618, 28);
+            cbPenerbit.TabIndex = 21;
+            cbPenerbit.SelectedIndexChanged += cbPenerbit_SelectedIndexChanged;
             // 
-            // comboBox1
+            // cbPenulis
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(58, 169);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(1400, 28);
-            comboBox1.TabIndex = 18;
+            cbPenulis.FormattingEnabled = true;
+            cbPenulis.Location = new Point(808, 296);
+            cbPenulis.Name = "cbPenulis";
+            cbPenulis.Size = new Size(618, 28);
+            cbPenulis.TabIndex = 20;
             // 
             // btTBAdmin
             // 
@@ -606,7 +608,7 @@ namespace Project_PBO_03
             btTBAdmin.FlatStyle = FlatStyle.Popup;
             btTBAdmin.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btTBAdmin.ForeColor = Color.White;
-            btTBAdmin.Location = new Point(637, 691);
+            btTBAdmin.Location = new Point(611, 627);
             btTBAdmin.Name = "btTBAdmin";
             btTBAdmin.Size = new Size(286, 56);
             btTBAdmin.TabIndex = 7;
@@ -618,17 +620,17 @@ namespace Project_PBO_03
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(58, 594);
+            label8.Location = new Point(808, 416);
             label8.Name = "label8";
-            label8.Size = new Size(64, 25);
+            label8.Size = new Size(119, 25);
             label8.TabIndex = 17;
-            label8.Text = "Jenis";
+            label8.Text = "Jenis Buku";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(58, 503);
+            label2.Location = new Point(60, 416);
             label2.Name = "label2";
             label2.Size = new Size(136, 25);
             label2.TabIndex = 15;
@@ -638,17 +640,18 @@ namespace Project_PBO_03
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(58, 405);
+            label3.Location = new Point(808, 121);
             label3.Name = "label3";
             label3.Size = new Size(92, 25);
             label3.TabIndex = 13;
             label3.Text = "Penerbit";
+            label3.Click += label3_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(58, 311);
+            label4.Location = new Point(808, 268);
             label4.Name = "label4";
             label4.Size = new Size(83, 25);
             label4.TabIndex = 11;
@@ -658,7 +661,7 @@ namespace Project_PBO_03
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(58, 218);
+            label5.Location = new Point(58, 209);
             label5.Name = "label5";
             label5.Size = new Size(95, 25);
             label5.TabIndex = 9;
@@ -678,7 +681,7 @@ namespace Project_PBO_03
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(23, 29);
+            label7.Location = new Point(36, 30);
             label7.Name = "label7";
             label7.Size = new Size(146, 25);
             label7.TabIndex = 5;
@@ -695,11 +698,11 @@ namespace Project_PBO_03
             Controls.Add(pictureBoxPerpusAdmin);
             Controls.Add(pictureBoxVektoradmin);
             Controls.Add(pnlAdmin);
+            Controls.Add(pnlTambahBukuAdmin);
             Controls.Add(pnlPeminjamanAdmin);
             Controls.Add(pnlRiwayatPeminjaman);
             Controls.Add(pnlProfileAdmin);
             Controls.Add(pnlDaftarBukuAdmin);
-            Controls.Add(pnlTambahBukuAdmin);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_Admin";
             Text = "V_Admin";
@@ -739,7 +742,7 @@ namespace Project_PBO_03
             btKeluarAdmin.BackColor = Color.CornflowerBlue;
             this.pnlTambahBukuAdmin.Hide();
             this.pnlPeminjamanAdmin.Show();
-            this.pnlPeminjamanAdmin.Dock = DockStyle.Bottom;
+            /*this.pnlPeminjamanAdmin.Dock = DockStyle.Bottom;*/
             this.pnlDaftarBukuAdmin.Hide();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Hide();
@@ -794,15 +797,15 @@ namespace Project_PBO_03
         private Label label7;
         private Button btTBAdmin;
         private Label label8;
-        private ComboBox comboBox1;
-        private ComboBox comboBox5;
-        private ComboBox comboBox6;
-        private ComboBox comboBox3;
-        private ComboBox comboBox4;
-        private ComboBox comboBox2;
+        private ComboBox cbJenisBuku;
+        private ComboBox cbPenerbit;
+        private ComboBox cbPenulis;
         private ucPenerbitTambahBukuAdmin ucPenerbitTambahBukuAdmin1;
         private ucJenisBukuTambahBukuAdmin ucJenisBukuTambahBukuAdmin1;
         private ucPenulisTambahBukuAdmin ucPenulisTambahBukuAdmin1;
         private Button btSimpanPerubahanA;
+        private TextBox tbNamaBuku;
+        private RichTextBox tbSinopsisBuku;
+        private TextBox tbTahunTerbit;
     }
 }

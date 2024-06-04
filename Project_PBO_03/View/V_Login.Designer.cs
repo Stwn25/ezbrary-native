@@ -788,10 +788,10 @@ namespace Project_PBO_03
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1920, 1080);
+            Controls.Add(pnlMasukSA);
             Controls.Add(nightControlBox1);
             Controls.Add(pnlKodevSA);
             Controls.Add(pnlDaftar);
-            Controls.Add(pnlMasukSA);
             Controls.Add(pnlMasuk);
             Controls.Add(pnlAwal);
             Controls.Add(pnlKodevAdmin);

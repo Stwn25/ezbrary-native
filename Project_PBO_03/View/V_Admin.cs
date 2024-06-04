@@ -132,6 +132,11 @@ namespace Project_PBO_03
             this.pnlProfileAdmin.Hide();
         }
 
+        private void cbPenerbit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
         private void btTBAdmin_Click(object sender, EventArgs e)
         {
@@ -155,7 +160,12 @@ namespace Project_PBO_03
 
         private void V_Admin_Load(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

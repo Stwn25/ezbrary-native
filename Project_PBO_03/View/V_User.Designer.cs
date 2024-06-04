@@ -257,7 +257,7 @@ namespace Project_PBO_03
             button1.BackColor = SystemColors.Highlight;
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Nunito ExtraBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(1160, 70);
+            button1.Location = new Point(1124, 70);
             button1.Name = "button1";
             button1.Size = new Size(72, 36);
             button1.TabIndex = 14;
@@ -285,7 +285,7 @@ namespace Project_PBO_03
             dungeonComboBox1.HoverSelectionColor = Color.Empty;
             dungeonComboBox1.IntegralHeight = false;
             dungeonComboBox1.ItemHeight = 20;
-            dungeonComboBox1.Location = new Point(148, 78);
+            dungeonComboBox1.Location = new Point(23, 80);
             dungeonComboBox1.Name = "dungeonComboBox1";
             dungeonComboBox1.Size = new Size(169, 26);
             dungeonComboBox1.StartIndex = 0;
@@ -297,7 +297,7 @@ namespace Project_PBO_03
             tbPeminjamanUser.BorderStyle = BorderStyle.FixedSingle;
             tbPeminjamanUser.Cursor = Cursors.IBeam;
             tbPeminjamanUser.Font = new Font("Nunito Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tbPeminjamanUser.Location = new Point(413, 72);
+            tbPeminjamanUser.Location = new Point(377, 72);
             tbPeminjamanUser.Multiline = true;
             tbPeminjamanUser.Name = "tbPeminjamanUser";
             tbPeminjamanUser.Size = new Size(741, 34);
@@ -565,11 +565,11 @@ namespace Project_PBO_03
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1920, 1080);
+            Controls.Add(pnlPeminjamanUser);
             Controls.Add(nightControlBox1);
             Controls.Add(pnlProfileUser);
             Controls.Add(pnlRiwayatUser);
             Controls.Add(pnlBukuFavUser);
-            Controls.Add(pnlPeminjamanUser);
             Controls.Add(lblHai1User);
             Controls.Add(lblHaiUser);
             Controls.Add(pictureBoxPerpusUser);
