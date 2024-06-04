@@ -43,6 +43,8 @@ namespace Project_PBO_03
             lblHaiUser = new Label();
             lblHai1User = new Label();
             pnlPeminjamanUser = new Panel();
+            button1 = new Button();
+            dungeonComboBox1 = new ReaLTaiizor.Controls.DungeonComboBox();
             tbPeminjamanUser = new TextBox();
             dgvPeminjamanUser = new DataGridView();
             lblPeminjamanUser = new Label();
@@ -53,17 +55,17 @@ namespace Project_PBO_03
             dataGridView2 = new DataGridView();
             label2 = new Label();
             pnlProfileUser = new Panel();
-            btSimpanPerubahan = new Button();
+            btSimpanPerubahanU = new Button();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            tbPassU = new TextBox();
+            tbTeleponU = new TextBox();
+            tbEmailU = new TextBox();
+            tbNamaProfileU = new TextBox();
+            tbUsernameProfileU = new TextBox();
             label3 = new Label();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             pnlUser.SuspendLayout();
@@ -239,21 +241,63 @@ namespace Project_PBO_03
             // 
             // pnlPeminjamanUser
             // 
+            pnlPeminjamanUser.Controls.Add(button1);
+            pnlPeminjamanUser.Controls.Add(dungeonComboBox1);
             pnlPeminjamanUser.Controls.Add(tbPeminjamanUser);
             pnlPeminjamanUser.Controls.Add(dgvPeminjamanUser);
             pnlPeminjamanUser.Controls.Add(lblPeminjamanUser);
-            pnlPeminjamanUser.Location = new Point(422, 301);
+            pnlPeminjamanUser.Location = new Point(422, 281);
             pnlPeminjamanUser.Name = "pnlPeminjamanUser";
             pnlPeminjamanUser.Size = new Size(1507, 805);
             pnlPeminjamanUser.TabIndex = 9;
             pnlPeminjamanUser.Paint += pnlPeminjamanUser_Paint_1;
             // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.Highlight;
+            button1.FlatStyle = FlatStyle.Popup;
+            button1.Font = new Font("Nunito ExtraBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(1124, 70);
+            button1.Name = "button1";
+            button1.Size = new Size(72, 36);
+            button1.TabIndex = 14;
+            button1.Text = "Search";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // dungeonComboBox1
+            // 
+            dungeonComboBox1.BackColor = Color.Black;
+            dungeonComboBox1.ColorA = Color.FromArgb(246, 132, 85);
+            dungeonComboBox1.ColorB = Color.FromArgb(231, 108, 57);
+            dungeonComboBox1.ColorC = Color.FromArgb(242, 241, 240);
+            dungeonComboBox1.ColorD = Color.FromArgb(253, 252, 252);
+            dungeonComboBox1.ColorE = Color.FromArgb(239, 237, 236);
+            dungeonComboBox1.ColorF = Color.FromArgb(180, 180, 180);
+            dungeonComboBox1.ColorG = Color.FromArgb(119, 119, 118);
+            dungeonComboBox1.ColorH = Color.FromArgb(224, 222, 220);
+            dungeonComboBox1.ColorI = Color.FromArgb(250, 249, 249);
+            dungeonComboBox1.DrawMode = DrawMode.OwnerDrawFixed;
+            dungeonComboBox1.DropDownHeight = 100;
+            dungeonComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            dungeonComboBox1.Font = new Font("Segoe UI", 10F);
+            dungeonComboBox1.ForeColor = Color.Black;
+            dungeonComboBox1.FormattingEnabled = true;
+            dungeonComboBox1.HoverSelectionColor = Color.Empty;
+            dungeonComboBox1.IntegralHeight = false;
+            dungeonComboBox1.ItemHeight = 20;
+            dungeonComboBox1.Location = new Point(23, 80);
+            dungeonComboBox1.Name = "dungeonComboBox1";
+            dungeonComboBox1.Size = new Size(169, 26);
+            dungeonComboBox1.StartIndex = 0;
+            dungeonComboBox1.TabIndex = 13;
+            // 
             // tbPeminjamanUser
             // 
-            tbPeminjamanUser.BackColor = Color.Silver;
+            tbPeminjamanUser.BackColor = Color.White;
+            tbPeminjamanUser.BorderStyle = BorderStyle.FixedSingle;
             tbPeminjamanUser.Cursor = Cursors.IBeam;
             tbPeminjamanUser.Font = new Font("Nunito Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tbPeminjamanUser.Location = new Point(439, 74);
+            tbPeminjamanUser.Location = new Point(377, 72);
             tbPeminjamanUser.Multiline = true;
             tbPeminjamanUser.Name = "tbPeminjamanUser";
             tbPeminjamanUser.Size = new Size(741, 34);
@@ -339,17 +383,17 @@ namespace Project_PBO_03
             // 
             // pnlProfileUser
             // 
-            pnlProfileUser.Controls.Add(btSimpanPerubahan);
+            pnlProfileUser.Controls.Add(btSimpanPerubahanU);
             pnlProfileUser.Controls.Add(label8);
             pnlProfileUser.Controls.Add(label7);
             pnlProfileUser.Controls.Add(label6);
             pnlProfileUser.Controls.Add(label5);
             pnlProfileUser.Controls.Add(label4);
-            pnlProfileUser.Controls.Add(textBox5);
-            pnlProfileUser.Controls.Add(textBox4);
-            pnlProfileUser.Controls.Add(textBox3);
-            pnlProfileUser.Controls.Add(textBox2);
-            pnlProfileUser.Controls.Add(textBox1);
+            pnlProfileUser.Controls.Add(tbPassU);
+            pnlProfileUser.Controls.Add(tbTeleponU);
+            pnlProfileUser.Controls.Add(tbEmailU);
+            pnlProfileUser.Controls.Add(tbNamaProfileU);
+            pnlProfileUser.Controls.Add(tbUsernameProfileU);
             pnlProfileUser.Controls.Add(label3);
             pnlProfileUser.Location = new Point(484, 224);
             pnlProfileUser.Name = "pnlProfileUser";
@@ -357,19 +401,19 @@ namespace Project_PBO_03
             pnlProfileUser.TabIndex = 15;
             pnlProfileUser.Paint += pnlProfileUser_Paint;
             // 
-            // btSimpanPerubahan
+            // btSimpanPerubahanU
             // 
-            btSimpanPerubahan.BackColor = SystemColors.HotTrack;
-            btSimpanPerubahan.Cursor = Cursors.Hand;
-            btSimpanPerubahan.FlatStyle = FlatStyle.Flat;
-            btSimpanPerubahan.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btSimpanPerubahan.ForeColor = Color.White;
-            btSimpanPerubahan.Location = new Point(627, 586);
-            btSimpanPerubahan.Name = "btSimpanPerubahan";
-            btSimpanPerubahan.Size = new Size(292, 46);
-            btSimpanPerubahan.TabIndex = 22;
-            btSimpanPerubahan.Text = "Simpan Perubahan";
-            btSimpanPerubahan.UseVisualStyleBackColor = false;
+            btSimpanPerubahanU.BackColor = SystemColors.HotTrack;
+            btSimpanPerubahanU.Cursor = Cursors.Hand;
+            btSimpanPerubahanU.FlatStyle = FlatStyle.Flat;
+            btSimpanPerubahanU.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btSimpanPerubahanU.ForeColor = Color.White;
+            btSimpanPerubahanU.Location = new Point(627, 586);
+            btSimpanPerubahanU.Name = "btSimpanPerubahanU";
+            btSimpanPerubahanU.Size = new Size(292, 46);
+            btSimpanPerubahanU.TabIndex = 22;
+            btSimpanPerubahanU.Text = "Simpan Perubahan";
+            btSimpanPerubahanU.UseVisualStyleBackColor = false;
             // 
             // label8
             // 
@@ -426,55 +470,60 @@ namespace Project_PBO_03
             label4.TabIndex = 16;
             label4.Text = "Username";
             // 
-            // textBox5
+            // tbPassU
             // 
-            textBox5.BackColor = Color.Silver;
-            textBox5.Font = new Font("Nunito Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox5.Location = new Point(58, 495);
-            textBox5.Multiline = true;
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(1400, 34);
-            textBox5.TabIndex = 17;
+            tbPassU.BackColor = Color.White;
+            tbPassU.BorderStyle = BorderStyle.FixedSingle;
+            tbPassU.Font = new Font("Nunito Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbPassU.Location = new Point(58, 495);
+            tbPassU.Multiline = true;
+            tbPassU.Name = "tbPassU";
+            tbPassU.Size = new Size(1400, 34);
+            tbPassU.TabIndex = 17;
             // 
-            // textBox4
+            // tbTeleponU
             // 
-            textBox4.BackColor = Color.Silver;
-            textBox4.Font = new Font("Nunito Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(58, 409);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(1400, 34);
-            textBox4.TabIndex = 16;
+            tbTeleponU.BackColor = Color.White;
+            tbTeleponU.BorderStyle = BorderStyle.FixedSingle;
+            tbTeleponU.Font = new Font("Nunito Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbTeleponU.Location = new Point(58, 409);
+            tbTeleponU.Multiline = true;
+            tbTeleponU.Name = "tbTeleponU";
+            tbTeleponU.Size = new Size(1400, 34);
+            tbTeleponU.TabIndex = 16;
             // 
-            // textBox3
+            // tbEmailU
             // 
-            textBox3.BackColor = Color.Silver;
-            textBox3.Font = new Font("Nunito Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(58, 323);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(1400, 34);
-            textBox3.TabIndex = 15;
+            tbEmailU.BackColor = Color.White;
+            tbEmailU.BorderStyle = BorderStyle.FixedSingle;
+            tbEmailU.Font = new Font("Nunito Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbEmailU.Location = new Point(58, 323);
+            tbEmailU.Multiline = true;
+            tbEmailU.Name = "tbEmailU";
+            tbEmailU.Size = new Size(1400, 34);
+            tbEmailU.TabIndex = 15;
             // 
-            // textBox2
+            // tbNamaProfileU
             // 
-            textBox2.BackColor = Color.Silver;
-            textBox2.Font = new Font("Nunito Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(58, 237);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(1400, 34);
-            textBox2.TabIndex = 14;
+            tbNamaProfileU.BackColor = Color.White;
+            tbNamaProfileU.BorderStyle = BorderStyle.FixedSingle;
+            tbNamaProfileU.Font = new Font("Nunito Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbNamaProfileU.Location = new Point(58, 237);
+            tbNamaProfileU.Multiline = true;
+            tbNamaProfileU.Name = "tbNamaProfileU";
+            tbNamaProfileU.Size = new Size(1400, 34);
+            tbNamaProfileU.TabIndex = 14;
             // 
-            // textBox1
+            // tbUsernameProfileU
             // 
-            textBox1.BackColor = Color.Silver;
-            textBox1.Font = new Font("Nunito Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(58, 156);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(1400, 34);
-            textBox1.TabIndex = 13;
+            tbUsernameProfileU.BackColor = Color.White;
+            tbUsernameProfileU.BorderStyle = BorderStyle.FixedSingle;
+            tbUsernameProfileU.Font = new Font("Nunito Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbUsernameProfileU.Location = new Point(58, 156);
+            tbUsernameProfileU.Multiline = true;
+            tbUsernameProfileU.Name = "tbUsernameProfileU";
+            tbUsernameProfileU.Size = new Size(1400, 34);
+            tbUsernameProfileU.TabIndex = 13;
             // 
             // label3
             // 
@@ -516,11 +565,11 @@ namespace Project_PBO_03
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1920, 1080);
+            Controls.Add(pnlPeminjamanUser);
             Controls.Add(nightControlBox1);
             Controls.Add(pnlProfileUser);
             Controls.Add(pnlRiwayatUser);
             Controls.Add(pnlBukuFavUser);
-            Controls.Add(pnlPeminjamanUser);
             Controls.Add(lblHai1User);
             Controls.Add(lblHaiUser);
             Controls.Add(pictureBoxPerpusUser);
@@ -528,6 +577,7 @@ namespace Project_PBO_03
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_User";
             Text = "V_User";
+            Load += V_User_Load;
             pnlUser.ResumeLayout(false);
             pnlUser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxVectorUser).EndInit();
@@ -617,13 +667,15 @@ namespace Project_PBO_03
         private Label label6;
         private Label label5;
         private Label label4;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox tbPassU;
+        private TextBox tbTeleponU;
+        private TextBox tbEmailU;
+        private TextBox tbNamaProfileU;
+        private TextBox tbUsernameProfileU;
         private Label label3;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
-        private Button btSimpanPerubahan;
+        private Button btSimpanPerubahanU;
+        private Button button1;
+        private ReaLTaiizor.Controls.DungeonComboBox dungeonComboBox1;
     }
 }

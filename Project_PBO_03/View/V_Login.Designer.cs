@@ -203,7 +203,7 @@ namespace Project_PBO_03
             pnlMasukSA.Controls.Add(tbPasswdMSA);
             pnlMasukSA.Controls.Add(tbUsernameMSA);
             pnlMasukSA.Controls.Add(pictureBox4);
-            pnlMasukSA.Location = new Point(12, 170);
+            pnlMasukSA.Location = new Point(43, 136);
             pnlMasukSA.Name = "pnlMasukSA";
             pnlMasukSA.Size = new Size(620, 1080);
             pnlMasukSA.TabIndex = 5;
@@ -788,10 +788,10 @@ namespace Project_PBO_03
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1920, 1080);
+            Controls.Add(pnlMasukSA);
             Controls.Add(nightControlBox1);
             Controls.Add(pnlKodevSA);
             Controls.Add(pnlDaftar);
-            Controls.Add(pnlMasukSA);
             Controls.Add(pnlMasuk);
             Controls.Add(pnlAwal);
             Controls.Add(pnlKodevAdmin);
