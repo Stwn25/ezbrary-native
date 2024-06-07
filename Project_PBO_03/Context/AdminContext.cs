@@ -1,10 +1,5 @@
 ﻿using Project_PBO_03.Core;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Npgsql;
 using NpgsqlTypes;
 using Project_PBO_03.Model;
@@ -17,7 +12,7 @@ namespace Project_PBO_03.Context
 
         public static DataTable all()
         {
-            string query = $"SELECT * from {table}";
+            string query = $"SELECT * FROM {table}";
             DataTable dataAdministrator = queryExecutor(query);
             return dataAdministrator;
         }
@@ -27,7 +22,7 @@ namespace Project_PBO_03.Context
             string query = $"SELECT * FROM {table} WHERE idadmin = @idadmin";
             NpgsqlParameter[] parameters =
             {
-                new NpgsqlParameter("@id", NpgsqlDbType.Integer) { Value = idadmin }
+                new NpgsqlParameter("@idadmin", NpgsqlDbType.Integer) { Value = idadmin }
             };
             DataTable dataAdministrator = queryExecutor(query, parameters);
             return dataAdministrator;
@@ -59,18 +54,19 @@ namespace Project_PBO_03.Context
             commandExecutor(query, parameters);
         }
 
-        public static void update(m_Administrator editMahasiswa)
+        // Method update yang menerima parameter individual
+        public static void update(int idadmin, string kodeverifikasi, string namaadmin, string telpadmin, string usrnmeadmin, string pwadmin, string emailadmin)
         {
-            string query = $"UPDATE {table} SET idadmin = @idadmin, kodeverifikasi = @kodeverifikasi, namaadmin = @namaadmin, telpadmin = @telpadmin, usrnmeadmin = @usrnmeadmin, pwadmin = @pwadmin, emailadmin = @emailadmin";
+            string query = $"UPDATE {table} SET kodeverifikasi = @kodeverifikasi, namaadmin = @namaadmin, telpadmin = @telpadmin, usrnmeadmin = @usrnmeadmin, pwadmin = @pwadmin, emailadmin = @emailadmin WHERE idadmin = @idadmin";
             NpgsqlParameter[] parameters =
             {
-                new NpgsqlParameter("@idadmin", NpgsqlDbType.Integer){Value = editMahasiswa.id_admin },
-                new NpgsqlParameter("@kodeverifikasi", NpgsqlDbType.Varchar){Value = editMahasiswa.kode_verif},
-                new NpgsqlParameter("@namaadmin", NpgsqlDbType.Varchar){Value = editMahasiswa.nama_admin},
-                new NpgsqlParameter("@telpadmin", NpgsqlDbType.Varchar){Value = editMahasiswa.telp_admin},
-                new NpgsqlParameter("@usrnmeadmin", NpgsqlDbType.Varchar){Value = editMahasiswa.username_admin},
-                new NpgsqlParameter("@pwadmin", NpgsqlDbType.Varchar){Value = editMahasiswa.pass_admin},
-                new NpgsqlParameter("@emailadmin", NpgsqlDbType.Varchar){Value = editMahasiswa.email_admin},
+                new NpgsqlParameter("@idadmin", NpgsqlDbType.Integer){Value = idadmin },
+                new NpgsqlParameter("@kodeverifikasi", NpgsqlDbType.Varchar){Value = kodeverifikasi},
+                new NpgsqlParameter("@namaadmin", NpgsqlDbType.Varchar){Value = namaadmin},
+                new NpgsqlParameter("@telpadmin", NpgsqlDbType.Varchar){Value = telpadmin},
+                new NpgsqlParameter("@usrnmeadmin", NpgsqlDbType.Varchar){Value = usrnmeadmin},
+                new NpgsqlParameter("@pwadmin", NpgsqlDbType.Varchar){Value = pwadmin},
+                new NpgsqlParameter("@emailadmin", NpgsqlDbType.Varchar){Value = emailadmin},
             };
             commandExecutor(query, parameters);
         }
