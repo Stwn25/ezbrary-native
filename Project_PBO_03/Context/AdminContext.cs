@@ -59,18 +59,18 @@ namespace Project_PBO_03.Context
             commandExecutor(query, parameters);
         }
 
-        public static void update(m_Administrator editMahasiswa)
+        public static void update(m_Administrator editAdmin)
         {
             string query = $"UPDATE {table} SET idadmin = @idadmin, kodeverifikasi = @kodeverifikasi, namaadmin = @namaadmin, telpadmin = @telpadmin, usrnmeadmin = @usrnmeadmin, pwadmin = @pwadmin, emailadmin = @emailadmin";
             NpgsqlParameter[] parameters =
             {
-                new NpgsqlParameter("@idadmin", NpgsqlDbType.Integer){Value = editMahasiswa.id_admin },
-                new NpgsqlParameter("@kodeverifikasi", NpgsqlDbType.Varchar){Value = editMahasiswa.kode_verif},
-                new NpgsqlParameter("@namaadmin", NpgsqlDbType.Varchar){Value = editMahasiswa.nama_admin},
-                new NpgsqlParameter("@telpadmin", NpgsqlDbType.Varchar){Value = editMahasiswa.telp_admin},
-                new NpgsqlParameter("@usrnmeadmin", NpgsqlDbType.Varchar){Value = editMahasiswa.username_admin},
-                new NpgsqlParameter("@pwadmin", NpgsqlDbType.Varchar){Value = editMahasiswa.pass_admin},
-                new NpgsqlParameter("@emailadmin", NpgsqlDbType.Varchar){Value = editMahasiswa.email_admin},
+                new NpgsqlParameter("@idadmin", NpgsqlDbType.Integer){Value = editAdmin.id_admin },
+                new NpgsqlParameter("@kodeverifikasi", NpgsqlDbType.Varchar){Value = editAdmin.kode_verif},
+                new NpgsqlParameter("@namaadmin", NpgsqlDbType.Varchar){Value = editAdmin.nama_admin},
+                new NpgsqlParameter("@telpadmin", NpgsqlDbType.Varchar){Value = editAdmin.telp_admin},
+                new NpgsqlParameter("@usrnmeadmin", NpgsqlDbType.Varchar){Value = editAdmin.username_admin},
+                new NpgsqlParameter("@pwadmin", NpgsqlDbType.Varchar){Value = editAdmin.pass_admin},
+                new NpgsqlParameter("@emailadmin", NpgsqlDbType.Varchar){Value = editAdmin .email_admin},
             };
             commandExecutor(query, parameters);
         }
