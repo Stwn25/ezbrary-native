@@ -123,18 +123,7 @@ namespace Project_PBO_03
 
         private void btKeluarUser_Click_1(object sender, EventArgs e)
         {
-            /*btPeminjamanUser.BackColor = Color.CornflowerBlue;
-            btBukuFavUser.BackColor = Color.CornflowerBlue;
-            btRiwayatPeminjamanUser.BackColor = Color.CornflowerBlue;
-            btProfileUser.BackColor = Color.CornflowerBlue;
-            btKeluarUser.BackColor = Color.Black;
-            this.pnlPeminjamanUser.Hide();
-            this.pnlBukuFavUser.Hide();
-            this.pnlRiwayatUser.Hide();
-            this.pnlProfileUser.Hide();
-            Application.Exit();*/
-            V_Login login = new V_Login();
-            login.Show();
+            this.Close();
         }
 
         private void pnlPeminjamanUser_Paint_1(object sender, PaintEventArgs e)
@@ -143,6 +132,11 @@ namespace Project_PBO_03
         }
 
         private void pictureBoxPerpusUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void V_User_Load(object sender, EventArgs e)
         {
 
         }

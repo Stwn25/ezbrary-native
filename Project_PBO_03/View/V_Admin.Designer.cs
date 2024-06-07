@@ -46,6 +46,13 @@ namespace Project_PBO_03
             lblDaftarBuku = new Label();
             tbDaftarBukuAdmin = new TextBox();
             pnlDaftarBukuAdmin = new Panel();
+            ucPenerbitTambahBukuAdmin1 = new ucPenerbitTambahBukuAdmin();
+            ucJenisBukuTambahBukuAdmin1 = new ucJenisBukuTambahBukuAdmin();
+            ucPenulisTambahBukuAdmin2 = new ucPenulisTambahBukuAdmin();
+            btJenisBuku = new Button();
+            btPenulis = new Button();
+            btPenerbit = new Button();
+            btTambahBukuAdmin = new Button();
             dgvKelolaBukuAdmin = new DataGridView();
             pnlPeminjamanAdmin = new Panel();
             dataGridView1 = new DataGridView();
@@ -54,6 +61,7 @@ namespace Project_PBO_03
             dataGridView2 = new DataGridView();
             label1 = new Label();
             pnlProfileAdmin = new Panel();
+            btSimpanPerubahanA = new Button();
             lblPasswordProfileAdmin = new Label();
             btPasswordProfileAdmin = new TextBox();
             lblNoteleponProfileAdmin = new Label();
@@ -66,6 +74,21 @@ namespace Project_PBO_03
             tbUsernameAdmin = new TextBox();
             lblProfileAdmin = new Label();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
+            pnlTambahBukuAdmin = new Panel();
+            tbTahunTerbit = new TextBox();
+            tbSinopsisBuku = new RichTextBox();
+            tbNamaBuku = new TextBox();
+            cbJenisBuku = new ComboBox();
+            cbPenerbit = new ComboBox();
+            cbPenulis = new ComboBox();
+            btTBAdmin = new Button();
+            label8 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            label7 = new Label();
             pnlAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxVektoradmin).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPerpusAdmin).BeginInit();
@@ -76,6 +99,7 @@ namespace Project_PBO_03
             pnlRiwayatPeminjaman.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             pnlProfileAdmin.SuspendLayout();
+            pnlTambahBukuAdmin.SuspendLayout();
             SuspendLayout();
             // 
             // pnlAdmin
@@ -204,6 +228,7 @@ namespace Project_PBO_03
             pictureBoxVektoradmin.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxVektoradmin.TabIndex = 1;
             pictureBoxVektoradmin.TabStop = false;
+            pictureBoxVektoradmin.Click += pictureBoxVektoradmin_Click;
             // 
             // pictureBoxPerpusAdmin
             // 
@@ -256,28 +281,121 @@ namespace Project_PBO_03
             // 
             // pnlDaftarBukuAdmin
             // 
+            pnlDaftarBukuAdmin.BackColor = Color.White;
+            pnlDaftarBukuAdmin.Controls.Add(ucPenerbitTambahBukuAdmin1);
+            pnlDaftarBukuAdmin.Controls.Add(ucJenisBukuTambahBukuAdmin1);
+            pnlDaftarBukuAdmin.Controls.Add(ucPenulisTambahBukuAdmin2);
+            pnlDaftarBukuAdmin.Controls.Add(btJenisBuku);
+            pnlDaftarBukuAdmin.Controls.Add(btPenulis);
+            pnlDaftarBukuAdmin.Controls.Add(btPenerbit);
+            pnlDaftarBukuAdmin.Controls.Add(btTambahBukuAdmin);
             pnlDaftarBukuAdmin.Controls.Add(dgvKelolaBukuAdmin);
             pnlDaftarBukuAdmin.Controls.Add(tbDaftarBukuAdmin);
             pnlDaftarBukuAdmin.Controls.Add(lblDaftarBuku);
-            pnlDaftarBukuAdmin.Location = new Point(418, 318);
+            pnlDaftarBukuAdmin.Location = new Point(417, 276);
             pnlDaftarBukuAdmin.Name = "pnlDaftarBukuAdmin";
             pnlDaftarBukuAdmin.Size = new Size(1507, 805);
             pnlDaftarBukuAdmin.TabIndex = 7;
             // 
+            // ucPenerbitTambahBukuAdmin1
+            // 
+            ucPenerbitTambahBukuAdmin1.BackColor = Color.White;
+            ucPenerbitTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
+            ucPenerbitTambahBukuAdmin1.Location = new Point(448, 23);
+            ucPenerbitTambahBukuAdmin1.Name = "ucPenerbitTambahBukuAdmin1";
+            ucPenerbitTambahBukuAdmin1.Size = new Size(500, 659);
+            ucPenerbitTambahBukuAdmin1.TabIndex = 13;
+            // 
+            // ucJenisBukuTambahBukuAdmin1
+            // 
+            ucJenisBukuTambahBukuAdmin1.BackColor = Color.White;
+            ucJenisBukuTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
+            ucJenisBukuTambahBukuAdmin1.Location = new Point(448, 47);
+            ucJenisBukuTambahBukuAdmin1.Name = "ucJenisBukuTambahBukuAdmin1";
+            ucJenisBukuTambahBukuAdmin1.Size = new Size(498, 573);
+            ucJenisBukuTambahBukuAdmin1.TabIndex = 11;
+            ucJenisBukuTambahBukuAdmin1.Load += ucJenisBukuTambahBukuAdmin1_Load;
+            // 
+            // ucPenulisTambahBukuAdmin2
+            // 
+            ucPenulisTambahBukuAdmin2.BackColor = Color.White;
+            ucPenulisTambahBukuAdmin2.BorderStyle = BorderStyle.FixedSingle;
+            ucPenulisTambahBukuAdmin2.Location = new Point(448, 39);
+            ucPenulisTambahBukuAdmin2.Name = "ucPenulisTambahBukuAdmin2";
+            ucPenulisTambahBukuAdmin2.Size = new Size(500, 585);
+            ucPenulisTambahBukuAdmin2.TabIndex = 12;
+            // 
+            // btJenisBuku
+            // 
+            btJenisBuku.BackColor = SystemColors.HotTrack;
+            btJenisBuku.FlatStyle = FlatStyle.Popup;
+            btJenisBuku.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btJenisBuku.ForeColor = Color.White;
+            btJenisBuku.Location = new Point(67, 718);
+            btJenisBuku.Name = "btJenisBuku";
+            btJenisBuku.Size = new Size(286, 56);
+            btJenisBuku.TabIndex = 10;
+            btJenisBuku.Text = "Jenis Buku";
+            btJenisBuku.UseVisualStyleBackColor = false;
+            btJenisBuku.Click += btJenisBuku_Click;
+            // 
+            // btPenulis
+            // 
+            btPenulis.BackColor = SystemColors.HotTrack;
+            btPenulis.FlatStyle = FlatStyle.Popup;
+            btPenulis.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btPenulis.ForeColor = Color.White;
+            btPenulis.Location = new Point(432, 718);
+            btPenulis.Name = "btPenulis";
+            btPenulis.Size = new Size(286, 56);
+            btPenulis.TabIndex = 9;
+            btPenulis.Text = "Penulis";
+            btPenulis.UseVisualStyleBackColor = false;
+            btPenulis.Click += btPenulis_Click;
+            // 
+            // btPenerbit
+            // 
+            btPenerbit.BackColor = SystemColors.HotTrack;
+            btPenerbit.FlatStyle = FlatStyle.Popup;
+            btPenerbit.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btPenerbit.ForeColor = Color.White;
+            btPenerbit.Location = new Point(796, 718);
+            btPenerbit.Name = "btPenerbit";
+            btPenerbit.Size = new Size(286, 56);
+            btPenerbit.TabIndex = 8;
+            btPenerbit.Text = "Penerbit";
+            btPenerbit.UseVisualStyleBackColor = false;
+            btPenerbit.Click += btPenerbit_Click;
+            // 
+            // btTambahBukuAdmin
+            // 
+            btTambahBukuAdmin.BackColor = SystemColors.HotTrack;
+            btTambahBukuAdmin.FlatStyle = FlatStyle.Popup;
+            btTambahBukuAdmin.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btTambahBukuAdmin.ForeColor = Color.White;
+            btTambahBukuAdmin.Location = new Point(1156, 718);
+            btTambahBukuAdmin.Name = "btTambahBukuAdmin";
+            btTambahBukuAdmin.Size = new Size(286, 56);
+            btTambahBukuAdmin.TabIndex = 7;
+            btTambahBukuAdmin.Text = "Tambah Buku";
+            btTambahBukuAdmin.UseVisualStyleBackColor = false;
+            btTambahBukuAdmin.Click += btTambahBukuAdmin_Click;
+            // 
             // dgvKelolaBukuAdmin
             // 
+            dgvKelolaBukuAdmin.BackgroundColor = SystemColors.ControlLight;
             dgvKelolaBukuAdmin.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvKelolaBukuAdmin.Location = new Point(23, 150);
             dgvKelolaBukuAdmin.Name = "dgvKelolaBukuAdmin";
             dgvKelolaBukuAdmin.RowHeadersWidth = 51;
-            dgvKelolaBukuAdmin.Size = new Size(1460, 625);
+            dgvKelolaBukuAdmin.Size = new Size(1460, 551);
             dgvKelolaBukuAdmin.TabIndex = 7;
             // 
             // pnlPeminjamanAdmin
             // 
             pnlPeminjamanAdmin.Controls.Add(dataGridView1);
             pnlPeminjamanAdmin.Controls.Add(lblBookingAdmin);
-            pnlPeminjamanAdmin.Location = new Point(438, 309);
+            pnlPeminjamanAdmin.Location = new Point(417, 275);
             pnlPeminjamanAdmin.Name = "pnlPeminjamanAdmin";
             pnlPeminjamanAdmin.Size = new Size(1507, 805);
             pnlPeminjamanAdmin.TabIndex = 8;
@@ -305,7 +423,7 @@ namespace Project_PBO_03
             // 
             pnlRiwayatPeminjaman.Controls.Add(dataGridView2);
             pnlRiwayatPeminjaman.Controls.Add(label1);
-            pnlRiwayatPeminjaman.Location = new Point(461, 288);
+            pnlRiwayatPeminjaman.Location = new Point(416, 275);
             pnlRiwayatPeminjaman.Name = "pnlRiwayatPeminjaman";
             pnlRiwayatPeminjaman.Size = new Size(1507, 805);
             pnlRiwayatPeminjaman.TabIndex = 9;
@@ -331,6 +449,7 @@ namespace Project_PBO_03
             // 
             // pnlProfileAdmin
             // 
+            pnlProfileAdmin.Controls.Add(btSimpanPerubahanA);
             pnlProfileAdmin.Controls.Add(lblPasswordProfileAdmin);
             pnlProfileAdmin.Controls.Add(btPasswordProfileAdmin);
             pnlProfileAdmin.Controls.Add(lblNoteleponProfileAdmin);
@@ -342,11 +461,24 @@ namespace Project_PBO_03
             pnlProfileAdmin.Controls.Add(lblUsernameProfileAdmin);
             pnlProfileAdmin.Controls.Add(tbUsernameAdmin);
             pnlProfileAdmin.Controls.Add(lblProfileAdmin);
-            pnlProfileAdmin.Location = new Point(501, 280);
+            pnlProfileAdmin.Location = new Point(416, 275);
             pnlProfileAdmin.Name = "pnlProfileAdmin";
             pnlProfileAdmin.Size = new Size(1507, 805);
             pnlProfileAdmin.TabIndex = 10;
             pnlProfileAdmin.Paint += pnlProfileAdmin_Paint;
+            // 
+            // btSimpanPerubahanA
+            // 
+            btSimpanPerubahanA.BackColor = SystemColors.HotTrack;
+            btSimpanPerubahanA.FlatStyle = FlatStyle.Popup;
+            btSimpanPerubahanA.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btSimpanPerubahanA.ForeColor = Color.White;
+            btSimpanPerubahanA.Location = new Point(625, 631);
+            btSimpanPerubahanA.Name = "btSimpanPerubahanA";
+            btSimpanPerubahanA.Size = new Size(286, 52);
+            btSimpanPerubahanA.TabIndex = 16;
+            btSimpanPerubahanA.Text = "Simpan Perubahan";
+            btSimpanPerubahanA.UseVisualStyleBackColor = false;
             // 
             // lblPasswordProfileAdmin
             // 
@@ -360,7 +492,8 @@ namespace Project_PBO_03
             // 
             // btPasswordProfileAdmin
             // 
-            btPasswordProfileAdmin.BackColor = Color.Silver;
+            btPasswordProfileAdmin.BackColor = Color.White;
+            btPasswordProfileAdmin.BorderStyle = BorderStyle.FixedSingle;
             btPasswordProfileAdmin.Location = new Point(58, 534);
             btPasswordProfileAdmin.Multiline = true;
             btPasswordProfileAdmin.Name = "btPasswordProfileAdmin";
@@ -379,7 +512,8 @@ namespace Project_PBO_03
             // 
             // tbNoTeleponProfileAdmin
             // 
-            tbNoTeleponProfileAdmin.BackColor = Color.Silver;
+            tbNoTeleponProfileAdmin.BackColor = Color.White;
+            tbNoTeleponProfileAdmin.BorderStyle = BorderStyle.FixedSingle;
             tbNoTeleponProfileAdmin.Location = new Point(58, 444);
             tbNoTeleponProfileAdmin.Multiline = true;
             tbNoTeleponProfileAdmin.Name = "tbNoTeleponProfileAdmin";
@@ -398,7 +532,8 @@ namespace Project_PBO_03
             // 
             // tbEmailProfileAdmin
             // 
-            tbEmailProfileAdmin.BackColor = Color.Silver;
+            tbEmailProfileAdmin.BackColor = Color.White;
+            tbEmailProfileAdmin.BorderStyle = BorderStyle.FixedSingle;
             tbEmailProfileAdmin.Location = new Point(58, 342);
             tbEmailProfileAdmin.Multiline = true;
             tbEmailProfileAdmin.Name = "tbEmailProfileAdmin";
@@ -417,7 +552,8 @@ namespace Project_PBO_03
             // 
             // tbNamaProfileAdmin
             // 
-            tbNamaProfileAdmin.BackColor = Color.Silver;
+            tbNamaProfileAdmin.BackColor = Color.White;
+            tbNamaProfileAdmin.BorderStyle = BorderStyle.FixedSingle;
             tbNamaProfileAdmin.Location = new Point(58, 249);
             tbNamaProfileAdmin.Multiline = true;
             tbNamaProfileAdmin.Name = "tbNamaProfileAdmin";
@@ -436,7 +572,8 @@ namespace Project_PBO_03
             // 
             // tbUsernameAdmin
             // 
-            tbUsernameAdmin.BackColor = Color.Silver;
+            tbUsernameAdmin.BackColor = Color.White;
+            tbUsernameAdmin.BorderStyle = BorderStyle.FixedSingle;
             tbUsernameAdmin.Location = new Point(58, 156);
             tbUsernameAdmin.Multiline = true;
             tbUsernameAdmin.Name = "tbUsernameAdmin";
@@ -456,19 +593,19 @@ namespace Project_PBO_03
             // 
             // nightControlBox1
             // 
-            nightControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             nightControlBox1.BackColor = Color.Transparent;
             nightControlBox1.CloseHoverColor = Color.FromArgb(199, 80, 80);
             nightControlBox1.CloseHoverForeColor = Color.White;
             nightControlBox1.DefaultLocation = true;
             nightControlBox1.DisableMaximizeColor = Color.FromArgb(105, 105, 105);
             nightControlBox1.DisableMinimizeColor = Color.FromArgb(105, 105, 105);
+            nightControlBox1.Dock = DockStyle.Right;
             nightControlBox1.EnableCloseColor = Color.FromArgb(160, 160, 160);
             nightControlBox1.EnableMaximizeButton = true;
             nightControlBox1.EnableMaximizeColor = Color.FromArgb(160, 160, 160);
             nightControlBox1.EnableMinimizeButton = true;
             nightControlBox1.EnableMinimizeColor = Color.FromArgb(160, 160, 160);
-            nightControlBox1.Location = new Point(424, 0);
+            nightControlBox1.Location = new Point(1781, 0);
             nightControlBox1.MaximizeHoverColor = Color.FromArgb(15, 255, 255, 255);
             nightControlBox1.MaximizeHoverForeColor = Color.White;
             nightControlBox1.MinimizeHoverColor = Color.FromArgb(15, 255, 255, 255);
@@ -477,21 +614,179 @@ namespace Project_PBO_03
             nightControlBox1.Size = new Size(139, 31);
             nightControlBox1.TabIndex = 11;
             // 
+            // pnlTambahBukuAdmin
+            // 
+            pnlTambahBukuAdmin.Controls.Add(tbTahunTerbit);
+            pnlTambahBukuAdmin.Controls.Add(tbSinopsisBuku);
+            pnlTambahBukuAdmin.Controls.Add(tbNamaBuku);
+            pnlTambahBukuAdmin.Controls.Add(cbJenisBuku);
+            pnlTambahBukuAdmin.Controls.Add(cbPenerbit);
+            pnlTambahBukuAdmin.Controls.Add(cbPenulis);
+            pnlTambahBukuAdmin.Controls.Add(btTBAdmin);
+            pnlTambahBukuAdmin.Controls.Add(label8);
+            pnlTambahBukuAdmin.Controls.Add(label2);
+            pnlTambahBukuAdmin.Controls.Add(label3);
+            pnlTambahBukuAdmin.Controls.Add(label4);
+            pnlTambahBukuAdmin.Controls.Add(label5);
+            pnlTambahBukuAdmin.Controls.Add(label6);
+            pnlTambahBukuAdmin.Controls.Add(label7);
+            pnlTambahBukuAdmin.Location = new Point(416, 275);
+            pnlTambahBukuAdmin.Name = "pnlTambahBukuAdmin";
+            pnlTambahBukuAdmin.Size = new Size(1507, 805);
+            pnlTambahBukuAdmin.TabIndex = 16;
+            pnlTambahBukuAdmin.Paint += pnlTambahBukuAdmin_Paint;
+            // 
+            // tbTahunTerbit
+            // 
+            tbTahunTerbit.BorderStyle = BorderStyle.FixedSingle;
+            tbTahunTerbit.Location = new Point(59, 444);
+            tbTahunTerbit.Name = "tbTahunTerbit";
+            tbTahunTerbit.Size = new Size(619, 27);
+            tbTahunTerbit.TabIndex = 26;
+            // 
+            // tbSinopsisBuku
+            // 
+            tbSinopsisBuku.BorderStyle = BorderStyle.FixedSingle;
+            tbSinopsisBuku.Location = new Point(58, 237);
+            tbSinopsisBuku.Name = "tbSinopsisBuku";
+            tbSinopsisBuku.Size = new Size(619, 156);
+            tbSinopsisBuku.TabIndex = 25;
+            tbSinopsisBuku.Text = "";
+            // 
+            // tbNamaBuku
+            // 
+            tbNamaBuku.BorderStyle = BorderStyle.FixedSingle;
+            tbNamaBuku.Location = new Point(58, 156);
+            tbNamaBuku.Name = "tbNamaBuku";
+            tbNamaBuku.Size = new Size(619, 27);
+            tbNamaBuku.TabIndex = 24;
+            // 
+            // cbJenisBuku
+            // 
+            cbJenisBuku.FormattingEnabled = true;
+            cbJenisBuku.Location = new Point(808, 444);
+            cbJenisBuku.Name = "cbJenisBuku";
+            cbJenisBuku.Size = new Size(618, 28);
+            cbJenisBuku.TabIndex = 23;
+            // 
+            // cbPenerbit
+            // 
+            cbPenerbit.FormattingEnabled = true;
+            cbPenerbit.Location = new Point(808, 155);
+            cbPenerbit.Name = "cbPenerbit";
+            cbPenerbit.Size = new Size(618, 28);
+            cbPenerbit.TabIndex = 21;
+            cbPenerbit.SelectedIndexChanged += cbPenerbit_SelectedIndexChanged;
+            // 
+            // cbPenulis
+            // 
+            cbPenulis.FormattingEnabled = true;
+            cbPenulis.Location = new Point(808, 296);
+            cbPenulis.Name = "cbPenulis";
+            cbPenulis.Size = new Size(618, 28);
+            cbPenulis.TabIndex = 20;
+            // 
+            // btTBAdmin
+            // 
+            btTBAdmin.BackColor = SystemColors.HotTrack;
+            btTBAdmin.FlatStyle = FlatStyle.Popup;
+            btTBAdmin.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btTBAdmin.ForeColor = Color.White;
+            btTBAdmin.Location = new Point(611, 627);
+            btTBAdmin.Name = "btTBAdmin";
+            btTBAdmin.Size = new Size(286, 56);
+            btTBAdmin.TabIndex = 7;
+            btTBAdmin.Text = "Tambah";
+            btTBAdmin.UseVisualStyleBackColor = false;
+            btTBAdmin.Click += btTBAdmin_Click;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Location = new Point(808, 416);
+            label8.Name = "label8";
+            label8.Size = new Size(119, 25);
+            label8.TabIndex = 17;
+            label8.Text = "Jenis Buku";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(60, 416);
+            label2.Name = "label2";
+            label2.Size = new Size(136, 25);
+            label2.TabIndex = 15;
+            label2.Text = "Tahun Terbit";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(808, 121);
+            label3.Name = "label3";
+            label3.Size = new Size(92, 25);
+            label3.TabIndex = 13;
+            label3.Text = "Penerbit";
+            label3.Click += label3_Click;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(808, 268);
+            label4.Name = "label4";
+            label4.Size = new Size(83, 25);
+            label4.TabIndex = 11;
+            label4.Text = "Penulis";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(58, 209);
+            label5.Name = "label5";
+            label5.Size = new Size(95, 25);
+            label5.TabIndex = 9;
+            label5.Text = "Sinopsis";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(58, 125);
+            label6.Name = "label6";
+            label6.Size = new Size(123, 25);
+            label6.TabIndex = 7;
+            label6.Text = "Nama Buku";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Location = new Point(36, 30);
+            label7.Name = "label7";
+            label7.Size = new Size(146, 25);
+            label7.TabIndex = 5;
+            label7.Text = "Tambah Buku";
+            // 
             // V_Admin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1920, 1080);
             Controls.Add(nightControlBox1);
-            Controls.Add(pnlProfileAdmin);
-            Controls.Add(pnlRiwayatPeminjaman);
-            Controls.Add(pnlDaftarBukuAdmin);
             Controls.Add(lblhai1Admin);
-            Controls.Add(pnlPeminjamanAdmin);
             Controls.Add(lblhaiAdmin);
             Controls.Add(pictureBoxPerpusAdmin);
             Controls.Add(pictureBoxVektoradmin);
             Controls.Add(pnlAdmin);
+            Controls.Add(pnlDaftarBukuAdmin);
+            Controls.Add(pnlTambahBukuAdmin);
+            Controls.Add(pnlPeminjamanAdmin);
+            Controls.Add(pnlRiwayatPeminjaman);
+            Controls.Add(pnlProfileAdmin);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_Admin";
             Text = "V_Admin";
@@ -511,20 +806,14 @@ namespace Project_PBO_03
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             pnlProfileAdmin.ResumeLayout(false);
             pnlProfileAdmin.PerformLayout();
+            pnlTambahBukuAdmin.ResumeLayout(false);
+            pnlTambahBukuAdmin.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
-        private void V_Admin_Load(object sender, EventArgs e)
-        {
-            
-           
-           
-        }
-
         private void pnlProfileAdmin_Paint(object sender, PaintEventArgs e)
         {
-            /*throw new NotImplementedException();*/
           
         }
 
@@ -535,28 +824,15 @@ namespace Project_PBO_03
             btRiwayatPeminjaman.BackColor = Color.CornflowerBlue;
             btProfileAdmin.BackColor = Color.CornflowerBlue;
             btKeluarAdmin.BackColor = Color.CornflowerBlue;
-            this.pnlDaftarBukuAdmin.Hide();
+            this.pnlTambahBukuAdmin.Hide();
             this.pnlPeminjamanAdmin.Show();
-            this.pnlPeminjamanAdmin.Dock = DockStyle.Bottom;
+            /*this.pnlPeminjamanAdmin.Dock = DockStyle.Bottom;*/
+            this.pnlDaftarBukuAdmin.Hide();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Hide();
         }
 
-        private void btKelolaBuku_Click(object sender, EventArgs e)
-        {
-            btKelolaBuku.BackColor = Color.Black;
-            btPeminjaman.BackColor = Color.CornflowerBlue;
-            btRiwayatPeminjaman.BackColor = Color.CornflowerBlue;
-            btProfileAdmin.BackColor = Color.CornflowerBlue;
-            btKeluarAdmin.BackColor = Color.CornflowerBlue;
-            this.pnlDaftarBukuAdmin.Show();
-            this.pnlDaftarBukuAdmin.Dock = DockStyle.Bottom;
-            this.pnlPeminjamanAdmin.Hide();
-            this.pnlRiwayatPeminjaman.Hide();
-            this.pnlProfileAdmin.Hide();
-
-        }
-
+       
         #endregion
 
         private Panel pnlAdmin;
@@ -595,5 +871,29 @@ namespace Project_PBO_03
         private Label lblEmailProfileAdmin;
         private TextBox tbEmailProfileAdmin;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
+        private Button btTambahBukuAdmin;
+        private Panel pnlTambahBukuAdmin;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private Label label5;
+        private Label label6;
+        private Label label7;
+        private Button btTBAdmin;
+        private Label label8;
+        private ComboBox cbJenisBuku;
+        private ComboBox cbPenerbit;
+        private ComboBox cbPenulis;
+        private ucPenulisTambahBukuAdmin ucPenulisTambahBukuAdmin1;
+        private Button btSimpanPerubahanA;
+        private TextBox tbNamaBuku;
+        private RichTextBox tbSinopsisBuku;
+        private TextBox tbTahunTerbit;
+        private Button btJenisBuku;
+        private Button btPenulis;
+        private Button btPenerbit;
+        private ucJenisBukuTambahBukuAdmin ucJenisBukuTambahBukuAdmin1;
+        private ucPenulisTambahBukuAdmin ucPenulisTambahBukuAdmin2;
+        private ucPenerbitTambahBukuAdmin ucPenerbitTambahBukuAdmin1;
     }
 }

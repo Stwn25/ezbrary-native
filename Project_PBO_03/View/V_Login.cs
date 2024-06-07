@@ -122,6 +122,10 @@ namespace Project_PBO_03
 
             if (loginResult)
             {
+                this.pnlMasuk.Hide();
+                this.pnlAwal.Show();
+                tbUsernameM.Text =default;
+                tbPasswordD.Text =default;
                 V_User User = new V_User();
                 User.Show();
             }
@@ -141,6 +145,9 @@ namespace Project_PBO_03
 
             if (loginResult)
             {
+                tbUsernameM.Text = default;
+                tbPasswordD.Text = default;
+
                 this.pnlMasuk.Hide();
                 this.pnlKodevAdmin.Show();
                 this.pnlKodevAdmin.Dock = DockStyle.Left;
@@ -162,6 +169,9 @@ namespace Project_PBO_03
 
             if (tbKodevAdmin.Text == kode_verif)
             {
+                tbKodevAdmin.Text = default;
+                this.pnlAwal.Show();
+                this.pnlKodevAdmin.Hide();
                 V_Admin admin = new V_Admin();
                 admin.Show();
             }
@@ -241,6 +251,8 @@ namespace Project_PBO_03
 
             if (tbKodevSA.Text == kode_verif)
             {
+                this.pnlKodevSA.Hide();
+                this.pnlAwal.Show();
                 V_SuperAdmin superadmin = new V_SuperAdmin();
                 superadmin.Show();
             }
@@ -290,6 +302,11 @@ namespace Project_PBO_03
         }
 
         private void tbUsernameMSA_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlMasuk_Paint(object sender, PaintEventArgs e)
         {
 
         }
