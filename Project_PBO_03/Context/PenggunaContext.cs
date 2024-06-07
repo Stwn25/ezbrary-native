@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NpgsqlTypes;
 using Npgsql;
+using NpgsqlTypes;
 using Project_PBO_03.Core;
 using Project_PBO_03.Model;
 

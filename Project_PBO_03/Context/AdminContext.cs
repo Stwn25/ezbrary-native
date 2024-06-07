@@ -1,10 +1,7 @@
-﻿using Project_PBO_03.Core;
+﻿    using Project_PBO_03.Core;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Npgsql;
 using NpgsqlTypes;
 using Project_PBO_03.Model;
@@ -15,9 +12,10 @@ namespace Project_PBO_03.Context
     {
         private static string table = "administrator";
 
+
         public static DataTable all()
         {
-            string query = $"SELECT * from {table}";
+            string query = $"SELECT * FROM {table}";
             DataTable dataAdministrator = queryExecutor(query);
             return dataAdministrator;
         }
@@ -61,7 +59,7 @@ namespace Project_PBO_03.Context
 
         public static void update(m_Administrator editAdmin)
         {
-            string query = $"UPDATE {table} SET idadmin = @idadmin, kodeverifikasi = @kodeverifikasi, namaadmin = @namaadmin, telpadmin = @telpadmin, usrnmeadmin = @usrnmeadmin, pwadmin = @pwadmin, emailadmin = @emailadmin";
+            string query = $"UPDATE {table} SET kodeverifikasi = @kodeverifikasi, namaadmin = @namaadmin, telpadmin = @telpadmin, usrnmeadmin = @usrnmeadmin, pwadmin = @pwadmin, emailadmin = @emailadmin WHERE idadmin = @idadmin";
             NpgsqlParameter[] parameters =
             {
                 new NpgsqlParameter("@idadmin", NpgsqlDbType.Integer){Value = editAdmin.id_admin },

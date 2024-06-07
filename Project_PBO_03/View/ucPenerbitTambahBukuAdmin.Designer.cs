@@ -28,28 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            dgvPenerbit = new DataGridView();
             label1 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            tbNamaPenerbit = new TextBox();
+            tbAlamatPenerbit = new TextBox();
             btSimpanPenerbit = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            button1 = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvPenerbit).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvPenerbit
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(15, 23);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(465, 356);
-            dataGridView1.TabIndex = 0;
+            dgvPenerbit.BackgroundColor = SystemColors.ControlLight;
+            dgvPenerbit.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPenerbit.Location = new Point(18, 50);
+            dgvPenerbit.Name = "dgvPenerbit";
+            dgvPenerbit.RowHeadersWidth = 51;
+            dgvPenerbit.Size = new Size(465, 356);
+            dgvPenerbit.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(15, 402);
+            label1.Location = new Point(18, 429);
             label1.Name = "label1";
             label1.Size = new Size(107, 20);
             label1.TabIndex = 4;
@@ -58,63 +60,80 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(15, 480);
+            label2.Location = new Point(18, 507);
             label2.Name = "label2";
             label2.Size = new Size(115, 20);
             label2.TabIndex = 5;
             label2.Text = "Alamat Penerbit";
             // 
-            // textBox1
+            // tbNamaPenerbit
             // 
-            textBox1.Location = new Point(15, 425);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(465, 27);
-            textBox1.TabIndex = 6;
+            tbNamaPenerbit.BorderStyle = BorderStyle.FixedSingle;
+            tbNamaPenerbit.Location = new Point(18, 452);
+            tbNamaPenerbit.Name = "tbNamaPenerbit";
+            tbNamaPenerbit.Size = new Size(465, 27);
+            tbNamaPenerbit.TabIndex = 6;
             // 
-            // textBox2
+            // tbAlamatPenerbit
             // 
-            textBox2.Location = new Point(15, 503);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(465, 27);
-            textBox2.TabIndex = 7;
+            tbAlamatPenerbit.BorderStyle = BorderStyle.FixedSingle;
+            tbAlamatPenerbit.Location = new Point(18, 530);
+            tbAlamatPenerbit.Name = "tbAlamatPenerbit";
+            tbAlamatPenerbit.Size = new Size(465, 27);
+            tbAlamatPenerbit.TabIndex = 7;
             // 
             // btSimpanPenerbit
             // 
             btSimpanPenerbit.BackColor = SystemColors.Highlight;
+            btSimpanPenerbit.FlatStyle = FlatStyle.Popup;
             btSimpanPenerbit.Font = new Font("Nunito SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btSimpanPenerbit.ForeColor = Color.White;
-            btSimpanPenerbit.Location = new Point(174, 547);
+            btSimpanPenerbit.Location = new Point(177, 574);
             btSimpanPenerbit.Name = "btSimpanPenerbit";
             btSimpanPenerbit.Size = new Size(136, 35);
             btSimpanPenerbit.TabIndex = 8;
             btSimpanPenerbit.Text = "Simpan";
             btSimpanPenerbit.UseVisualStyleBackColor = false;
             // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(437, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(46, 41);
+            button1.TabIndex = 16;
+            button1.Text = "X";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // ucPenerbitTambahBukuAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             BorderStyle = BorderStyle.FixedSingle;
+            Controls.Add(button1);
             Controls.Add(btSimpanPenerbit);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(tbAlamatPenerbit);
+            Controls.Add(tbNamaPenerbit);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvPenerbit);
             Name = "ucPenerbitTambahBukuAdmin";
-            Size = new Size(496, 604);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Size = new Size(496, 624);
+            ((System.ComponentModel.ISupportInitialize)dgvPenerbit).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dgvPenerbit;
         private Label label1;
         private Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox tbNamaPenerbit;
+        private TextBox tbAlamatPenerbit;
         private Button btSimpanPenerbit;
+        private Button button1;
     }
 }
