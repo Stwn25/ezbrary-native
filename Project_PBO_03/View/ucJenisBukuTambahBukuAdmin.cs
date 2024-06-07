@@ -16,5 +16,15 @@ namespace Project_PBO_03
         {
             InitializeComponent();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void btSimpanJenisBuku_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

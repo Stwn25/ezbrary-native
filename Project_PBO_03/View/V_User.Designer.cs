@@ -44,7 +44,7 @@ namespace Project_PBO_03
             lblHai1User = new Label();
             pnlPeminjamanUser = new Panel();
             button1 = new Button();
-            dungeonComboBox1 = new ReaLTaiizor.Controls.DungeonComboBox();
+            cbJenis = new ReaLTaiizor.Controls.DungeonComboBox();
             tbPeminjamanUser = new TextBox();
             dgvPeminjamanUser = new DataGridView();
             lblPeminjamanUser = new Label();
@@ -242,7 +242,7 @@ namespace Project_PBO_03
             // pnlPeminjamanUser
             // 
             pnlPeminjamanUser.Controls.Add(button1);
-            pnlPeminjamanUser.Controls.Add(dungeonComboBox1);
+            pnlPeminjamanUser.Controls.Add(cbJenis);
             pnlPeminjamanUser.Controls.Add(tbPeminjamanUser);
             pnlPeminjamanUser.Controls.Add(dgvPeminjamanUser);
             pnlPeminjamanUser.Controls.Add(lblPeminjamanUser);
@@ -264,32 +264,32 @@ namespace Project_PBO_03
             button1.Text = "Search";
             button1.UseVisualStyleBackColor = false;
             // 
-            // dungeonComboBox1
+            // cbJenis
             // 
-            dungeonComboBox1.BackColor = Color.Black;
-            dungeonComboBox1.ColorA = Color.FromArgb(246, 132, 85);
-            dungeonComboBox1.ColorB = Color.FromArgb(231, 108, 57);
-            dungeonComboBox1.ColorC = Color.FromArgb(242, 241, 240);
-            dungeonComboBox1.ColorD = Color.FromArgb(253, 252, 252);
-            dungeonComboBox1.ColorE = Color.FromArgb(239, 237, 236);
-            dungeonComboBox1.ColorF = Color.FromArgb(180, 180, 180);
-            dungeonComboBox1.ColorG = Color.FromArgb(119, 119, 118);
-            dungeonComboBox1.ColorH = Color.FromArgb(224, 222, 220);
-            dungeonComboBox1.ColorI = Color.FromArgb(250, 249, 249);
-            dungeonComboBox1.DrawMode = DrawMode.OwnerDrawFixed;
-            dungeonComboBox1.DropDownHeight = 100;
-            dungeonComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            dungeonComboBox1.Font = new Font("Segoe UI", 10F);
-            dungeonComboBox1.ForeColor = Color.Black;
-            dungeonComboBox1.FormattingEnabled = true;
-            dungeonComboBox1.HoverSelectionColor = Color.Empty;
-            dungeonComboBox1.IntegralHeight = false;
-            dungeonComboBox1.ItemHeight = 20;
-            dungeonComboBox1.Location = new Point(23, 80);
-            dungeonComboBox1.Name = "dungeonComboBox1";
-            dungeonComboBox1.Size = new Size(169, 26);
-            dungeonComboBox1.StartIndex = 0;
-            dungeonComboBox1.TabIndex = 13;
+            cbJenis.BackColor = Color.Black;
+            cbJenis.ColorA = Color.FromArgb(246, 132, 85);
+            cbJenis.ColorB = Color.FromArgb(231, 108, 57);
+            cbJenis.ColorC = Color.FromArgb(242, 241, 240);
+            cbJenis.ColorD = Color.FromArgb(253, 252, 252);
+            cbJenis.ColorE = Color.FromArgb(239, 237, 236);
+            cbJenis.ColorF = Color.FromArgb(180, 180, 180);
+            cbJenis.ColorG = Color.FromArgb(119, 119, 118);
+            cbJenis.ColorH = Color.FromArgb(224, 222, 220);
+            cbJenis.ColorI = Color.FromArgb(250, 249, 249);
+            cbJenis.DrawMode = DrawMode.OwnerDrawFixed;
+            cbJenis.DropDownHeight = 100;
+            cbJenis.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbJenis.Font = new Font("Segoe UI", 10F);
+            cbJenis.ForeColor = Color.Black;
+            cbJenis.FormattingEnabled = true;
+            cbJenis.HoverSelectionColor = Color.Empty;
+            cbJenis.IntegralHeight = false;
+            cbJenis.ItemHeight = 20;
+            cbJenis.Location = new Point(23, 80);
+            cbJenis.Name = "cbJenis";
+            cbJenis.Size = new Size(169, 26);
+            cbJenis.StartIndex = 0;
+            cbJenis.TabIndex = 13;
             // 
             // tbPeminjamanUser
             // 
@@ -676,6 +676,6 @@ namespace Project_PBO_03
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
         private Button btSimpanPerubahanU;
         private Button button1;
-        private ReaLTaiizor.Controls.DungeonComboBox dungeonComboBox1;
+        private ReaLTaiizor.Controls.DungeonComboBox cbJenis;
     }
 }

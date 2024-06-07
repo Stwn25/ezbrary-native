@@ -40,7 +40,7 @@ namespace Project_PBO_03
             pbBuku = new PictureBox();
             pnlMasukSA = new Panel();
             pictureBox11 = new PictureBox();
-            button1 = new Button();
+            btMasukSA = new Button();
             pictureBox10 = new PictureBox();
             pictureBox9 = new PictureBox();
             tbPasswdMSA = new TextBox();
@@ -197,7 +197,7 @@ namespace Project_PBO_03
             // 
             pnlMasukSA.BorderStyle = BorderStyle.FixedSingle;
             pnlMasukSA.Controls.Add(pictureBox11);
-            pnlMasukSA.Controls.Add(button1);
+            pnlMasukSA.Controls.Add(btMasukSA);
             pnlMasukSA.Controls.Add(pictureBox10);
             pnlMasukSA.Controls.Add(pictureBox9);
             pnlMasukSA.Controls.Add(tbPasswdMSA);
@@ -219,19 +219,19 @@ namespace Project_PBO_03
             pictureBox11.TabStop = false;
             pictureBox11.Click += pictureBox11_Click;
             // 
-            // button1
+            // btMasukSA
             // 
-            button1.BackColor = SystemColors.HotTrack;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(150, 576);
-            button1.Name = "button1";
-            button1.Size = new Size(292, 38);
-            button1.TabIndex = 13;
-            button1.Text = "Masuk Sebagai Super Admin";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += btMasukSA_Click;
+            btMasukSA.BackColor = SystemColors.HotTrack;
+            btMasukSA.FlatStyle = FlatStyle.Flat;
+            btMasukSA.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btMasukSA.ForeColor = Color.White;
+            btMasukSA.Location = new Point(150, 576);
+            btMasukSA.Name = "btMasukSA";
+            btMasukSA.Size = new Size(292, 38);
+            btMasukSA.TabIndex = 13;
+            btMasukSA.Text = "Masuk Sebagai Super Admin";
+            btMasukSA.UseVisualStyleBackColor = false;
+            btMasukSA.Click += btMasukSA_Click;
             // 
             // pictureBox10
             // 
@@ -909,7 +909,7 @@ namespace Project_PBO_03
         private TextBox tbPasswdMSA;
         private TextBox tbUsernameMSA;
         private PictureBox pictureBox11;
-        private Button button1;
+        private Button btMasukSA;
         private Panel pnlKodevAdmin;
         private PictureBox pictureBox12;
         private Button btSubmitAdmin;

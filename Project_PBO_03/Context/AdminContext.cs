@@ -1,4 +1,4 @@
-﻿using Project_PBO_03.Core;
+﻿    using Project_PBO_03.Core;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,6 +14,7 @@ namespace Project_PBO_03.Context
     internal class AdminContext : DBconnection
     {
         private static string table = "administrator";
+
 
         public static DataTable all()
         {

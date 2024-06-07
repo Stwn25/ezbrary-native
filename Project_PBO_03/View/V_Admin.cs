@@ -26,6 +26,9 @@ namespace Project_PBO_03
             this.pnlPeminjamanAdmin.Hide();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Hide();
+            ucJenisBukuTambahBukuAdmin1.Hide();
+            ucPenerbitTambahBukuAdmin1.Hide();
+            ucPenulisTambahBukuAdmin2.Hide();
         }
 
         private void btKelolaBuku_Click(object sender, EventArgs e)
@@ -166,6 +169,37 @@ namespace Project_PBO_03
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ucJenisBukuTambahBukuAdmin2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btPenerbit_Click(object sender, EventArgs e)
+        {
+            ucPenerbitTambahBukuAdmin1.Show();
+            ucPenulisTambahBukuAdmin2.Hide();
+            ucJenisBukuTambahBukuAdmin1.Hide();
+        }
+
+        private void ucJenisBukuTambahBukuAdmin1_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btJenisBuku_Click(object sender, EventArgs e)
+        {
+            ucJenisBukuTambahBukuAdmin1.Show();
+            ucPenulisTambahBukuAdmin2.Hide();
+            ucPenerbitTambahBukuAdmin1.Hide();
+        }
+
+        private void btPenulis_Click(object sender, EventArgs e)
+        {
+            ucPenulisTambahBukuAdmin2.Show();
+            ucJenisBukuTambahBukuAdmin1.Hide();
+            ucPenerbitTambahBukuAdmin1.Hide();
         }
     }
 

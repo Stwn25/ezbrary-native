@@ -29,61 +29,78 @@
         private void InitializeComponent()
         {
             btSimpanPenulis = new Button();
-            textBox1 = new TextBox();
+            tbNamaPenulis = new TextBox();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            dgvPenulis = new DataGridView();
+            button1 = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvPenulis).BeginInit();
             SuspendLayout();
             // 
             // btSimpanPenulis
             // 
             btSimpanPenulis.BackColor = SystemColors.Highlight;
+            btSimpanPenulis.FlatStyle = FlatStyle.Popup;
             btSimpanPenulis.Font = new Font("Nunito SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btSimpanPenulis.ForeColor = Color.White;
-            btSimpanPenulis.Location = new Point(175, 479);
+            btSimpanPenulis.Location = new Point(175, 506);
             btSimpanPenulis.Name = "btSimpanPenulis";
             btSimpanPenulis.Size = new Size(136, 35);
             btSimpanPenulis.TabIndex = 18;
             btSimpanPenulis.Text = "Simpan";
             btSimpanPenulis.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // tbNamaPenulis
             // 
-            textBox1.Location = new Point(16, 425);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(465, 27);
-            textBox1.TabIndex = 17;
+            tbNamaPenulis.BorderStyle = BorderStyle.FixedSingle;
+            tbNamaPenulis.Location = new Point(16, 452);
+            tbNamaPenulis.Name = "tbNamaPenulis";
+            tbNamaPenulis.Size = new Size(465, 27);
+            tbNamaPenulis.TabIndex = 17;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(16, 402);
+            label1.Location = new Point(16, 429);
             label1.Name = "label1";
             label1.Size = new Size(154, 20);
             label1.TabIndex = 16;
             label1.Text = "Tambah Nama Penulis";
             // 
-            // dataGridView1
+            // dgvPenulis
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(16, 23);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(465, 356);
-            dataGridView1.TabIndex = 15;
+            dgvPenulis.BackgroundColor = SystemColors.ControlLight;
+            dgvPenulis.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPenulis.Location = new Point(16, 50);
+            dgvPenulis.Name = "dgvPenulis";
+            dgvPenulis.RowHeadersWidth = 51;
+            dgvPenulis.Size = new Size(465, 356);
+            dgvPenulis.TabIndex = 15;
+            // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(435, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(46, 41);
+            button1.TabIndex = 19;
+            button1.Text = "X";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // ucPenulisTambahBukuAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             BorderStyle = BorderStyle.FixedSingle;
+            Controls.Add(button1);
             Controls.Add(btSimpanPenulis);
-            Controls.Add(textBox1);
+            Controls.Add(tbNamaPenulis);
             Controls.Add(label1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvPenulis);
             Name = "ucPenulisTambahBukuAdmin";
-            Size = new Size(499, 542);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Size = new Size(499, 583);
+            ((System.ComponentModel.ISupportInitialize)dgvPenulis).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -91,8 +108,9 @@
         #endregion
 
         private Button btSimpanPenulis;
-        private TextBox textBox1;
+        private TextBox tbNamaPenulis;
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView dgvPenulis;
+        private Button button1;
     }
 }
