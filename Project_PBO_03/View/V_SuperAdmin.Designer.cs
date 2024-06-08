@@ -40,6 +40,8 @@
             btAdminSA1 = new Button();
             btUserSA1 = new Button();
             dataGridView1 = new DataGridView();
+            HapusAdmin = new DataGridViewButtonColumn();
+            UpdateAdmin = new DataGridViewButtonColumn();
             label1 = new Label();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             lblHai1SA = new Label();
@@ -49,6 +51,7 @@
             btAdminSA = new Button();
             btUserSA = new Button();
             dataGridView2 = new DataGridView();
+            HapusUser = new DataGridViewButtonColumn();
             lblDaftarPenggunaSA = new Label();
             pnlDaftarAdminSA = new Panel();
             btDaftarSA = new Button();
@@ -63,6 +66,7 @@
             tbNamaSA = new TextBox();
             tbUsernameSA = new TextBox();
             label3 = new Label();
+            ucUpdateAdmin1 = new ucUpdateAdmin();
             pnlSA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxVectorUser).BeginInit();
             pnlAdminSA.SuspendLayout();
@@ -86,7 +90,6 @@
             pnlSA.Name = "pnlSA";
             pnlSA.Size = new Size(416, 1080);
             pnlSA.TabIndex = 1;
-            pnlSA.Paint += pnlSA_Paint;
             // 
             // btKeluarSA
             // 
@@ -157,11 +160,10 @@
             pnlAdminSA.Controls.Add(btUserSA1);
             pnlAdminSA.Controls.Add(dataGridView1);
             pnlAdminSA.Controls.Add(label1);
-            pnlAdminSA.Location = new Point(416, 276);
+            pnlAdminSA.Location = new Point(416, 277);
             pnlAdminSA.Name = "pnlAdminSA";
             pnlAdminSA.Size = new Size(1507, 805);
             pnlAdminSA.TabIndex = 18;
-            pnlAdminSA.Paint += pnlAdminSA_Paint;
             // 
             // btDaftarAdminSA
             // 
@@ -209,11 +211,29 @@
             // 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { HapusAdmin, UpdateAdmin });
             dataGridView1.Location = new Point(23, 127);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1460, 591);
             dataGridView1.TabIndex = 11;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // HapusAdmin
+            // 
+            HapusAdmin.HeaderText = "Hapus Admin";
+            HapusAdmin.MinimumWidth = 6;
+            HapusAdmin.Name = "HapusAdmin";
+            HapusAdmin.Text = "Hapus";
+            HapusAdmin.UseColumnTextForButtonValue = true;
+            // 
+            // UpdateAdmin
+            // 
+            UpdateAdmin.HeaderText = "Update Admin";
+            UpdateAdmin.MinimumWidth = 6;
+            UpdateAdmin.Name = "UpdateAdmin";
+            UpdateAdmin.Text = "Update";
+            UpdateAdmin.UseColumnTextForButtonValue = true;
             // 
             // label1
             // 
@@ -324,11 +344,21 @@
             // 
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { HapusUser });
             dataGridView2.Location = new Point(23, 127);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 51;
             dataGridView2.Size = new Size(1460, 591);
             dataGridView2.TabIndex = 11;
+            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
+            // 
+            // HapusUser
+            // 
+            HapusUser.HeaderText = "Hapus User";
+            HapusUser.MinimumWidth = 6;
+            HapusUser.Name = "HapusUser";
+            HapusUser.Text = "Hapus";
+            HapusUser.UseColumnTextForButtonValue = true;
             // 
             // lblDaftarPenggunaSA
             // 
@@ -355,7 +385,7 @@
             pnlDaftarAdminSA.Controls.Add(tbNamaSA);
             pnlDaftarAdminSA.Controls.Add(tbUsernameSA);
             pnlDaftarAdminSA.Controls.Add(label3);
-            pnlDaftarAdminSA.Location = new Point(638, 132);
+            pnlDaftarAdminSA.Location = new Point(1143, 232);
             pnlDaftarAdminSA.Name = "pnlDaftarAdminSA";
             pnlDaftarAdminSA.Size = new Size(1507, 805);
             pnlDaftarAdminSA.TabIndex = 17;
@@ -492,11 +522,21 @@
             label3.TabIndex = 10;
             label3.Text = "Daftar Admin";
             // 
+            // ucUpdateAdmin1
+            // 
+            ucUpdateAdmin1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ucUpdateAdmin1.Location = new Point(824, 134);
+            ucUpdateAdmin1.Name = "ucUpdateAdmin1";
+            ucUpdateAdmin1.Size = new Size(843, 682);
+            ucUpdateAdmin1.TabIndex = 15;
+            ucUpdateAdmin1.Load += ucUpdateAdmin1_Load;
+            // 
             // V_SuperAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1920, 1080);
+            Controls.Add(ucUpdateAdmin1);
             Controls.Add(pnlDaftarAdminSA);
             Controls.Add(pnlAdminSA);
             Controls.Add(pnlUserSA);
@@ -508,7 +548,6 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_SuperAdmin";
             Text = "V_SuperAdmin";
-            Load += V_SuperAdmin_Load;
             pnlSA.ResumeLayout(false);
             pnlSA.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxVectorUser).EndInit();
@@ -561,5 +600,9 @@
         private TextBox tbNamaSA;
         private TextBox tbUsernameSA;
         private Label label3;
+        private DataGridViewButtonColumn HapusUser;
+        private DataGridViewButtonColumn HapusAdmin;
+        private DataGridViewButtonColumn UpdateAdmin;
+        private ucUpdateAdmin ucUpdateAdmin1;
     }
 }
