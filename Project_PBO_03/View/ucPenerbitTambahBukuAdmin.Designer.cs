@@ -40,6 +40,7 @@
             // 
             // dgvPenerbit
             // 
+            dgvPenerbit.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvPenerbit.BackgroundColor = SystemColors.ControlLight;
             dgvPenerbit.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPenerbit.Location = new Point(18, 50);
@@ -47,6 +48,7 @@
             dgvPenerbit.RowHeadersWidth = 51;
             dgvPenerbit.Size = new Size(465, 356);
             dgvPenerbit.TabIndex = 0;
+            dgvPenerbit.CellContentClick += dgvPenerbit_CellContentClick;
             // 
             // label1
             // 
@@ -73,6 +75,7 @@
             tbNamaPenerbit.Name = "tbNamaPenerbit";
             tbNamaPenerbit.Size = new Size(465, 27);
             tbNamaPenerbit.TabIndex = 6;
+            tbNamaPenerbit.TextChanged += tbNamaPenerbit_TextChanged;
             // 
             // tbAlamatPenerbit
             // 
@@ -94,6 +97,7 @@
             btSimpanPenerbit.TabIndex = 8;
             btSimpanPenerbit.Text = "Simpan";
             btSimpanPenerbit.UseVisualStyleBackColor = false;
+            btSimpanPenerbit.Click += btSimpanPenerbit_Click;
             // 
             // button1
             // 

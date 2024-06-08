@@ -48,6 +48,7 @@
             btSimpanPenulis.TabIndex = 18;
             btSimpanPenulis.Text = "Simpan";
             btSimpanPenulis.UseVisualStyleBackColor = false;
+            btSimpanPenulis.Click += btSimpanPenulis_Click;
             // 
             // tbNamaPenulis
             // 
@@ -56,6 +57,7 @@
             tbNamaPenulis.Name = "tbNamaPenulis";
             tbNamaPenulis.Size = new Size(465, 27);
             tbNamaPenulis.TabIndex = 17;
+            tbNamaPenulis.TextChanged += tbNamaPenulis_TextChanged;
             // 
             // label1
             // 
@@ -68,6 +70,7 @@
             // 
             // dgvPenulis
             // 
+            dgvPenulis.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvPenulis.BackgroundColor = SystemColors.ControlLight;
             dgvPenulis.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPenulis.Location = new Point(16, 50);
@@ -75,6 +78,7 @@
             dgvPenulis.RowHeadersWidth = 51;
             dgvPenulis.Size = new Size(465, 356);
             dgvPenulis.TabIndex = 15;
+            dgvPenulis.CellContentClick += dgvPenulis_CellContentClick;
             // 
             // button1
             // 

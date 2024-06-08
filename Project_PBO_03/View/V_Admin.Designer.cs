@@ -46,14 +46,16 @@ namespace Project_PBO_03
             lblDaftarBuku = new Label();
             tbDaftarBukuAdmin = new TextBox();
             pnlDaftarBukuAdmin = new Panel();
-            ucPenerbitTambahBukuAdmin1 = new ucPenerbitTambahBukuAdmin();
-            ucJenisBukuTambahBukuAdmin1 = new ucJenisBukuTambahBukuAdmin();
+            cbJenisBukuAdmin = new ComboBox();
+            button1 = new Button();
             ucPenulisTambahBukuAdmin2 = new ucPenulisTambahBukuAdmin();
+            ucJenisBukuTambahBukuAdmin1 = new ucJenisBukuTambahBukuAdmin();
+            ucPenerbitTambahBukuAdmin1 = new ucPenerbitTambahBukuAdmin();
+            dgvDaftarBuku = new DataGridView();
             btJenisBuku = new Button();
             btPenulis = new Button();
             btPenerbit = new Button();
             btTambahBukuAdmin = new Button();
-            dgvKelolaBukuAdmin = new DataGridView();
             pnlPeminjamanAdmin = new Panel();
             dataGridView1 = new DataGridView();
             lblBookingAdmin = new Label();
@@ -93,7 +95,7 @@ namespace Project_PBO_03
             ((System.ComponentModel.ISupportInitialize)pictureBoxVektoradmin).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPerpusAdmin).BeginInit();
             pnlDaftarBukuAdmin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvKelolaBukuAdmin).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDaftarBuku).BeginInit();
             pnlPeminjamanAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             pnlRiwayatPeminjaman.SuspendLayout();
@@ -272,24 +274,27 @@ namespace Project_PBO_03
             // 
             // tbDaftarBukuAdmin
             // 
-            tbDaftarBukuAdmin.BackColor = Color.Silver;
-            tbDaftarBukuAdmin.Location = new Point(58, 76);
+            tbDaftarBukuAdmin.BackColor = Color.White;
+            tbDaftarBukuAdmin.BorderStyle = BorderStyle.FixedSingle;
+            tbDaftarBukuAdmin.Location = new Point(423, 76);
             tbDaftarBukuAdmin.Multiline = true;
             tbDaftarBukuAdmin.Name = "tbDaftarBukuAdmin";
-            tbDaftarBukuAdmin.Size = new Size(1400, 34);
+            tbDaftarBukuAdmin.Size = new Size(647, 34);
             tbDaftarBukuAdmin.TabIndex = 6;
             // 
             // pnlDaftarBukuAdmin
             // 
             pnlDaftarBukuAdmin.BackColor = Color.White;
-            pnlDaftarBukuAdmin.Controls.Add(ucPenerbitTambahBukuAdmin1);
-            pnlDaftarBukuAdmin.Controls.Add(ucJenisBukuTambahBukuAdmin1);
+            pnlDaftarBukuAdmin.Controls.Add(cbJenisBukuAdmin);
+            pnlDaftarBukuAdmin.Controls.Add(button1);
             pnlDaftarBukuAdmin.Controls.Add(ucPenulisTambahBukuAdmin2);
+            pnlDaftarBukuAdmin.Controls.Add(ucJenisBukuTambahBukuAdmin1);
+            pnlDaftarBukuAdmin.Controls.Add(ucPenerbitTambahBukuAdmin1);
+            pnlDaftarBukuAdmin.Controls.Add(dgvDaftarBuku);
             pnlDaftarBukuAdmin.Controls.Add(btJenisBuku);
             pnlDaftarBukuAdmin.Controls.Add(btPenulis);
             pnlDaftarBukuAdmin.Controls.Add(btPenerbit);
             pnlDaftarBukuAdmin.Controls.Add(btTambahBukuAdmin);
-            pnlDaftarBukuAdmin.Controls.Add(dgvKelolaBukuAdmin);
             pnlDaftarBukuAdmin.Controls.Add(tbDaftarBukuAdmin);
             pnlDaftarBukuAdmin.Controls.Add(lblDaftarBuku);
             pnlDaftarBukuAdmin.Location = new Point(417, 276);
@@ -297,33 +302,66 @@ namespace Project_PBO_03
             pnlDaftarBukuAdmin.Size = new Size(1507, 805);
             pnlDaftarBukuAdmin.TabIndex = 7;
             // 
-            // ucPenerbitTambahBukuAdmin1
+            // cbJenisBukuAdmin
             // 
-            ucPenerbitTambahBukuAdmin1.BackColor = Color.White;
-            ucPenerbitTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
-            ucPenerbitTambahBukuAdmin1.Location = new Point(448, 23);
-            ucPenerbitTambahBukuAdmin1.Name = "ucPenerbitTambahBukuAdmin1";
-            ucPenerbitTambahBukuAdmin1.Size = new Size(500, 659);
-            ucPenerbitTambahBukuAdmin1.TabIndex = 13;
+            cbJenisBukuAdmin.FormattingEnabled = true;
+            cbJenisBukuAdmin.Location = new Point(48, 80);
+            cbJenisBukuAdmin.Name = "cbJenisBukuAdmin";
+            cbJenisBukuAdmin.Size = new Size(159, 28);
+            cbJenisBukuAdmin.TabIndex = 16;
+            cbJenisBukuAdmin.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
-            // ucJenisBukuTambahBukuAdmin1
+            // button1
             // 
-            ucJenisBukuTambahBukuAdmin1.BackColor = Color.White;
-            ucJenisBukuTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
-            ucJenisBukuTambahBukuAdmin1.Location = new Point(448, 47);
-            ucJenisBukuTambahBukuAdmin1.Name = "ucJenisBukuTambahBukuAdmin1";
-            ucJenisBukuTambahBukuAdmin1.Size = new Size(498, 573);
-            ucJenisBukuTambahBukuAdmin1.TabIndex = 11;
-            ucJenisBukuTambahBukuAdmin1.Load += ucJenisBukuTambahBukuAdmin1_Load;
+            button1.BackColor = SystemColors.Highlight;
+            button1.FlatStyle = FlatStyle.Popup;
+            button1.Font = new Font("Nunito ExtraBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(1091, 76);
+            button1.Name = "button1";
+            button1.Size = new Size(72, 34);
+            button1.TabIndex = 15;
+            button1.Text = "Search";
+            button1.UseVisualStyleBackColor = false;
             // 
             // ucPenulisTambahBukuAdmin2
             // 
             ucPenulisTambahBukuAdmin2.BackColor = Color.White;
             ucPenulisTambahBukuAdmin2.BorderStyle = BorderStyle.FixedSingle;
-            ucPenulisTambahBukuAdmin2.Location = new Point(448, 39);
+            ucPenulisTambahBukuAdmin2.Location = new Point(520, 58);
             ucPenulisTambahBukuAdmin2.Name = "ucPenulisTambahBukuAdmin2";
             ucPenulisTambahBukuAdmin2.Size = new Size(500, 585);
             ucPenulisTambahBukuAdmin2.TabIndex = 12;
+            // 
+            // ucJenisBukuTambahBukuAdmin1
+            // 
+            ucJenisBukuTambahBukuAdmin1.BackColor = Color.White;
+            ucJenisBukuTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
+            ucJenisBukuTambahBukuAdmin1.Location = new Point(520, 37);
+            ucJenisBukuTambahBukuAdmin1.Name = "ucJenisBukuTambahBukuAdmin1";
+            ucJenisBukuTambahBukuAdmin1.Size = new Size(498, 573);
+            ucJenisBukuTambahBukuAdmin1.TabIndex = 11;
+            ucJenisBukuTambahBukuAdmin1.Load += ucJenisBukuTambahBukuAdmin1_Load;
+            // 
+            // ucPenerbitTambahBukuAdmin1
+            // 
+            ucPenerbitTambahBukuAdmin1.BackColor = Color.White;
+            ucPenerbitTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
+            ucPenerbitTambahBukuAdmin1.Location = new Point(520, 19);
+            ucPenerbitTambahBukuAdmin1.Name = "ucPenerbitTambahBukuAdmin1";
+            ucPenerbitTambahBukuAdmin1.Size = new Size(500, 659);
+            ucPenerbitTambahBukuAdmin1.TabIndex = 13;
+            ucPenerbitTambahBukuAdmin1.Load += ucPenerbitTambahBukuAdmin1_Load;
+            // 
+            // dgvDaftarBuku
+            // 
+            dgvDaftarBuku.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvDaftarBuku.BackgroundColor = SystemColors.ControlLight;
+            dgvDaftarBuku.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDaftarBuku.Location = new Point(48, 135);
+            dgvDaftarBuku.Name = "dgvDaftarBuku";
+            dgvDaftarBuku.RowHeadersWidth = 51;
+            dgvDaftarBuku.Size = new Size(1419, 561);
+            dgvDaftarBuku.TabIndex = 14;
             // 
             // btJenisBuku
             // 
@@ -380,16 +418,6 @@ namespace Project_PBO_03
             btTambahBukuAdmin.Text = "Tambah Buku";
             btTambahBukuAdmin.UseVisualStyleBackColor = false;
             btTambahBukuAdmin.Click += btTambahBukuAdmin_Click;
-            // 
-            // dgvKelolaBukuAdmin
-            // 
-            dgvKelolaBukuAdmin.BackgroundColor = SystemColors.ControlLight;
-            dgvKelolaBukuAdmin.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvKelolaBukuAdmin.Location = new Point(23, 150);
-            dgvKelolaBukuAdmin.Name = "dgvKelolaBukuAdmin";
-            dgvKelolaBukuAdmin.RowHeadersWidth = 51;
-            dgvKelolaBukuAdmin.Size = new Size(1460, 551);
-            dgvKelolaBukuAdmin.TabIndex = 7;
             // 
             // pnlPeminjamanAdmin
             // 
@@ -797,7 +825,7 @@ namespace Project_PBO_03
             ((System.ComponentModel.ISupportInitialize)pictureBoxPerpusAdmin).EndInit();
             pnlDaftarBukuAdmin.ResumeLayout(false);
             pnlDaftarBukuAdmin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvKelolaBukuAdmin).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDaftarBuku).EndInit();
             pnlPeminjamanAdmin.ResumeLayout(false);
             pnlPeminjamanAdmin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -851,7 +879,6 @@ namespace Project_PBO_03
         private Label lblDaftarBuku;
         private TextBox tbDaftarBukuAdmin;
         private Panel pnlDaftarBukuAdmin;
-        private DataGridView dgvKelolaBukuAdmin;
         private Panel pnlPeminjamanAdmin;
         private DataGridView dataGridView1;
         private Label lblBookingAdmin;
@@ -892,8 +919,11 @@ namespace Project_PBO_03
         private Button btJenisBuku;
         private Button btPenulis;
         private Button btPenerbit;
+        private ucPenerbitTambahBukuAdmin ucPenerbitTambahBukuAdmin1;
         private ucJenisBukuTambahBukuAdmin ucJenisBukuTambahBukuAdmin1;
         private ucPenulisTambahBukuAdmin ucPenulisTambahBukuAdmin2;
-        private ucPenerbitTambahBukuAdmin ucPenerbitTambahBukuAdmin1;
+        private DataGridView dgvDaftarBuku;
+        private ComboBox cbJenisBukuAdmin;
+        private Button button1;
     }
 }

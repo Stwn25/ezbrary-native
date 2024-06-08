@@ -17,7 +17,10 @@ namespace Project_PBO_03.Context
 
         public static DataTable all()
         {
-            string query = $"select * from {table}";
+            string query = $"select b.isbn, b.namabuku, b.sinopsis, b.thnterbit, jb.namajenis, b.stokbuku, pt.namapenerbit, ps.namapenulis, b.posisirak" +
+                           $"\r\nfrom buku b join jenisbuku jb \r\nON jb.idjenis = b.jenisbuku_idjenis" +
+                           $"\r\njoin penulis ps \r\nON ps.idpenulis = b.penulis_idpenulis" +
+                           $"\r\njoin penerbit pt\r\nON pt.idpenerbit = b.penerbit_idpenerbit";
             DataTable dataBuku = queryExecutor(query);
             return dataBuku;
         }
@@ -31,6 +34,8 @@ namespace Project_PBO_03.Context
         {
             string query;
         }*/
+
+
 
         public static void create(m_Buku bukuBaru)
         {
@@ -48,6 +53,16 @@ namespace Project_PBO_03.Context
                 new NpgsqlParameter ("@penulis", NpgsqlDbType.Integer){Value=bukuBaru.penulis_id},
                 new NpgsqlParameter ("@posisirak", NpgsqlDbType.Varchar){Value=bukuBaru.posisi_rak},
 
+            };
+            commandExecutor(query, parameters);
+        }
+
+        public static void delete(string isbn)
+        {
+            string query = $"DELETE FROM {table} WHERE isbn = @isbn";
+            NpgsqlParameter[] parameters =
+            {
+                new NpgsqlParameter("@isbn", NpgsqlDbType.Varchar){Value = isbn},
             };
             commandExecutor(query, parameters);
         }

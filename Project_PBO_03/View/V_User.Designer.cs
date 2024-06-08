@@ -246,7 +246,7 @@ namespace Project_PBO_03
             pnlPeminjamanUser.Controls.Add(tbPeminjamanUser);
             pnlPeminjamanUser.Controls.Add(dgvPeminjamanUser);
             pnlPeminjamanUser.Controls.Add(lblPeminjamanUser);
-            pnlPeminjamanUser.Location = new Point(422, 281);
+            pnlPeminjamanUser.Location = new Point(416, 274);
             pnlPeminjamanUser.Name = "pnlPeminjamanUser";
             pnlPeminjamanUser.Size = new Size(1507, 805);
             pnlPeminjamanUser.TabIndex = 9;
@@ -327,7 +327,7 @@ namespace Project_PBO_03
             // 
             pnlBukuFavUser.Controls.Add(dataGridView1);
             pnlBukuFavUser.Controls.Add(label1);
-            pnlBukuFavUser.Location = new Point(438, 263);
+            pnlBukuFavUser.Location = new Point(416, 275);
             pnlBukuFavUser.Name = "pnlBukuFavUser";
             pnlBukuFavUser.Size = new Size(1507, 805);
             pnlBukuFavUser.TabIndex = 13;
@@ -356,7 +356,7 @@ namespace Project_PBO_03
             // 
             pnlRiwayatUser.Controls.Add(dataGridView2);
             pnlRiwayatUser.Controls.Add(label2);
-            pnlRiwayatUser.Location = new Point(461, 253);
+            pnlRiwayatUser.Location = new Point(415, 274);
             pnlRiwayatUser.Name = "pnlRiwayatUser";
             pnlRiwayatUser.Size = new Size(1507, 805);
             pnlRiwayatUser.TabIndex = 14;
@@ -395,7 +395,7 @@ namespace Project_PBO_03
             pnlProfileUser.Controls.Add(tbNamaProfileU);
             pnlProfileUser.Controls.Add(tbUsernameProfileU);
             pnlProfileUser.Controls.Add(label3);
-            pnlProfileUser.Location = new Point(484, 224);
+            pnlProfileUser.Location = new Point(415, 274);
             pnlProfileUser.Name = "pnlProfileUser";
             pnlProfileUser.Size = new Size(1507, 805);
             pnlProfileUser.TabIndex = 15;
@@ -608,7 +608,7 @@ namespace Project_PBO_03
             this.pnlBukuFavUser.Hide();
             this.pnlRiwayatUser.Show();
             this.pnlProfileUser.Hide();
-            this.pnlRiwayatUser.Dock = DockStyle.Bottom;
+           
         }
 
        
@@ -624,7 +624,7 @@ namespace Project_PBO_03
             this.pnlBukuFavUser.Hide();
             this.pnlRiwayatUser.Hide();
             this.pnlProfileUser.Hide();
-            this.pnlPeminjamanUser.Dock = DockStyle.Bottom;
+            
         }
 
         private void label1_Click(object sender, EventArgs e)

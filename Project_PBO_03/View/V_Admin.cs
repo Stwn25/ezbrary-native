@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_PBO_03.Context;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,7 +30,10 @@ namespace Project_PBO_03
             ucJenisBukuTambahBukuAdmin1.Hide();
             ucPenerbitTambahBukuAdmin1.Hide();
             ucPenulisTambahBukuAdmin2.Hide();
+            dgvDaftarBuku.DataSource = BukuContext.all();
+            cbJenisBukuAdmin.Items.Add(JenisBukuContext.comboBox());
         }
+
 
         private void btKelolaBuku_Click(object sender, EventArgs e)
         {
@@ -185,7 +189,7 @@ namespace Project_PBO_03
 
         private void ucJenisBukuTambahBukuAdmin1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btJenisBuku_Click(object sender, EventArgs e)
@@ -200,6 +204,34 @@ namespace Project_PBO_03
             ucPenulisTambahBukuAdmin2.Show();
             ucJenisBukuTambahBukuAdmin1.Hide();
             ucPenerbitTambahBukuAdmin1.Hide();
+        }
+
+        private void dgvKelolaBukuAdmin_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            /*if (e.ColumnIndex == dgvKelolaBukuAdmin.Columns["Hapusbuku"].Index && e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvKelolaBukuAdmin.Rows[e.RowIndex];
+                string isbn = Convert.ToString(row.Cells["isbn"].Value);
+                BukuContext.delete(isbn);
+                dgvKelolaBukuAdmin.DataSource = BukuContext.all();
+                MessageBox.Show("Buku berhasil dihapus!", "Sukses", MessageBoxButtons.OK);
+            }*/
+        }
+
+        private void ucPenerbitTambahBukuAdmin1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 

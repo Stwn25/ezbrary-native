@@ -37,7 +37,7 @@ namespace Project_PBO_03
             this.pnlBukuFavUser.Hide();
             this.pnlRiwayatUser.Hide();
             this.pnlProfileUser.Hide();
-            this.pnlPeminjamanUser.Dock = DockStyle.Bottom;
+
         }
 
         private void btBukuFavUser_Click(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace Project_PBO_03
             this.pnlBukuFavUser.Show();
             this.pnlRiwayatUser.Hide();
             this.pnlProfileUser.Hide();
-            this.pnlBukuFavUser.Dock = DockStyle.Bottom;
+            
         }
 
         private void btRiwayatPeminjamanUser_Click(object sender, EventArgs e)
@@ -65,7 +65,7 @@ namespace Project_PBO_03
             this.pnlBukuFavUser.Hide();
             this.pnlRiwayatUser.Show();
             this.pnlProfileUser.Hide();
-            this.pnlRiwayatUser.Dock = DockStyle.Bottom;
+
         }
 
         private void btProfileUser_Click(object sender, EventArgs e)
@@ -79,22 +79,10 @@ namespace Project_PBO_03
             this.pnlBukuFavUser.Hide();
             this.pnlRiwayatUser.Hide();
             this.pnlProfileUser.Show();
-            this.pnlProfileUser.Dock = DockStyle.Bottom;
+           
         }
 
-        /*        private void btKeluarUser_Click(object sender, EventArgs e)
-                {
-                    btPeminjamanUser.BackColor = Color.CornflowerBlue;
-                    btBukuFavUser.BackColor = Color.CornflowerBlue;
-                    btRiwayatPeminjamanUser.BackColor = Color.CornflowerBlue;
-                    btProfileUser.BackColor = Color.CornflowerBlue;
-                    btKeluarUser.BackColor = Color.Black;
-                    this.pnlPeminjamanUser.Hide();
-                    this.pnlBukuFavUser.Hide();
-                    this.pnlRiwayatUser.Hide();
-                    this.pnlProfileUser.Hide();
-                    Application.Exit();
-                }*/
+       
 
         private void pnlProfileUser_Paint(object sender, PaintEventArgs e)
         {

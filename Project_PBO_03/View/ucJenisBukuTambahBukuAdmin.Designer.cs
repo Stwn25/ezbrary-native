@@ -57,6 +57,7 @@
             tbJenisBuku.Name = "tbJenisBuku";
             tbJenisBuku.Size = new Size(465, 27);
             tbJenisBuku.TabIndex = 12;
+            tbJenisBuku.TextChanged += tbJenisBuku_TextChanged;
             // 
             // label1
             // 
@@ -69,6 +70,7 @@
             // 
             // dgvJenisBuku
             // 
+            dgvJenisBuku.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvJenisBuku.BackgroundColor = SystemColors.ControlLight;
             dgvJenisBuku.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvJenisBuku.Location = new Point(16, 50);
@@ -76,6 +78,7 @@
             dgvJenisBuku.RowHeadersWidth = 51;
             dgvJenisBuku.Size = new Size(465, 356);
             dgvJenisBuku.TabIndex = 9;
+            dgvJenisBuku.CellContentClick += dgvJenisBuku_CellContentClick;
             // 
             // button1
             // 

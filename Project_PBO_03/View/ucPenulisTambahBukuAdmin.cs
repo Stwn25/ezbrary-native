@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Project_PBO_03.Context;
+using Project_PBO_03.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,11 +17,45 @@ namespace Project_PBO_03
         public ucPenulisTambahBukuAdmin()
         {
             InitializeComponent();
+            dgvPenulis.DataSource = PenulisContext.all();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void dgvPenulis_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btSimpanPenulis_Click(object sender, EventArgs e)
+        {
+            {
+                string Penulis = tbNamaPenulis.Text;
+
+                m_Penulis penulisBaru = new m_Penulis()
+                {
+                    nama_penulis = Penulis,
+
+                };
+
+                PenulisContext.create(penulisBaru);
+                DialogResult message = MessageBox.Show("Data berhasil ditambahkan", "Sukses", MessageBoxButtons.OK);
+                if (message == DialogResult.OK)
+                {
+                    dgvPenulis.DataSource = PenulisContext.all();
+                    tbNamaPenulis.Text = default;
+
+                }
+            }
+        }
+
+        private void tbNamaPenulis_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

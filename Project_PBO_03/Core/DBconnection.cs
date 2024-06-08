@@ -11,7 +11,7 @@ namespace Project_PBO_03.Core
     internal class DBconnection
     {
         private static readonly string DB_HOST = "localhost";
-        private static readonly string DB_DATABASE = "BismillahPBO";
+        private static readonly string DB_DATABASE = "ProjectPBO";
         private static readonly string DB_USERNAME = "postgres";
         private static readonly string DB_PASSWORD = "iwanganteng";
         private static readonly string DB_PORT = "5432";
