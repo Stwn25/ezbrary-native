@@ -46,9 +46,9 @@ namespace Project_PBO_03
             lblDaftarBuku = new Label();
             tbDaftarBukuAdmin = new TextBox();
             pnlDaftarBukuAdmin = new Panel();
+            ucPenulisTambahBukuAdmin2 = new ucPenulisTambahBukuAdmin();
             cbJenisBukuAdmin = new ComboBox();
             button1 = new Button();
-            ucPenulisTambahBukuAdmin2 = new ucPenulisTambahBukuAdmin();
             ucJenisBukuTambahBukuAdmin1 = new ucJenisBukuTambahBukuAdmin();
             ucPenerbitTambahBukuAdmin1 = new ucPenerbitTambahBukuAdmin();
             dgvDaftarBuku = new DataGridView();
@@ -285,9 +285,9 @@ namespace Project_PBO_03
             // pnlDaftarBukuAdmin
             // 
             pnlDaftarBukuAdmin.BackColor = Color.White;
+            pnlDaftarBukuAdmin.Controls.Add(ucPenulisTambahBukuAdmin2);
             pnlDaftarBukuAdmin.Controls.Add(cbJenisBukuAdmin);
             pnlDaftarBukuAdmin.Controls.Add(button1);
-            pnlDaftarBukuAdmin.Controls.Add(ucPenulisTambahBukuAdmin2);
             pnlDaftarBukuAdmin.Controls.Add(ucJenisBukuTambahBukuAdmin1);
             pnlDaftarBukuAdmin.Controls.Add(ucPenerbitTambahBukuAdmin1);
             pnlDaftarBukuAdmin.Controls.Add(dgvDaftarBuku);
@@ -302,14 +302,23 @@ namespace Project_PBO_03
             pnlDaftarBukuAdmin.Size = new Size(1507, 805);
             pnlDaftarBukuAdmin.TabIndex = 7;
             // 
+            // ucPenulisTambahBukuAdmin2
+            // 
+            ucPenulisTambahBukuAdmin2.BackColor = Color.White;
+            ucPenulisTambahBukuAdmin2.BorderStyle = BorderStyle.FixedSingle;
+            ucPenulisTambahBukuAdmin2.Location = new Point(520, 63);
+            ucPenulisTambahBukuAdmin2.Name = "ucPenulisTambahBukuAdmin2";
+            ucPenulisTambahBukuAdmin2.Size = new Size(498, 575);
+            ucPenulisTambahBukuAdmin2.TabIndex = 17;
+            // 
             // cbJenisBukuAdmin
             // 
             cbJenisBukuAdmin.FormattingEnabled = true;
             cbJenisBukuAdmin.Location = new Point(48, 80);
             cbJenisBukuAdmin.Name = "cbJenisBukuAdmin";
-            cbJenisBukuAdmin.Size = new Size(159, 28);
+            cbJenisBukuAdmin.Size = new Size(241, 28);
             cbJenisBukuAdmin.TabIndex = 16;
-            cbJenisBukuAdmin.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            cbJenisBukuAdmin.SelectedIndexChanged += cbJenisBuku_SelectedIndexChanged;
             // 
             // button1
             // 
@@ -322,15 +331,6 @@ namespace Project_PBO_03
             button1.TabIndex = 15;
             button1.Text = "Search";
             button1.UseVisualStyleBackColor = false;
-            // 
-            // ucPenulisTambahBukuAdmin2
-            // 
-            ucPenulisTambahBukuAdmin2.BackColor = Color.White;
-            ucPenulisTambahBukuAdmin2.BorderStyle = BorderStyle.FixedSingle;
-            ucPenulisTambahBukuAdmin2.Location = new Point(520, 58);
-            ucPenulisTambahBukuAdmin2.Name = "ucPenulisTambahBukuAdmin2";
-            ucPenulisTambahBukuAdmin2.Size = new Size(500, 585);
-            ucPenulisTambahBukuAdmin2.TabIndex = 12;
             // 
             // ucJenisBukuTambahBukuAdmin1
             // 
@@ -911,7 +911,7 @@ namespace Project_PBO_03
         private ComboBox cbJenisBuku;
         private ComboBox cbPenerbit;
         private ComboBox cbPenulis;
-        private ucPenulisTambahBukuAdmin ucPenulisTambahBukuAdmin1;
+        private ucPenulisTambahBukuAdmin ucPenulisTambahBukuAdmin2;
         private Button btSimpanPerubahanA;
         private TextBox tbNamaBuku;
         private RichTextBox tbSinopsisBuku;
@@ -921,7 +921,6 @@ namespace Project_PBO_03
         private Button btPenerbit;
         private ucPenerbitTambahBukuAdmin ucPenerbitTambahBukuAdmin1;
         private ucJenisBukuTambahBukuAdmin ucJenisBukuTambahBukuAdmin1;
-        private ucPenulisTambahBukuAdmin ucPenulisTambahBukuAdmin2;
         private DataGridView dgvDaftarBuku;
         private ComboBox cbJenisBukuAdmin;
         private Button button1;

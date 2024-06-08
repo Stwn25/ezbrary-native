@@ -29,6 +29,25 @@ namespace Project_PBO_03.Context
             return dataJenis;
         }
 
+        public static DataTable Jenis(string namajenis)
+        {
+            string query = $"select b.isbn, b.namabuku, b.sinopsis, b.thnterbit, jb.namajenis, b.stokbuku, pt.namapenerbit, ps.namapenulis, b.posisirak " +
+                           $"from buku b join jenisbuku jb " +
+                           $"ON jb.idjenis = b.jenisbuku_idjenis " +
+                           $"join penulis ps " +
+                           $"ON ps.idpenulis = b.penulis_idpenulis " +
+                           $"join penerbit pt " +
+                           $"ON pt.idpenerbit = b.penerbit_idpenerbit " +
+                           $"where jb.namajenis = @namajenis";
+            NpgsqlParameter[] parameters =
+            {
+                new NpgsqlParameter("@namajenis", NpgsqlDbType.Varchar) {Value = namajenis},
+            };
+
+            DataTable dataBuku = queryExecutor(query, parameters);
+            return dataBuku;
+        }
+
         public static void create(m_JenisBuku jenisBaru)
         {
             string query = $"INSERT INTO {table} (namajenis) VALUES (@namajenis)";

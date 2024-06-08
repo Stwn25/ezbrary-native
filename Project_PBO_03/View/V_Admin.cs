@@ -31,7 +31,9 @@ namespace Project_PBO_03
             ucPenerbitTambahBukuAdmin1.Hide();
             ucPenulisTambahBukuAdmin2.Hide();
             dgvDaftarBuku.DataSource = BukuContext.all();
-            cbJenisBukuAdmin.Items.Add(JenisBukuContext.comboBox());
+            cbJenisBukuAdmin.DataSource = JenisBukuContext.comboBox();
+            cbJenisBukuAdmin.DisplayMember = "namajenis";
+            cbJenisBukuAdmin.ValueMember = "namajenis";
         }
 
 
@@ -208,6 +210,10 @@ namespace Project_PBO_03
 
         private void dgvKelolaBukuAdmin_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.ColumnIndex == dgvDaftarBuku.Columns["hapusButton"].Index && e.RowIndex >= 0)
+            {
+
+            }
 
             /*if (e.ColumnIndex == dgvKelolaBukuAdmin.Columns["Hapusbuku"].Index && e.RowIndex >= 0)
             {
@@ -229,9 +235,19 @@ namespace Project_PBO_03
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbJenisBuku_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            string namajenis = Convert.ToString(cbJenisBukuAdmin.SelectedValue);
+
+            if (cbJenisBukuAdmin.SelectedValue != null)
+            {
+                dgvDaftarBuku.DataSource = JenisBukuContext.Jenis(namajenis);
+            }
+        }
+
+        private void ucPenulisTambahBukuAdmin2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 
