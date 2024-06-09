@@ -71,11 +71,6 @@ namespace Project_PBO_03.View
             };
             dataGridView1.Columns.Insert(1, updateAdmin);
 
-            // Tambahkan event handler untuk DataGridView2 Cell Content Click
-            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
-
-            // Tambahkan event handler untuk DataGridView1 Cell Content Click
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
         }
 
 
@@ -160,11 +155,17 @@ namespace Project_PBO_03.View
         {
             if (e.ColumnIndex == dataGridView1.Columns["HapusAdmin"].Index && e.RowIndex >= 0)
             {
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                int idadmin = Convert.ToInt32(row.Cells["idadmin"].Value);
-                AdminContext.delete(idadmin);
-                dataGridView1.DataSource = AdminContext.all();
-                MessageBox.Show("Admin berhasil dihapus!", "Sukses", MessageBoxButtons.OK);
+                int id = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["idadmin"].Value);
+
+                DialogResult message = MessageBox.Show("Apakah anda yakin ingin menghapus data ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo);
+                if (message == DialogResult.Yes)
+                {
+                    AdminContext.delete(id);
+
+                    DialogResult messageHapus = MessageBox.Show("Data berhasil dihapus", "Sukses", MessageBoxButtons.OK);
+
+                    dataGridView1.DataSource = AdminContext.all();
+                }
             }
 
             if (e.ColumnIndex == dataGridView1.Columns["UpdateAdmin"].Index && e.RowIndex >= 0)
@@ -185,15 +186,20 @@ namespace Project_PBO_03.View
         {
             if (e.ColumnIndex == dataGridView2.Columns["HapusUser"].Index && e.RowIndex >= 0)
             {
-                DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
-                int iduser = Convert.ToInt32(row.Cells["iduser"].Value);
-                PenggunaContext.delete(iduser);
-                dataGridView2.DataSource = PenggunaContext.all();
-                MessageBox.Show("User berhasil dihapus!", "Sukses", MessageBoxButtons.OK);
+                int id = Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells["iduser"].Value);
+
+                DialogResult message = MessageBox.Show("Apakah anda yakin ingin menghapus data ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo);
+                if (message == DialogResult.Yes)
+                {
+                    PenggunaContext.delete(id);
+
+                    DialogResult messageHapus = MessageBox.Show("Data berhasil dihapus", "Sukses", MessageBoxButtons.OK);
+
+                    dataGridView2.DataSource = PenggunaContext.all();
+                }
             }
         }
-
-        private void btDaftarAdminSA_Click(object sender, EventArgs e)
+            private void btDaftarAdminSA_Click(object sender, EventArgs e)
         {
             pnlUserSA.Hide();
             pnlAdminSA.Hide();
