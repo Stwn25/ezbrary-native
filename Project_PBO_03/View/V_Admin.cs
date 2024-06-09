@@ -301,10 +301,11 @@ namespace Project_PBO_03
 
         private void dgvDaftarBuku_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            string namajenis = Convert.ToString(cbJenisBukuAdmin.SelectedValue);
+            string isbn = Convert.ToString(dgvDaftarBuku.Rows[e.RowIndex].Cells["isbn"].Value);
+
             if (e.ColumnIndex == dgvDaftarBuku.Columns["hapusButton"].Index && e.RowIndex >= 0)
             {
-                string isbn = Convert.ToString(dgvDaftarBuku.Rows[e.RowIndex].Cells["isbn"].Value);
-                string namajenis = Convert.ToString(cbJenisBukuAdmin.SelectedValue);
 
                 // Panggil metode destroy dari kelas M_Mahasiswa untuk menghapus mahasiswa tetapi konfirmasi dulu
                 DialogResult message = MessageBox.Show("Apakah anda yakin ingin menghapus data ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo);
@@ -317,6 +318,10 @@ namespace Project_PBO_03
                 // Kemudian, perbarui DataGridView dengan data yang telah diperbarui
                 dgvDaftarBuku.DataSource = null;
                 dgvDaftarBuku.DataSource = JenisBukuContext.Jenis(namajenis);
+            }
+            if (e.ColumnIndex == dgvDaftarBuku.Columns["updateButton"].Index && e.RowIndex >= 0)
+            {
+                ucUpdateBuku1.Show();
             }
         }
         public void cbPenerbit_SelectedIndexChanged(object sender, EventArgs e)

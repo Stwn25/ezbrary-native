@@ -54,6 +54,7 @@ namespace Project_PBO_03
             button1 = new Button();
             dgvDaftarBuku = new DataGridView();
             hapusButton = new DataGridViewButtonColumn();
+            updateButton = new DataGridViewButtonColumn();
             btJenisBuku = new Button();
             btPenulis = new Button();
             btPenerbit = new Button();
@@ -343,6 +344,7 @@ namespace Project_PBO_03
             // 
             // ucUpdateBuku1
             // 
+            ucUpdateBuku1.AllowDrop = true;
             ucUpdateBuku1.BorderStyle = BorderStyle.FixedSingle;
             ucUpdateBuku1.Location = new Point(327, 76);
             ucUpdateBuku1.Name = "ucUpdateBuku1";
@@ -376,7 +378,7 @@ namespace Project_PBO_03
             dgvDaftarBuku.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvDaftarBuku.BackgroundColor = SystemColors.ControlLight;
             dgvDaftarBuku.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDaftarBuku.Columns.AddRange(new DataGridViewColumn[] { hapusButton });
+            dgvDaftarBuku.Columns.AddRange(new DataGridViewColumn[] { hapusButton, updateButton });
             dgvDaftarBuku.Location = new Point(48, 135);
             dgvDaftarBuku.Name = "dgvDaftarBuku";
             dgvDaftarBuku.RowHeadersWidth = 51;
@@ -391,6 +393,14 @@ namespace Project_PBO_03
             hapusButton.Name = "hapusButton";
             hapusButton.Text = "Hapus";
             hapusButton.UseColumnTextForButtonValue = true;
+            // 
+            // updateButton
+            // 
+            updateButton.HeaderText = "Update";
+            updateButton.MinimumWidth = 6;
+            updateButton.Name = "updateButton";
+            updateButton.Text = "Update";
+            updateButton.UseColumnTextForButtonValue = true;
             // 
             // btJenisBuku
             // 
@@ -910,11 +920,11 @@ namespace Project_PBO_03
             Controls.Add(pictureBoxPerpusAdmin);
             Controls.Add(pictureBoxVektoradmin);
             Controls.Add(pnlAdmin);
-            Controls.Add(pnlTambahBukuAdmin);
             Controls.Add(pnlDaftarBukuAdmin);
             Controls.Add(pnlPeminjamanAdmin);
             Controls.Add(pnlRiwayatPeminjaman);
             Controls.Add(pnlProfileAdmin);
+            Controls.Add(pnlTambahBukuAdmin);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_Admin";
             Text = "V_Admin";
@@ -1024,7 +1034,6 @@ namespace Project_PBO_03
         private DataGridView dgvDaftarBuku;
         private ComboBox cbJenisBukuAdmin;
         private Button button1;
-        private DataGridViewButtonColumn hapusButton;
         private TextBox tbISBN;
         private Label label9;
         private TextBox tbStokBuku;
@@ -1032,5 +1041,7 @@ namespace Project_PBO_03
         private TextBox tbPosisiRak;
         private Label label11;
         private View.ucUpdateBuku ucUpdateBuku1;
+        private DataGridViewButtonColumn hapusButton;
+        private DataGridViewButtonColumn updateButton;
     }
 }
