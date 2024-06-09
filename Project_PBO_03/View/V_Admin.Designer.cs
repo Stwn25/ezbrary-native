@@ -46,6 +46,7 @@ namespace Project_PBO_03
             lblDaftarBuku = new Label();
             tbDaftarBukuAdmin = new TextBox();
             pnlDaftarBukuAdmin = new Panel();
+            ucUpdateBuku1 = new View.ucUpdateBuku();
             ucPenulisTambahBukuAdmin2 = new ucPenulisTambahBukuAdmin();
             cbJenisBukuAdmin = new ComboBox();
             button1 = new Button();
@@ -292,6 +293,7 @@ namespace Project_PBO_03
             // pnlDaftarBukuAdmin
             // 
             pnlDaftarBukuAdmin.BackColor = Color.White;
+            pnlDaftarBukuAdmin.Controls.Add(ucUpdateBuku1);
             pnlDaftarBukuAdmin.Controls.Add(ucPenulisTambahBukuAdmin2);
             pnlDaftarBukuAdmin.Controls.Add(cbJenisBukuAdmin);
             pnlDaftarBukuAdmin.Controls.Add(button1);
@@ -308,6 +310,15 @@ namespace Project_PBO_03
             pnlDaftarBukuAdmin.Name = "pnlDaftarBukuAdmin";
             pnlDaftarBukuAdmin.Size = new Size(1507, 805);
             pnlDaftarBukuAdmin.TabIndex = 7;
+            // 
+            // ucUpdateBuku1
+            // 
+            ucUpdateBuku1.BorderStyle = BorderStyle.FixedSingle;
+            ucUpdateBuku1.Location = new Point(253, 19);
+            ucUpdateBuku1.Name = "ucUpdateBuku1";
+            ucUpdateBuku1.Size = new Size(937, 650);
+            ucUpdateBuku1.TabIndex = 18;
+            ucUpdateBuku1.Load += ucUpdateBuku1_Load;
             // 
             // ucPenulisTambahBukuAdmin2
             // 
@@ -890,11 +901,11 @@ namespace Project_PBO_03
             Controls.Add(pictureBoxPerpusAdmin);
             Controls.Add(pictureBoxVektoradmin);
             Controls.Add(pnlAdmin);
-            Controls.Add(pnlTambahBukuAdmin);
             Controls.Add(pnlDaftarBukuAdmin);
             Controls.Add(pnlPeminjamanAdmin);
             Controls.Add(pnlRiwayatPeminjaman);
             Controls.Add(pnlProfileAdmin);
+            Controls.Add(pnlTambahBukuAdmin);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_Admin";
             Text = "V_Admin";
@@ -1011,5 +1022,6 @@ namespace Project_PBO_03
         private Label label10;
         private TextBox tbPosisiRak;
         private Label label11;
+        private View.ucUpdateBuku ucUpdateBuku1;
     }
 }
