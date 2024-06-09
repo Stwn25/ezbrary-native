@@ -44,8 +44,7 @@ namespace Project_PBO_03
 
             cbPenerbit.DataSource = PenerbitContext.comboBox();
             cbPenerbit.DisplayMember = "namapenerbit";
-            cbPenulis.ValueMember = "idpenerbit";
-            cbPenulis.Text = " ";
+            cbPenerbit.ValueMember = "idpenerbit";
 
             cbPenulis.DataSource = PenulisContext.all();
             cbPenulis.DisplayMember = "namapenulis";
@@ -156,16 +155,28 @@ namespace Project_PBO_03
         {
             this.pnlTambahBukuAdmin.Show();
             this.pnlDaftarBukuAdmin.Hide();
-            /*this.pnlTambahBukuAdmin.Dock = DockStyle.Bottom;*/
             this.pnlPeminjamanAdmin.Hide();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Hide();
+
+            cbPenerbit.DataSource = PenerbitContext.comboBox();
+            cbPenerbit.DisplayMember = "namapenerbit";
+            cbPenerbit.ValueMember = "idpenerbit";
+
+            cbPenulis.DataSource = PenulisContext.all();
+            cbPenulis.DisplayMember = "namapenulis";
+            cbPenulis.ValueMember = "idpenulis";
+
+            cbJenisBuku.DataSource = JenisBukuContext.all();
+            cbJenisBuku.DisplayMember = "namajenis";
+            cbJenisBuku.ValueMember = "idjenis";
         }
 
 
 
         private void btTBAdmin_Click(object sender, EventArgs e)
         {
+            dgvDaftarBuku.Columns[9].HeaderText = "Hapus";
 
             DataRowView rowJenisBuku = cbJenisBuku.SelectedItem as DataRowView;
             DataRowView rowPenerbit = cbPenerbit.SelectedItem as DataRowView;
@@ -253,7 +264,7 @@ namespace Project_PBO_03
 
         private void ucJenisBukuTambahBukuAdmin1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btJenisBuku_Click(object sender, EventArgs e)
@@ -273,7 +284,7 @@ namespace Project_PBO_03
 
         private void ucPenerbitTambahBukuAdmin1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -367,6 +378,11 @@ namespace Project_PBO_03
         private void ucUpdateBuku1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void ucPenulisTambahBukuAdmin2_Load_1(object sender, EventArgs e)
+        {
+            
         }
     }
 
