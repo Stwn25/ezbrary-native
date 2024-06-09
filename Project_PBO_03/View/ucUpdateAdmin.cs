@@ -1,19 +1,16 @@
 ﻿using Project_PBO_03.Context;
+using Project_PBO_03.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Project_PBO_03.View
 {
     public partial class ucUpdateAdmin : UserControl
     {
-        private object ucUpdateAdmin1;
+        public int IdAdmin { get; set; }
+
+        public event EventHandler UpdateAdminSuccess;
 
         public ucUpdateAdmin()
         {
@@ -46,7 +43,46 @@ namespace Project_PBO_03.View
 
         private void btUpdateSAuc_Click(object sender, EventArgs e)
         {
+            if (IdAdmin != 0)
+            {
+                DataTable dt = AdminContext.read(IdAdmin);
+                if (dt.Rows.Count > 0)
+                {
+                    DataRow row = dt.Rows[0];
 
+                    m_Administrator updatedAdmin = new m_Administrator
+                    {
+                        id_admin = IdAdmin,
+                        kode_verif = row["kodeverifikasi"].ToString(),
+                        username_admin = tbUsernameSAuc.Text,
+                        nama_admin = tbNamaSAuc.Text,
+                        email_admin = tbEmailSAuc.Text,
+                        telp_admin = tbTeleponSAuc.Text,
+                        pass_admin = tbPasswordSAuc.Text
+                    };
+
+                    try
+                    {
+                        AdminContext.update(updatedAdmin);
+                        MessageBox.Show("Data admin berhasil diperbarui!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        UpdateAdminSuccess?.Invoke(this, EventArgs.Empty);
+
+                        this.Hide();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Gagal memperbarui data admin: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Data admin tidak ditemukan.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("ID Admin tidak valid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

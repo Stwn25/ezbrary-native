@@ -71,8 +71,15 @@ namespace Project_PBO_03.View
             };
             dataGridView1.Columns.Insert(1, updateAdmin);
 
+            // Event handler untuk ucUpdateAdmin
+            ucUpdateAdmin1.UpdateAdminSuccess += UcUpdateAdmin1_UpdateAdminSuccess;
         }
 
+        private void UcUpdateAdmin1_UpdateAdminSuccess(object sender, EventArgs e)
+        {
+            // Refresh the DataGridView1 data source
+            dataGridView1.DataSource = AdminContext.all();
+        }
 
         private void btKelolaAkunSA_Click(object sender, EventArgs e)
         {
@@ -173,6 +180,9 @@ namespace Project_PBO_03.View
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 int idadmin = Convert.ToInt32(row.Cells["idadmin"].Value);
 
+                // Set IdAdmin property of user control
+                ucUpdateAdmin1.IdAdmin = idadmin;
+
                 // Load the admin data into the UserControl
                 ucUpdateAdmin1.LoadAdminData(idadmin);
 
@@ -199,7 +209,8 @@ namespace Project_PBO_03.View
                 }
             }
         }
-            private void btDaftarAdminSA_Click(object sender, EventArgs e)
+
+        private void btDaftarAdminSA_Click(object sender, EventArgs e)
         {
             pnlUserSA.Hide();
             pnlAdminSA.Hide();
@@ -220,7 +231,6 @@ namespace Project_PBO_03.View
         private void ucUpdateAdmin1_Load(object sender, EventArgs e)
         {
             this.ucUpdateAdmin1.Hide();
-
         }
     }
 }
