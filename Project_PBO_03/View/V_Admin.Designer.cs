@@ -52,6 +52,7 @@ namespace Project_PBO_03
             ucJenisBukuTambahBukuAdmin1 = new ucJenisBukuTambahBukuAdmin();
             ucPenerbitTambahBukuAdmin1 = new ucPenerbitTambahBukuAdmin();
             dgvDaftarBuku = new DataGridView();
+            hapusButton = new DataGridViewButtonColumn();
             btJenisBuku = new Button();
             btPenulis = new Button();
             btPenerbit = new Button();
@@ -77,6 +78,12 @@ namespace Project_PBO_03
             lblProfileAdmin = new Label();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             pnlTambahBukuAdmin = new Panel();
+            tbPosisiRak = new TextBox();
+            label11 = new Label();
+            tbStokBuku = new TextBox();
+            label10 = new Label();
+            tbISBN = new TextBox();
+            label9 = new Label();
             tbTahunTerbit = new TextBox();
             tbSinopsisBuku = new RichTextBox();
             tbNamaBuku = new TextBox();
@@ -318,7 +325,7 @@ namespace Project_PBO_03
             cbJenisBukuAdmin.Name = "cbJenisBukuAdmin";
             cbJenisBukuAdmin.Size = new Size(241, 28);
             cbJenisBukuAdmin.TabIndex = 16;
-            cbJenisBukuAdmin.SelectedIndexChanged += cbJenisBuku_SelectedIndexChanged;
+            cbJenisBukuAdmin.SelectedIndexChanged += cbJenisBukuAdmin_SelectedIndexChanged;
             // 
             // button1
             // 
@@ -357,11 +364,21 @@ namespace Project_PBO_03
             dgvDaftarBuku.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvDaftarBuku.BackgroundColor = SystemColors.ControlLight;
             dgvDaftarBuku.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDaftarBuku.Columns.AddRange(new DataGridViewColumn[] { hapusButton });
             dgvDaftarBuku.Location = new Point(48, 135);
             dgvDaftarBuku.Name = "dgvDaftarBuku";
             dgvDaftarBuku.RowHeadersWidth = 51;
             dgvDaftarBuku.Size = new Size(1419, 561);
             dgvDaftarBuku.TabIndex = 14;
+            dgvDaftarBuku.CellContentClick += dgvDaftarBuku_CellContentClick;
+            // 
+            // hapusButton
+            // 
+            hapusButton.HeaderText = "Hapus";
+            hapusButton.MinimumWidth = 6;
+            hapusButton.Name = "hapusButton";
+            hapusButton.Text = "Hapus";
+            hapusButton.UseColumnTextForButtonValue = true;
             // 
             // btJenisBuku
             // 
@@ -644,6 +661,12 @@ namespace Project_PBO_03
             // 
             // pnlTambahBukuAdmin
             // 
+            pnlTambahBukuAdmin.Controls.Add(tbPosisiRak);
+            pnlTambahBukuAdmin.Controls.Add(label11);
+            pnlTambahBukuAdmin.Controls.Add(tbStokBuku);
+            pnlTambahBukuAdmin.Controls.Add(label10);
+            pnlTambahBukuAdmin.Controls.Add(tbISBN);
+            pnlTambahBukuAdmin.Controls.Add(label9);
             pnlTambahBukuAdmin.Controls.Add(tbTahunTerbit);
             pnlTambahBukuAdmin.Controls.Add(tbSinopsisBuku);
             pnlTambahBukuAdmin.Controls.Add(tbNamaBuku);
@@ -664,10 +687,64 @@ namespace Project_PBO_03
             pnlTambahBukuAdmin.TabIndex = 16;
             pnlTambahBukuAdmin.Paint += pnlTambahBukuAdmin_Paint;
             // 
+            // tbPosisiRak
+            // 
+            tbPosisiRak.BorderStyle = BorderStyle.FixedSingle;
+            tbPosisiRak.Location = new Point(797, 523);
+            tbPosisiRak.Name = "tbPosisiRak";
+            tbPosisiRak.Size = new Size(249, 27);
+            tbPosisiRak.TabIndex = 32;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.Location = new Point(797, 492);
+            label11.Name = "label11";
+            label11.Size = new Size(113, 25);
+            label11.TabIndex = 31;
+            label11.Text = "Posisi Rak";
+            // 
+            // tbStokBuku
+            // 
+            tbStokBuku.BorderStyle = BorderStyle.FixedSingle;
+            tbStokBuku.Location = new Point(797, 156);
+            tbStokBuku.Name = "tbStokBuku";
+            tbStokBuku.Size = new Size(249, 27);
+            tbStokBuku.TabIndex = 30;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.Location = new Point(797, 125);
+            label10.Name = "label10";
+            label10.Size = new Size(111, 25);
+            label10.TabIndex = 29;
+            label10.Text = "Stok Buku";
+            // 
+            // tbISBN
+            // 
+            tbISBN.BorderStyle = BorderStyle.FixedSingle;
+            tbISBN.Location = new Point(59, 156);
+            tbISBN.Name = "tbISBN";
+            tbISBN.Size = new Size(619, 27);
+            tbISBN.TabIndex = 28;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.Location = new Point(59, 125);
+            label9.Name = "label9";
+            label9.Size = new Size(62, 25);
+            label9.TabIndex = 27;
+            label9.Text = "ISBN\r\n";
+            // 
             // tbTahunTerbit
             // 
             tbTahunTerbit.BorderStyle = BorderStyle.FixedSingle;
-            tbTahunTerbit.Location = new Point(59, 444);
+            tbTahunTerbit.Location = new Point(59, 523);
             tbTahunTerbit.Name = "tbTahunTerbit";
             tbTahunTerbit.Size = new Size(619, 27);
             tbTahunTerbit.TabIndex = 26;
@@ -675,7 +752,7 @@ namespace Project_PBO_03
             // tbSinopsisBuku
             // 
             tbSinopsisBuku.BorderStyle = BorderStyle.FixedSingle;
-            tbSinopsisBuku.Location = new Point(58, 237);
+            tbSinopsisBuku.Location = new Point(58, 316);
             tbSinopsisBuku.Name = "tbSinopsisBuku";
             tbSinopsisBuku.Size = new Size(619, 156);
             tbSinopsisBuku.TabIndex = 25;
@@ -684,7 +761,7 @@ namespace Project_PBO_03
             // tbNamaBuku
             // 
             tbNamaBuku.BorderStyle = BorderStyle.FixedSingle;
-            tbNamaBuku.Location = new Point(58, 156);
+            tbNamaBuku.Location = new Point(58, 235);
             tbNamaBuku.Name = "tbNamaBuku";
             tbNamaBuku.Size = new Size(619, 27);
             tbNamaBuku.TabIndex = 24;
@@ -692,15 +769,17 @@ namespace Project_PBO_03
             // cbJenisBuku
             // 
             cbJenisBuku.FormattingEnabled = true;
-            cbJenisBuku.Location = new Point(808, 444);
+            cbJenisBuku.Location = new Point(797, 424);
             cbJenisBuku.Name = "cbJenisBuku";
             cbJenisBuku.Size = new Size(618, 28);
             cbJenisBuku.TabIndex = 23;
+            cbJenisBuku.SelectedIndexChanged += cbJenisBuku_SelectedIndexChanged;
+            cbJenisBuku.SelectionChangeCommitted += cbJenisBuku_SelectionChangeCommitted;
             // 
             // cbPenerbit
             // 
             cbPenerbit.FormattingEnabled = true;
-            cbPenerbit.Location = new Point(808, 155);
+            cbPenerbit.Location = new Point(797, 234);
             cbPenerbit.Name = "cbPenerbit";
             cbPenerbit.Size = new Size(618, 28);
             cbPenerbit.TabIndex = 21;
@@ -709,10 +788,11 @@ namespace Project_PBO_03
             // cbPenulis
             // 
             cbPenulis.FormattingEnabled = true;
-            cbPenulis.Location = new Point(808, 296);
+            cbPenulis.Location = new Point(797, 332);
             cbPenulis.Name = "cbPenulis";
             cbPenulis.Size = new Size(618, 28);
             cbPenulis.TabIndex = 20;
+            cbPenulis.SelectedIndexChanged += cbPenulis_SelectedIndexChanged;
             // 
             // btTBAdmin
             // 
@@ -732,7 +812,7 @@ namespace Project_PBO_03
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(808, 416);
+            label8.Location = new Point(797, 396);
             label8.Name = "label8";
             label8.Size = new Size(119, 25);
             label8.TabIndex = 17;
@@ -742,7 +822,7 @@ namespace Project_PBO_03
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(60, 416);
+            label2.Location = new Point(60, 495);
             label2.Name = "label2";
             label2.Size = new Size(136, 25);
             label2.TabIndex = 15;
@@ -752,7 +832,7 @@ namespace Project_PBO_03
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(808, 121);
+            label3.Location = new Point(797, 200);
             label3.Name = "label3";
             label3.Size = new Size(92, 25);
             label3.TabIndex = 13;
@@ -763,7 +843,7 @@ namespace Project_PBO_03
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(808, 268);
+            label4.Location = new Point(797, 304);
             label4.Name = "label4";
             label4.Size = new Size(83, 25);
             label4.TabIndex = 11;
@@ -773,7 +853,7 @@ namespace Project_PBO_03
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(58, 209);
+            label5.Location = new Point(58, 288);
             label5.Name = "label5";
             label5.Size = new Size(95, 25);
             label5.TabIndex = 9;
@@ -783,7 +863,7 @@ namespace Project_PBO_03
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(58, 125);
+            label6.Location = new Point(58, 204);
             label6.Name = "label6";
             label6.Size = new Size(123, 25);
             label6.TabIndex = 7;
@@ -810,8 +890,8 @@ namespace Project_PBO_03
             Controls.Add(pictureBoxPerpusAdmin);
             Controls.Add(pictureBoxVektoradmin);
             Controls.Add(pnlAdmin);
-            Controls.Add(pnlDaftarBukuAdmin);
             Controls.Add(pnlTambahBukuAdmin);
+            Controls.Add(pnlDaftarBukuAdmin);
             Controls.Add(pnlPeminjamanAdmin);
             Controls.Add(pnlRiwayatPeminjaman);
             Controls.Add(pnlProfileAdmin);
@@ -924,5 +1004,12 @@ namespace Project_PBO_03
         private DataGridView dgvDaftarBuku;
         private ComboBox cbJenisBukuAdmin;
         private Button button1;
+        private DataGridViewButtonColumn hapusButton;
+        private TextBox tbISBN;
+        private Label label9;
+        private TextBox tbStokBuku;
+        private Label label10;
+        private TextBox tbPosisiRak;
+        private Label label11;
     }
 }

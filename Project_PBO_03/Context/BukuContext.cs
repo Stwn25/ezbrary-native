@@ -39,8 +39,8 @@ namespace Project_PBO_03.Context
 
         public static void create(m_Buku bukuBaru)
         {
-            string query = $"INSERT INTO {table} (isbn, namabuku, sinopsis, thnterbit, jenisbuku_idjenis, stokbuku, penerbit_idpenerbit, penulis_id, posisirak " +
-                            $"penulis_idpenulis, posisirak) VALUES (@isbn, @namabuku, @sinopsis, @tahunterbit, @jenisbuku, @stokbuku, @penerbit, @penulis, @posisirak)";
+            string query = $"INSERT INTO {table} (isbn, namabuku, sinopsis, thnterbit, jenisbuku_idjenis, stokbuku, penerbit_idpenerbit, penulis_idpenulis, posisirak) " +
+                           $"VALUES (@isbn, @namabuku, @sinopsis, @tahunterbit, @jenisbuku, @stokbuku, @penerbit, @penulis, @posisirak)";
             NpgsqlParameter[] parameters =
             {
                 new NpgsqlParameter ("@isbn", NpgsqlDbType.Varchar){Value = bukuBaru.isbn},

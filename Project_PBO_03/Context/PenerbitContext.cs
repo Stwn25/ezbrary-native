@@ -22,6 +22,13 @@ namespace Project_PBO_03.Context
             return dataPenerbit;
         }
 
+        public static DataTable comboBox()
+        {
+            string query = $"SELECT idpenerbit, namapenerbit FROM {table}";
+            DataTable dataPenerbit = queryExecutor(query);
+            return dataPenerbit;
+        }
+
         public static DataTable read(int id)
         {
             string query = $"SELECT * FROM {table} WHERE idpenerbit = @idpenerbit";

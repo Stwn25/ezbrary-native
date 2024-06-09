@@ -1,4 +1,7 @@
-﻿using Project_PBO_03.Context;
+﻿using Npgsql;
+using NpgsqlTypes;
+using Project_PBO_03.Context;
+using Project_PBO_03.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,19 +24,36 @@ namespace Project_PBO_03
             btRiwayatPeminjaman.BackColor = Color.CornflowerBlue;
             btProfileAdmin.BackColor = Color.CornflowerBlue;
             btKeluarAdmin.BackColor = Color.CornflowerBlue;
+
             this.pnlDaftarBukuAdmin.Show();
             this.pnlTambahBukuAdmin.Hide();
-            /*this.pnlDaftarBukuAdmin.Dock = DockStyle.Bottom;*/
             this.pnlPeminjamanAdmin.Hide();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Hide();
+
             ucJenisBukuTambahBukuAdmin1.Hide();
             ucPenerbitTambahBukuAdmin1.Hide();
             ucPenulisTambahBukuAdmin2.Hide();
+
             dgvDaftarBuku.DataSource = BukuContext.all();
             cbJenisBukuAdmin.DataSource = JenisBukuContext.comboBox();
             cbJenisBukuAdmin.DisplayMember = "namajenis";
             cbJenisBukuAdmin.ValueMember = "namajenis";
+            cbJenisBukuAdmin.Text = "All";
+
+            cbPenerbit.DataSource = PenerbitContext.comboBox();
+            cbPenerbit.DisplayMember = "namapenerbit";
+            cbPenulis.ValueMember = "idpenerbit";
+            cbPenulis.Text = " ";
+
+            cbPenulis.DataSource = PenulisContext.all();
+            cbPenulis.DisplayMember = "namapenulis";
+            cbPenulis.ValueMember = "idpenulis";
+
+            cbJenisBuku.DataSource = JenisBukuContext.all();
+            cbJenisBuku.DisplayMember = "namajenis";
+            cbJenisBuku.ValueMember = "idjenis";
+
         }
 
 
@@ -141,17 +161,58 @@ namespace Project_PBO_03
             this.pnlProfileAdmin.Hide();
         }
 
-        private void cbPenerbit_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
 
         private void btTBAdmin_Click(object sender, EventArgs e)
         {
 
+            DataRowView rowJenisBuku = cbJenisBuku.SelectedItem as DataRowView;
+            DataRowView rowPenerbit = cbPenerbit.SelectedItem as DataRowView;
+            DataRowView rowPenulis = cbPenulis.SelectedItem as DataRowView;
+
+            string isbn = tbISBN.Text;
+            string namabuku = tbNamaBuku.Text;
+            string sinopsis = tbSinopsisBuku.Text;
+            string tahunterbit = tbTahunTerbit.Text;
+            int jenisbuku = Convert.ToInt32(rowJenisBuku["idjenis"]);
+            int stokbuku = Convert.ToInt32(tbStokBuku.Text);
+            int penerbit = Convert.ToInt32(rowPenerbit["idpenerbit"]);
+            int penulis = Convert.ToInt32(rowPenulis["idpenulis"]);
+            string posisirak = tbPosisiRak.Text;
+
+            m_Buku tambahBuku = new m_Buku
+            {
+                isbn = isbn,
+                nama_buku = namabuku,
+                sinopsis = sinopsis,
+                thn_terbit = tahunterbit,
+                jenis_id = jenisbuku,
+                stok_buku = stokbuku,
+                penerbit_id = penerbit,
+                penulis_id = penulis,
+                posisi_rak = posisirak
+            };
+
+            BukuContext.create(tambahBuku);
+            DialogResult message = MessageBox.Show("Data buku berhasil ditambahkan", "Sukses", MessageBoxButtons.OK);
+            if (message == DialogResult.OK)
+            {
+                tbISBN.Text = default;
+                tbNamaBuku.Text = default;
+                tbSinopsisBuku.Text = default;
+                tbTahunTerbit.Text = default;
+                tbPosisiRak.Text = default;
+                tbStokBuku.Text = default;
+
+                string namajenis = Convert.ToString(cbJenisBukuAdmin.SelectedValue);
+                dgvDaftarBuku.DataSource = JenisBukuContext.Jenis(namajenis); 
+            }
+
         }
 
+        private void cbJenisBuku_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+        }
         private void ucPenulisTambahBukuAdmin1_Load(object sender, EventArgs e)
         {
 
@@ -208,22 +269,6 @@ namespace Project_PBO_03
             ucPenerbitTambahBukuAdmin1.Hide();
         }
 
-        private void dgvKelolaBukuAdmin_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == dgvDaftarBuku.Columns["hapusButton"].Index && e.RowIndex >= 0)
-            {
-
-            }
-
-            /*if (e.ColumnIndex == dgvKelolaBukuAdmin.Columns["Hapusbuku"].Index && e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dgvKelolaBukuAdmin.Rows[e.RowIndex];
-                string isbn = Convert.ToString(row.Cells["isbn"].Value);
-                BukuContext.delete(isbn);
-                dgvKelolaBukuAdmin.DataSource = BukuContext.all();
-                MessageBox.Show("Buku berhasil dihapus!", "Sukses", MessageBoxButtons.OK);
-            }*/
-        }
 
         private void ucPenerbitTambahBukuAdmin1_Load(object sender, EventArgs e)
         {
@@ -235,19 +280,87 @@ namespace Project_PBO_03
 
         }
 
-        private void cbJenisBuku_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string namajenis = Convert.ToString(cbJenisBukuAdmin.SelectedValue);
 
-            if (cbJenisBukuAdmin.SelectedValue != null)
-            {
-                dgvDaftarBuku.DataSource = JenisBukuContext.Jenis(namajenis);
-            }
-        }
 
         private void ucPenulisTambahBukuAdmin2_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        private void dgvDaftarBuku_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgvDaftarBuku.Columns["hapusButton"].Index && e.RowIndex >= 0)
+            {
+                string isbn = Convert.ToString(dgvDaftarBuku.Rows[e.RowIndex].Cells["isbn"].Value);
+                string namajenis = Convert.ToString(cbJenisBukuAdmin.SelectedValue);
+
+                // Panggil metode destroy dari kelas M_Mahasiswa untuk menghapus mahasiswa tetapi konfirmasi dulu
+                DialogResult message = MessageBox.Show("Apakah anda yakin ingin menghapus data ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo);
+                if (message == DialogResult.Yes)
+                {
+                    BukuContext.delete(isbn);
+                    DialogResult messageHapus = MessageBox.Show("Data berhasil dihapus", "Sukses", MessageBoxButtons.OK);
+                }
+
+                // Kemudian, perbarui DataGridView dengan data yang telah diperbarui
+                dgvDaftarBuku.DataSource = null;
+                dgvDaftarBuku.DataSource = JenisBukuContext.Jenis(namajenis);
+            }
+        }
+        public void cbPenerbit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbPenerbit.SelectedIndex != null)
+            {
+                DataRowView selectedRow = cbPenerbit.SelectedItem as DataRowView;
+                if (selectedRow != null)
+                {
+                    string namapenerbit = selectedRow["namapenerbit"].ToString();
+                    int idpenerbit = Convert.ToInt32(selectedRow["idpenerbit"]);
+                }
+            }
+        }
+
+        public void cbPenulis_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbPenulis.SelectedItem != null)
+            {
+                // Dapatkan DataRowView dari item yang dipilih
+                DataRowView selectedRow = cbPenulis.SelectedItem as DataRowView;
+                if (selectedRow != null)
+                {
+                    // Akses nilai dari DataRowView
+                    string namaPenulis = selectedRow["namapenulis"].ToString();
+                    int idPenulis = Convert.ToInt32(selectedRow["idpenulis"]);
+                }
+            }
+        }
+
+        public void cbJenisBuku_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cbJenisBukuAdmin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbJenisBuku.SelectedItem != null)
+            {
+                DataRowView selectedRow = cbJenisBukuAdmin.SelectedItem as DataRowView;
+                if (selectedRow != null)
+                {
+                    string jenisBuku = selectedRow["namajenis"].ToString();
+
+                    if (jenisBuku == "All")
+                    {
+                        dgvDaftarBuku.DataSource = BukuContext.all();
+                    }
+                    else
+                    {
+                        dgvDaftarBuku.DataSource = JenisBukuContext.Jenis(jenisBuku);
+                    }
+                    
+                }
+
+            }
         }
     }
 

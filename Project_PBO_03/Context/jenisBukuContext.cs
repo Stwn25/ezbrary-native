@@ -21,7 +21,7 @@ namespace Project_PBO_03.Context
             DataTable dataJenis = queryExecutor(query);
             return dataJenis;
         }
-
+        
         public static DataTable comboBox()
         {
             string query = $"SELECT namajenis FROM {table}";
