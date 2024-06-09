@@ -145,11 +145,21 @@ namespace Project_PBO_03.View
         {
             try
             {
-                // Create new admin object with data from textboxes
+                // Pengecekan input kosong
+                if (string.IsNullOrWhiteSpace(tbUsernameSA.Text) ||
+                    string.IsNullOrWhiteSpace(tbNamaSA.Text) ||
+                    string.IsNullOrWhiteSpace(tbEmailSA.Text) ||
+                    string.IsNullOrWhiteSpace(tbTeleponSA.Text) ||
+                    string.IsNullOrWhiteSpace(tbPasswordSA.Text))
+                {
+                    MessageBox.Show("Tidak boleh ada yang kosong!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Membuat objek admin baru
                 m_Administrator newAdmin = new m_Administrator
                 {
-                    id_admin = 0, // Assuming id is auto-incremented by the database
-                    kode_verif = "123456", // Using the fixed verification code
+                    kode_verif = "123456",
                     username_admin = tbUsernameSA.Text,
                     nama_admin = tbNamaSA.Text,
                     email_admin = tbEmailSA.Text,
@@ -157,22 +167,28 @@ namespace Project_PBO_03.View
                     pass_admin = tbPasswordSA.Text
                 };
 
-                // Add new admin to the database
+                // Menambahkan admin baru ke database
                 AdminContext.create(newAdmin);
 
-                // Refresh DataGridView to show new admin
+                // Memperbarui data di dataGridView
                 dataGridView1.DataSource = AdminContext.all();
 
-                // Clear textboxes
+                // Membersihkan textbox
                 ClearTextboxes();
 
+                // Menampilkan pesan sukses
                 MessageBox.Show("Data admin berhasil ditambahkan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Menyembunyikan panel
+                pnlDaftarAdminSA.Hide();
             }
             catch (Exception ex)
             {
+                // Menampilkan pesan error
                 MessageBox.Show("Gagal menambahkan data admin: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void ClearTextboxes()
         {
