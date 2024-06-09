@@ -71,7 +71,6 @@ namespace Project_PBO_03.View
             };
             dataGridView1.Columns.Insert(1, updateAdmin);
 
-            // Event handler untuk ucUpdateAdmin
             ucUpdateAdmin1.UpdateAdminSuccess += UcUpdateAdmin1_UpdateAdminSuccess;
         }
 
@@ -144,13 +143,46 @@ namespace Project_PBO_03.View
 
         private void btDaftarSA_Click(object sender, EventArgs e)
         {
-            btKelolaAkunSA.BackColor = Color.Black;
-            btKeluarSA.BackColor = Color.CornflowerBlue;
-            pnlUserSA.Hide();
-            pnlAdminSA.Hide();
-            pnlDaftarAdminSA.Show();
-            pnlDaftarAdminSA.Dock = DockStyle.Bottom;
+            try
+            {
+                // Create new admin object with data from textboxes
+                m_Administrator newAdmin = new m_Administrator
+                {
+                    id_admin = 0, // Assuming id is auto-incremented by the database
+                    kode_verif = "123456", // Using the fixed verification code
+                    username_admin = tbUsernameSA.Text,
+                    nama_admin = tbNamaSA.Text,
+                    email_admin = tbEmailSA.Text,
+                    telp_admin = tbTeleponSA.Text,
+                    pass_admin = tbPasswordSA.Text
+                };
+
+                // Add new admin to the database
+                AdminContext.create(newAdmin);
+
+                // Refresh DataGridView to show new admin
+                dataGridView1.DataSource = AdminContext.all();
+
+                // Clear textboxes
+                ClearTextboxes();
+
+                MessageBox.Show("Data admin berhasil ditambahkan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal menambahkan data admin: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+        private void ClearTextboxes()
+        {
+            tbUsernameSA.Text = "";
+            tbNamaSA.Text = "";
+            tbEmailSA.Text = "";
+            tbTeleponSA.Text = "";
+            tbPasswordSA.Text = "";
+        }
+
 
         private void btKeluarSA_Click(object sender, EventArgs e)
         {
