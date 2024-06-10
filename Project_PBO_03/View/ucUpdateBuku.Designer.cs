@@ -130,6 +130,7 @@
             tbNamaBukuuc.Name = "tbNamaBukuuc";
             tbNamaBukuuc.Size = new Size(405, 27);
             tbNamaBukuuc.TabIndex = 43;
+            tbNamaBukuuc.TextChanged += tbNamaBukuuc_TextChanged;
             // 
             // cbJenisBukuuc
             // 
@@ -278,6 +279,7 @@
             Controls.Add(label6);
             Name = "ucUpdateBuku";
             Size = new Size(942, 642);
+            Load += ucUpdateBuku_Load;
             panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();

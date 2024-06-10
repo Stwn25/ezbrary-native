@@ -87,8 +87,9 @@
             pnlSA.Controls.Add(pictureBoxVectorUser);
             pnlSA.Dock = DockStyle.Left;
             pnlSA.Location = new Point(0, 0);
+            pnlSA.Margin = new Padding(3, 2, 3, 2);
             pnlSA.Name = "pnlSA";
-            pnlSA.Size = new Size(416, 1080);
+            pnlSA.Size = new Size(364, 591);
             pnlSA.TabIndex = 1;
             // 
             // btKeluarSA
@@ -98,9 +99,10 @@
             btKeluarSA.FlatStyle = FlatStyle.Popup;
             btKeluarSA.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold);
             btKeluarSA.ForeColor = Color.White;
-            btKeluarSA.Location = new Point(68, 943);
+            btKeluarSA.Location = new Point(60, 707);
+            btKeluarSA.Margin = new Padding(3, 2, 3, 2);
             btKeluarSA.Name = "btKeluarSA";
-            btKeluarSA.Size = new Size(286, 56);
+            btKeluarSA.Size = new Size(250, 42);
             btKeluarSA.TabIndex = 6;
             btKeluarSA.Text = "Keluar";
             btKeluarSA.UseVisualStyleBackColor = false;
@@ -113,9 +115,10 @@
             btKelolaAkunSA.FlatStyle = FlatStyle.Popup;
             btKelolaAkunSA.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold);
             btKelolaAkunSA.ForeColor = Color.White;
-            btKelolaAkunSA.Location = new Point(68, 380);
+            btKelolaAkunSA.Location = new Point(60, 285);
+            btKelolaAkunSA.Margin = new Padding(3, 2, 3, 2);
             btKelolaAkunSA.Name = "btKelolaAkunSA";
-            btKelolaAkunSA.Size = new Size(286, 56);
+            btKelolaAkunSA.Size = new Size(250, 42);
             btKelolaAkunSA.TabIndex = 1;
             btKelolaAkunSA.Text = "Kelola Akun";
             btKelolaAkunSA.UseVisualStyleBackColor = false;
@@ -126,9 +129,9 @@
             lblEmailUser.AutoSize = true;
             lblEmailUser.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblEmailUser.ForeColor = Color.Black;
-            lblEmailUser.Location = new Point(119, 284);
+            lblEmailUser.Location = new Point(104, 213);
             lblEmailUser.Name = "lblEmailUser";
-            lblEmailUser.Size = new Size(197, 20);
+            lblEmailUser.Size = new Size(168, 17);
             lblEmailUser.TabIndex = 2;
             lblEmailUser.Text = "Jamaludin@gmail.com";
             // 
@@ -137,18 +140,19 @@
             lblUsernameUser.AutoSize = true;
             lblUsernameUser.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblUsernameUser.ForeColor = Color.White;
-            lblUsernameUser.Location = new Point(154, 256);
+            lblUsernameUser.Location = new Point(135, 192);
             lblUsernameUser.Name = "lblUsernameUser";
-            lblUsernameUser.Size = new Size(110, 25);
+            lblUsernameUser.Size = new Size(91, 20);
             lblUsernameUser.TabIndex = 1;
             lblUsernameUser.Text = "Username";
             // 
             // pictureBoxVectorUser
             // 
             pictureBoxVectorUser.Image = (Image)resources.GetObject("pictureBoxVectorUser.Image");
-            pictureBoxVectorUser.Location = new Point(79, 45);
+            pictureBoxVectorUser.Location = new Point(69, 34);
+            pictureBoxVectorUser.Margin = new Padding(3, 2, 3, 2);
             pictureBoxVectorUser.Name = "pictureBoxVectorUser";
-            pictureBoxVectorUser.Size = new Size(256, 189);
+            pictureBoxVectorUser.Size = new Size(224, 142);
             pictureBoxVectorUser.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxVectorUser.TabIndex = 0;
             pictureBoxVectorUser.TabStop = false;
@@ -163,7 +167,7 @@
             pnlAdminSA.Controls.Add(ucUpdateAdmin1);
             pnlAdminSA.Location = new Point(416, 277);
             pnlAdminSA.Name = "pnlAdminSA";
-            pnlAdminSA.Size = new Size(1507, 805);
+            pnlAdminSA.Size = new Size(1319, 604);
             pnlAdminSA.TabIndex = 18;
             // 
             // btDaftarAdminSA
@@ -172,9 +176,10 @@
             btDaftarAdminSA.FlatStyle = FlatStyle.Popup;
             btDaftarAdminSA.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btDaftarAdminSA.ForeColor = Color.White;
-            btDaftarAdminSA.Location = new Point(1215, 734);
+            btDaftarAdminSA.Location = new Point(1063, 550);
+            btDaftarAdminSA.Margin = new Padding(3, 2, 3, 2);
             btDaftarAdminSA.Name = "btDaftarAdminSA";
-            btDaftarAdminSA.Size = new Size(268, 49);
+            btDaftarAdminSA.Size = new Size(234, 37);
             btDaftarAdminSA.TabIndex = 14;
             btDaftarAdminSA.Text = "Daftar Admin";
             btDaftarAdminSA.UseVisualStyleBackColor = false;
@@ -186,9 +191,10 @@
             btAdminSA1.FlatStyle = FlatStyle.Popup;
             btAdminSA1.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btAdminSA1.ForeColor = Color.White;
-            btAdminSA1.Location = new Point(137, 64);
+            btAdminSA1.Location = new Point(120, 48);
+            btAdminSA1.Margin = new Padding(3, 2, 3, 2);
             btAdminSA1.Name = "btAdminSA1";
-            btAdminSA1.Size = new Size(114, 34);
+            btAdminSA1.Size = new Size(100, 26);
             btAdminSA1.TabIndex = 13;
             btAdminSA1.Text = "Admin";
             btAdminSA1.UseVisualStyleBackColor = false;
@@ -200,9 +206,10 @@
             btUserSA1.FlatStyle = FlatStyle.Popup;
             btUserSA1.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btUserSA1.ForeColor = Color.White;
-            btUserSA1.Location = new Point(23, 64);
+            btUserSA1.Location = new Point(20, 48);
+            btUserSA1.Margin = new Padding(3, 2, 3, 2);
             btUserSA1.Name = "btUserSA1";
-            btUserSA1.Size = new Size(114, 34);
+            btUserSA1.Size = new Size(100, 26);
             btUserSA1.TabIndex = 12;
             btUserSA1.Text = "User";
             btUserSA1.UseVisualStyleBackColor = false;
@@ -213,10 +220,11 @@
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { HapusAdmin, UpdateAdmin });
-            dataGridView1.Location = new Point(23, 127);
+            dataGridView1.Location = new Point(20, 95);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1460, 591);
+            dataGridView1.Size = new Size(1278, 443);
             dataGridView1.TabIndex = 11;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -241,9 +249,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(23, 29);
+            label1.Location = new Point(20, 22);
             label1.Name = "label1";
-            label1.Size = new Size(174, 25);
+            label1.Size = new Size(146, 20);
             label1.TabIndex = 10;
             label1.Text = "Daftar Pengguna";
             // 
@@ -271,7 +279,7 @@
             nightControlBox1.EnableMaximizeColor = Color.FromArgb(160, 160, 160);
             nightControlBox1.EnableMinimizeButton = true;
             nightControlBox1.EnableMinimizeColor = Color.FromArgb(160, 160, 160);
-            nightControlBox1.Location = new Point(1781, 0);
+            nightControlBox1.Location = new Point(1074, 0);
             nightControlBox1.MaximizeHoverColor = Color.FromArgb(15, 255, 255, 255);
             nightControlBox1.MaximizeHoverForeColor = Color.White;
             nightControlBox1.MinimizeHoverColor = Color.FromArgb(15, 255, 255, 255);
@@ -285,9 +293,9 @@
             lblHai1SA.AutoSize = true;
             lblHai1SA.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblHai1SA.ForeColor = Color.Black;
-            lblHai1SA.Location = new Point(436, 64);
+            lblHai1SA.Location = new Point(382, 48);
             lblHai1SA.Name = "lblHai1SA";
-            lblHai1SA.Size = new Size(137, 25);
+            lblHai1SA.Size = new Size(112, 20);
             lblHai1SA.TabIndex = 12;
             lblHai1SA.Text = "Super Admin";
             // 
@@ -296,18 +304,19 @@
             lblHaiSA.AutoSize = true;
             lblHaiSA.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblHaiSA.ForeColor = Color.Black;
-            lblHaiSA.Location = new Point(436, 24);
+            lblHaiSA.Location = new Point(382, 18);
             lblHaiSA.Name = "lblHaiSA";
-            lblHaiSA.Size = new Size(172, 25);
+            lblHaiSA.Size = new Size(144, 20);
             lblHaiSA.TabIndex = 11;
             lblHaiSA.Text = "Selamat Datang,";
             // 
             // pictureBoxPerpusSA
             // 
             pictureBoxPerpusSA.Image = (Image)resources.GetObject("pictureBoxPerpusSA.Image");
-            pictureBoxPerpusSA.Location = new Point(416, 0);
+            pictureBoxPerpusSA.Location = new Point(364, 0);
+            pictureBoxPerpusSA.Margin = new Padding(3, 2, 3, 2);
             pictureBoxPerpusSA.Name = "pictureBoxPerpusSA";
-            pictureBoxPerpusSA.Size = new Size(1507, 275);
+            pictureBoxPerpusSA.Size = new Size(1319, 206);
             pictureBoxPerpusSA.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxPerpusSA.TabIndex = 9;
             pictureBoxPerpusSA.TabStop = false;
@@ -318,9 +327,10 @@
             pnlUserSA.Controls.Add(btUserSA);
             pnlUserSA.Controls.Add(dataGridView2);
             pnlUserSA.Controls.Add(lblDaftarPenggunaSA);
-            pnlUserSA.Location = new Point(416, 275);
+            pnlUserSA.Location = new Point(364, 206);
+            pnlUserSA.Margin = new Padding(3, 2, 3, 2);
             pnlUserSA.Name = "pnlUserSA";
-            pnlUserSA.Size = new Size(1507, 805);
+            pnlUserSA.Size = new Size(1319, 604);
             pnlUserSA.TabIndex = 17;
             // 
             // btAdminSA
@@ -329,9 +339,10 @@
             btAdminSA.FlatStyle = FlatStyle.Popup;
             btAdminSA.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btAdminSA.ForeColor = Color.White;
-            btAdminSA.Location = new Point(137, 64);
+            btAdminSA.Location = new Point(120, 48);
+            btAdminSA.Margin = new Padding(3, 2, 3, 2);
             btAdminSA.Name = "btAdminSA";
-            btAdminSA.Size = new Size(114, 34);
+            btAdminSA.Size = new Size(100, 26);
             btAdminSA.TabIndex = 13;
             btAdminSA.Text = "Admin";
             btAdminSA.UseVisualStyleBackColor = false;
@@ -343,9 +354,10 @@
             btUserSA.FlatStyle = FlatStyle.Popup;
             btUserSA.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btUserSA.ForeColor = Color.White;
-            btUserSA.Location = new Point(23, 64);
+            btUserSA.Location = new Point(20, 48);
+            btUserSA.Margin = new Padding(3, 2, 3, 2);
             btUserSA.Name = "btUserSA";
-            btUserSA.Size = new Size(114, 34);
+            btUserSA.Size = new Size(100, 26);
             btUserSA.TabIndex = 12;
             btUserSA.Text = "User";
             btUserSA.UseVisualStyleBackColor = false;
@@ -356,10 +368,11 @@
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Columns.AddRange(new DataGridViewColumn[] { HapusUser });
-            dataGridView2.Location = new Point(23, 127);
+            dataGridView2.Location = new Point(20, 95);
+            dataGridView2.Margin = new Padding(3, 2, 3, 2);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(1460, 591);
+            dataGridView2.Size = new Size(1278, 443);
             dataGridView2.TabIndex = 11;
             dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 
@@ -376,9 +389,9 @@
             lblDaftarPenggunaSA.AutoSize = true;
             lblDaftarPenggunaSA.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDaftarPenggunaSA.ForeColor = Color.Black;
-            lblDaftarPenggunaSA.Location = new Point(23, 29);
+            lblDaftarPenggunaSA.Location = new Point(20, 22);
             lblDaftarPenggunaSA.Name = "lblDaftarPenggunaSA";
-            lblDaftarPenggunaSA.Size = new Size(174, 25);
+            lblDaftarPenggunaSA.Size = new Size(146, 20);
             lblDaftarPenggunaSA.TabIndex = 10;
             lblDaftarPenggunaSA.Text = "Daftar Pengguna";
             // 
@@ -396,9 +409,10 @@
             pnlDaftarAdminSA.Controls.Add(tbNamaSA);
             pnlDaftarAdminSA.Controls.Add(tbUsernameSA);
             pnlDaftarAdminSA.Controls.Add(label3);
-            pnlDaftarAdminSA.Location = new Point(1143, 232);
+            pnlDaftarAdminSA.Location = new Point(1000, 174);
+            pnlDaftarAdminSA.Margin = new Padding(3, 2, 3, 2);
             pnlDaftarAdminSA.Name = "pnlDaftarAdminSA";
-            pnlDaftarAdminSA.Size = new Size(1507, 805);
+            pnlDaftarAdminSA.Size = new Size(1319, 604);
             pnlDaftarAdminSA.TabIndex = 17;
             pnlDaftarAdminSA.Paint += pnlDaftarAdminSA_Paint;
             // 
@@ -409,9 +423,10 @@
             btDaftarSA.FlatStyle = FlatStyle.Popup;
             btDaftarSA.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btDaftarSA.ForeColor = Color.White;
-            btDaftarSA.Location = new Point(549, 573);
+            btDaftarSA.Location = new Point(480, 430);
+            btDaftarSA.Margin = new Padding(3, 2, 3, 2);
             btDaftarSA.Name = "btDaftarSA";
-            btDaftarSA.Size = new Size(268, 49);
+            btDaftarSA.Size = new Size(234, 37);
             btDaftarSA.TabIndex = 15;
             btDaftarSA.Text = "Daftar";
             btDaftarSA.UseVisualStyleBackColor = false;
@@ -422,9 +437,9 @@
             label8.AutoSize = true;
             label8.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.Black;
-            label8.Location = new Point(58, 464);
+            label8.Location = new Point(51, 348);
             label8.Name = "label8";
-            label8.Size = new Size(106, 25);
+            label8.Size = new Size(86, 20);
             label8.TabIndex = 21;
             label8.Text = "Password";
             // 
@@ -433,9 +448,9 @@
             label7.AutoSize = true;
             label7.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.Black;
-            label7.Location = new Point(58, 378);
+            label7.Location = new Point(51, 284);
             label7.Name = "label7";
-            label7.Size = new Size(130, 25);
+            label7.Size = new Size(105, 20);
             label7.TabIndex = 20;
             label7.Text = "No. Telepon";
             // 
@@ -444,9 +459,9 @@
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(58, 288);
+            label6.Location = new Point(51, 216);
             label6.Name = "label6";
-            label6.Size = new Size(65, 25);
+            label6.Size = new Size(53, 20);
             label6.TabIndex = 19;
             label6.Text = "Email";
             // 
@@ -455,9 +470,9 @@
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(58, 206);
+            label5.Location = new Point(51, 154);
             label5.Name = "label5";
-            label5.Size = new Size(68, 25);
+            label5.Size = new Size(55, 20);
             label5.TabIndex = 18;
             label5.Text = "Nama";
             // 
@@ -466,9 +481,9 @@
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(58, 125);
+            label4.Location = new Point(51, 94);
             label4.Name = "label4";
-            label4.Size = new Size(110, 25);
+            label4.Size = new Size(91, 20);
             label4.TabIndex = 16;
             label4.Text = "Username";
             // 
@@ -476,50 +491,55 @@
             // 
             tbPasswordSA.BackColor = Color.Silver;
             tbPasswordSA.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tbPasswordSA.Location = new Point(58, 495);
+            tbPasswordSA.Location = new Point(51, 371);
+            tbPasswordSA.Margin = new Padding(3, 2, 3, 2);
             tbPasswordSA.Multiline = true;
             tbPasswordSA.Name = "tbPasswordSA";
-            tbPasswordSA.Size = new Size(1400, 34);
+            tbPasswordSA.Size = new Size(1226, 26);
             tbPasswordSA.TabIndex = 17;
             // 
             // tbTeleponSA
             // 
             tbTeleponSA.BackColor = Color.Silver;
             tbTeleponSA.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tbTeleponSA.Location = new Point(58, 409);
+            tbTeleponSA.Location = new Point(51, 307);
+            tbTeleponSA.Margin = new Padding(3, 2, 3, 2);
             tbTeleponSA.Multiline = true;
             tbTeleponSA.Name = "tbTeleponSA";
-            tbTeleponSA.Size = new Size(1400, 34);
+            tbTeleponSA.Size = new Size(1226, 26);
             tbTeleponSA.TabIndex = 16;
             // 
             // tbEmailSA
             // 
             tbEmailSA.BackColor = Color.Silver;
             tbEmailSA.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tbEmailSA.Location = new Point(58, 323);
+            tbEmailSA.Location = new Point(51, 242);
+            tbEmailSA.Margin = new Padding(3, 2, 3, 2);
             tbEmailSA.Multiline = true;
             tbEmailSA.Name = "tbEmailSA";
-            tbEmailSA.Size = new Size(1400, 34);
+            tbEmailSA.Size = new Size(1226, 26);
             tbEmailSA.TabIndex = 15;
             // 
             // tbNamaSA
             // 
             tbNamaSA.BackColor = Color.Silver;
             tbNamaSA.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tbNamaSA.Location = new Point(58, 237);
+            tbNamaSA.Location = new Point(51, 178);
+            tbNamaSA.Margin = new Padding(3, 2, 3, 2);
             tbNamaSA.Multiline = true;
             tbNamaSA.Name = "tbNamaSA";
-            tbNamaSA.Size = new Size(1400, 34);
+            tbNamaSA.Size = new Size(1226, 26);
             tbNamaSA.TabIndex = 14;
             // 
             // tbUsernameSA
             // 
             tbUsernameSA.BackColor = Color.Silver;
             tbUsernameSA.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tbUsernameSA.Location = new Point(58, 156);
+            tbUsernameSA.Location = new Point(51, 117);
+            tbUsernameSA.Margin = new Padding(3, 2, 3, 2);
             tbUsernameSA.Multiline = true;
             tbUsernameSA.Name = "tbUsernameSA";
-            tbUsernameSA.Size = new Size(1400, 34);
+            tbUsernameSA.Size = new Size(1226, 26);
             tbUsernameSA.TabIndex = 13;
             // 
             // label3
@@ -527,15 +547,15 @@
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(23, 29);
+            label3.Location = new Point(20, 22);
             label3.Name = "label3";
-            label3.Size = new Size(137, 25);
+            label3.Size = new Size(115, 20);
             label3.TabIndex = 10;
             label3.Text = "Daftar Admin";
             // 
             // V_SuperAdmin
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1920, 1080);
             Controls.Add(pnlDaftarAdminSA);
@@ -547,6 +567,7 @@
             Controls.Add(pictureBoxPerpusSA);
             Controls.Add(pnlSA);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "V_SuperAdmin";
             Text = "V_SuperAdmin";
             pnlSA.ResumeLayout(false);

@@ -44,9 +44,10 @@
             btSimpanJenisBuku.FlatStyle = FlatStyle.Popup;
             btSimpanJenisBuku.Font = new Font("Nunito SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btSimpanJenisBuku.ForeColor = Color.White;
-            btSimpanJenisBuku.Location = new Point(180, 537);
+            btSimpanJenisBuku.Location = new Point(153, 380);
+            btSimpanJenisBuku.Margin = new Padding(3, 2, 3, 2);
             btSimpanJenisBuku.Name = "btSimpanJenisBuku";
-            btSimpanJenisBuku.Size = new Size(136, 35);
+            btSimpanJenisBuku.Size = new Size(119, 26);
             btSimpanJenisBuku.TabIndex = 14;
             btSimpanJenisBuku.Text = "Simpan";
             btSimpanJenisBuku.UseVisualStyleBackColor = false;
@@ -55,19 +56,20 @@
             // tbJenisBuku
             // 
             tbJenisBuku.BorderStyle = BorderStyle.FixedSingle;
-            tbJenisBuku.Font = new Font("Nunito", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbJenisBuku.Location = new Point(21, 483);
+            tbJenisBuku.Location = new Point(14, 339);
+            tbJenisBuku.Margin = new Padding(3, 2, 3, 2);
             tbJenisBuku.Name = "tbJenisBuku";
-            tbJenisBuku.Size = new Size(465, 28);
+            tbJenisBuku.Size = new Size(407, 23);
             tbJenisBuku.TabIndex = 12;
             tbJenisBuku.TextChanged += tbJenisBuku_TextChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(21, 460);
+            label1.Font = new Font("Nunito SemiBold", 8.999998F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(14, 322);
             label1.Name = "label1";
-            label1.Size = new Size(132, 20);
+            label1.Size = new Size(110, 17);
             label1.TabIndex = 10;
             label1.Text = "Tambah Jenis Buku";
             // 
@@ -76,19 +78,21 @@
             dgvJenisBuku.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvJenisBuku.BackgroundColor = SystemColors.ControlLight;
             dgvJenisBuku.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvJenisBuku.Location = new Point(21, 80);
+            dgvJenisBuku.Location = new Point(14, 38);
+            dgvJenisBuku.Margin = new Padding(3, 2, 3, 2);
             dgvJenisBuku.Name = "dgvJenisBuku";
             dgvJenisBuku.RowHeadersWidth = 51;
-            dgvJenisBuku.Size = new Size(465, 356);
+            dgvJenisBuku.Size = new Size(407, 267);
             dgvJenisBuku.TabIndex = 9;
             dgvJenisBuku.CellContentClick += dgvJenisBuku_CellContentClick;
             // 
             // button1
             // 
             button1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(449, 5);
+            button1.Location = new Point(381, 2);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(46, 41);
+            button1.Size = new Size(40, 31);
             button1.TabIndex = 15;
             button1.Text = "X";
             button1.UseVisualStyleBackColor = true;
@@ -105,7 +109,7 @@
             // 
             // ucJenisBukuTambahBukuAdmin
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             BorderStyle = BorderStyle.FixedSingle;
@@ -114,8 +118,9 @@
             Controls.Add(tbJenisBuku);
             Controls.Add(label1);
             Controls.Add(dgvJenisBuku);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "ucJenisBukuTambahBukuAdmin";
-            Size = new Size(503, 600);
+            Size = new Size(432, 436);
             ((System.ComponentModel.ISupportInitialize)dgvJenisBuku).EndInit();
             panel1.ResumeLayout(false);
             ResumeLayout(false);
