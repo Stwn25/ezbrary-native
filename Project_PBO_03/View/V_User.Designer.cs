@@ -106,7 +106,7 @@ namespace Project_PBO_03
             btKeluarUser.BackColor = SystemColors.HotTrack;
             btKeluarUser.Cursor = Cursors.Hand;
             btKeluarUser.FlatStyle = FlatStyle.Popup;
-            btKeluarUser.Font = new Font("Nunito ExtraBold", 11.999999F, FontStyle.Bold);
+            btKeluarUser.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold);
             btKeluarUser.ForeColor = Color.White;
             btKeluarUser.Location = new Point(69, 943);
             btKeluarUser.Name = "btKeluarUser";
@@ -121,7 +121,7 @@ namespace Project_PBO_03
             btProfileUser.BackColor = SystemColors.HotTrack;
             btProfileUser.Cursor = Cursors.Hand;
             btProfileUser.FlatStyle = FlatStyle.Popup;
-            btProfileUser.Font = new Font("Nunito ExtraBold", 11.999999F, FontStyle.Bold);
+            btProfileUser.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold);
             btProfileUser.ForeColor = Color.White;
             btProfileUser.Location = new Point(69, 872);
             btProfileUser.Name = "btProfileUser";
@@ -136,7 +136,7 @@ namespace Project_PBO_03
             btRiwayatPeminjamanUser.BackColor = SystemColors.HotTrack;
             btRiwayatPeminjamanUser.Cursor = Cursors.Hand;
             btRiwayatPeminjamanUser.FlatStyle = FlatStyle.Popup;
-            btRiwayatPeminjamanUser.Font = new Font("Nunito ExtraBold", 11.999999F, FontStyle.Bold);
+            btRiwayatPeminjamanUser.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold);
             btRiwayatPeminjamanUser.ForeColor = Color.White;
             btRiwayatPeminjamanUser.Location = new Point(69, 527);
             btRiwayatPeminjamanUser.Name = "btRiwayatPeminjamanUser";
@@ -151,7 +151,7 @@ namespace Project_PBO_03
             btBukuFavUser.BackColor = SystemColors.HotTrack;
             btBukuFavUser.Cursor = Cursors.Hand;
             btBukuFavUser.FlatStyle = FlatStyle.Popup;
-            btBukuFavUser.Font = new Font("Nunito ExtraBold", 11.999999F, FontStyle.Bold);
+            btBukuFavUser.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold);
             btBukuFavUser.ForeColor = Color.White;
             btBukuFavUser.Location = new Point(69, 453);
             btBukuFavUser.Name = "btBukuFavUser";
@@ -166,7 +166,7 @@ namespace Project_PBO_03
             btPeminjamanUser.BackColor = SystemColors.HotTrack;
             btPeminjamanUser.Cursor = Cursors.Hand;
             btPeminjamanUser.FlatStyle = FlatStyle.Popup;
-            btPeminjamanUser.Font = new Font("Nunito ExtraBold", 11.999999F, FontStyle.Bold);
+            btPeminjamanUser.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold);
             btPeminjamanUser.ForeColor = Color.White;
             btPeminjamanUser.Location = new Point(69, 380);
             btPeminjamanUser.Name = "btPeminjamanUser";
@@ -179,22 +179,22 @@ namespace Project_PBO_03
             // lblEmailUser
             // 
             lblEmailUser.AutoSize = true;
-            lblEmailUser.Font = new Font("Nunito", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblEmailUser.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblEmailUser.ForeColor = Color.Black;
             lblEmailUser.Location = new Point(119, 284);
             lblEmailUser.Name = "lblEmailUser";
-            lblEmailUser.Size = new Size(184, 23);
+            lblEmailUser.Size = new Size(197, 20);
             lblEmailUser.TabIndex = 2;
             lblEmailUser.Text = "Jamaludin@gmail.com";
             // 
             // lblUsernameUser
             // 
             lblUsernameUser.AutoSize = true;
-            lblUsernameUser.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblUsernameUser.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblUsernameUser.ForeColor = Color.White;
             lblUsernameUser.Location = new Point(154, 256);
             lblUsernameUser.Name = "lblUsernameUser";
-            lblUsernameUser.Size = new Size(108, 28);
+            lblUsernameUser.Size = new Size(110, 25);
             lblUsernameUser.TabIndex = 1;
             lblUsernameUser.Text = "Username";
             lblUsernameUser.Click += label1_Click;
@@ -223,7 +223,7 @@ namespace Project_PBO_03
             // lblHaiUser
             // 
             lblHaiUser.AutoSize = true;
-            lblHaiUser.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblHaiUser.Font = new Font("Nunito", 11.999999F, FontStyle.Bold);
             lblHaiUser.ForeColor = Color.Black;
             lblHaiUser.Location = new Point(438, 24);
             lblHaiUser.Name = "lblHaiUser";
@@ -234,7 +234,7 @@ namespace Project_PBO_03
             // lblHai1User
             // 
             lblHai1User.AutoSize = true;
-            lblHai1User.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblHai1User.Font = new Font("Nunito", 11.999999F, FontStyle.Bold);
             lblHai1User.ForeColor = Color.Black;
             lblHai1User.Location = new Point(438, 64);
             lblHai1User.Name = "lblHai1User";
@@ -268,7 +268,7 @@ namespace Project_PBO_03
             // 
             button1.BackColor = SystemColors.Highlight;
             button1.FlatStyle = FlatStyle.Popup;
-            button1.Font = new Font("Nunito ExtraBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.Location = new Point(1125, 69);
             button1.Name = "button1";
             button1.Size = new Size(72, 36);
@@ -309,7 +309,7 @@ namespace Project_PBO_03
             tbPeminjamanUser.BackColor = Color.White;
             tbPeminjamanUser.BorderStyle = BorderStyle.FixedSingle;
             tbPeminjamanUser.Cursor = Cursors.IBeam;
-            tbPeminjamanUser.Font = new Font("Nunito Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbPeminjamanUser.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tbPeminjamanUser.Location = new Point(377, 72);
             tbPeminjamanUser.Multiline = true;
             tbPeminjamanUser.Name = "tbPeminjamanUser";
@@ -368,11 +368,11 @@ namespace Project_PBO_03
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Black;
             label1.Location = new Point(23, 29);
             label1.Name = "label1";
-            label1.Size = new Size(132, 28);
+            label1.Size = new Size(133, 25);
             label1.TabIndex = 10;
             label1.Text = "Buku Favorit";
             // 
@@ -397,11 +397,11 @@ namespace Project_PBO_03
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Black;
             label2.Location = new Point(23, 29);
             label2.Name = "label2";
-            label2.Size = new Size(210, 28);
+            label2.Size = new Size(211, 25);
             label2.TabIndex = 10;
             label2.Text = "Riwayat Peminjaman";
             // 
@@ -442,55 +442,55 @@ namespace Project_PBO_03
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.Black;
             label8.Location = new Point(58, 464);
             label8.Name = "label8";
-            label8.Size = new Size(105, 28);
+            label8.Size = new Size(106, 25);
             label8.TabIndex = 21;
             label8.Text = "Password";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.Black;
             label7.Location = new Point(58, 379);
             label7.Name = "label7";
-            label7.Size = new Size(124, 28);
+            label7.Size = new Size(130, 25);
             label7.TabIndex = 20;
             label7.Text = "No. Telepon";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.Black;
             label6.Location = new Point(58, 288);
             label6.Name = "label6";
-            label6.Size = new Size(64, 28);
+            label6.Size = new Size(65, 25);
             label6.TabIndex = 19;
             label6.Text = "Email";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.Black;
             label5.Location = new Point(58, 205);
             label5.Name = "label5";
-            label5.Size = new Size(67, 28);
+            label5.Size = new Size(68, 25);
             label5.TabIndex = 18;
             label5.Text = "Nama";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.Black;
             label4.Location = new Point(58, 125);
             label4.Name = "label4";
-            label4.Size = new Size(108, 28);
+            label4.Size = new Size(110, 25);
             label4.TabIndex = 16;
             label4.Text = "Username";
             // 
@@ -498,7 +498,7 @@ namespace Project_PBO_03
             // 
             tbPassU.BackColor = Color.White;
             tbPassU.BorderStyle = BorderStyle.FixedSingle;
-            tbPassU.Font = new Font("Nunito Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbPassU.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tbPassU.Location = new Point(58, 495);
             tbPassU.Multiline = true;
             tbPassU.Name = "tbPassU";
@@ -509,7 +509,7 @@ namespace Project_PBO_03
             // 
             tbTeleponU.BackColor = Color.White;
             tbTeleponU.BorderStyle = BorderStyle.FixedSingle;
-            tbTeleponU.Font = new Font("Nunito Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbTeleponU.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tbTeleponU.Location = new Point(58, 409);
             tbTeleponU.Multiline = true;
             tbTeleponU.Name = "tbTeleponU";
@@ -520,7 +520,7 @@ namespace Project_PBO_03
             // 
             tbEmailU.BackColor = Color.White;
             tbEmailU.BorderStyle = BorderStyle.FixedSingle;
-            tbEmailU.Font = new Font("Nunito Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbEmailU.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tbEmailU.Location = new Point(58, 323);
             tbEmailU.Multiline = true;
             tbEmailU.Name = "tbEmailU";
@@ -531,7 +531,7 @@ namespace Project_PBO_03
             // 
             tbNamaProfileU.BackColor = Color.White;
             tbNamaProfileU.BorderStyle = BorderStyle.FixedSingle;
-            tbNamaProfileU.Font = new Font("Nunito Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbNamaProfileU.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tbNamaProfileU.Location = new Point(58, 237);
             tbNamaProfileU.Multiline = true;
             tbNamaProfileU.Name = "tbNamaProfileU";
@@ -542,7 +542,7 @@ namespace Project_PBO_03
             // 
             tbUsernameProfileU.BackColor = Color.White;
             tbUsernameProfileU.BorderStyle = BorderStyle.FixedSingle;
-            tbUsernameProfileU.Font = new Font("Nunito Medium", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbUsernameProfileU.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tbUsernameProfileU.Location = new Point(58, 156);
             tbUsernameProfileU.Multiline = true;
             tbUsernameProfileU.Name = "tbUsernameProfileU";
@@ -552,11 +552,11 @@ namespace Project_PBO_03
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Black;
             label3.Location = new Point(23, 29);
             label3.Name = "label3";
-            label3.Size = new Size(74, 28);
+            label3.Size = new Size(73, 25);
             label3.TabIndex = 10;
             label3.Text = "Profile";
             // 

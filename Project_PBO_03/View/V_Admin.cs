@@ -179,51 +179,73 @@ namespace Project_PBO_03
 
         private void btTBAdmin_Click(object sender, EventArgs e)
         {
-            dgvDaftarBuku.Columns[9].HeaderText = "Hapus";
-
-            DataRowView rowJenisBuku = cbJenisBuku.SelectedItem as DataRowView;
-            DataRowView rowPenerbit = cbPenerbit.SelectedItem as DataRowView;
-            DataRowView rowPenulis = cbPenulis.SelectedItem as DataRowView;
-
-            string isbn = tbISBN.Text;
-            string namabuku = tbNamaBuku.Text;
-            string sinopsis = tbSinopsisBuku.Text;
-            string tahunterbit = tbTahunTerbit.Text;
-            int jenisbuku = Convert.ToInt32(rowJenisBuku["idjenis"]);
-            int stokbuku = Convert.ToInt32(tbStokBuku.Text);
-            int penerbit = Convert.ToInt32(rowPenerbit["idpenerbit"]);
-            int penulis = Convert.ToInt32(rowPenulis["idpenulis"]);
-            string posisirak = tbPosisiRak.Text;
-
-            m_Buku tambahBuku = new m_Buku
+            try
             {
-                isbn = isbn,
-                nama_buku = namabuku,
-                sinopsis = sinopsis,
-                thn_terbit = tahunterbit,
-                jenis_id = jenisbuku,
-                stok_buku = stokbuku,
-                penerbit_id = penerbit,
-                penulis_id = penulis,
-                posisi_rak = posisirak
-            };
+                // Pengecekan input kosong
+                if (string.IsNullOrWhiteSpace(tbISBN.Text) ||
+                    string.IsNullOrWhiteSpace(tbNamaBuku.Text) ||
+                    string.IsNullOrWhiteSpace(tbSinopsisBuku.Text) ||
+                    string.IsNullOrWhiteSpace(tbTahunTerbit.Text) ||
+                    string.IsNullOrWhiteSpace(tbStokBuku.Text) ||
+                    cbJenisBuku.SelectedItem == null ||
+                    cbPenerbit.SelectedItem == null ||
+                    cbPenulis.SelectedItem == null ||
+                    string.IsNullOrWhiteSpace(tbPosisiRak.Text))
+                {
+                    MessageBox.Show("Tidak boleh ada yang kosong!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-            BukuContext.create(tambahBuku);
-            DialogResult message = MessageBox.Show("Data buku berhasil ditambahkan", "Sukses", MessageBoxButtons.OK);
-            if (message == DialogResult.OK)
-            {
-                tbISBN.Text = default;
-                tbNamaBuku.Text = default;
-                tbSinopsisBuku.Text = default;
-                tbTahunTerbit.Text = default;
-                tbPosisiRak.Text = default;
-                tbStokBuku.Text = default;
+                // Mendapatkan data dari combobox
+                DataRowView rowJenisBuku = cbJenisBuku.SelectedItem as DataRowView;
+                DataRowView rowPenerbit = cbPenerbit.SelectedItem as DataRowView;
+                DataRowView rowPenulis = cbPenulis.SelectedItem as DataRowView;
 
-                string namajenis = Convert.ToString(cbJenisBukuAdmin.SelectedValue);
-                dgvDaftarBuku.DataSource = JenisBukuContext.Jenis(namajenis);
+                // Membuat objek buku baru
+                m_Buku tambahBuku = new m_Buku
+                {
+                    isbn = tbISBN.Text,
+                    nama_buku = tbNamaBuku.Text,
+                    sinopsis = tbSinopsisBuku.Text,
+                    thn_terbit = tbTahunTerbit.Text,
+                    jenis_id = Convert.ToInt32(rowJenisBuku["idjenis"]),
+                    stok_buku = Convert.ToInt32(tbStokBuku.Text),
+                    penerbit_id = Convert.ToInt32(rowPenerbit["idpenerbit"]),
+                    penulis_id = Convert.ToInt32(rowPenulis["idpenulis"]),
+                    posisi_rak = tbPosisiRak.Text
+                };
+
+                // Menambahkan buku baru ke database
+                BukuContext.create(tambahBuku);
+
+                // Menampilkan pesan sukses
+                DialogResult message = MessageBox.Show("Data buku berhasil ditambahkan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Membersihkan textbox dan combobox
+                if (message == DialogResult.OK)
+                {
+                    tbISBN.Clear();
+                    tbNamaBuku.Clear();
+                    tbSinopsisBuku.Clear();
+                    tbTahunTerbit.Clear();
+                    tbStokBuku.Clear();
+                    tbPosisiRak.Clear();
+                    cbJenisBuku.SelectedIndex = -1;
+                    cbPenerbit.SelectedIndex = -1;
+                    cbPenulis.SelectedIndex = -1;
+
+                    // Memperbarui data di dataGridView
+                    string namajenis = Convert.ToString(cbJenisBukuAdmin.SelectedValue);
+                    dgvDaftarBuku.DataSource = JenisBukuContext.Jenis(namajenis);
+                }
             }
-
+            catch (Exception ex)
+            {
+                // Menampilkan pesan error
+                MessageBox.Show("Gagal menambahkan data buku: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void cbJenisBuku_SelectionChangeCommitted(object sender, EventArgs e)
         {
@@ -267,7 +289,7 @@ namespace Project_PBO_03
 
         private void ucJenisBukuTambahBukuAdmin1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btJenisBuku_Click(object sender, EventArgs e)
@@ -287,7 +309,7 @@ namespace Project_PBO_03
 
         private void ucPenerbitTambahBukuAdmin1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -390,7 +412,12 @@ namespace Project_PBO_03
 
         private void ucPenulisTambahBukuAdmin2_Load_1(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void pnlRiwayatPeminjaman_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 
