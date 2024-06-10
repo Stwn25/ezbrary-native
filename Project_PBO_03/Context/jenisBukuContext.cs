@@ -21,12 +21,31 @@ namespace Project_PBO_03.Context
             DataTable dataJenis = queryExecutor(query);
             return dataJenis;
         }
-        
+
         public static DataTable comboBox()
         {
             string query = $"SELECT namajenis FROM {table}";
             DataTable dataJenis = queryExecutor(query);
             return dataJenis;
+        }
+
+        public static DataTable comboBoxUser(string namajenis)
+        {
+            string query = $"select b.isbn, b.namabuku, jb.namajenis, b.stokbuku, b.posisirak " +
+                           $"from buku b join jenisbuku jb " +
+                           $"ON jb.idjenis = b.idjenis " +
+                           $"join penulis ps " +
+                           $"ON ps.idpenulis = b.idpenulis " +
+                           $"join penerbit pt " +
+                           $"ON pt.idpenerbit = b.idpenerbit " +
+                           $"where jb.namajenis = @namajenis";
+            NpgsqlParameter[] parameters =
+            {
+                new NpgsqlParameter("@namajenis", NpgsqlDbType.Varchar) {Value = namajenis},
+            };
+
+            DataTable dataBuku = queryExecutor(query, parameters);
+            return dataBuku;
         }
 
         public static DataTable Jenis(string namajenis)

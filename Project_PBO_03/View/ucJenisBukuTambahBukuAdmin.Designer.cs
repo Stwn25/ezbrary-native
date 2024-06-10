@@ -44,10 +44,9 @@
             btSimpanJenisBuku.FlatStyle = FlatStyle.Popup;
             btSimpanJenisBuku.Font = new Font("Nunito SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btSimpanJenisBuku.ForeColor = Color.White;
-            btSimpanJenisBuku.Location = new Point(153, 380);
-            btSimpanJenisBuku.Margin = new Padding(3, 2, 3, 2);
+            btSimpanJenisBuku.Location = new Point(174, 524);
             btSimpanJenisBuku.Name = "btSimpanJenisBuku";
-            btSimpanJenisBuku.Size = new Size(119, 26);
+            btSimpanJenisBuku.Size = new Size(136, 35);
             btSimpanJenisBuku.TabIndex = 14;
             btSimpanJenisBuku.Text = "Simpan";
             btSimpanJenisBuku.UseVisualStyleBackColor = false;
@@ -56,10 +55,9 @@
             // tbJenisBuku
             // 
             tbJenisBuku.BorderStyle = BorderStyle.FixedSingle;
-            tbJenisBuku.Location = new Point(14, 339);
-            tbJenisBuku.Margin = new Padding(3, 2, 3, 2);
+            tbJenisBuku.Location = new Point(15, 469);
             tbJenisBuku.Name = "tbJenisBuku";
-            tbJenisBuku.Size = new Size(407, 23);
+            tbJenisBuku.Size = new Size(465, 27);
             tbJenisBuku.TabIndex = 12;
             tbJenisBuku.TextChanged += tbJenisBuku_TextChanged;
             // 
@@ -67,9 +65,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Nunito SemiBold", 8.999998F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(14, 322);
+            label1.Location = new Point(15, 446);
             label1.Name = "label1";
-            label1.Size = new Size(110, 17);
+            label1.Size = new Size(141, 20);
             label1.TabIndex = 10;
             label1.Text = "Tambah Jenis Buku";
             // 
@@ -78,21 +76,19 @@
             dgvJenisBuku.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvJenisBuku.BackgroundColor = SystemColors.ControlLight;
             dgvJenisBuku.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvJenisBuku.Location = new Point(14, 38);
-            dgvJenisBuku.Margin = new Padding(3, 2, 3, 2);
+            dgvJenisBuku.Location = new Point(15, 68);
             dgvJenisBuku.Name = "dgvJenisBuku";
             dgvJenisBuku.RowHeadersWidth = 51;
-            dgvJenisBuku.Size = new Size(407, 267);
+            dgvJenisBuku.Size = new Size(465, 356);
             dgvJenisBuku.TabIndex = 9;
             dgvJenisBuku.CellContentClick += dgvJenisBuku_CellContentClick;
             // 
             // button1
             // 
             button1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(381, 2);
-            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Location = new Point(435, 3);
             button1.Name = "button1";
-            button1.Size = new Size(40, 31);
+            button1.Size = new Size(46, 41);
             button1.TabIndex = 15;
             button1.Text = "X";
             button1.UseVisualStyleBackColor = true;
@@ -103,13 +99,14 @@
             panel1.BackColor = SystemColors.HotTrack;
             panel1.Controls.Add(button1);
             panel1.Location = new Point(-1, -1);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(505, 52);
+            panel1.Size = new Size(496, 50);
             panel1.TabIndex = 16;
             // 
             // ucJenisBukuTambahBukuAdmin
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             BorderStyle = BorderStyle.FixedSingle;
@@ -118,9 +115,8 @@
             Controls.Add(tbJenisBuku);
             Controls.Add(label1);
             Controls.Add(dgvJenisBuku);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "ucJenisBukuTambahBukuAdmin";
-            Size = new Size(432, 436);
+            Size = new Size(494, 581);
             ((System.ComponentModel.ISupportInitialize)dgvJenisBuku).EndInit();
             panel1.ResumeLayout(false);
             ResumeLayout(false);

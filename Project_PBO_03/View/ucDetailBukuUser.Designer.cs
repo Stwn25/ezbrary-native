@@ -52,18 +52,19 @@
             // 
             namabuku.AutoSize = true;
             namabuku.Font = new Font("Nunito", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            namabuku.Location = new Point(335, 177);
+            namabuku.Location = new Point(383, 236);
             namabuku.Name = "namabuku";
-            namabuku.Size = new Size(113, 26);
+            namabuku.Size = new Size(145, 33);
             namabuku.TabIndex = 11;
             namabuku.Text = "Nama Buku";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Favorite__1_;
-            pictureBox1.Location = new Point(335, 28);
+            pictureBox1.Location = new Point(383, 37);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(121, 137);
+            pictureBox1.Size = new Size(138, 183);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 12;
             pictureBox1.TabStop = false;
@@ -72,36 +73,39 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Nunito SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(38, 212);
+            label2.Location = new Point(43, 283);
             label2.Name = "label2";
-            label2.Size = new Size(79, 22);
+            label2.Size = new Size(99, 28);
             label2.TabIndex = 13;
             label2.Text = "Sinopsis :";
             // 
             // tbSinopsis
             // 
-            tbSinopsis.Location = new Point(38, 246);
+            tbSinopsis.Location = new Point(43, 328);
+            tbSinopsis.Margin = new Padding(3, 4, 3, 4);
             tbSinopsis.Multiline = true;
             tbSinopsis.Name = "tbSinopsis";
-            tbSinopsis.Size = new Size(711, 74);
+            tbSinopsis.Size = new Size(812, 97);
             tbSinopsis.TabIndex = 14;
             tbSinopsis.Text = resources.GetString("tbSinopsis.Text");
+            tbSinopsis.TextChanged += tbSinopsis_TextChanged;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Nunito SemiBold", 9.749998F, FontStyle.Bold);
-            label9.Location = new Point(433, 386);
+            label9.Location = new Point(495, 515);
             label9.Name = "label9";
-            label9.Size = new Size(0, 18);
+            label9.Size = new Size(0, 23);
             label9.TabIndex = 22;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.Favorite;
-            pictureBox2.Location = new Point(462, 141);
+            pictureBox2.Location = new Point(528, 188);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(24, 24);
+            pictureBox2.Size = new Size(27, 32);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 23;
             pictureBox2.TabStop = false;
@@ -111,9 +115,9 @@
             // 
             lbisbnBuku.AutoSize = true;
             lbisbnBuku.Font = new Font("Nunito SemiBold", 9.749998F, FontStyle.Bold);
-            lbisbnBuku.Location = new Point(38, 338);
+            lbisbnBuku.Location = new Point(43, 451);
             lbisbnBuku.Name = "lbisbnBuku";
-            lbisbnBuku.Size = new Size(44, 18);
+            lbisbnBuku.Size = new Size(59, 23);
             lbisbnBuku.TabIndex = 24;
             lbisbnBuku.Text = "ISBN :";
             lbisbnBuku.Click += lbisbnBuku_Click_2;
@@ -122,9 +126,9 @@
             // 
             lbtahunterbit.AutoSize = true;
             lbtahunterbit.Font = new Font("Nunito SemiBold", 9.749998F, FontStyle.Bold);
-            lbtahunterbit.Location = new Point(36, 365);
+            lbtahunterbit.Location = new Point(41, 487);
             lbtahunterbit.Name = "lbtahunterbit";
-            lbtahunterbit.Size = new Size(90, 18);
+            lbtahunterbit.Size = new Size(118, 23);
             lbtahunterbit.TabIndex = 25;
             lbtahunterbit.Text = "Tahun Terbit : ";
             // 
@@ -132,9 +136,9 @@
             // 
             lbpenerbit.AutoSize = true;
             lbpenerbit.Font = new Font("Nunito SemiBold", 9.749998F, FontStyle.Bold);
-            lbpenerbit.Location = new Point(38, 391);
+            lbpenerbit.Location = new Point(43, 521);
             lbpenerbit.Name = "lbpenerbit";
-            lbpenerbit.Size = new Size(64, 18);
+            lbpenerbit.Size = new Size(83, 23);
             lbpenerbit.TabIndex = 26;
             lbpenerbit.Text = "Penerbit :";
             lbpenerbit.Click += lbpenerbit_Click;
@@ -143,9 +147,9 @@
             // 
             lbpenulis.AutoSize = true;
             lbpenulis.Font = new Font("Nunito SemiBold", 9.749998F, FontStyle.Bold);
-            lbpenulis.Location = new Point(40, 416);
+            lbpenulis.Location = new Point(46, 555);
             lbpenulis.Name = "lbpenulis";
-            lbpenulis.Size = new Size(56, 18);
+            lbpenulis.Size = new Size(75, 23);
             lbpenulis.TabIndex = 27;
             lbpenulis.Text = "Penulis :";
             // 
@@ -153,9 +157,9 @@
             // 
             lbstok.AutoSize = true;
             lbstok.Font = new Font("Nunito SemiBold", 9.749998F, FontStyle.Bold);
-            lbstok.Location = new Point(40, 439);
+            lbstok.Location = new Point(46, 585);
             lbstok.Name = "lbstok";
-            lbstok.Size = new Size(41, 18);
+            lbstok.Size = new Size(54, 23);
             lbstok.TabIndex = 28;
             lbstok.Text = "Stok :";
             // 
@@ -163,9 +167,9 @@
             // 
             lbjenisbuku.AutoSize = true;
             lbjenisbuku.Font = new Font("Nunito SemiBold", 9.749998F, FontStyle.Bold);
-            lbjenisbuku.Location = new Point(503, 338);
+            lbjenisbuku.Location = new Point(575, 451);
             lbjenisbuku.Name = "lbjenisbuku";
-            lbjenisbuku.Size = new Size(74, 18);
+            lbjenisbuku.Size = new Size(100, 23);
             lbjenisbuku.TabIndex = 29;
             lbjenisbuku.Text = "Jenis Buku :";
             // 
@@ -173,19 +177,18 @@
             // 
             lbposisirak.AutoSize = true;
             lbposisirak.Font = new Font("Nunito SemiBold", 9.749998F, FontStyle.Bold);
-            lbposisirak.Location = new Point(503, 365);
+            lbposisirak.Location = new Point(575, 487);
             lbposisirak.Name = "lbposisirak";
-            lbposisirak.Size = new Size(73, 18);
+            lbposisirak.Size = new Size(97, 23);
             lbposisirak.TabIndex = 30;
             lbposisirak.Text = "Posisi Rak :";
             // 
             // btkeluar
             // 
             btkeluar.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btkeluar.Location = new Point(748, 2);
-            btkeluar.Margin = new Padding(3, 2, 3, 2);
+            btkeluar.Location = new Point(855, 3);
             btkeluar.Name = "btkeluar";
-            btkeluar.Size = new Size(40, 31);
+            btkeluar.Size = new Size(46, 41);
             btkeluar.TabIndex = 31;
             btkeluar.Text = "X";
             btkeluar.UseVisualStyleBackColor = true;
@@ -195,15 +198,16 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Nunito SemiBold", 9.749998F, FontStyle.Bold);
-            label3.Location = new Point(38, 338);
+            label3.Location = new Point(43, 451);
             label3.Name = "label3";
-            label3.Size = new Size(0, 18);
+            label3.Size = new Size(0, 23);
             label3.TabIndex = 15;
             // 
             // ucDetailBukuUser
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(btkeluar);
             Controls.Add(lbposisirak);
             Controls.Add(lbjenisbuku);
@@ -219,8 +223,9 @@
             Controls.Add(label2);
             Controls.Add(pictureBox1);
             Controls.Add(namabuku);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "ucDetailBukuUser";
-            Size = new Size(791, 470);
+            Size = new Size(902, 625);
             Load += ucDetailBukuUser_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

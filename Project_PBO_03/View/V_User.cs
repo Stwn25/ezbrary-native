@@ -182,7 +182,7 @@ namespace Project_PBO_03
 
             if (cbJenis.SelectedValue != null)
             {
-                dgvPeminjamanUser.DataSource = JenisBukuContext.Jenis(namajenis);
+                dgvPeminjamanUser.DataSource = JenisBukuContext.comboBoxUser(namajenis);
             }
         }
 

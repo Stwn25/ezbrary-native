@@ -104,5 +104,10 @@ namespace Project_PBO_03.View
         {
 
         }
+
+        private void tbSinopsis_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

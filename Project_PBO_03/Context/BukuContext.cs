@@ -30,9 +30,9 @@ namespace Project_PBO_03.Context
         public static DataTable buku()
         {
             string query = $"select b.namabuku, b.sinopsis, b.posisirak " +
-                           $"\r\nfrom buku b join jenisbuku jb \r\nON jb.idjenis = b.jenisbuku_idjenis" +
-                           $"\r\njoin penulis ps \r\nON ps.idpenulis = b.penulis_idpenulis" +
-                           $"\r\njoin penerbit pt\r\nON pt.idpenerbit = b.penerbit_idpenerbit";
+                           $"\r\nfrom buku b join jenisbuku jb \r\nON jb.idjenis = b.idjenis" +
+                           $"\r\njoin penulis ps \r\nON ps.idpenulis = b.idpenulis" +
+                           $"\r\njoin penerbit pt\r\nON pt.idpenerbit = b.idpenerbit";
             DataTable dataBuku = queryExecutor(query);
             return dataBuku;
         }
@@ -50,9 +50,9 @@ namespace Project_PBO_03.Context
         public static DataTable detailbuku(string namabuku)
         {
             string query = $"select b.isbn, b.namabuku, b.sinopsis, b.thnterbit, jb.namajenis, b.stokbuku, pt.namapenerbit, ps.namapenulis, b.posisirak" +
-                           $"\r\nfrom buku b join jenisbuku jb \r\nON jb.idjenis = b.jenisbuku_idjenis" +
-                           $"\r\njoin penulis ps \r\nON ps.idpenulis = b.penulis_idpenulis" +
-                           $"\r\njoin penerbit pt\r\nON pt.idpenerbit = b.penerbit_idpenerbit" +
+                           $"\r\nfrom buku b join jenisbuku jb \r\nON jb.idjenis = b.idjenis" +
+                           $"\r\njoin penulis ps \r\nON ps.idpenulis = b.idpenulis" +
+                           $"\r\njoin penerbit pt\r\nON pt.idpenerbit = b.idpenerbit" +
                            $" where b.namabuku = @namabuku";
 
             NpgsqlParameter[] parameters =
