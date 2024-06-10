@@ -586,8 +586,9 @@ namespace Project_PBO_03
             // 
             // ucDetailBukuUser1
             // 
+            ucDetailBukuUser1.BackColor = Color.White;
             ucDetailBukuUser1.BorderStyle = BorderStyle.FixedSingle;
-            ucDetailBukuUser1.Location = new Point(769, 186);
+            ucDetailBukuUser1.Location = new Point(763, 244);
             ucDetailBukuUser1.Margin = new Padding(3, 5, 3, 5);
             ucDetailBukuUser1.Name = "ucDetailBukuUser1";
             ucDetailBukuUser1.Size = new Size(904, 627);

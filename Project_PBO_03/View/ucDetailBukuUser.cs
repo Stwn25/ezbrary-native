@@ -17,6 +17,7 @@ namespace Project_PBO_03.View
         public ucDetailBukuUser()
         {
             InitializeComponent();
+            pbStarKuning.Hide();
 
         }
 
@@ -75,7 +76,10 @@ namespace Project_PBO_03.View
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            string isbn = lbisbnBuku.Text;
+            pbStarKosong.Hide();
+            pbStarKuning.Show();
+
+            /*string isbn = lbisbnBuku.Text;
             int idpengguna = 1;
 
             m_BukuFavorit Bukufavorit = new m_BukuFavorit()
@@ -85,7 +89,7 @@ namespace Project_PBO_03.View
             };
 
             BukuContext.bukufavorit(Bukufavorit);
-            DialogResult message = MessageBox.Show("Buku berhasil difavoritkan", "Sukses", MessageBoxButtons.OK);
+            DialogResult message = MessageBox.Show("Buku berhasil difavoritkan", "Sukses", MessageBoxButtons.OK);*/
 
 
         }
@@ -108,6 +112,47 @@ namespace Project_PBO_03.View
         private void tbSinopsis_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label4_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialMultiLineTextBoxEdit1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tglPengambilanBooking_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime bookingDate = tglPengambilanBooking.Value;
+            DateTime currentDate = DateTime.Now.Date;
+
+            if ((bookingDate - currentDate).TotalDays > 2)
+            {
+                MessageBox.Show("Tanggal pengambilan tidak boleh lebih dari dua hari dari hari ini.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tglPengambilanBooking.Value = currentDate;
+                return;
+            }
+            if ((bookingDate - currentDate).TotalDays < 0)
+            {
+                MessageBox.Show("Tentukan tanggal pengambilan dengan tepat.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tglPengambilanBooking.Value = currentDate;
+                return;
+            }
+
+        }
+
+        private void pbStarKuning_Click(object sender, EventArgs e)
+        {
+            pbStarKosong.Show();
+            pbStarKuning.Hide();
         }
     }
 }
