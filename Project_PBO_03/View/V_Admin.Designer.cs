@@ -326,10 +326,10 @@ namespace Project_PBO_03
             // 
             ucJenisBukuTambahBukuAdmin1.BackColor = Color.White;
             ucJenisBukuTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
-            ucJenisBukuTambahBukuAdmin1.Location = new Point(594, 63);
+            ucJenisBukuTambahBukuAdmin1.Location = new Point(520, 43);
             ucJenisBukuTambahBukuAdmin1.Margin = new Padding(3, 4, 3, 4);
             ucJenisBukuTambahBukuAdmin1.Name = "ucJenisBukuTambahBukuAdmin1";
-            ucJenisBukuTambahBukuAdmin1.Size = new Size(569, 763);
+            ucJenisBukuTambahBukuAdmin1.Size = new Size(498, 609);
             ucJenisBukuTambahBukuAdmin1.TabIndex = 11;
             ucJenisBukuTambahBukuAdmin1.Load += ucJenisBukuTambahBukuAdmin1_Load;
             // 
@@ -337,10 +337,10 @@ namespace Project_PBO_03
             // 
             ucPenerbitTambahBukuAdmin1.BackColor = Color.White;
             ucPenerbitTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
-            ucPenerbitTambahBukuAdmin1.Location = new Point(594, 31);
+            ucPenerbitTambahBukuAdmin1.Location = new Point(520, 28);
             ucPenerbitTambahBukuAdmin1.Margin = new Padding(3, 4, 3, 4);
             ucPenerbitTambahBukuAdmin1.Name = "ucPenerbitTambahBukuAdmin1";
-            ucPenerbitTambahBukuAdmin1.Size = new Size(491, 878);
+            ucPenerbitTambahBukuAdmin1.Size = new Size(491, 650);
             ucPenerbitTambahBukuAdmin1.TabIndex = 13;
             ucPenerbitTambahBukuAdmin1.Load += ucPenerbitTambahBukuAdmin1_Load;
             // 
@@ -348,10 +348,10 @@ namespace Project_PBO_03
             // 
             ucUpdateBuku1.AllowDrop = true;
             ucUpdateBuku1.BorderStyle = BorderStyle.FixedSingle;
-            ucUpdateBuku1.Location = new Point(374, 101);
+            ucUpdateBuku1.Location = new Point(247, 80);
             ucUpdateBuku1.Margin = new Padding(3, 4, 3, 4);
             ucUpdateBuku1.Name = "ucUpdateBuku1";
-            ucUpdateBuku1.Size = new Size(943, 866);
+            ucUpdateBuku1.Size = new Size(943, 620);
             ucUpdateBuku1.TabIndex = 18;
             ucUpdateBuku1.Load += ucUpdateBuku1_Load;
             // 
