@@ -251,10 +251,10 @@
             // 
             ucUpdateAdmin1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ucUpdateAdmin1.IdAdmin = 0;
-            ucUpdateAdmin1.Location = new Point(747, 137);
+            ucUpdateAdmin1.Location = new Point(310, 17);
             ucUpdateAdmin1.Margin = new Padding(3, 4, 3, 4);
             ucUpdateAdmin1.Name = "ucUpdateAdmin1";
-            ucUpdateAdmin1.Size = new Size(825, 667);
+            ucUpdateAdmin1.Size = new Size(841, 667);
             ucUpdateAdmin1.TabIndex = 15;
             ucUpdateAdmin1.Load += ucUpdateAdmin1_Load;
             // 
@@ -385,6 +385,7 @@
             // 
             // pnlDaftarAdminSA
             // 
+            pnlDaftarAdminSA.Controls.Add(ucUpdateAdmin1);
             pnlDaftarAdminSA.Controls.Add(btDaftarSA);
             pnlDaftarAdminSA.Controls.Add(label8);
             pnlDaftarAdminSA.Controls.Add(label7);
@@ -539,7 +540,6 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1942, 1102);
-            Controls.Add(ucUpdateAdmin1);
             Controls.Add(pnlDaftarAdminSA);
             Controls.Add(pnlAdminSA);
             Controls.Add(pnlUserSA);
