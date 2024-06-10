@@ -33,19 +33,19 @@ namespace Project_PBO_03.Context
 
         public static void create(m_Administrator newAdmin)
         {
-            string query = $"INSERT INTO {table}(idadmin, kodeverifikasi, namaadmin, telpadmin, usrnmeadmin, pwadmin, emailadmin) VALUES(@idadmin, @kodeverifikasi, @namaadmin, @telpadmin, @usrnmeadmin, @pwadmin, @emailadmin)";
+            string query = $"INSERT INTO {table} (kodeverifikasi, namaadmin, telpadmin, usrnmeadmin, pwadmin, emailadmin) VALUES(@kodeverifikasi, @namaadmin, @telpadmin, @usrnmeadmin, @pwadmin, @emailadmin)";
             NpgsqlParameter[] parameters =
             {
-                new NpgsqlParameter("@idadmin", NpgsqlDbType.Integer){Value = newAdmin.id_admin},
-                new NpgsqlParameter("@kodeverifikasi", NpgsqlDbType.Varchar){Value = newAdmin.kode_verif},
-                new NpgsqlParameter("@namaadmin", NpgsqlDbType.Varchar){Value = newAdmin.nama_admin},
-                new NpgsqlParameter("@telpadmin", NpgsqlDbType.Varchar){Value = newAdmin.telp_admin},
-                new NpgsqlParameter("@usrnmeadmin", NpgsqlDbType.Varchar){Value = newAdmin.username_admin},
-                new NpgsqlParameter("@pwadmin", NpgsqlDbType.Varchar){Value = newAdmin.pass_admin},
-                new NpgsqlParameter("@emailadmin", NpgsqlDbType.Varchar){Value = newAdmin.email_admin},
-            };
+        new NpgsqlParameter("@kodeverifikasi", NpgsqlDbType.Varchar){Value = newAdmin.kode_verif},
+        new NpgsqlParameter("@namaadmin", NpgsqlDbType.Varchar){Value = newAdmin.nama_admin},
+        new NpgsqlParameter("@telpadmin", NpgsqlDbType.Varchar){Value = newAdmin.telp_admin},
+        new NpgsqlParameter("@usrnmeadmin", NpgsqlDbType.Varchar){Value = newAdmin.username_admin},
+        new NpgsqlParameter("@pwadmin", NpgsqlDbType.Varchar){Value = newAdmin.pass_admin},
+        new NpgsqlParameter("@emailadmin", NpgsqlDbType.Varchar){Value = newAdmin.email_admin},
+    };
             commandExecutor(query, parameters);
         }
+
 
         public static void delete(int id)
         {

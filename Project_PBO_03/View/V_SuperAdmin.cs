@@ -181,6 +181,8 @@ namespace Project_PBO_03.View
 
                 // Menyembunyikan panel
                 pnlDaftarAdminSA.Hide();
+                pnlAdminSA.Show();
+
             }
             catch (Exception ex)
             {
