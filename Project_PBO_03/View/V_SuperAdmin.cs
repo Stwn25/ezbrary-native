@@ -71,7 +71,6 @@ namespace Project_PBO_03.View
             };
             dataGridView1.Columns.Insert(1, updateAdmin);
 
-            // Event handler untuk ucUpdateAdmin
             ucUpdateAdmin1.UpdateAdminSuccess += UcUpdateAdmin1_UpdateAdminSuccess;
         }
 
@@ -144,13 +143,62 @@ namespace Project_PBO_03.View
 
         private void btDaftarSA_Click(object sender, EventArgs e)
         {
-            btKelolaAkunSA.BackColor = Color.Black;
-            btKeluarSA.BackColor = Color.CornflowerBlue;
-            pnlUserSA.Hide();
-            pnlAdminSA.Hide();
-            pnlDaftarAdminSA.Show();
-            pnlDaftarAdminSA.Dock = DockStyle.Bottom;
+            try
+            {
+                // Pengecekan input kosong
+                if (string.IsNullOrWhiteSpace(tbUsernameSA.Text) ||
+                    string.IsNullOrWhiteSpace(tbNamaSA.Text) ||
+                    string.IsNullOrWhiteSpace(tbEmailSA.Text) ||
+                    string.IsNullOrWhiteSpace(tbTeleponSA.Text) ||
+                    string.IsNullOrWhiteSpace(tbPasswordSA.Text))
+                {
+                    MessageBox.Show("Tidak boleh ada yang kosong!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Membuat objek admin baru
+                m_Administrator newAdmin = new m_Administrator
+                {
+                    kode_verif = "123456",
+                    username_admin = tbUsernameSA.Text,
+                    nama_admin = tbNamaSA.Text,
+                    email_admin = tbEmailSA.Text,
+                    telp_admin = tbTeleponSA.Text,
+                    pass_admin = tbPasswordSA.Text
+                };
+
+                // Menambahkan admin baru ke database
+                AdminContext.create(newAdmin);
+
+                // Memperbarui data di dataGridView
+                dataGridView1.DataSource = AdminContext.all();
+
+                // Membersihkan textbox
+                ClearTextboxes();
+
+                // Menampilkan pesan sukses
+                MessageBox.Show("Data admin berhasil ditambahkan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Menyembunyikan panel
+                pnlDaftarAdminSA.Hide();
+            }
+            catch (Exception ex)
+            {
+                // Menampilkan pesan error
+                MessageBox.Show("Gagal menambahkan data admin: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
+        private void ClearTextboxes()
+        {
+            tbUsernameSA.Text = "";
+            tbNamaSA.Text = "";
+            tbEmailSA.Text = "";
+            tbTeleponSA.Text = "";
+            tbPasswordSA.Text = "";
+        }
+
 
         private void btKeluarSA_Click(object sender, EventArgs e)
         {
