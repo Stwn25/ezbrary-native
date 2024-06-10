@@ -46,55 +46,55 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Nunito", 11.999999F, FontStyle.Bold);
+            label8.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold);
             label8.ForeColor = Color.Black;
             label8.Location = new Point(84, 466);
             label8.Name = "label8";
-            label8.Size = new Size(105, 28);
+            label8.Size = new Size(103, 28);
             label8.TabIndex = 32;
             label8.Text = "Password";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Nunito", 11.999999F, FontStyle.Bold);
+            label7.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold);
             label7.ForeColor = Color.Black;
             label7.Location = new Point(84, 380);
             label7.Name = "label7";
-            label7.Size = new Size(123, 28);
+            label7.Size = new Size(121, 28);
             label7.TabIndex = 31;
             label7.Text = "No. Telepon";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold);
             label6.ForeColor = Color.Black;
             label6.Location = new Point(84, 290);
             label6.Name = "label6";
-            label6.Size = new Size(64, 28);
+            label6.Size = new Size(63, 28);
             label6.TabIndex = 30;
             label6.Text = "Email";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold);
             label5.ForeColor = Color.Black;
             label5.Location = new Point(84, 208);
             label5.Name = "label5";
-            label5.Size = new Size(67, 28);
+            label5.Size = new Size(66, 28);
             label5.TabIndex = 29;
             label5.Text = "Nama";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold);
             label4.ForeColor = Color.Black;
             label4.Location = new Point(84, 127);
             label4.Name = "label4";
-            label4.Size = new Size(108, 28);
+            label4.Size = new Size(106, 28);
             label4.TabIndex = 26;
             label4.Text = "Username";
             // 

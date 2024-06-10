@@ -223,22 +223,22 @@ namespace Project_PBO_03
             // lblHaiUser
             // 
             lblHaiUser.AutoSize = true;
-            lblHaiUser.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblHaiUser.Font = new Font("Nunito", 11.999999F, FontStyle.Bold);
             lblHaiUser.ForeColor = Color.Black;
             lblHaiUser.Location = new Point(438, 24);
             lblHaiUser.Name = "lblHaiUser";
-            lblHaiUser.Size = new Size(172, 25);
+            lblHaiUser.Size = new Size(169, 28);
             lblHaiUser.TabIndex = 7;
             lblHaiUser.Text = "Selamat Datang,";
             // 
             // lblHai1User
             // 
             lblHai1User.AutoSize = true;
-            lblHai1User.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblHai1User.Font = new Font("Nunito", 11.999999F, FontStyle.Bold);
             lblHai1User.ForeColor = Color.Black;
             lblHai1User.Location = new Point(438, 64);
             lblHai1User.Name = "lblHai1User";
-            lblHai1User.Size = new Size(57, 25);
+            lblHai1User.Size = new Size(56, 28);
             lblHai1User.TabIndex = 8;
             lblHai1User.Text = "User";
             // 
@@ -339,11 +339,11 @@ namespace Project_PBO_03
             // lblPeminjamanUser
             // 
             lblPeminjamanUser.AutoSize = true;
-            lblPeminjamanUser.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPeminjamanUser.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPeminjamanUser.ForeColor = Color.Black;
             lblPeminjamanUser.Location = new Point(23, 29);
             lblPeminjamanUser.Name = "lblPeminjamanUser";
-            lblPeminjamanUser.Size = new Size(130, 25);
+            lblPeminjamanUser.Size = new Size(128, 28);
             lblPeminjamanUser.TabIndex = 10;
             lblPeminjamanUser.Text = "Peminjaman";
             // 
