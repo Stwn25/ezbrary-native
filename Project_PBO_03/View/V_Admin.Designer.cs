@@ -752,6 +752,7 @@ namespace Project_PBO_03
             tbISBN.BorderStyle = BorderStyle.FixedSingle;
             tbISBN.Font = new Font("Nunito", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbISBN.Location = new Point(59, 156);
+            tbISBN.MaxLength = 20;
             tbISBN.Name = "tbISBN";
             tbISBN.Size = new Size(619, 28);
             tbISBN.TabIndex = 28;
@@ -920,11 +921,11 @@ namespace Project_PBO_03
             Controls.Add(pictureBoxPerpusAdmin);
             Controls.Add(pictureBoxVektoradmin);
             Controls.Add(pnlAdmin);
+            Controls.Add(pnlTambahBukuAdmin);
             Controls.Add(pnlDaftarBukuAdmin);
             Controls.Add(pnlPeminjamanAdmin);
             Controls.Add(pnlRiwayatPeminjaman);
             Controls.Add(pnlProfileAdmin);
-            Controls.Add(pnlTambahBukuAdmin);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_Admin";
             Text = "V_Admin";

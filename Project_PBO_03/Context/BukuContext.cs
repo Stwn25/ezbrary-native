@@ -25,6 +25,17 @@ namespace Project_PBO_03.Context
             return dataBuku;
         }
 
+        public static DataTable read(string isbn)
+        {
+            string query = $"select * from {table} where isbn = @isbn";
+            NpgsqlParameter[] parameters =
+            {
+                new NpgsqlParameter("@isbn", NpgsqlDbType.Varchar){Value = isbn},
+            };
+            DataTable dataBuku = queryExecutor(query, parameters);
+            return dataBuku;
+        }
+
         /*public static DataTable showByJenis()
         {
             string query;

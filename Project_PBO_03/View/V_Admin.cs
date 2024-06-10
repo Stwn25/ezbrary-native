@@ -71,6 +71,9 @@ namespace Project_PBO_03
             this.pnlPeminjamanAdmin.Hide();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Hide();
+
+            string namajenis = Convert.ToString(cbJenisBukuAdmin.SelectedValue);
+            dgvDaftarBuku.DataSource = JenisBukuContext.Jenis(namajenis);
         }
 
         private void btProfileAdmin_Click(object sender, EventArgs e)
