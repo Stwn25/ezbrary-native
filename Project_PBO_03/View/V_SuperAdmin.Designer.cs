@@ -43,6 +43,7 @@
             HapusAdmin = new DataGridViewButtonColumn();
             UpdateAdmin = new DataGridViewButtonColumn();
             label1 = new Label();
+            ucUpdateAdmin1 = new ucUpdateAdmin();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             lblHai1SA = new Label();
             lblHaiSA = new Label();
@@ -66,7 +67,6 @@
             tbNamaSA = new TextBox();
             tbUsernameSA = new TextBox();
             label3 = new Label();
-            ucUpdateAdmin1 = new ucUpdateAdmin();
             pnlSA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxVectorUser).BeginInit();
             pnlAdminSA.SuspendLayout();
@@ -164,8 +164,8 @@
             pnlAdminSA.Controls.Add(btUserSA1);
             pnlAdminSA.Controls.Add(dataGridView1);
             pnlAdminSA.Controls.Add(label1);
-            pnlAdminSA.Location = new Point(364, 208);
-            pnlAdminSA.Margin = new Padding(3, 2, 3, 2);
+            pnlAdminSA.Controls.Add(ucUpdateAdmin1);
+            pnlAdminSA.Location = new Point(416, 277);
             pnlAdminSA.Name = "pnlAdminSA";
             pnlAdminSA.Size = new Size(1319, 604);
             pnlAdminSA.TabIndex = 18;
@@ -254,6 +254,16 @@
             label1.Size = new Size(146, 20);
             label1.TabIndex = 10;
             label1.Text = "Daftar Pengguna";
+            // 
+            // ucUpdateAdmin1
+            // 
+            ucUpdateAdmin1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ucUpdateAdmin1.IdAdmin = 0;
+            ucUpdateAdmin1.Location = new Point(0, 0);
+            ucUpdateAdmin1.Name = "ucUpdateAdmin1";
+            ucUpdateAdmin1.Size = new Size(843, 682);
+            ucUpdateAdmin1.TabIndex = 15;
+            ucUpdateAdmin1.Load += ucUpdateAdmin1_Load;
             // 
             // nightControlBox1
             // 
@@ -543,22 +553,11 @@
             label3.TabIndex = 10;
             label3.Text = "Daftar Admin";
             // 
-            // ucUpdateAdmin1
-            // 
-            ucUpdateAdmin1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ucUpdateAdmin1.Location = new Point(721, 100);
-            ucUpdateAdmin1.Margin = new Padding(3, 2, 3, 2);
-            ucUpdateAdmin1.Name = "ucUpdateAdmin1";
-            ucUpdateAdmin1.Size = new Size(738, 512);
-            ucUpdateAdmin1.TabIndex = 15;
-            ucUpdateAdmin1.Load += ucUpdateAdmin1_Load;
-            // 
             // V_SuperAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1213, 591);
-            Controls.Add(ucUpdateAdmin1);
+            ClientSize = new Size(1920, 1080);
             Controls.Add(pnlDaftarAdminSA);
             Controls.Add(pnlAdminSA);
             Controls.Add(pnlUserSA);

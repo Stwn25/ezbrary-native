@@ -19,11 +19,10 @@ namespace Project_PBO_03.Context
 
         public static void create(m_Penulis penulisBaru)
         {
-            string query = $"INSERT INTO {table} (idpenulis, namapenulis) VALUES(@idpenulis, @namapenulis)";
+            string query = $"INSERT INTO {table} (namapenulis) VALUES(@namapenulis)";
             NpgsqlParameter[] parameters =
             {
-                new NpgsqlParameter("@idpenulis", NpgsqlDbType.Integer){Value = penulisBaru.id_penulis},
-                new NpgsqlParameter("@namapenulis", NpgsqlDbType.Varchar){Value = penulisBaru.nama_penulis},
+                new NpgsqlParameter("@namapenulis", NpgsqlDbType.Varchar){Value = penulisBaru.nama_penulis}
             };
             commandExecutor(query, parameters);
         }

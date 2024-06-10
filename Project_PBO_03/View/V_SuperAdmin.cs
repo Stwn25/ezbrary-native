@@ -71,13 +71,14 @@ namespace Project_PBO_03.View
             };
             dataGridView1.Columns.Insert(1, updateAdmin);
 
-            // Tambahkan event handler untuk DataGridView2 Cell Content Click
-            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
-
-            // Tambahkan event handler untuk DataGridView1 Cell Content Click
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            ucUpdateAdmin1.UpdateAdminSuccess += UcUpdateAdmin1_UpdateAdminSuccess;
         }
 
+        private void UcUpdateAdmin1_UpdateAdminSuccess(object sender, EventArgs e)
+        {
+            // Refresh the DataGridView1 data source
+            dataGridView1.DataSource = AdminContext.all();
+        }
 
         private void btKelolaAkunSA_Click(object sender, EventArgs e)
         {
@@ -142,13 +143,62 @@ namespace Project_PBO_03.View
 
         private void btDaftarSA_Click(object sender, EventArgs e)
         {
-            btKelolaAkunSA.BackColor = Color.Black;
-            btKeluarSA.BackColor = Color.CornflowerBlue;
-            pnlUserSA.Hide();
-            pnlAdminSA.Hide();
-            pnlDaftarAdminSA.Show();
-            pnlDaftarAdminSA.Dock = DockStyle.Bottom;
+            try
+            {
+                // Pengecekan input kosong
+                if (string.IsNullOrWhiteSpace(tbUsernameSA.Text) ||
+                    string.IsNullOrWhiteSpace(tbNamaSA.Text) ||
+                    string.IsNullOrWhiteSpace(tbEmailSA.Text) ||
+                    string.IsNullOrWhiteSpace(tbTeleponSA.Text) ||
+                    string.IsNullOrWhiteSpace(tbPasswordSA.Text))
+                {
+                    MessageBox.Show("Tidak boleh ada yang kosong!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Membuat objek admin baru
+                m_Administrator newAdmin = new m_Administrator
+                {
+                    kode_verif = "123456",
+                    username_admin = tbUsernameSA.Text,
+                    nama_admin = tbNamaSA.Text,
+                    email_admin = tbEmailSA.Text,
+                    telp_admin = tbTeleponSA.Text,
+                    pass_admin = tbPasswordSA.Text
+                };
+
+                // Menambahkan admin baru ke database
+                AdminContext.create(newAdmin);
+
+                // Memperbarui data di dataGridView
+                dataGridView1.DataSource = AdminContext.all();
+
+                // Membersihkan textbox
+                ClearTextboxes();
+
+                // Menampilkan pesan sukses
+                MessageBox.Show("Data admin berhasil ditambahkan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Menyembunyikan panel
+                pnlDaftarAdminSA.Hide();
+            }
+            catch (Exception ex)
+            {
+                // Menampilkan pesan error
+                MessageBox.Show("Gagal menambahkan data admin: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
+        private void ClearTextboxes()
+        {
+            tbUsernameSA.Text = "";
+            tbNamaSA.Text = "";
+            tbEmailSA.Text = "";
+            tbTeleponSA.Text = "";
+            tbPasswordSA.Text = "";
+        }
+
 
         private void btKeluarSA_Click(object sender, EventArgs e)
         {
@@ -160,17 +210,26 @@ namespace Project_PBO_03.View
         {
             if (e.ColumnIndex == dataGridView1.Columns["HapusAdmin"].Index && e.RowIndex >= 0)
             {
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                int idadmin = Convert.ToInt32(row.Cells["idadmin"].Value);
-                AdminContext.delete(idadmin);
-                dataGridView1.DataSource = AdminContext.all();
-                MessageBox.Show("Admin berhasil dihapus!", "Sukses", MessageBoxButtons.OK);
+                int id = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["idadmin"].Value);
+
+                DialogResult message = MessageBox.Show("Apakah anda yakin ingin menghapus data ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo);
+                if (message == DialogResult.Yes)
+                {
+                    AdminContext.delete(id);
+
+                    DialogResult messageHapus = MessageBox.Show("Data berhasil dihapus", "Sukses", MessageBoxButtons.OK);
+
+                    dataGridView1.DataSource = AdminContext.all();
+                }
             }
 
             if (e.ColumnIndex == dataGridView1.Columns["UpdateAdmin"].Index && e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 int idadmin = Convert.ToInt32(row.Cells["idadmin"].Value);
+
+                // Set IdAdmin property of user control
+                ucUpdateAdmin1.IdAdmin = idadmin;
 
                 // Load the admin data into the UserControl
                 ucUpdateAdmin1.LoadAdminData(idadmin);
@@ -185,11 +244,17 @@ namespace Project_PBO_03.View
         {
             if (e.ColumnIndex == dataGridView2.Columns["HapusUser"].Index && e.RowIndex >= 0)
             {
-                DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
-                int iduser = Convert.ToInt32(row.Cells["iduser"].Value);
-                PenggunaContext.delete(iduser);
-                dataGridView2.DataSource = PenggunaContext.all();
-                MessageBox.Show("User berhasil dihapus!", "Sukses", MessageBoxButtons.OK);
+                int id = Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells["iduser"].Value);
+
+                DialogResult message = MessageBox.Show("Apakah anda yakin ingin menghapus data ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo);
+                if (message == DialogResult.Yes)
+                {
+                    PenggunaContext.delete(id);
+
+                    DialogResult messageHapus = MessageBox.Show("Data berhasil dihapus", "Sukses", MessageBoxButtons.OK);
+
+                    dataGridView2.DataSource = PenggunaContext.all();
+                }
             }
         }
 
@@ -214,7 +279,6 @@ namespace Project_PBO_03.View
         private void ucUpdateAdmin1_Load(object sender, EventArgs e)
         {
             this.ucUpdateAdmin1.Hide();
-
         }
     }
 }

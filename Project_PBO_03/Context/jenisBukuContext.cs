@@ -21,7 +21,7 @@ namespace Project_PBO_03.Context
             DataTable dataJenis = queryExecutor(query);
             return dataJenis;
         }
-
+        
         public static DataTable comboBox()
         {
             string query = $"SELECT namajenis FROM {table}";
@@ -33,11 +33,11 @@ namespace Project_PBO_03.Context
         {
             string query = $"select b.isbn, b.namabuku, b.sinopsis, b.thnterbit, jb.namajenis, b.stokbuku, pt.namapenerbit, ps.namapenulis, b.posisirak " +
                            $"from buku b join jenisbuku jb " +
-                           $"ON jb.idjenis = b.jenisbuku_idjenis " +
+                           $"ON jb.idjenis = b.idjenis " +
                            $"join penulis ps " +
-                           $"ON ps.idpenulis = b.penulis_idpenulis " +
+                           $"ON ps.idpenulis = b.idpenulis " +
                            $"join penerbit pt " +
-                           $"ON pt.idpenerbit = b.penerbit_idpenerbit " +
+                           $"ON pt.idpenerbit = b.idpenerbit " +
                            $"where jb.namajenis = @namajenis";
             NpgsqlParameter[] parameters =
             {
