@@ -55,10 +55,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Nunito Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Nunito SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(18, 450);
             label1.Name = "label1";
-            label1.Size = new Size(111, 20);
+            label1.Size = new Size(112, 20);
             label1.TabIndex = 4;
             label1.Text = "Nama Penerbit";
             // 
@@ -75,18 +75,20 @@
             // tbNamaPenerbit
             // 
             tbNamaPenerbit.BorderStyle = BorderStyle.FixedSingle;
+            tbNamaPenerbit.Font = new Font("Nunito SemiBold", 9F, FontStyle.Bold);
             tbNamaPenerbit.Location = new Point(18, 473);
             tbNamaPenerbit.Name = "tbNamaPenerbit";
-            tbNamaPenerbit.Size = new Size(465, 27);
+            tbNamaPenerbit.Size = new Size(465, 28);
             tbNamaPenerbit.TabIndex = 6;
             tbNamaPenerbit.TextChanged += tbNamaPenerbit_TextChanged;
             // 
             // tbAlamatPenerbit
             // 
             tbAlamatPenerbit.BorderStyle = BorderStyle.FixedSingle;
+            tbAlamatPenerbit.Font = new Font("Nunito SemiBold", 9F, FontStyle.Bold);
             tbAlamatPenerbit.Location = new Point(18, 551);
             tbAlamatPenerbit.Name = "tbAlamatPenerbit";
-            tbAlamatPenerbit.Size = new Size(465, 27);
+            tbAlamatPenerbit.Size = new Size(465, 28);
             tbAlamatPenerbit.TabIndex = 7;
             // 
             // btSimpanPenerbit

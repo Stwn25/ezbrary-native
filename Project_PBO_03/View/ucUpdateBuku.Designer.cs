@@ -55,9 +55,10 @@
             // tbPosisiRakuc
             // 
             tbPosisiRakuc.BorderStyle = BorderStyle.FixedSingle;
+            tbPosisiRakuc.Font = new Font("Nunito SemiBold", 9F, FontStyle.Bold);
             tbPosisiRakuc.Location = new Point(499, 464);
             tbPosisiRakuc.Name = "tbPosisiRakuc";
-            tbPosisiRakuc.Size = new Size(404, 27);
+            tbPosisiRakuc.Size = new Size(404, 28);
             tbPosisiRakuc.TabIndex = 51;
             // 
             // label11
@@ -73,9 +74,10 @@
             // tbStokBukuuc
             // 
             tbStokBukuuc.BorderStyle = BorderStyle.FixedSingle;
+            tbStokBukuuc.Font = new Font("Nunito SemiBold", 9F, FontStyle.Bold);
             tbStokBukuuc.Location = new Point(499, 96);
             tbStokBukuuc.Name = "tbStokBukuuc";
-            tbStokBukuuc.Size = new Size(404, 27);
+            tbStokBukuuc.Size = new Size(404, 28);
             tbStokBukuuc.TabIndex = 49;
             // 
             // label10
@@ -91,9 +93,10 @@
             // tbISBNuc
             // 
             tbISBNuc.BorderStyle = BorderStyle.FixedSingle;
+            tbISBNuc.Font = new Font("Nunito SemiBold", 9F, FontStyle.Bold);
             tbISBNuc.Location = new Point(33, 97);
             tbISBNuc.Name = "tbISBNuc";
-            tbISBNuc.Size = new Size(405, 27);
+            tbISBNuc.Size = new Size(405, 28);
             tbISBNuc.TabIndex = 47;
             // 
             // label9
@@ -109,14 +112,16 @@
             // tbTahunTerbituc
             // 
             tbTahunTerbituc.BorderStyle = BorderStyle.FixedSingle;
+            tbTahunTerbituc.Font = new Font("Nunito SemiBold", 9F, FontStyle.Bold);
             tbTahunTerbituc.Location = new Point(33, 464);
             tbTahunTerbituc.Name = "tbTahunTerbituc";
-            tbTahunTerbituc.Size = new Size(405, 27);
+            tbTahunTerbituc.Size = new Size(405, 28);
             tbTahunTerbituc.TabIndex = 45;
             // 
             // tbSinopsisBukuuc
             // 
             tbSinopsisBukuuc.BorderStyle = BorderStyle.FixedSingle;
+            tbSinopsisBukuuc.Font = new Font("Nunito SemiBold", 9F, FontStyle.Bold);
             tbSinopsisBukuuc.Location = new Point(32, 257);
             tbSinopsisBukuuc.Name = "tbSinopsisBukuuc";
             tbSinopsisBukuuc.Size = new Size(405, 156);
@@ -126,14 +131,16 @@
             // tbNamaBukuuc
             // 
             tbNamaBukuuc.BorderStyle = BorderStyle.FixedSingle;
+            tbNamaBukuuc.Font = new Font("Nunito SemiBold", 9F, FontStyle.Bold);
             tbNamaBukuuc.Location = new Point(32, 176);
             tbNamaBukuuc.Name = "tbNamaBukuuc";
-            tbNamaBukuuc.Size = new Size(405, 27);
+            tbNamaBukuuc.Size = new Size(405, 28);
             tbNamaBukuuc.TabIndex = 43;
             tbNamaBukuuc.TextChanged += tbNamaBukuuc_TextChanged;
             // 
             // cbJenisBukuuc
             // 
+            cbJenisBukuuc.Font = new Font("Nunito SemiBold", 9F, FontStyle.Bold);
             cbJenisBukuuc.FormattingEnabled = true;
             cbJenisBukuuc.Location = new Point(499, 364);
             cbJenisBukuuc.Name = "cbJenisBukuuc";
@@ -142,6 +149,7 @@
             // 
             // cbPenerbituc
             // 
+            cbPenerbituc.Font = new Font("Nunito SemiBold", 9F, FontStyle.Bold);
             cbPenerbituc.FormattingEnabled = true;
             cbPenerbituc.Location = new Point(499, 174);
             cbPenerbituc.Name = "cbPenerbituc";
@@ -150,6 +158,7 @@
             // 
             // cbPenulisuc
             // 
+            cbPenulisuc.Font = new Font("Nunito SemiBold", 9F, FontStyle.Bold);
             cbPenulisuc.FormattingEnabled = true;
             cbPenulisuc.Location = new Point(499, 272);
             cbPenulisuc.Name = "cbPenulisuc";
@@ -220,7 +229,7 @@
             // 
             btTBAdminuc.BackColor = SystemColors.HotTrack;
             btTBAdminuc.FlatStyle = FlatStyle.Popup;
-            btTBAdminuc.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btTBAdminuc.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btTBAdminuc.ForeColor = Color.White;
             btTBAdminuc.Location = new Point(326, 537);
             btTBAdminuc.Name = "btTBAdminuc";

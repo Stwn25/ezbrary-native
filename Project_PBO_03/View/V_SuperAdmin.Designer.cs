@@ -466,7 +466,7 @@
             // 
             tbPasswordSA.BackColor = Color.White;
             tbPasswordSA.BorderStyle = BorderStyle.FixedSingle;
-            tbPasswordSA.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbPasswordSA.Font = new Font("Nunito", 10.2F, FontStyle.Bold);
             tbPasswordSA.Location = new Point(58, 496);
             tbPasswordSA.Multiline = true;
             tbPasswordSA.Name = "tbPasswordSA";
@@ -477,7 +477,7 @@
             // 
             tbTeleponSA.BackColor = Color.White;
             tbTeleponSA.BorderStyle = BorderStyle.FixedSingle;
-            tbTeleponSA.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbTeleponSA.Font = new Font("Nunito", 10.2F, FontStyle.Bold);
             tbTeleponSA.Location = new Point(58, 409);
             tbTeleponSA.Multiline = true;
             tbTeleponSA.Name = "tbTeleponSA";
@@ -488,7 +488,7 @@
             // 
             tbEmailSA.BackColor = Color.White;
             tbEmailSA.BorderStyle = BorderStyle.FixedSingle;
-            tbEmailSA.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbEmailSA.Font = new Font("Nunito", 10.2F, FontStyle.Bold);
             tbEmailSA.Location = new Point(58, 323);
             tbEmailSA.Multiline = true;
             tbEmailSA.Name = "tbEmailSA";
@@ -499,7 +499,7 @@
             // 
             tbNamaSA.BackColor = Color.White;
             tbNamaSA.BorderStyle = BorderStyle.FixedSingle;
-            tbNamaSA.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbNamaSA.Font = new Font("Nunito", 10.2F, FontStyle.Bold);
             tbNamaSA.Location = new Point(58, 237);
             tbNamaSA.Multiline = true;
             tbNamaSA.Name = "tbNamaSA";
@@ -510,7 +510,7 @@
             // 
             tbUsernameSA.BackColor = Color.White;
             tbUsernameSA.BorderStyle = BorderStyle.FixedSingle;
-            tbUsernameSA.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbUsernameSA.Font = new Font("Nunito", 10.2F, FontStyle.Bold);
             tbUsernameSA.Location = new Point(58, 156);
             tbUsernameSA.Multiline = true;
             tbUsernameSA.Name = "tbUsernameSA";

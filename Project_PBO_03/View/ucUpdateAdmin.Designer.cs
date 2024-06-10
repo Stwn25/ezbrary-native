@@ -102,7 +102,7 @@
             // 
             tbPasswordSAuc.BackColor = Color.White;
             tbPasswordSAuc.BorderStyle = BorderStyle.FixedSingle;
-            tbPasswordSAuc.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbPasswordSAuc.Font = new Font("Nunito SemiBold", 10.2F, FontStyle.Bold);
             tbPasswordSAuc.Location = new Point(84, 497);
             tbPasswordSAuc.Multiline = true;
             tbPasswordSAuc.Name = "tbPasswordSAuc";
@@ -113,7 +113,7 @@
             // 
             tbUsernameSAuc.BackColor = Color.White;
             tbUsernameSAuc.BorderStyle = BorderStyle.FixedSingle;
-            tbUsernameSAuc.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbUsernameSAuc.Font = new Font("Nunito SemiBold", 10.2F, FontStyle.Bold);
             tbUsernameSAuc.ForeColor = Color.Black;
             tbUsernameSAuc.Location = new Point(84, 158);
             tbUsernameSAuc.Multiline = true;
@@ -148,7 +148,7 @@
             btUpdateSAuc.BackColor = SystemColors.HotTrack;
             btUpdateSAuc.Cursor = Cursors.Hand;
             btUpdateSAuc.FlatStyle = FlatStyle.Popup;
-            btUpdateSAuc.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btUpdateSAuc.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btUpdateSAuc.ForeColor = Color.White;
             btUpdateSAuc.Location = new Point(274, 554);
             btUpdateSAuc.Name = "btUpdateSAuc";
@@ -162,7 +162,7 @@
             // 
             tbTeleponSAuc.BackColor = Color.White;
             tbTeleponSAuc.BorderStyle = BorderStyle.FixedSingle;
-            tbTeleponSAuc.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbTeleponSAuc.Font = new Font("Nunito SemiBold", 10.2F, FontStyle.Bold);
             tbTeleponSAuc.ForeColor = Color.Black;
             tbTeleponSAuc.Location = new Point(84, 411);
             tbTeleponSAuc.Multiline = true;
@@ -174,7 +174,7 @@
             // 
             tbEmailSAuc.BackColor = Color.White;
             tbEmailSAuc.BorderStyle = BorderStyle.FixedSingle;
-            tbEmailSAuc.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbEmailSAuc.Font = new Font("Nunito SemiBold", 10.2F, FontStyle.Bold);
             tbEmailSAuc.ForeColor = Color.Black;
             tbEmailSAuc.Location = new Point(84, 325);
             tbEmailSAuc.Multiline = true;
@@ -186,7 +186,7 @@
             // 
             tbNamaSAuc.BackColor = Color.White;
             tbNamaSAuc.BorderStyle = BorderStyle.FixedSingle;
-            tbNamaSAuc.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbNamaSAuc.Font = new Font("Nunito SemiBold", 10.2F, FontStyle.Bold);
             tbNamaSAuc.ForeColor = Color.Black;
             tbNamaSAuc.Location = new Point(84, 239);
             tbNamaSAuc.Multiline = true;

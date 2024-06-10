@@ -55,9 +55,10 @@
             // tbJenisBuku
             // 
             tbJenisBuku.BorderStyle = BorderStyle.FixedSingle;
+            tbJenisBuku.Font = new Font("Nunito SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tbJenisBuku.Location = new Point(15, 469);
             tbJenisBuku.Name = "tbJenisBuku";
-            tbJenisBuku.Size = new Size(465, 27);
+            tbJenisBuku.Size = new Size(465, 28);
             tbJenisBuku.TabIndex = 12;
             tbJenisBuku.TextChanged += tbJenisBuku_TextChanged;
             // 

@@ -213,5 +213,10 @@ namespace Project_PBO_03
                 }
             }
         }
+
+        private void ucDetailBukuUser1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

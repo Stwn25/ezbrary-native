@@ -54,7 +54,7 @@
             // tbNamaPenulis
             // 
             tbNamaPenulis.BorderStyle = BorderStyle.FixedSingle;
-            tbNamaPenulis.Font = new Font("Nunito", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbNamaPenulis.Font = new Font("Nunito SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tbNamaPenulis.Location = new Point(16, 464);
             tbNamaPenulis.Name = "tbNamaPenulis";
             tbNamaPenulis.Size = new Size(465, 28);
@@ -64,10 +64,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Nunito Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Nunito SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(16, 441);
             label1.Name = "label1";
-            label1.Size = new Size(163, 20);
+            label1.Size = new Size(164, 20);
             label1.TabIndex = 16;
             label1.Text = "Tambah Nama Penulis";
             // 

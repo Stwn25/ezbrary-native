@@ -592,6 +592,7 @@ namespace Project_PBO_03
             ucDetailBukuUser1.Name = "ucDetailBukuUser1";
             ucDetailBukuUser1.Size = new Size(904, 627);
             ucDetailBukuUser1.TabIndex = 16;
+            ucDetailBukuUser1.Load += ucDetailBukuUser1_Load;
             // 
             // V_User
             // 
