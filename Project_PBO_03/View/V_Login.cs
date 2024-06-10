@@ -17,7 +17,10 @@ namespace Project_PBO_03
     public partial class V_Login : Form
     {
         /*private object pbDekorTeks;*/
-
+        public string getnama
+        {
+            get { return tbUsernameM.Text; }
+        }
         public V_Login()
         {
             InitializeComponent();
@@ -124,8 +127,8 @@ namespace Project_PBO_03
             {
                 this.pnlMasuk.Hide();
                 this.pnlAwal.Show();
-                tbUsernameM.Text =default;
-                tbPasswordD.Text =default;
+                tbUsernameM.Text = default;
+                tbPasswordD.Text = default;
                 V_User User = new V_User();
                 User.Show();
             }
@@ -307,6 +310,11 @@ namespace Project_PBO_03
         }
 
         private void pnlMasuk_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tbUsernameM_TextChanged(object sender, EventArgs e)
         {
 
         }

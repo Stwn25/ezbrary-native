@@ -31,7 +31,7 @@ namespace Project_PBO_03.Context
 
         public static void create(m_Pengguna penggunaBaru)
         {
-            string query = $"INSERT INTO {table} (namauser, usrnmeuser, pwuser, telpuser, emailuser) Values(@namauser, @usrnmeuser, @pwuser, @telpuser, @emailuser)";
+            string query = $"INSERT INTO {table} (iduser,namauser, usrnmeuser, pwuser, telpuser, emailuser) Values(@namauser, @usrnmeuser, @pwuser, @telpuser, @emailuser)";
             NpgsqlParameter[] parameters =
             {
                 new NpgsqlParameter ("@namauser", NpgsqlDbType.Varchar){Value = penggunaBaru.nama_pengguna},
