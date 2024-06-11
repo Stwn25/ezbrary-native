@@ -87,7 +87,7 @@
             label2.Font = new Font("Nunito SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(42, 305);
             label2.Name = "label2";
-            label2.Size = new Size(99, 28);
+            label2.Size = new Size(101, 28);
             label2.TabIndex = 13;
             label2.Text = "Sinopsis :";
             // 
@@ -142,7 +142,7 @@
             lbisbnBuku.Font = new Font("Nunito SemiBold", 9.749998F, FontStyle.Bold);
             lbisbnBuku.Location = new Point(212, 101);
             lbisbnBuku.Name = "lbisbnBuku";
-            lbisbnBuku.Size = new Size(59, 23);
+            lbisbnBuku.Size = new Size(60, 23);
             lbisbnBuku.TabIndex = 24;
             lbisbnBuku.Text = "ISBN :";
             lbisbnBuku.Click += lbisbnBuku_Click_2;
@@ -153,7 +153,7 @@
             lbtahunterbit.Font = new Font("Nunito SemiBold", 9.749998F, FontStyle.Bold);
             lbtahunterbit.Location = new Point(212, 130);
             lbtahunterbit.Name = "lbtahunterbit";
-            lbtahunterbit.Size = new Size(118, 23);
+            lbtahunterbit.Size = new Size(125, 23);
             lbtahunterbit.TabIndex = 25;
             lbtahunterbit.Text = "Tahun Terbit : ";
             // 
@@ -163,7 +163,7 @@
             lbpenerbit.Font = new Font("Nunito SemiBold", 9.749998F, FontStyle.Bold);
             lbpenerbit.Location = new Point(212, 159);
             lbpenerbit.Name = "lbpenerbit";
-            lbpenerbit.Size = new Size(83, 23);
+            lbpenerbit.Size = new Size(86, 23);
             lbpenerbit.TabIndex = 26;
             lbpenerbit.Text = "Penerbit :";
             lbpenerbit.Click += lbpenerbit_Click;
@@ -174,7 +174,7 @@
             lbpenulis.Font = new Font("Nunito SemiBold", 9.749998F, FontStyle.Bold);
             lbpenulis.Location = new Point(212, 189);
             lbpenulis.Name = "lbpenulis";
-            lbpenulis.Size = new Size(75, 23);
+            lbpenulis.Size = new Size(76, 23);
             lbpenulis.TabIndex = 27;
             lbpenulis.Text = "Penulis :";
             // 
@@ -184,7 +184,7 @@
             lbstok.Font = new Font("Nunito SemiBold", 9.749998F, FontStyle.Bold);
             lbstok.Location = new Point(212, 275);
             lbstok.Name = "lbstok";
-            lbstok.Size = new Size(54, 23);
+            lbstok.Size = new Size(56, 23);
             lbstok.TabIndex = 28;
             lbstok.Text = "Stok :";
             // 
@@ -194,7 +194,7 @@
             lbjenisbuku.Font = new Font("Nunito SemiBold", 9.749998F, FontStyle.Bold);
             lbjenisbuku.Location = new Point(212, 217);
             lbjenisbuku.Name = "lbjenisbuku";
-            lbjenisbuku.Size = new Size(100, 23);
+            lbjenisbuku.Size = new Size(102, 23);
             lbjenisbuku.TabIndex = 29;
             lbjenisbuku.Text = "Jenis Buku :";
             // 
@@ -204,7 +204,7 @@
             lbposisirak.Font = new Font("Nunito SemiBold", 9.749998F, FontStyle.Bold);
             lbposisirak.Location = new Point(212, 246);
             lbposisirak.Name = "lbposisirak";
-            lbposisirak.Size = new Size(97, 23);
+            lbposisirak.Size = new Size(99, 23);
             lbposisirak.TabIndex = 30;
             lbposisirak.Text = "Posisi Rak :";
             // 
