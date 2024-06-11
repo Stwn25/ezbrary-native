@@ -1035,12 +1035,12 @@ namespace Project_PBO_03
             Controls.Add(pictureBoxPerpusAdmin);
             Controls.Add(pictureBoxVektoradmin);
             Controls.Add(pnlAdmin);
+            Controls.Add(pnlPeminjamanAdmin1);
+            Controls.Add(pnlTambahBukuAdmin);
             Controls.Add(pnlDaftarBukuAdmin);
             Controls.Add(pnlRiwayatPeminjaman);
             Controls.Add(pnlProfileAdmin);
             Controls.Add(pnlPeminjamanAdmin);
-            Controls.Add(pnlPeminjamanAdmin1);
-            Controls.Add(pnlTambahBukuAdmin);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_Admin";
             Text = "V_Admin";
