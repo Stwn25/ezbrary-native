@@ -507,6 +507,16 @@ namespace Project_PBO_03
             pnlPeminjamanAdmin1.Hide();
             pnlPeminjamanAdmin.Show();
         }
+
+        private void pnlPeminjamanAdmin_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ucJenisBukuTambahBukuAdmin1_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

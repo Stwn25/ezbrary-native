@@ -46,6 +46,10 @@ namespace Project_PBO_03
             lblDaftarBuku = new Label();
             tbDaftarBukuAdmin = new TextBox();
             pnlDaftarBukuAdmin = new Panel();
+            ucUpdateBuku1 = new View.ucUpdateBuku();
+            ucPenulisTambahBukuAdmin2 = new ucPenulisTambahBukuAdmin();
+            ucPenerbitTambahBukuAdmin1 = new ucPenerbitTambahBukuAdmin();
+            ucJenisBukuTambahBukuAdmin1 = new ucJenisBukuTambahBukuAdmin();
             cbJenisBukuAdmin = new ComboBox();
             button1 = new Button();
             dgvDaftarBuku = new DataGridView();
@@ -300,6 +304,10 @@ namespace Project_PBO_03
             // pnlDaftarBukuAdmin
             // 
             pnlDaftarBukuAdmin.BackColor = Color.White;
+            pnlDaftarBukuAdmin.Controls.Add(ucUpdateBuku1);
+            pnlDaftarBukuAdmin.Controls.Add(ucPenulisTambahBukuAdmin2);
+            pnlDaftarBukuAdmin.Controls.Add(ucPenerbitTambahBukuAdmin1);
+            pnlDaftarBukuAdmin.Controls.Add(ucJenisBukuTambahBukuAdmin1);
             pnlDaftarBukuAdmin.Controls.Add(cbJenisBukuAdmin);
             pnlDaftarBukuAdmin.Controls.Add(button1);
             pnlDaftarBukuAdmin.Controls.Add(dgvDaftarBuku);
@@ -313,6 +321,42 @@ namespace Project_PBO_03
             pnlDaftarBukuAdmin.Name = "pnlDaftarBukuAdmin";
             pnlDaftarBukuAdmin.Size = new Size(1507, 805);
             pnlDaftarBukuAdmin.TabIndex = 7;
+            // 
+            // ucUpdateBuku1
+            // 
+            ucUpdateBuku1.BorderStyle = BorderStyle.FixedSingle;
+            ucUpdateBuku1.Location = new Point(479, 2);
+            ucUpdateBuku1.Name = "ucUpdateBuku1";
+            ucUpdateBuku1.Size = new Size(948, 802);
+            ucUpdateBuku1.TabIndex = 20;
+            // 
+            // ucPenulisTambahBukuAdmin2
+            // 
+            ucPenulisTambahBukuAdmin2.BackColor = Color.White;
+            ucPenulisTambahBukuAdmin2.BorderStyle = BorderStyle.FixedSingle;
+            ucPenulisTambahBukuAdmin2.Location = new Point(94, 87);
+            ucPenulisTambahBukuAdmin2.Name = "ucPenulisTambahBukuAdmin2";
+            ucPenulisTambahBukuAdmin2.Size = new Size(504, 729);
+            ucPenulisTambahBukuAdmin2.TabIndex = 19;
+            // 
+            // ucPenerbitTambahBukuAdmin1
+            // 
+            ucPenerbitTambahBukuAdmin1.BackColor = Color.White;
+            ucPenerbitTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
+            ucPenerbitTambahBukuAdmin1.Location = new Point(175, 31);
+            ucPenerbitTambahBukuAdmin1.Name = "ucPenerbitTambahBukuAdmin1";
+            ucPenerbitTambahBukuAdmin1.Size = new Size(500, 808);
+            ucPenerbitTambahBukuAdmin1.TabIndex = 18;
+            // 
+            // ucJenisBukuTambahBukuAdmin1
+            // 
+            ucJenisBukuTambahBukuAdmin1.BackColor = Color.White;
+            ucJenisBukuTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
+            ucJenisBukuTambahBukuAdmin1.Location = new Point(339, 77);
+            ucJenisBukuTambahBukuAdmin1.Name = "ucJenisBukuTambahBukuAdmin1";
+            ucJenisBukuTambahBukuAdmin1.Size = new Size(500, 726);
+            ucJenisBukuTambahBukuAdmin1.TabIndex = 17;
+            ucJenisBukuTambahBukuAdmin1.Load += ucJenisBukuTambahBukuAdmin1_Load_1;
             // 
             // cbJenisBukuAdmin
             // 
@@ -867,7 +911,7 @@ namespace Project_PBO_03
             label2.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(71, 552);
             label2.Name = "label2";
-            label2.Size = new Size(125, 28);
+            label2.Size = new Size(127, 28);
             label2.TabIndex = 15;
             label2.Text = "Tahun Terbit";
             // 
@@ -985,18 +1029,18 @@ namespace Project_PBO_03
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1920, 1080);
-            Controls.Add(pnlPeminjamanAdmin);
             Controls.Add(nightControlBox1);
             Controls.Add(lblhai1Admin);
             Controls.Add(lblhaiAdmin);
             Controls.Add(pictureBoxPerpusAdmin);
             Controls.Add(pictureBoxVektoradmin);
             Controls.Add(pnlAdmin);
-            Controls.Add(pnlPeminjamanAdmin1);
-            Controls.Add(pnlTambahBukuAdmin);
             Controls.Add(pnlDaftarBukuAdmin);
             Controls.Add(pnlRiwayatPeminjaman);
             Controls.Add(pnlProfileAdmin);
+            Controls.Add(pnlPeminjamanAdmin);
+            Controls.Add(pnlPeminjamanAdmin1);
+            Controls.Add(pnlTambahBukuAdmin);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_Admin";
             Text = "V_Admin";
@@ -1096,7 +1140,6 @@ namespace Project_PBO_03
         private ComboBox cbJenisBuku;
         private ComboBox cbPenerbit;
         private ComboBox cbPenulis;
-        private ucPenulisTambahBukuAdmin ucPenulisTambahBukuAdmin2;
         private Button btSimpanPerubahanA;
         private TextBox tbNamaBuku;
         private RichTextBox tbSinopsisBuku;
@@ -1104,7 +1147,6 @@ namespace Project_PBO_03
         private Button btJenisBuku;
         private Button btPenulis;
         private Button btPenerbit;
-        private ucPenerbitTambahBukuAdmin ucPenerbitTambahBukuAdmin1;
         private ucJenisBukuTambahBukuAdmin ucJenisBukuTambahBukuAdmin1;
         private DataGridView dgvDaftarBuku;
         private ComboBox cbJenisBukuAdmin;
@@ -1119,9 +1161,7 @@ namespace Project_PBO_03
         private DataGridViewButtonColumn hapusButton;
         private DataGridViewButtonColumn statusButton;
         private DataGridViewButtonColumn updateButton;
-        private ucPenulisTambahBukuAdmin ucPenulisTambahBukuAdmin1;
-        private ucPenerbitTambahBukuAdmin ucPenerbitTambahBukuAdmin2;
-        private ucJenisBukuTambahBukuAdmin ucJenisBukuTambahBukuAdmin2;
+        private ucPenulisTambahBukuAdmin ucPenulisTambahBukuAdmin2;
         private Button btSedangDipinjam1;
         private Button btBooking1;
         private Panel pnlPeminjamanAdmin;
@@ -1129,5 +1169,6 @@ namespace Project_PBO_03
         private Button btBooking;
         private DataGridView dgvBooking;
         private Label label12;
+        private ucPenerbitTambahBukuAdmin ucPenerbitTambahBukuAdmin1;
     }
 }
