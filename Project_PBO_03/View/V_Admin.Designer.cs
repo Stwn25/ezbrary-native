@@ -874,7 +874,7 @@ namespace Project_PBO_03
             label2.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(71, 552);
             label2.Name = "label2";
-            label2.Size = new Size(127, 28);
+            label2.Size = new Size(125, 28);
             label2.TabIndex = 15;
             label2.Text = "Tahun Terbit";
             // 
