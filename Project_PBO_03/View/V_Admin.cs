@@ -366,7 +366,7 @@ namespace Project_PBO_03
                         DialogResult messageHapus = MessageBox.Show("Buku berhasil diaktifkan", "Sukses", MessageBoxButtons.OK);
                     }
                 }
-                
+
 
                 // Kemudian, perbarui DataGridView dengan data yang telah diperbarui
                 dgvDaftarBuku.DataSource = null;
@@ -443,8 +443,11 @@ namespace Project_PBO_03
         {
 
         }
+
+        private void btkeluartambahbukuadmin_Click(object sender, EventArgs e)
+        {
+            this.pnlTambahBukuAdmin.Hide();
+            this.pnlDaftarBukuAdmin.Show();
+        }
     }
-
-
-
 }

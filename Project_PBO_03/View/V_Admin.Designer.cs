@@ -81,6 +81,7 @@ namespace Project_PBO_03
             lblProfileAdmin = new Label();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             pnlTambahBukuAdmin = new Panel();
+            btkeluartambahbukuadmin = new Button();
             tbPosisiRak = new TextBox();
             label11 = new Label();
             tbStokBuku = new TextBox();
@@ -365,6 +366,7 @@ namespace Project_PBO_03
             button1.BackColor = SystemColors.Highlight;
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Nunito ExtraBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.Black;
             button1.Location = new Point(1091, 76);
             button1.Name = "button1";
             button1.Size = new Size(72, 35);
@@ -693,6 +695,7 @@ namespace Project_PBO_03
             // 
             // pnlTambahBukuAdmin
             // 
+            pnlTambahBukuAdmin.Controls.Add(btkeluartambahbukuadmin);
             pnlTambahBukuAdmin.Controls.Add(tbPosisiRak);
             pnlTambahBukuAdmin.Controls.Add(label11);
             pnlTambahBukuAdmin.Controls.Add(tbStokBuku);
@@ -718,6 +721,17 @@ namespace Project_PBO_03
             pnlTambahBukuAdmin.Size = new Size(1507, 805);
             pnlTambahBukuAdmin.TabIndex = 16;
             pnlTambahBukuAdmin.Paint += pnlTambahBukuAdmin_Paint;
+            // 
+            // btkeluartambahbukuadmin
+            // 
+            btkeluartambahbukuadmin.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btkeluartambahbukuadmin.Location = new Point(1469, 2);
+            btkeluartambahbukuadmin.Name = "btkeluartambahbukuadmin";
+            btkeluartambahbukuadmin.Size = new Size(35, 29);
+            btkeluartambahbukuadmin.TabIndex = 35;
+            btkeluartambahbukuadmin.Text = "X";
+            btkeluartambahbukuadmin.UseVisualStyleBackColor = true;
+            btkeluartambahbukuadmin.Click += btkeluartambahbukuadmin_Click;
             // 
             // tbPosisiRak
             // 
@@ -1067,5 +1081,6 @@ namespace Project_PBO_03
         private ucPenulisTambahBukuAdmin ucPenulisTambahBukuAdmin1;
         private ucPenerbitTambahBukuAdmin ucPenerbitTambahBukuAdmin2;
         private ucJenisBukuTambahBukuAdmin ucJenisBukuTambahBukuAdmin2;
+        private Button btkeluartambahbukuadmin;
     }
 }
