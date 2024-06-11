@@ -70,7 +70,6 @@ namespace Project_PBO_03
             tbUsernameProfileU = new TextBox();
             label3 = new Label();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
-            ucDetailBukuUser1 = new View.ucDetailBukuUser();
             pnlUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxVectorUser).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPerpusUser).BeginInit();
@@ -584,33 +583,20 @@ namespace Project_PBO_03
             nightControlBox1.TabIndex = 7;
             nightControlBox1.Click += nightControlBox1_Click;
             // 
-            // ucDetailBukuUser1
-            // 
-            ucDetailBukuUser1.BackColor = Color.White;
-            ucDetailBukuUser1.BorderStyle = BorderStyle.FixedSingle;
-            ucDetailBukuUser1.id_pengguna = 0;
-            ucDetailBukuUser1.Location = new Point(763, 244);
-            ucDetailBukuUser1.Margin = new Padding(3, 5, 3, 5);
-            ucDetailBukuUser1.Name = "ucDetailBukuUser1";
-            ucDetailBukuUser1.Size = new Size(904, 627);
-            ucDetailBukuUser1.TabIndex = 16;
-            ucDetailBukuUser1.Load += ucDetailBukuUser1_Load;
-            // 
             // V_User
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1920, 1080);
-            Controls.Add(ucDetailBukuUser1);
-            Controls.Add(pnlPeminjamanUser);
             Controls.Add(nightControlBox1);
-            Controls.Add(pnlProfileUser);
-            Controls.Add(pnlRiwayatUser);
-            Controls.Add(pnlBukuFavUser);
             Controls.Add(lblHai1User);
             Controls.Add(lblHaiUser);
             Controls.Add(pictureBoxPerpusUser);
             Controls.Add(pnlUser);
+            Controls.Add(pnlPeminjamanUser);
+            Controls.Add(pnlProfileUser);
+            Controls.Add(pnlRiwayatUser);
+            Controls.Add(pnlBukuFavUser);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_User";
             Text = "V_User";

@@ -27,7 +27,7 @@ namespace Project_PBO_03
 
             this.pnlDaftarBukuAdmin.Show();
             this.pnlTambahBukuAdmin.Hide();
-            this.pnlPeminjamanAdmin.Hide();
+            this.pnlPeminjamanAdmin1.Hide();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Hide();
 
@@ -67,7 +67,7 @@ namespace Project_PBO_03
             btKeluarAdmin.BackColor = Color.CornflowerBlue;
             this.pnlDaftarBukuAdmin.Show();
             this.pnlTambahBukuAdmin.Hide();
-            this.pnlPeminjamanAdmin.Hide();
+            this.pnlPeminjamanAdmin1.Hide();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Hide();
 
@@ -84,7 +84,7 @@ namespace Project_PBO_03
             btKeluarAdmin.BackColor = Color.CornflowerBlue;
             this.pnlDaftarBukuAdmin.Hide();
             this.pnlTambahBukuAdmin.Hide();
-            this.pnlPeminjamanAdmin.Hide();
+            this.pnlPeminjamanAdmin1.Hide();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Show();
 
@@ -99,7 +99,7 @@ namespace Project_PBO_03
             btKeluarAdmin.BackColor = Color.CornflowerBlue;
             this.pnlDaftarBukuAdmin.Hide();
             this.pnlTambahBukuAdmin.Hide();
-            this.pnlPeminjamanAdmin.Hide();
+            this.pnlPeminjamanAdmin1.Hide();
             this.pnlRiwayatPeminjaman.Show();
             this.pnlProfileAdmin.Hide();
 
@@ -114,7 +114,7 @@ namespace Project_PBO_03
             btKeluarAdmin.BackColor = Color.CornflowerBlue;
             this.pnlDaftarBukuAdmin.Hide();
             this.pnlTambahBukuAdmin.Hide();
-            this.pnlPeminjamanAdmin.Show();
+            this.pnlPeminjamanAdmin1.Show();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Hide();
 
@@ -129,7 +129,7 @@ namespace Project_PBO_03
             btKeluarAdmin.BackColor = Color.CornflowerBlue;
             this.pnlTambahBukuAdmin.Hide();
             this.pnlDaftarBukuAdmin.Show();
-            this.pnlPeminjamanAdmin.Hide();
+            this.pnlPeminjamanAdmin1.Hide();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Hide();
         }
@@ -153,7 +153,7 @@ namespace Project_PBO_03
         {
             this.pnlTambahBukuAdmin.Show();
             this.pnlDaftarBukuAdmin.Hide();
-            this.pnlPeminjamanAdmin.Hide();
+            this.pnlPeminjamanAdmin1.Hide();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Hide();
 
@@ -366,7 +366,7 @@ namespace Project_PBO_03
                         DialogResult messageHapus = MessageBox.Show("Buku berhasil diaktifkan", "Sukses", MessageBoxButtons.OK);
                     }
                 }
-                
+
 
                 // Kemudian, perbarui DataGridView dengan data yang telah diperbarui
                 dgvDaftarBuku.DataSource = null;
@@ -442,6 +442,70 @@ namespace Project_PBO_03
         private void pnlRiwayatPeminjaman_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btBooking1_Click(object sender, EventArgs e)
+        {
+            btPeminjaman.BackColor = Color.Black;
+            btKeluarAdmin.BackColor = Color.CornflowerBlue;
+            btBooking.BackColor = Color.Black;
+            btBooking1.BackColor = Color.Black;
+            btSedangDipinjam.BackColor = Color.CornflowerBlue;
+            btSedangDipinjam1.BackColor = Color.CornflowerBlue;
+            pnlDaftarBukuAdmin.Hide();
+            pnlProfileAdmin.Hide();
+            pnlRiwayatPeminjaman.Hide();
+            pnlTambahBuku.Hide();
+            pnlPeminjamanAdmin1.Show();
+            pnlPeminjamanAdmin.Hide();
+        }
+
+        private void btSedangDipinjam1_Click(object sender, EventArgs e)
+        {
+            btPeminjaman.BackColor = Color.Black;
+            btKeluarAdmin.BackColor = Color.CornflowerBlue;
+            btBooking.BackColor = Color.CornflowerBlue;
+            btBooking1.BackColor = Color.CornflowerBlue;
+            btSedangDipinjam.BackColor = Color.Black;
+            btSedangDipinjam1.BackColor = Color.Black;
+            pnlDaftarBukuAdmin.Hide();
+            pnlProfileAdmin.Hide();
+            pnlRiwayatPeminjaman.Hide();
+            pnlTambahBuku.Hide();
+            pnlPeminjamanAdmin1.Hide();
+            pnlPeminjamanAdmin.Show();
+        }
+
+        private void btBooking_Click(object sender, EventArgs e)
+        {
+            btPeminjaman.BackColor = Color.Black;
+            btKeluarAdmin.BackColor = Color.CornflowerBlue;
+            btBooking.BackColor = Color.Black;
+            btBooking1.BackColor = Color.Black;
+            btSedangDipinjam.BackColor = Color.CornflowerBlue;
+            btSedangDipinjam1.BackColor = Color.CornflowerBlue;
+            pnlDaftarBukuAdmin.Hide();
+            pnlProfileAdmin.Hide();
+            pnlRiwayatPeminjaman.Hide();
+            pnlTambahBuku.Hide();
+            pnlPeminjamanAdmin1.Show();
+            pnlPeminjamanAdmin.Hide();
+        }
+
+        private void btSedangDipinjam_Click(object sender, EventArgs e)
+        {
+            btPeminjaman.BackColor = Color.Black;
+            btKeluarAdmin.BackColor = Color.CornflowerBlue;
+            btBooking.BackColor = Color.CornflowerBlue;
+            btBooking1.BackColor = Color.CornflowerBlue;
+            btSedangDipinjam.BackColor = Color.Black;
+            btSedangDipinjam1.BackColor = Color.Black;
+            pnlDaftarBukuAdmin.Hide();
+            pnlProfileAdmin.Hide();
+            pnlRiwayatPeminjaman.Hide();
+            pnlTambahBuku.Hide();
+            pnlPeminjamanAdmin1.Hide();
+            pnlPeminjamanAdmin.Show();
         }
     }
 
