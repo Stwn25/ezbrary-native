@@ -15,7 +15,8 @@ namespace Project_PBO_03.View
     public partial class ucDetailBukuUser : UserControl
     {
         DateTime currentDate = DateTime.Now.Date;
-        V_Login login = new V_Login();
+        public int id_pengguna { get; set; }
+
         public ucDetailBukuUser()
         {
             InitializeComponent();
@@ -159,8 +160,8 @@ namespace Project_PBO_03.View
 
         private void btBookingBuku_Click(object sender, EventArgs e)
         {
+            MessageBox.Show($"{this.id_pengguna}", "Pemberitahuan", MessageBoxButtons.YesNo);
 
-            
 
             DialogResult message = MessageBox.Show($"Pengambilan dilakukan pada tanggal {tglPengambilanBooking.Value},\ndan dikembalikan pada tanggal {tglPengambilanBooking.Value.AddDays(7)}", "Pemberitahuan", MessageBoxButtons.YesNo);
             if (message == DialogResult.Yes)
@@ -168,10 +169,10 @@ namespace Project_PBO_03.View
                 m_PeminjamanBuku peminjaman = new m_PeminjamanBuku
                 {
                     isbn_buku = lbisbnBuku.Text,
-                    tgl_pengambilan = tglPengambilanBooking.Value.ToString(),
-                    tgl_pengembalian = tglPengambilanBooking.Value.AddDays(7).ToString(),
+                    tgl_pengambilan = tglPengambilanBooking.Value,
+                    tgl_pengembalian = tglPengambilanBooking.Value.AddDays(7),
                     id_status = 1,
-                    id_pengguna = login.iduser
+                    id_pengguna = this.id_pengguna
                 };
 
                 PeminjamanBuku.create(peminjaman);

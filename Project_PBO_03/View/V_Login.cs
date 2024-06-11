@@ -16,11 +16,12 @@ namespace Project_PBO_03
 {
     public partial class V_Login : Form
     {
-        public int iduser {  get; set; }
+        public int iduser { get; set; }
         public string input { get; set; }
 
         public V_Login()
         {
+
             InitializeComponent();
             this.pnlAwal.Show();
             this.pnlMasuk.Hide();
@@ -30,6 +31,7 @@ namespace Project_PBO_03
             this.pnlMasukSA.Hide();
 
         }
+        
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
@@ -130,9 +132,9 @@ namespace Project_PBO_03
                 
                 if (dt.Rows.Count > 0)
                 {
-                    int idpengguna = Convert.ToInt32(dt.Rows[0]["iduser"]);
+                    var Iduser = Convert.ToInt32(dt.Rows[0]["iduser"]);
                     string username = dt.Rows[0]["usrnmeuser"].ToString();
-                    this.iduser = idpengguna;
+                    this.iduser = Iduser;
                     this.input = input_pengguna;
                     this.pnlMasuk.Hide();
                     this.pnlAwal.Show();

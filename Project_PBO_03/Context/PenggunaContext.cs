@@ -18,15 +18,15 @@ namespace Project_PBO_03.Context
             return dataPengguna;
         }
 
-        public static DataTable read(int id)
+        public static DataTable read(string username)
         {
-            string query = $"SELECT * FROM {table} WHERE iduser = @iduser";
+            string query = $"SELECT iduser FROM {table} WHERE usrnmeuser = @username";
             NpgsqlParameter[] parameters =
             {
-                new NpgsqlParameter("@iduser", NpgsqlDbType.Integer){Value = id},
+                new NpgsqlParameter("@username", username){NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar}
             };
-            DataTable dataPengguna = queryExecutor(query, parameters);
-            return dataPengguna;
+            DataTable idUser = queryExecutor(query, parameters);
+            return idUser;
         }
 
         public static void create(m_Pengguna penggunaBaru)

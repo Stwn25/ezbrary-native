@@ -22,8 +22,8 @@ namespace Project_PBO_03.Context
                             $"VALUES (@tglambil, @tglkembali, @isbn, @iduser, @idstatus)";
             NpgsqlParameter[] parameters =
             {
-                new NpgsqlParameter("@tglambil", NpgsqlDbType.Varchar){Value = peminjamanBaru.tgl_pengambilan},
-                new NpgsqlParameter("@tglkembali", NpgsqlDbType.Varchar){Value = peminjamanBaru.tgl_pengembalian},
+                new NpgsqlParameter("@tglambil", NpgsqlDbType.Date){Value = peminjamanBaru.tgl_pengambilan},
+                new NpgsqlParameter("@tglkembali", NpgsqlDbType.Date){Value = peminjamanBaru.tgl_pengembalian},
                 new NpgsqlParameter("@isbn", NpgsqlDbType.Varchar){Value = peminjamanBaru.isbn_buku},
                 new NpgsqlParameter("@iduser", NpgsqlDbType.Integer){Value = peminjamanBaru.id_pengguna},
                 new NpgsqlParameter("@idstatus", NpgsqlDbType.Integer){Value = peminjamanBaru.id_status}

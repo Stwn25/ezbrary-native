@@ -18,10 +18,12 @@ namespace Project_PBO_03
     public partial class V_User : Form
     {
         private string input;
-        public V_User(string gtnama)
+        public int idpengguna;
+
+        public V_User(string getnama)
         {
             InitializeComponent();  
-            this.input = gtnama;
+            this.input = getnama;
 
             ucDetailBukuUser1.Hide();
 
@@ -44,35 +46,45 @@ namespace Project_PBO_03
 
             dgvPeminjamanUser.DataSource = BukuContext.buku();
 
-            /*V_Login login = (V_Login)Application.OpenForms["V_Login"];*/
-            /*V_Login login = new V_Login();
-            if (login != null)
+
+            V_Login login = new V_Login();
+
+            /* if (login != null)
+             {
+                 string data = "Host=localhost;Port=5432;Database=PBO;User Id=postgres;Password=iwanganteng";
+
+                 using (NpgsqlConnection conn = new NpgsqlConnection(data))
+                 {
+                     conn.Open();
+                     using (NpgsqlCommand command = new NpgsqlCommand($"SELECT * FROM pengguna where usrnmeuser = '{getnama}'", conn))
+                     {
+                         using (NpgsqlDataReader reader = command.ExecuteReader())
+                         {
+
+                             if (reader.Read())
+                             {
+                                 tbNamaProfileU.Text = reader["namauser"].ToString();
+                                 tbUsernameProfileU.Text = reader["usrnmeuser"].ToString();
+                                 tbPassU.Text = reader["pwuser"].ToString();
+                                 tbTeleponU.Text = reader["telpuser"].ToString();
+                                 tbEmailU.Text = reader["emailuser"].ToString();
+                                 lblEmailUser.Text = reader["emailuser"].ToString();
+                                 lblHai1User.Text = reader["usrnmeuser"].ToString();
+                                 lblUsernameUser.Text = reader["usrnmeuser"].ToString();
+                             }
+
+                         }
+                     }
+                 }
+             }*/
+
+
+
+            /*DataTable du = PenggunaContext.read(input);
+            if (du != null )
             {
-                string data = "Host=localhost;Port=5432;Database=PBO;User Id=postgres;Password=iwanganteng";
-
-                using (NpgsqlConnection conn = new NpgsqlConnection(data))
-                {
-                    conn.Open();
-                    using (NpgsqlCommand command = new NpgsqlCommand($"SELECT * FROM pengguna where usrnmeuser = '{getnama}'", conn))
-                    {
-                        using (NpgsqlDataReader reader = command.ExecuteReader())
-                        {
-
-                            if (reader.Read())
-                            {
-                                tbNamaProfileU.Text = reader["namauser"].ToString();
-                                tbUsernameProfileU.Text = reader["usrnmeuser"].ToString();
-                                tbPassU.Text = reader["pwuser"].ToString();
-                                tbTeleponU.Text = reader["telpuser"].ToString();
-                                tbEmailU.Text = reader["emailuser"].ToString();
-                                lblEmailUser.Text = reader["emailuser"].ToString();
-                                lblHai1User.Text = reader["usrnmeuser"].ToString();
-                                lblUsernameUser.Text = reader["usrnmeuser"].ToString();
-                            }
-                            
-                        }
-                    }
-                }
+                int iduser = Convert.ToInt32(du.Rows[0]["iduser"]);
+                MessageBox.Show($"User : {iduser}", "Plis", MessageBoxButtons.OK);
             }*/
 
             DataTable dt = PenggunaContext.datauser(input);
@@ -80,12 +92,15 @@ namespace Project_PBO_03
             {
                 MessageBox.Show($"User : {input}", "Plis", MessageBoxButtons.OK);
 
+                int iduser = Convert.ToInt32(dt.Rows[0]["iduser"]);
                 string nama = dt.Rows[0]["namauser"].ToString();
                 string usernameuser = dt.Rows[0]["usrnmeuser"].ToString();
                 string pwuser = dt.Rows[0]["pwuser"].ToString();
                 string telpuser = dt.Rows[0]["telpuser"].ToString();
                 string email = dt.Rows[0]["emailuser"].ToString();
+                idpengguna = iduser;
 
+                MessageBox.Show($"User : {idpengguna}", "Plis", MessageBoxButtons.OK);
 
                 tbNamaProfileU.Text = nama;
                 tbUsernameProfileU.Text = usernameuser;
