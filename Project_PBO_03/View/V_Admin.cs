@@ -40,7 +40,7 @@ namespace Project_PBO_03
             cbJenisBukuAdmin.DataSource = JenisBukuContext.comboBox();
             cbJenisBukuAdmin.DisplayMember = "namajenis";
             cbJenisBukuAdmin.ValueMember = "namajenis";
-            cbJenisBukuAdmin.Text = "All";
+            cbJenisBukuAdmin.Text = default;
 
             cbPenerbit.DataSource = PenerbitContext.comboBox();
             cbPenerbit.DisplayMember = "namapenerbit";
@@ -67,7 +67,6 @@ namespace Project_PBO_03
             btKeluarAdmin.BackColor = Color.CornflowerBlue;
             this.pnlDaftarBukuAdmin.Show();
             this.pnlTambahBukuAdmin.Hide();
-            /*this.pnlDaftarBukuAdmin.Dock = DockStyle.Bottom;*/
             this.pnlPeminjamanAdmin.Hide();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Hide();
@@ -88,7 +87,6 @@ namespace Project_PBO_03
             this.pnlPeminjamanAdmin.Hide();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Show();
-            /*this.pnlProfileAdmin.Dock = DockStyle.Bottom;*/
 
         }
 
@@ -103,7 +101,6 @@ namespace Project_PBO_03
             this.pnlTambahBukuAdmin.Hide();
             this.pnlPeminjamanAdmin.Hide();
             this.pnlRiwayatPeminjaman.Show();
-            /*this.pnlRiwayatPeminjaman.Dock = DockStyle.Bottom;*/
             this.pnlProfileAdmin.Hide();
 
         }
@@ -118,7 +115,6 @@ namespace Project_PBO_03
             this.pnlDaftarBukuAdmin.Hide();
             this.pnlTambahBukuAdmin.Hide();
             this.pnlPeminjamanAdmin.Show();
-            /*this.pnlPeminjamanAdmin.Dock = DockStyle.Bottom;*/
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Hide();
 
@@ -133,7 +129,6 @@ namespace Project_PBO_03
             btKeluarAdmin.BackColor = Color.CornflowerBlue;
             this.pnlTambahBukuAdmin.Hide();
             this.pnlDaftarBukuAdmin.Show();
-            /*this.pnlDaftarBukuAdmin.Dock = DockStyle.Bottom;*/
             this.pnlPeminjamanAdmin.Hide();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Hide();
@@ -179,6 +174,9 @@ namespace Project_PBO_03
 
         private void btTBAdmin_Click(object sender, EventArgs e)
         {
+            string namajenis = Convert.ToString(cbJenisBukuAdmin.SelectedValue);
+            dgvDaftarBuku.DataSource = JenisBukuContext.Jenis(namajenis);
+
             try
             {
                 // Pengecekan input kosong
@@ -235,7 +233,6 @@ namespace Project_PBO_03
                     cbPenulis.SelectedIndex = -1;
 
                     // Memperbarui data di dataGridView
-                    string namajenis = Convert.ToString(cbJenisBukuAdmin.SelectedValue);
                     dgvDaftarBuku.DataSource = JenisBukuContext.Jenis(namajenis);
                 }
             }
@@ -294,6 +291,8 @@ namespace Project_PBO_03
 
         private void btJenisBuku_Click(object sender, EventArgs e)
         {
+            cbJenisBukuAdmin.DataSource = JenisBukuContext.comboBox();
+
             ucJenisBukuTambahBukuAdmin1.Show();
             ucPenulisTambahBukuAdmin2.Hide();
             ucPenerbitTambahBukuAdmin1.Hide();
@@ -328,6 +327,7 @@ namespace Project_PBO_03
         {
             string namajenis = Convert.ToString(cbJenisBukuAdmin.SelectedValue);
             string isbn = Convert.ToString(dgvDaftarBuku.Rows[e.RowIndex].Cells["isbn"].Value);
+            int idstatus = Convert.ToInt32(dgvDaftarBuku.Rows[e.RowIndex].Cells["statusbuku_idstatusbuku"].Value);
 
             if (e.ColumnIndex == dgvDaftarBuku.Columns["hapusButton"].Index && e.RowIndex >= 0)
             {
@@ -344,6 +344,35 @@ namespace Project_PBO_03
                 dgvDaftarBuku.DataSource = null;
                 dgvDaftarBuku.DataSource = JenisBukuContext.Jenis(namajenis);
             }
+
+            if (e.ColumnIndex == dgvDaftarBuku.Columns["statusButton"].Index && e.RowIndex >= 0)
+            {
+                if (idstatus == 1)
+                {
+                    DialogResult message = MessageBox.Show("Apakah anda yakin ingin menonaktifkan buku ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo);
+                    if (message == DialogResult.Yes)
+                    {
+                        BukuContext.nonaktif(isbn);
+                        DialogResult messageHapus = MessageBox.Show("Buku berhasil dinonaktifkan", "Sukses", MessageBoxButtons.OK);
+                    }
+                }
+
+                else
+                {
+                    DialogResult message = MessageBox.Show("Apakah anda yakin ingin mengaktifkan buku ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo);
+                    if (message == DialogResult.Yes)
+                    {
+                        BukuContext.aktif(isbn);
+                        DialogResult messageHapus = MessageBox.Show("Buku berhasil diaktifkan", "Sukses", MessageBoxButtons.OK);
+                    }
+                }
+                
+
+                // Kemudian, perbarui DataGridView dengan data yang telah diperbarui
+                dgvDaftarBuku.DataSource = null;
+                dgvDaftarBuku.DataSource = JenisBukuContext.Jenis(namajenis);
+            }
+
             if (e.ColumnIndex == dgvDaftarBuku.Columns["updateButton"].Index && e.RowIndex >= 0)
             {
                 ucUpdateBuku1.Show();
@@ -390,16 +419,11 @@ namespace Project_PBO_03
                 if (selectedRow != null)
                 {
                     string jenisBuku = selectedRow["namajenis"].ToString();
-
-                    if (jenisBuku == "All")
-                    {
-                        dgvDaftarBuku.DataSource = BukuContext.all();
-                    }
-                    else
-                    {
-                        dgvDaftarBuku.DataSource = JenisBukuContext.Jenis(jenisBuku);
-                    }
-
+                    dgvDaftarBuku.DataSource = JenisBukuContext.Jenis(jenisBuku);
+                }
+                else
+                {
+                    dgvDaftarBuku.DataSource = BukuContext.all();
                 }
 
             }

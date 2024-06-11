@@ -54,6 +54,7 @@ namespace Project_PBO_03
             button1 = new Button();
             dgvDaftarBuku = new DataGridView();
             hapusButton = new DataGridViewButtonColumn();
+            statusButton = new DataGridViewButtonColumn();
             updateButton = new DataGridViewButtonColumn();
             btJenisBuku = new Button();
             btPenulis = new Button();
@@ -381,7 +382,7 @@ namespace Project_PBO_03
             dgvDaftarBuku.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvDaftarBuku.BackgroundColor = SystemColors.ControlLight;
             dgvDaftarBuku.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDaftarBuku.Columns.AddRange(new DataGridViewColumn[] { hapusButton, updateButton });
+            dgvDaftarBuku.Columns.AddRange(new DataGridViewColumn[] { hapusButton, statusButton, updateButton });
             dgvDaftarBuku.Location = new Point(38, 126);
             dgvDaftarBuku.Margin = new Padding(3, 4, 3, 4);
             dgvDaftarBuku.Name = "dgvDaftarBuku";
@@ -392,15 +393,25 @@ namespace Project_PBO_03
             // 
             // hapusButton
             // 
-            hapusButton.HeaderText = "Hapus";
+            hapusButton.HeaderText = "";
             hapusButton.MinimumWidth = 6;
             hapusButton.Name = "hapusButton";
             hapusButton.Text = "Hapus";
             hapusButton.UseColumnTextForButtonValue = true;
             // 
+            // statusButton
+            // 
+            statusButton.HeaderText = "";
+            statusButton.MinimumWidth = 6;
+            statusButton.Name = "statusButton";
+            statusButton.Resizable = DataGridViewTriState.True;
+            statusButton.SortMode = DataGridViewColumnSortMode.Automatic;
+            statusButton.Text = "Status";
+            statusButton.UseColumnTextForButtonValue = true;
+            // 
             // updateButton
             // 
-            updateButton.HeaderText = "Update";
+            updateButton.HeaderText = "";
             updateButton.MinimumWidth = 6;
             updateButton.Name = "updateButton";
             updateButton.Text = "Update";
@@ -1056,6 +1067,7 @@ namespace Project_PBO_03
         private Label label11;
         private View.ucUpdateBuku ucUpdateBuku1;
         private DataGridViewButtonColumn hapusButton;
+        private DataGridViewButtonColumn statusButton;
         private DataGridViewButtonColumn updateButton;
     }
 }

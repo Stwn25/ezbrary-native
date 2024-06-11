@@ -36,13 +36,13 @@ namespace Project_PBO_03.Context
             string query = $"INSERT INTO {table} (kodeverifikasi, namaadmin, telpadmin, usrnmeadmin, pwadmin, emailadmin) VALUES(@kodeverifikasi, @namaadmin, @telpadmin, @usrnmeadmin, @pwadmin, @emailadmin)";
             NpgsqlParameter[] parameters =
             {
-        new NpgsqlParameter("@kodeverifikasi", NpgsqlDbType.Varchar){Value = newAdmin.kode_verif},
-        new NpgsqlParameter("@namaadmin", NpgsqlDbType.Varchar){Value = newAdmin.nama_admin},
-        new NpgsqlParameter("@telpadmin", NpgsqlDbType.Varchar){Value = newAdmin.telp_admin},
-        new NpgsqlParameter("@usrnmeadmin", NpgsqlDbType.Varchar){Value = newAdmin.username_admin},
-        new NpgsqlParameter("@pwadmin", NpgsqlDbType.Varchar){Value = newAdmin.pass_admin},
-        new NpgsqlParameter("@emailadmin", NpgsqlDbType.Varchar){Value = newAdmin.email_admin},
-    };
+                new NpgsqlParameter("@kodeverifikasi", NpgsqlDbType.Varchar){Value = newAdmin.kode_verif},
+                new NpgsqlParameter("@namaadmin", NpgsqlDbType.Varchar){Value = newAdmin.nama_admin},
+                new NpgsqlParameter("@telpadmin", NpgsqlDbType.Varchar){Value = newAdmin.telp_admin},
+                new NpgsqlParameter("@usrnmeadmin", NpgsqlDbType.Varchar){Value = newAdmin.username_admin},
+                new NpgsqlParameter("@pwadmin", NpgsqlDbType.Varchar){Value = newAdmin.pass_admin},
+                new NpgsqlParameter("@emailadmin", NpgsqlDbType.Varchar){Value = newAdmin.email_admin},
+            };
             commandExecutor(query, parameters);
         }
 

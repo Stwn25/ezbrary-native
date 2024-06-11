@@ -14,6 +14,8 @@ namespace Project_PBO_03.View
 {
     public partial class ucDetailBukuUser : UserControl
     {
+        DateTime currentDate = DateTime.Now.Date;
+        V_Login login = new V_Login();
         public ucDetailBukuUser()
         {
             InitializeComponent();
@@ -72,6 +74,7 @@ namespace Project_PBO_03.View
         private void btkeluar_Click(object sender, EventArgs e)
         {
             this.Hide();
+            tglPengambilanBooking.Value = currentDate;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -129,10 +132,9 @@ namespace Project_PBO_03.View
 
         }
 
-        private void tglPengambilanBooking_ValueChanged(object sender, EventArgs e)
+        public void tglPengambilanBooking_ValueChanged(object sender, EventArgs e)
         {
             DateTime bookingDate = tglPengambilanBooking.Value;
-            DateTime currentDate = DateTime.Now.Date;
 
             if ((bookingDate - currentDate).TotalDays > 2)
             {
@@ -153,6 +155,27 @@ namespace Project_PBO_03.View
         {
             pbStarKosong.Show();
             pbStarKuning.Hide();
+        }
+
+        private void btBookingBuku_Click(object sender, EventArgs e)
+        {
+
+            
+
+            DialogResult message = MessageBox.Show($"Pengambilan dilakukan pada tanggal {tglPengambilanBooking.Value},\ndan dikembalikan pada tanggal {tglPengambilanBooking.Value.AddDays(7)}", "Pemberitahuan", MessageBoxButtons.YesNo);
+            if (message == DialogResult.Yes)
+            {
+                m_PeminjamanBuku peminjaman = new m_PeminjamanBuku
+                {
+                    isbn_buku = lbisbnBuku.Text,
+                    tgl_pengambilan = tglPengambilanBooking.Value.ToString(),
+                    tgl_pengembalian = tglPengambilanBooking.Value.AddDays(7).ToString(),
+                    id_status = 1,
+                    id_pengguna = login.iduser
+                };
+
+                PeminjamanBuku.create(peminjaman);
+            }
         }
     }
 }

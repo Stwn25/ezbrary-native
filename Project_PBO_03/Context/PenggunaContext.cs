@@ -31,7 +31,7 @@ namespace Project_PBO_03.Context
 
         public static void create(m_Pengguna penggunaBaru)
         {
-            string query = $"INSERT INTO {table} (iduser,namauser, usrnmeuser, pwuser, telpuser, emailuser) Values(@namauser, @usrnmeuser, @pwuser, @telpuser, @emailuser)";
+            string query = $"INSERT INTO {table} (namauser, usrnmeuser, pwuser, telpuser, emailuser) Values(@namauser, @usrnmeuser, @pwuser, @telpuser, @emailuser)";
             NpgsqlParameter[] parameters =
             {
                 new NpgsqlParameter ("@namauser", NpgsqlDbType.Varchar){Value = penggunaBaru.nama_pengguna},
@@ -51,6 +51,27 @@ namespace Project_PBO_03.Context
                 new NpgsqlParameter("@iduser", NpgsqlDbType.Integer){Value = id},
             };
             commandExecutor(query, parameters);
+        }
+
+        public static DataTable login(string username, string password)
+        {
+            string query = "SELECT * FROM pengguna WHERE usrnmeuser = @input AND pwuser =@password";
+            NpgsqlParameter[] parameters =
+            {
+                    new NpgsqlParameter("@input", DbType.String) {Value = username },
+                    new NpgsqlParameter("@password", DbType.String) {Value = password },
+                };
+            return queryExecutor(query, parameters);
+        }
+
+        public static DataTable datauser(string input)
+        {
+            string query = "SELECT * FROM pengguna WHERE usrnmeuser = @user";
+            NpgsqlParameter[] parameters =
+            {
+                new NpgsqlParameter("@user", input){NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar}
+            };
+            return queryExecutor(query, parameters);
         }
     }
 }

@@ -29,20 +29,42 @@ namespace Project_PBO_03.Context
         }
         public static DataTable buku()
         {
-            string query = $"select b.namabuku, b.sinopsis, b.posisirak " +
-                           $"\r\nfrom buku b join jenisbuku jb \r\nON jb.idjenis = b.idjenis" +
-                           $"\r\njoin penulis ps \r\nON ps.idpenulis = b.idpenulis" +
-                           $"\r\njoin penerbit pt\r\nON pt.idpenerbit = b.idpenerbit";
+            string query = $"select b.namabuku, b.isbn, b.posisirak, jb.namajenis, b.stokbuku" +
+                           $"\r\nfrom buku b join jenisbuku jb \r\nON jb.idjenis = b.jenisbuku_idjenis" +
+                           $"\r\njoin penulis ps \r\nON ps.idpenulis = b.penulis_idpenulis" +
+                           $"\r\njoin penerbit pt\r\nON pt.idpenerbit = b.penerbit_idpenerbit " +
+                           $"join statusbuku sb on sb.idstatusbuku = b.statusbuku_idstatusbuku where b.statusbuku_idstatusbuku = 1";
             DataTable dataBuku = queryExecutor(query);
             return dataBuku;
         }
 
+        public static void aktif(string isbn)
+        {
+            string query = $"update {table} set statusbuku_idstatusbuku = 1 where isbn = @isbn";
+            NpgsqlParameter[] parameters =
+            {
+                new NpgsqlParameter("@isbn", NpgsqlDbType.Varchar){Value = isbn},
+            };
+            commandExecutor(query, parameters);
+        }
+
+        public static void nonaktif(string isbn)
+        {
+            string query = $"update {table} set statusbuku_idstatusbuku = 2 where isbn = @isbn";
+            NpgsqlParameter[] parameters =
+            {
+                new NpgsqlParameter("@isbn", NpgsqlDbType.Varchar){Value = isbn},
+            };
+            commandExecutor(query, parameters);
+        }
+
         public static DataTable all()
         {
-            string query = $"select b.isbn, b.namabuku, b.sinopsis, b.thnterbit, jb.namajenis, b.stokbuku, pt.namapenerbit, ps.namapenulis, b.posisirak" +
-                           $"\r\nfrom buku b join jenisbuku jb \r\nON jb.idjenis = b.idjenis" +
-                           $"\r\njoin penulis ps \r\nON ps.idpenulis = b.idpenulis" +
-                           $"\r\njoin penerbit pt\r\nON pt.idpenerbit = b.idpenerbit";
+            string query = $"select b.isbn, b.namabuku, b.sinopsis, b.thnterbit, jb.namajenis, b.stokbuku, pt.namapenerbit, ps.namapenulis, b.posisirak, b.statusbuku_idstatusbuku" +
+                           $"\r\nfrom buku b join jenisbuku jb \r\nON jb.idjenis = b.jenisbuku_idjenis" +
+                           $"\r\njoin penulis ps \r\nON ps.idpenulis = b.penulis_idpenulis" +
+                           $"\r\njoin penerbit pt\r\nON pt.idpenerbit = b.penerbit_idpenerbit " +
+                           $"join statusbuku sb on sb.idstatusbuku = b.statusbuku_idstatusbuku";
             DataTable dataBuku = queryExecutor(query);
             return dataBuku;
         }
@@ -50,9 +72,9 @@ namespace Project_PBO_03.Context
         public static DataTable detailbuku(string namabuku)
         {
             string query = $"select b.isbn, b.namabuku, b.sinopsis, b.thnterbit, jb.namajenis, b.stokbuku, pt.namapenerbit, ps.namapenulis, b.posisirak" +
-                           $"\r\nfrom buku b join jenisbuku jb \r\nON jb.idjenis = b.idjenis" +
-                           $"\r\njoin penulis ps \r\nON ps.idpenulis = b.idpenulis" +
-                           $"\r\njoin penerbit pt\r\nON pt.idpenerbit = b.idpenerbit" +
+                           $"\r\nfrom buku b join jenisbuku jb \r\nON jb.idjenis = b.jenisbuku_idjenis" +
+                           $"\r\njoin penulis ps \r\nON ps.idpenulis = b.penulis_idpenulis" +
+                           $"\r\njoin penerbit pt\r\nON pt.idpenerbit = b.penerbit_idpenerbit" +
                            $" where b.namabuku = @namabuku";
 
             NpgsqlParameter[] parameters =
@@ -74,22 +96,17 @@ namespace Project_PBO_03.Context
             return dataBuku;
         }
 
-        /*public static DataTable showByJenis()
-        {
-            string query;
-        }
-
+        
+        /*
         public static DataTable showBySearch()
         {
             string query;
         }*/
 
-
-
         public static void create(m_Buku bukuBaru)
         {
-            string query = $"INSERT INTO {table} (isbn, namabuku, sinopsis, thnterbit, idjenis, stokbuku, idpenerbit, idpenulis, posisirak) " +
-                           $"VALUES (@isbn, @namabuku, @sinopsis, @tahunterbit, @jenisbuku, @stokbuku, @penerbit, @penulis, @posisirak)";
+            string query = $"INSERT INTO {table} (isbn, namabuku, sinopsis, thnterbit, jenisbuku_idjenis, stokbuku, penerbit_idpenerbit, penulis_idpenulis, posisirak, statusbuku_idstatusbuku) " +
+                           $"VALUES (@isbn, @namabuku, @sinopsis, @tahunterbit, @jenisbuku, @stokbuku, @penerbit, @penulis, @posisirak, @statusbuku)";
             NpgsqlParameter[] parameters =
             {
                 new NpgsqlParameter ("@isbn", NpgsqlDbType.Varchar){Value = bukuBaru.isbn},
@@ -101,7 +118,7 @@ namespace Project_PBO_03.Context
                 new NpgsqlParameter ("@penerbit", NpgsqlDbType.Integer){Value=bukuBaru.penerbit_id},
                 new NpgsqlParameter ("@penulis", NpgsqlDbType.Integer){Value=bukuBaru.penulis_id},
                 new NpgsqlParameter ("@posisirak", NpgsqlDbType.Varchar){Value=bukuBaru.posisi_rak},
-
+                new NpgsqlParameter ("@statusbuku", NpgsqlDbType.Integer){Value = 1}
             };
             commandExecutor(query, parameters);
         }
@@ -115,5 +132,7 @@ namespace Project_PBO_03.Context
             };
             commandExecutor(query, parameters);
         }
+
+        
     }
 }
