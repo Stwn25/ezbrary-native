@@ -33,11 +33,11 @@ namespace Project_PBO_03.Context
         {
             string query = $"select b.isbn, b.namabuku, jb.namajenis, b.stokbuku, b.posisirak " +
                            $"from buku b join jenisbuku jb " +
-                           $"ON jb.idjenis = b.idjenis " +
+                           $"ON jb.idjenis = b.jenisbuku_idjenis " +
                            $"join penulis ps " +
-                           $"ON ps.idpenulis = b.idpenulis " +
+                           $"ON ps.idpenulis = b.penulis_idpenulis " +
                            $"join penerbit pt " +
-                           $"ON pt.idpenerbit = b.idpenerbit " +
+                           $"ON pt.idpenerbit = b.penerbit_idpenerbit " +
                            $"where jb.namajenis = @namajenis";
             NpgsqlParameter[] parameters =
             {
@@ -50,13 +50,15 @@ namespace Project_PBO_03.Context
 
         public static DataTable Jenis(string namajenis)
         {
-            string query = $"select b.isbn, b.namabuku, b.sinopsis, b.thnterbit, jb.namajenis, b.stokbuku, pt.namapenerbit, ps.namapenulis, b.posisirak " +
+            string query = $"select b.isbn, b.namabuku, b.sinopsis, b.thnterbit, jb.namajenis, b.stokbuku, pt.namapenerbit, ps.namapenulis, b.posisirak, b.statusbuku_idstatusbuku " +
                            $"from buku b join jenisbuku jb " +
-                           $"ON jb.idjenis = b.idjenis " +
+                           $"ON jb.idjenis = b.jenisbuku_idjenis " +
                            $"join penulis ps " +
-                           $"ON ps.idpenulis = b.idpenulis " +
+                           $"ON ps.idpenulis = b.penulis_idpenulis " +
                            $"join penerbit pt " +
-                           $"ON pt.idpenerbit = b.idpenerbit " +
+                           $"ON pt.idpenerbit = b.penerbit_idpenerbit " +
+                           $"join statusbuku sb " +
+                           $"ON sb.idstatusbuku = b.statusbuku_idstatusbuku " +
                            $"where jb.namajenis = @namajenis";
             NpgsqlParameter[] parameters =
             {

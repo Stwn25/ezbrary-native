@@ -16,11 +16,9 @@ namespace Project_PBO_03
 {
     public partial class V_Login : Form
     {
-        /*private object pbDekorTeks;*/
-        public string getnama
-        {
-            get { return tbUsernameM.Text; }
-        }
+        public int iduser {  get; set; }
+        public string input { get; set; }
+
         public V_Login()
         {
             InitializeComponent();
@@ -118,23 +116,33 @@ namespace Project_PBO_03
 
         private void btMasukM_Click(object sender, EventArgs e)
         {
-            string input_pengguna = tbUsernameM.Text;
-            string pass_pengguna = tbPasswordD.Text;
+            string input_pengguna = tbUsernameM.Text.Trim();
+            string pass_pengguna = tbPasswordD.Text.Trim();
 
-            bool loginResult = cekLoginPengguna.Login(input_pengguna, pass_pengguna);
-
-            if (loginResult)
+            if (string.IsNullOrWhiteSpace(input_pengguna) || string.IsNullOrWhiteSpace(pass_pengguna))
             {
-                this.pnlMasuk.Hide();
-                this.pnlAwal.Show();
-                tbUsernameM.Text = default;
-                tbPasswordD.Text = default;
-                V_User User = new V_User();
-                User.Show();
+                MessageBox.Show("Masukkan username dan password");
+                return;
             }
             else
             {
-                MessageBox.Show("Login gagal, harap cek username dan password", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DataTable dt = PenggunaContext.login(input_pengguna, pass_pengguna);
+                
+                if (dt.Rows.Count > 0)
+                {
+                    int idpengguna = Convert.ToInt32(dt.Rows[0]["iduser"]);
+                    string username = dt.Rows[0]["usrnmeuser"].ToString();
+                    this.iduser = idpengguna;
+                    this.input = input_pengguna;
+                    this.pnlMasuk.Hide();
+                    this.pnlAwal.Show();
+                    V_User User = new V_User(input);
+                    User.Show();
+                }
+                else
+                {
+                    MessageBox.Show($"username atau password salah, {dt.Rows.Count}");
+                }
             }
         }
 
@@ -294,7 +302,8 @@ namespace Project_PBO_03
                 DialogResult message = MessageBox.Show("Data berhasil ditambahkan", "Sukses", MessageBoxButtons.OK);
                 if (message == DialogResult.OK)
                 {
-                    this.Close();
+                    this.pnlDaftar.Hide();
+                    this.pnlAwal.Show();
                 }
             }
             else

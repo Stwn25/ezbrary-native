@@ -17,12 +17,11 @@ namespace Project_PBO_03
 {
     public partial class V_User : Form
     {
-
-
-        public V_User()
+        private string input;
+        public V_User(string gtnama)
         {
-            InitializeComponent();
-
+            InitializeComponent();  
+            this.input = gtnama;
 
             ucDetailBukuUser1.Hide();
 
@@ -32,22 +31,29 @@ namespace Project_PBO_03
             btRiwayatPeminjamanUser.BackColor = Color.CornflowerBlue;
             btProfileUser.BackColor = Color.CornflowerBlue;
             btKeluarUser.BackColor = Color.CornflowerBlue;
+
             this.pnlPeminjamanUser.Show();
             this.pnlBukuFavUser.Hide();
             this.pnlRiwayatUser.Hide();
             this.pnlProfileUser.Hide();
+
             cbJenis.DataSource = JenisBukuContext.all();
             cbJenis.DisplayMember = "namajenis";
             cbJenis.ValueMember = "namajenis";
+            
+
             dgvPeminjamanUser.DataSource = BukuContext.buku();
-            V_Login login = (V_Login)Application.OpenForms["V_Login"];
+
+            /*V_Login login = (V_Login)Application.OpenForms["V_Login"];*/
+            /*V_Login login = new V_Login();
             if (login != null)
             {
-                string data = "Host=localhost;Port=5432;Database=PROYEK PBO;User Id=postgres;Password=20juli2004";
+                string data = "Host=localhost;Port=5432;Database=PBO;User Id=postgres;Password=iwanganteng";
+
                 using (NpgsqlConnection conn = new NpgsqlConnection(data))
                 {
                     conn.Open();
-                    using (NpgsqlCommand command = new NpgsqlCommand("SELECT * FROM pengguna", conn))
+                    using (NpgsqlCommand command = new NpgsqlCommand($"SELECT * FROM pengguna where usrnmeuser = '{getnama}'", conn))
                     {
                         using (NpgsqlDataReader reader = command.ExecuteReader())
                         {
@@ -63,13 +69,32 @@ namespace Project_PBO_03
                                 lblHai1User.Text = reader["usrnmeuser"].ToString();
                                 lblUsernameUser.Text = reader["usrnmeuser"].ToString();
                             }
-                            else
-                            {
-                                MessageBox.Show("Error: ");
-                            }
+                            
                         }
                     }
                 }
+            }*/
+
+            DataTable dt = PenggunaContext.datauser(input);
+            if (dt != null)
+            {
+                MessageBox.Show($"User : {input}", "Plis", MessageBoxButtons.OK);
+
+                string nama = dt.Rows[0]["namauser"].ToString();
+                string usernameuser = dt.Rows[0]["usrnmeuser"].ToString();
+                string pwuser = dt.Rows[0]["pwuser"].ToString();
+                string telpuser = dt.Rows[0]["telpuser"].ToString();
+                string email = dt.Rows[0]["emailuser"].ToString();
+
+
+                tbNamaProfileU.Text = nama;
+                tbUsernameProfileU.Text = usernameuser;
+                tbPassU.Text = pwuser;
+                tbTeleponU.Text = telpuser;
+                tbEmailU.Text = email;
+                lblEmailUser.Text = email;
+                lblHai1User.Text = usernameuser;
+                lblUsernameUser.Text = usernameuser;
             }
         }
 
@@ -84,7 +109,6 @@ namespace Project_PBO_03
             this.pnlBukuFavUser.Hide();
             this.pnlRiwayatUser.Hide();
             this.pnlProfileUser.Hide();
-
         }
 
         private void btBukuFavUser_Click(object sender, EventArgs e)
@@ -98,7 +122,6 @@ namespace Project_PBO_03
             this.pnlBukuFavUser.Show();
             this.pnlRiwayatUser.Hide();
             this.pnlProfileUser.Hide();
-
         }
 
         private void btRiwayatPeminjamanUser_Click(object sender, EventArgs e)
@@ -112,7 +135,6 @@ namespace Project_PBO_03
             this.pnlBukuFavUser.Hide();
             this.pnlRiwayatUser.Show();
             this.pnlProfileUser.Hide();
-
         }
 
         private void btProfileUser_Click(object sender, EventArgs e)

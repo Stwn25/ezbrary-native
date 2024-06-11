@@ -20,5 +20,7 @@ namespace Project_PBO_03.Model
         public int penerbit_id { get; set; }
         public int penulis_id { get; set; }
         public string posisi_rak { get; set; }
+
+        public int status {  get; set; }
     }
 }

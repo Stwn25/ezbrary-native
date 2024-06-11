@@ -94,7 +94,7 @@
             // tbSinopsis
             // 
             tbSinopsis.BackColor = Color.White;
-            tbSinopsis.BorderStyle = BorderStyle.None;
+            tbSinopsis.BorderStyle = BorderStyle.FixedSingle;
             tbSinopsis.Location = new Point(42, 337);
             tbSinopsis.Margin = new Padding(3, 4, 3, 4);
             tbSinopsis.Multiline = true;
@@ -242,6 +242,7 @@
             btBookingBuku.TabIndex = 33;
             btBookingBuku.Text = "Booking";
             btBookingBuku.UseVisualStyleBackColor = false;
+            btBookingBuku.Click += btBookingBuku_Click;
             // 
             // tglPengambilanBooking
             // 
