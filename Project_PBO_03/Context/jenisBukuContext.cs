@@ -81,7 +81,7 @@ namespace Project_PBO_03.Context
 
         public static void delete(int id)
         {
-            string query = $"DELETE FROM {table} WHERE idpenerbit = @idjenis";
+            string query = $"DELETE FROM {table} WHERE idjenis = @idjenis";
             NpgsqlParameter[] parameters =
             {
                 new NpgsqlParameter("@idjenis", NpgsqlDbType.Integer) {Value = id},

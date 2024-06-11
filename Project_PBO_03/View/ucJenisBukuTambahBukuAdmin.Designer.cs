@@ -34,6 +34,7 @@
             dgvJenisBuku = new DataGridView();
             button1 = new Button();
             panel1 = new Panel();
+            hapusButton = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dgvJenisBuku).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -77,6 +78,7 @@
             dgvJenisBuku.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvJenisBuku.BackgroundColor = SystemColors.ControlLight;
             dgvJenisBuku.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvJenisBuku.Columns.AddRange(new DataGridViewColumn[] { hapusButton });
             dgvJenisBuku.Location = new Point(15, 68);
             dgvJenisBuku.Name = "dgvJenisBuku";
             dgvJenisBuku.RowHeadersWidth = 51;
@@ -105,6 +107,14 @@
             panel1.Size = new Size(496, 50);
             panel1.TabIndex = 16;
             // 
+            // hapusButton
+            // 
+            hapusButton.HeaderText = "Hapus";
+            hapusButton.MinimumWidth = 6;
+            hapusButton.Name = "hapusButton";
+            hapusButton.Text = "Hapus";
+            hapusButton.UseColumnTextForButtonValue = true;
+            // 
             // ucJenisBukuTambahBukuAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -132,5 +142,6 @@
         private DataGridView dgvJenisBuku;
         private Button button1;
         private Panel panel1;
+        private DataGridViewButtonColumn hapusButton;
     }
 }

@@ -36,6 +36,7 @@
             btSimpanPenerbit = new Button();
             button1 = new Button();
             panel1 = new Panel();
+            hapusButton = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dgvPenerbit).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -45,6 +46,7 @@
             dgvPenerbit.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvPenerbit.BackgroundColor = SystemColors.ControlLight;
             dgvPenerbit.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPenerbit.Columns.AddRange(new DataGridViewColumn[] { hapusButton });
             dgvPenerbit.Location = new Point(18, 71);
             dgvPenerbit.Name = "dgvPenerbit";
             dgvPenerbit.RowHeadersWidth = 51;
@@ -125,6 +127,14 @@
             panel1.Size = new Size(497, 51);
             panel1.TabIndex = 17;
             // 
+            // hapusButton
+            // 
+            hapusButton.HeaderText = "Hapus";
+            hapusButton.MinimumWidth = 6;
+            hapusButton.Name = "hapusButton";
+            hapusButton.Text = "Hapus";
+            hapusButton.UseColumnTextForButtonValue = true;
+            // 
             // ucPenerbitTambahBukuAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -156,5 +166,6 @@
         private Button btSimpanPenerbit;
         private Button button1;
         private Panel panel1;
+        private DataGridViewButtonColumn hapusButton;
     }
 }

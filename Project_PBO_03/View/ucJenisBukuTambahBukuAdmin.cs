@@ -48,6 +48,23 @@ namespace Project_PBO_03
 
         private void dgvJenisBuku_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            int idjenis = Convert.ToInt32(dgvJenisBuku.Rows[e.RowIndex].Cells["idjenis"].Value);
+
+            if (e.ColumnIndex == dgvJenisBuku.Columns["hapusButton"].Index && e.RowIndex >= 0)
+            {
+
+                // Panggil metode destroy dari kelas M_Mahasiswa untuk menghapus mahasiswa tetapi konfirmasi dulu
+                DialogResult message = MessageBox.Show("Apakah anda yakin ingin menghapus data ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo);
+                if (message == DialogResult.Yes)
+                {
+                    JenisBukuContext.delete(idjenis);
+                    DialogResult messageHapus = MessageBox.Show("Data berhasil dihapus", "Sukses", MessageBoxButtons.OK);
+                }
+
+                // Kemudian, perbarui DataGridView dengan data yang telah diperbarui
+                dgvJenisBuku.DataSource = null;
+                dgvJenisBuku.DataSource = JenisBukuContext.all();
+            }
 
         }
 

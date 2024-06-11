@@ -27,7 +27,23 @@ namespace Project_PBO_03
 
         private void dgvPenerbit_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            int idpenerbit = Convert.ToInt32(dgvPenerbit.Rows[e.RowIndex].Cells["idpenerbit"].Value);
 
+            if (e.ColumnIndex == dgvPenerbit.Columns["hapusButton"].Index && e.RowIndex >= 0)
+            {
+
+                // Panggil metode destroy dari kelas M_Mahasiswa untuk menghapus mahasiswa tetapi konfirmasi dulu
+                DialogResult message = MessageBox.Show("Apakah anda yakin ingin menghapus data ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo);
+                if (message == DialogResult.Yes)
+                {
+                    PenerbitContext.delete(idpenerbit);
+                    DialogResult messageHapus = MessageBox.Show("Data berhasil dihapus", "Sukses", MessageBoxButtons.OK);
+                }
+
+                // Kemudian, perbarui DataGridView dengan data yang telah diperbarui
+                dgvPenerbit.DataSource = null;
+                dgvPenerbit.DataSource = PenerbitContext.all();
+            }
         }
 
         private void btSimpanPenerbit_Click(object sender, EventArgs e)
