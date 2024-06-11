@@ -67,6 +67,7 @@
             tbNamaSA = new TextBox();
             tbUsernameSA = new TextBox();
             label3 = new Label();
+            ucUpdateAdmin1 = new ucUpdateAdmin();
             pnlSA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxVectorUser).BeginInit();
             pnlAdminSA.SuspendLayout();
@@ -437,7 +438,7 @@
             label7.ForeColor = Color.Black;
             label7.Location = new Point(58, 379);
             label7.Name = "label7";
-            label7.Size = new Size(122, 28);
+            label7.Size = new Size(121, 28);
             label7.TabIndex = 20;
             label7.Text = "No. Telepon";
             // 
@@ -540,11 +541,21 @@
             label3.TabIndex = 10;
             label3.Text = "Daftar Admin";
             // 
+            // ucUpdateAdmin1
+            // 
+            ucUpdateAdmin1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ucUpdateAdmin1.IdAdmin = 0;
+            ucUpdateAdmin1.Location = new Point(758, 218);
+            ucUpdateAdmin1.Name = "ucUpdateAdmin1";
+            ucUpdateAdmin1.Size = new Size(840, 840);
+            ucUpdateAdmin1.TabIndex = 15;
+            // 
             // V_SuperAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1942, 1102);
+            Controls.Add(ucUpdateAdmin1);
             Controls.Add(nightControlBox1);
             Controls.Add(lblHai1SA);
             Controls.Add(lblHaiSA);
@@ -611,7 +622,8 @@
         private DataGridViewButtonColumn HapusUser;
         private DataGridViewButtonColumn HapusAdmin;
         private DataGridViewButtonColumn UpdateAdmin;
-        private ucUpdateAdmin ucUpdateAdmin1;
+        
         private Button button1;
+        private ucUpdateAdmin ucUpdateAdmin1;
     }
 }

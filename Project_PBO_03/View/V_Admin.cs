@@ -154,6 +154,7 @@ namespace Project_PBO_03
             this.pnlTambahBukuAdmin.Show();
             this.pnlDaftarBukuAdmin.Hide();
             this.pnlPeminjamanAdmin1.Hide();
+            this.pnlPeminjamanAdmin.Hide();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Hide();
 
@@ -233,7 +234,9 @@ namespace Project_PBO_03
                     cbPenulis.SelectedIndex = -1;
 
                     // Memperbarui data di dataGridView
-                    dgvDaftarBuku.DataSource = JenisBukuContext.Jenis(namajenis);
+                    dgvDaftarBuku.DataSource = BukuContext.all();
+                    this.pnlTambahBukuAdmin.Hide();
+                    this.pnlDaftarBukuAdmin.Show();
                 }
             }
             catch (Exception ex)
@@ -516,6 +519,12 @@ namespace Project_PBO_03
         private void ucJenisBukuTambahBukuAdmin1_Load_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void btkeluartambahbuku_Click(object sender, EventArgs e)
+        {
+            this.pnlTambahBukuAdmin.Hide();
+            this.pnlDaftarBukuAdmin.Show();
         }
     }
 }

@@ -83,7 +83,7 @@ namespace Project_PBO_03
             lblProfileAdmin = new Label();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             pnlTambahBukuAdmin = new Panel();
-            btkeluartambahbukuadmin = new Button();
+            btkeluartambahbuku = new Button();
             tbPosisiRak = new TextBox();
             label11 = new Label();
             tbStokBuku = new TextBox();
@@ -732,7 +732,7 @@ namespace Project_PBO_03
             // 
             // pnlTambahBukuAdmin
             // 
-            pnlTambahBukuAdmin.Controls.Add(btkeluartambahbukuadmin);
+            pnlTambahBukuAdmin.Controls.Add(btkeluartambahbuku);
             pnlTambahBukuAdmin.Controls.Add(tbPosisiRak);
             pnlTambahBukuAdmin.Controls.Add(label11);
             pnlTambahBukuAdmin.Controls.Add(tbStokBuku);
@@ -759,16 +759,16 @@ namespace Project_PBO_03
             pnlTambahBukuAdmin.TabIndex = 16;
             pnlTambahBukuAdmin.Paint += pnlTambahBukuAdmin_Paint;
             // 
-            // btkeluartambahbukuadmin
+            // btkeluartambahbuku
             // 
-            btkeluartambahbukuadmin.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btkeluartambahbukuadmin.Location = new Point(1469, 2);
-            btkeluartambahbukuadmin.Name = "btkeluartambahbukuadmin";
-            btkeluartambahbukuadmin.Size = new Size(35, 29);
-            btkeluartambahbukuadmin.TabIndex = 35;
-            btkeluartambahbukuadmin.Text = "X";
-            btkeluartambahbukuadmin.UseVisualStyleBackColor = true;
-            btkeluartambahbukuadmin.Click += btkeluartambahbukuadmin_Click;
+            btkeluartambahbuku.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btkeluartambahbuku.Location = new Point(1469, 1);
+            btkeluartambahbuku.Name = "btkeluartambahbuku";
+            btkeluartambahbuku.Size = new Size(35, 29);
+            btkeluartambahbuku.TabIndex = 35;
+            btkeluartambahbuku.Text = "X";
+            btkeluartambahbuku.UseVisualStyleBackColor = true;
+            btkeluartambahbuku.Click += btkeluartambahbuku_Click;
             // 
             // tbPosisiRak
             // 
@@ -925,7 +925,7 @@ namespace Project_PBO_03
             label2.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(71, 552);
             label2.Name = "label2";
-            label2.Size = new Size(127, 28);
+            label2.Size = new Size(125, 28);
             label2.TabIndex = 15;
             label2.Text = "Tahun Terbit";
             // 
@@ -1049,12 +1049,12 @@ namespace Project_PBO_03
             Controls.Add(pictureBoxPerpusAdmin);
             Controls.Add(pictureBoxVektoradmin);
             Controls.Add(pnlAdmin);
-            Controls.Add(pnlPeminjamanAdmin1);
-            Controls.Add(pnlTambahBukuAdmin);
             Controls.Add(pnlDaftarBukuAdmin);
             Controls.Add(pnlRiwayatPeminjaman);
             Controls.Add(pnlProfileAdmin);
             Controls.Add(pnlPeminjamanAdmin);
+            Controls.Add(pnlPeminjamanAdmin1);
+            Controls.Add(pnlTambahBukuAdmin);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_Admin";
             Text = "V_Admin";
@@ -1184,5 +1184,6 @@ namespace Project_PBO_03
         private DataGridView dgvBooking;
         private Label label12;
         private ucPenerbitTambahBukuAdmin ucPenerbitTambahBukuAdmin1;
+        private Button btkeluartambahbuku;
     }
 }
