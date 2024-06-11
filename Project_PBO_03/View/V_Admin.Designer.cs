@@ -47,8 +47,8 @@ namespace Project_PBO_03
             tbDaftarBukuAdmin = new TextBox();
             pnlDaftarBukuAdmin = new Panel();
             ucPenulisTambahBukuAdmin2 = new ucPenulisTambahBukuAdmin();
-            ucJenisBukuTambahBukuAdmin1 = new ucJenisBukuTambahBukuAdmin();
             ucPenerbitTambahBukuAdmin1 = new ucPenerbitTambahBukuAdmin();
+            ucJenisBukuTambahBukuAdmin1 = new ucJenisBukuTambahBukuAdmin();
             ucUpdateBuku1 = new View.ucUpdateBuku();
             cbJenisBukuAdmin = new ComboBox();
             button1 = new Button();
@@ -296,8 +296,8 @@ namespace Project_PBO_03
             // 
             pnlDaftarBukuAdmin.BackColor = Color.White;
             pnlDaftarBukuAdmin.Controls.Add(ucPenulisTambahBukuAdmin2);
-            pnlDaftarBukuAdmin.Controls.Add(ucJenisBukuTambahBukuAdmin1);
             pnlDaftarBukuAdmin.Controls.Add(ucPenerbitTambahBukuAdmin1);
+            pnlDaftarBukuAdmin.Controls.Add(ucJenisBukuTambahBukuAdmin1);
             pnlDaftarBukuAdmin.Controls.Add(ucUpdateBuku1);
             pnlDaftarBukuAdmin.Controls.Add(cbJenisBukuAdmin);
             pnlDaftarBukuAdmin.Controls.Add(button1);
@@ -317,33 +317,28 @@ namespace Project_PBO_03
             // 
             ucPenulisTambahBukuAdmin2.BackColor = Color.White;
             ucPenulisTambahBukuAdmin2.BorderStyle = BorderStyle.FixedSingle;
-            ucPenulisTambahBukuAdmin2.Location = new Point(520, 63);
+            ucPenulisTambahBukuAdmin2.Location = new Point(533, 45);
             ucPenulisTambahBukuAdmin2.Name = "ucPenulisTambahBukuAdmin2";
-            ucPenulisTambahBukuAdmin2.Size = new Size(498, 575);
-            ucPenulisTambahBukuAdmin2.TabIndex = 17;
-            ucPenulisTambahBukuAdmin2.Load += ucPenulisTambahBukuAdmin2_Load_1;
-            // 
-            // ucJenisBukuTambahBukuAdmin1
-            // 
-            ucJenisBukuTambahBukuAdmin1.BackColor = Color.White;
-            ucJenisBukuTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
-            ucJenisBukuTambahBukuAdmin1.Location = new Point(520, 43);
-            ucJenisBukuTambahBukuAdmin1.Margin = new Padding(3, 4, 3, 4);
-            ucJenisBukuTambahBukuAdmin1.Name = "ucJenisBukuTambahBukuAdmin1";
-            ucJenisBukuTambahBukuAdmin1.Size = new Size(498, 609);
-            ucJenisBukuTambahBukuAdmin1.TabIndex = 11;
-            ucJenisBukuTambahBukuAdmin1.Load += ucJenisBukuTambahBukuAdmin1_Load;
+            ucPenulisTambahBukuAdmin2.Size = new Size(498, 729);
+            ucPenulisTambahBukuAdmin2.TabIndex = 21;
             // 
             // ucPenerbitTambahBukuAdmin1
             // 
             ucPenerbitTambahBukuAdmin1.BackColor = Color.White;
             ucPenerbitTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
-            ucPenerbitTambahBukuAdmin1.Location = new Point(520, 28);
-            ucPenerbitTambahBukuAdmin1.Margin = new Padding(3, 4, 3, 4);
+            ucPenerbitTambahBukuAdmin1.Location = new Point(533, 29);
             ucPenerbitTambahBukuAdmin1.Name = "ucPenerbitTambahBukuAdmin1";
-            ucPenerbitTambahBukuAdmin1.Size = new Size(491, 650);
-            ucPenerbitTambahBukuAdmin1.TabIndex = 13;
-            ucPenerbitTambahBukuAdmin1.Load += ucPenerbitTambahBukuAdmin1_Load;
+            ucPenerbitTambahBukuAdmin1.Size = new Size(499, 808);
+            ucPenerbitTambahBukuAdmin1.TabIndex = 20;
+            // 
+            // ucJenisBukuTambahBukuAdmin1
+            // 
+            ucJenisBukuTambahBukuAdmin1.BackColor = Color.White;
+            ucJenisBukuTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
+            ucJenisBukuTambahBukuAdmin1.Location = new Point(533, 18);
+            ucJenisBukuTambahBukuAdmin1.Name = "ucJenisBukuTambahBukuAdmin1";
+            ucJenisBukuTambahBukuAdmin1.Size = new Size(495, 726);
+            ucJenisBukuTambahBukuAdmin1.TabIndex = 19;
             // 
             // ucUpdateBuku1
             // 
@@ -1069,5 +1064,8 @@ namespace Project_PBO_03
         private DataGridViewButtonColumn hapusButton;
         private DataGridViewButtonColumn statusButton;
         private DataGridViewButtonColumn updateButton;
+        private ucPenulisTambahBukuAdmin ucPenulisTambahBukuAdmin1;
+        private ucPenerbitTambahBukuAdmin ucPenerbitTambahBukuAdmin2;
+        private ucJenisBukuTambahBukuAdmin ucJenisBukuTambahBukuAdmin2;
     }
 }
