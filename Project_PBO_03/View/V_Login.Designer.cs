@@ -501,6 +501,7 @@ namespace Project_PBO_03
             pnlDaftar.Name = "pnlDaftar";
             pnlDaftar.Size = new Size(620, 1079);
             pnlDaftar.TabIndex = 2;
+            pnlDaftar.Paint += pnlDaftar_Paint;
             // 
             // pictureBox14
             // 
