@@ -301,6 +301,7 @@ namespace Project_PBO_03
             tbDaftarBukuAdmin.Name = "tbDaftarBukuAdmin";
             tbDaftarBukuAdmin.Size = new Size(647, 34);
             tbDaftarBukuAdmin.TabIndex = 6;
+            tbDaftarBukuAdmin.TextChanged += tbDaftarBukuAdmin_TextChanged;
             // 
             // pnlDaftarBukuAdmin
             // 
@@ -326,7 +327,7 @@ namespace Project_PBO_03
             // ucUpdateBuku1
             // 
             ucUpdateBuku1.BorderStyle = BorderStyle.FixedSingle;
-            ucUpdateBuku1.Location = new Point(479, 2);
+            ucUpdateBuku1.Location = new Point(57, 14);
             ucUpdateBuku1.Name = "ucUpdateBuku1";
             ucUpdateBuku1.Size = new Size(948, 802);
             ucUpdateBuku1.TabIndex = 20;
@@ -380,6 +381,7 @@ namespace Project_PBO_03
             button1.TabIndex = 15;
             button1.Text = "Search";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // dgvDaftarBuku
             // 
@@ -925,7 +927,7 @@ namespace Project_PBO_03
             label2.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(71, 552);
             label2.Name = "label2";
-            label2.Size = new Size(125, 28);
+            label2.Size = new Size(127, 28);
             label2.TabIndex = 15;
             label2.Text = "Tahun Terbit";
             // 

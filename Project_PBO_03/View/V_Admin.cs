@@ -526,5 +526,19 @@ namespace Project_PBO_03
             this.pnlTambahBukuAdmin.Hide();
             this.pnlDaftarBukuAdmin.Show();
         }
+
+        private void tbDaftarBukuAdmin_TextChanged(object sender, EventArgs e)
+        {
+            string pencarian = tbDaftarBukuAdmin.Text;
+            DataTable search = BukuContext.showBySearch(pencarian);
+            dgvDaftarBuku.DataSource = search;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string pencarian = tbDaftarBukuAdmin.Text;
+            DataTable search = BukuContext.showBySearch(pencarian);
+            dgvDaftarBuku.DataSource = search;
+        }
     }
 }

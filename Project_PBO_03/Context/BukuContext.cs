@@ -96,12 +96,19 @@ namespace Project_PBO_03.Context
             return dataBuku;
         }
 
-        
-        /*
-        public static DataTable showBySearch()
+
+
+        public static DataTable showBySearch(string pencarian)
         {
-            string query;
-        }*/
+            string query = $"select b.isbn, b.namabuku, b.thnterbit, pt.namapenerbit, ps.namapenulis " +
+                           $"\r\nfrom buku b " +
+                           $"\r\njoin penulis ps \r\nON ps.idpenulis = b.penulis_idpenulis " +
+                           $"\r\njoin penerbit pt\r\nON pt.idpenerbit = b.penerbit_idpenerbit " +
+                           $"\r\nwhere namabuku ilike'%{pencarian}%'or namapenerbit ilike'%{pencarian}%'or namapenulis ilike'%{pencarian}%'" +
+                           $"\r\norder by namabuku, namapenerbit, namapenulis ";
+            DataTable dataBuku = queryExecutor(query);
+            return dataBuku;
+        }
 
         public static void create(m_Buku bukuBaru)
         {

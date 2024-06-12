@@ -262,7 +262,7 @@ namespace Project_PBO_03
             ucDetailBukuUser1.BackColor = Color.White;
             ucDetailBukuUser1.BorderStyle = BorderStyle.FixedSingle;
             ucDetailBukuUser1.id_pengguna = 0;
-            ucDetailBukuUser1.Location = new Point(253, 0);
+            ucDetailBukuUser1.Location = new Point(169, 105);
             ucDetailBukuUser1.Margin = new Padding(3, 4, 3, 4);
             ucDetailBukuUser1.Name = "ucDetailBukuUser1";
             ucDetailBukuUser1.Size = new Size(907, 781);
@@ -287,6 +287,7 @@ namespace Project_PBO_03
             button1.TabIndex = 14;
             button1.Text = "Search";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // cbJenis
             // 
@@ -327,6 +328,7 @@ namespace Project_PBO_03
             tbPeminjamanUser.Name = "tbPeminjamanUser";
             tbPeminjamanUser.Size = new Size(741, 34);
             tbPeminjamanUser.TabIndex = 12;
+            tbPeminjamanUser.TextChanged += tbPeminjamanUser_TextChanged;
             // 
             // dgvPeminjamanUser
             // 

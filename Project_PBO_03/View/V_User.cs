@@ -22,7 +22,7 @@ namespace Project_PBO_03
 
         public V_User(string getnama)
         {
-            InitializeComponent();  
+            InitializeComponent();
             this.input = getnama;
 
             ucDetailBukuUser1.Hide();
@@ -42,7 +42,7 @@ namespace Project_PBO_03
             cbJenis.DataSource = JenisBukuContext.all();
             cbJenis.DisplayMember = "namajenis";
             cbJenis.ValueMember = "namajenis";
-            
+
 
             dgvPeminjamanUser.DataSource = BukuContext.buku();
 
@@ -254,6 +254,20 @@ namespace Project_PBO_03
         private void ucDetailBukuUser1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void tbPeminjamanUser_TextChanged(object sender, EventArgs e)
+        {
+            string pencarian = tbPeminjamanUser.Text;
+            DataTable search = BukuContext.showBySearch(pencarian);
+            dgvPeminjamanUser.DataSource = search;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string pencarian = tbPeminjamanUser.Text;
+            DataTable search = BukuContext.showBySearch(pencarian);
+            dgvPeminjamanUser.DataSource = search;
         }
     }
 }
