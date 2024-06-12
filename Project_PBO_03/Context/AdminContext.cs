@@ -72,5 +72,26 @@ namespace Project_PBO_03.Context
             };
             commandExecutor(query, parameters);
         }
+        public static DataTable dataadmin(string inputs)
+        {
+            string query = "SELECT * FROM administrator WHERE usrnmeadmin = @usrnmeadmin";
+            NpgsqlParameter[] parameters =
+            {
+                new NpgsqlParameter("@usrnmeadmin", inputs){NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar}
+            };
+            return queryExecutor(query, parameters);
+        }
+
+        public static DataTable loginadmin(string username_admin, string password_admin)
+        {
+            string query = "SELECT * FROM administrator WHERE usrnmeadmin = @inputs AND pwadmin =@pw";
+            NpgsqlParameter[] parameters =
+            {
+                    new NpgsqlParameter("@inputs", DbType.String) {Value = username_admin},
+                    new NpgsqlParameter("@pw", DbType.String) {Value = password_admin },
+                };
+            return queryExecutor(query, parameters);
+        }
+
     }
 }

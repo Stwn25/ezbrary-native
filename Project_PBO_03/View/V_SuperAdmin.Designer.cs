@@ -240,11 +240,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Black;
             label1.Location = new Point(23, 29);
             label1.Name = "label1";
-            label1.Size = new Size(171, 28);
+            label1.Size = new Size(174, 25);
             label1.TabIndex = 10;
             label1.Text = "Daftar Pengguna";
             // 
@@ -274,22 +274,22 @@
             // lblHai1SA
             // 
             lblHai1SA.AutoSize = true;
-            lblHai1SA.Font = new Font("Nunito", 11.999999F, FontStyle.Bold);
+            lblHai1SA.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold);
             lblHai1SA.ForeColor = Color.Black;
             lblHai1SA.Location = new Point(437, 64);
             lblHai1SA.Name = "lblHai1SA";
-            lblHai1SA.Size = new Size(135, 28);
+            lblHai1SA.Size = new Size(137, 25);
             lblHai1SA.TabIndex = 12;
             lblHai1SA.Text = "Super Admin";
             // 
             // lblHaiSA
             // 
             lblHaiSA.AutoSize = true;
-            lblHaiSA.Font = new Font("Nunito", 11.999999F, FontStyle.Bold);
+            lblHaiSA.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold);
             lblHaiSA.ForeColor = Color.Black;
             lblHaiSA.Location = new Point(437, 24);
             lblHaiSA.Name = "lblHaiSA";
-            lblHaiSA.Size = new Size(169, 28);
+            lblHaiSA.Size = new Size(172, 25);
             lblHaiSA.TabIndex = 11;
             lblHaiSA.Text = "Selamat Datang,";
             // 
@@ -365,11 +365,11 @@
             // lblDaftarPenggunaSA
             // 
             lblDaftarPenggunaSA.AutoSize = true;
-            lblDaftarPenggunaSA.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDaftarPenggunaSA.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDaftarPenggunaSA.ForeColor = Color.Black;
             lblDaftarPenggunaSA.Location = new Point(23, 29);
             lblDaftarPenggunaSA.Name = "lblDaftarPenggunaSA";
-            lblDaftarPenggunaSA.Size = new Size(171, 28);
+            lblDaftarPenggunaSA.Size = new Size(174, 25);
             lblDaftarPenggunaSA.TabIndex = 10;
             lblDaftarPenggunaSA.Text = "Daftar Pengguna";
             // 
@@ -396,7 +396,7 @@
             // 
             // button1
             // 
-            button1.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.Location = new Point(1452, 3);
             button1.Name = "button1";
             button1.Size = new Size(41, 29);
@@ -423,55 +423,55 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold);
+            label8.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold);
             label8.ForeColor = Color.Black;
             label8.Location = new Point(58, 464);
             label8.Name = "label8";
-            label8.Size = new Size(103, 28);
+            label8.Size = new Size(106, 25);
             label8.TabIndex = 21;
             label8.Text = "Password";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold);
+            label7.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold);
             label7.ForeColor = Color.Black;
             label7.Location = new Point(58, 379);
             label7.Name = "label7";
-            label7.Size = new Size(121, 28);
+            label7.Size = new Size(130, 25);
             label7.TabIndex = 20;
             label7.Text = "No. Telepon";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold);
+            label6.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold);
             label6.ForeColor = Color.Black;
             label6.Location = new Point(58, 288);
             label6.Name = "label6";
-            label6.Size = new Size(63, 28);
+            label6.Size = new Size(65, 25);
             label6.TabIndex = 19;
             label6.Text = "Email";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold);
+            label5.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold);
             label5.ForeColor = Color.Black;
             label5.Location = new Point(58, 204);
             label5.Name = "label5";
-            label5.Size = new Size(66, 28);
+            label5.Size = new Size(68, 25);
             label5.TabIndex = 18;
             label5.Text = "Nama";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold);
+            label4.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold);
             label4.ForeColor = Color.Black;
             label4.Location = new Point(58, 124);
             label4.Name = "label4";
-            label4.Size = new Size(106, 28);
+            label4.Size = new Size(110, 25);
             label4.TabIndex = 16;
             label4.Text = "Username";
             // 
@@ -479,7 +479,7 @@
             // 
             tbPasswordSA.BackColor = Color.White;
             tbPasswordSA.BorderStyle = BorderStyle.FixedSingle;
-            tbPasswordSA.Font = new Font("Nunito", 10.2F, FontStyle.Bold);
+            tbPasswordSA.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold);
             tbPasswordSA.Location = new Point(58, 496);
             tbPasswordSA.Multiline = true;
             tbPasswordSA.Name = "tbPasswordSA";
@@ -490,7 +490,7 @@
             // 
             tbTeleponSA.BackColor = Color.White;
             tbTeleponSA.BorderStyle = BorderStyle.FixedSingle;
-            tbTeleponSA.Font = new Font("Nunito", 10.2F, FontStyle.Bold);
+            tbTeleponSA.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold);
             tbTeleponSA.Location = new Point(58, 409);
             tbTeleponSA.Multiline = true;
             tbTeleponSA.Name = "tbTeleponSA";
@@ -501,7 +501,7 @@
             // 
             tbEmailSA.BackColor = Color.White;
             tbEmailSA.BorderStyle = BorderStyle.FixedSingle;
-            tbEmailSA.Font = new Font("Nunito", 10.2F, FontStyle.Bold);
+            tbEmailSA.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold);
             tbEmailSA.Location = new Point(58, 323);
             tbEmailSA.Multiline = true;
             tbEmailSA.Name = "tbEmailSA";
@@ -512,7 +512,7 @@
             // 
             tbNamaSA.BackColor = Color.White;
             tbNamaSA.BorderStyle = BorderStyle.FixedSingle;
-            tbNamaSA.Font = new Font("Nunito", 10.2F, FontStyle.Bold);
+            tbNamaSA.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold);
             tbNamaSA.Location = new Point(58, 237);
             tbNamaSA.Multiline = true;
             tbNamaSA.Name = "tbNamaSA";
@@ -523,7 +523,7 @@
             // 
             tbUsernameSA.BackColor = Color.White;
             tbUsernameSA.BorderStyle = BorderStyle.FixedSingle;
-            tbUsernameSA.Font = new Font("Nunito", 10.2F, FontStyle.Bold);
+            tbUsernameSA.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold);
             tbUsernameSA.Location = new Point(58, 156);
             tbUsernameSA.Multiline = true;
             tbUsernameSA.Name = "tbUsernameSA";
@@ -533,11 +533,11 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Black;
             label3.Location = new Point(23, 29);
             label3.Name = "label3";
-            label3.Size = new Size(138, 28);
+            label3.Size = new Size(137, 25);
             label3.TabIndex = 10;
             label3.Text = "Daftar Admin";
             // 
