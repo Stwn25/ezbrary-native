@@ -2,6 +2,7 @@
 using NpgsqlTypes;
 using Project_PBO_03.Context;
 using Project_PBO_03.Model;
+using Project_PBO_03.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -58,10 +59,6 @@ namespace Project_PBO_03
             cbJenisBuku.DisplayMember = "namajenis";
             cbJenisBuku.ValueMember = "idjenis";
 
-            /*MessageBox.Show($"Admin : {input}", "Plis", MessageBoxButtons.OK);*/
-            /*V_Login login = new V_Login();*/
-
-
             DataTable dt = AdminContext.dataadmin(input);
             if (dt != null && input != null)
             {
@@ -92,8 +89,13 @@ namespace Project_PBO_03
             }
 
 
+            ucUpdateBuku1.UpdateBukuSuccess += UcUpdateBuku1_UpdateBukuSuccess;
         }
 
+        private void UcUpdateBuku1_UpdateBukuSuccess(object sender, EventArgs e)
+        {
+            dgvDaftarBuku.DataSource = BukuContext.all();
+        }
 
         private void btKelolaBuku_Click(object sender, EventArgs e)
         {
@@ -417,6 +419,17 @@ namespace Project_PBO_03
 
             if (e.ColumnIndex == dgvDaftarBuku.Columns["updateButton"].Index && e.RowIndex >= 0)
             {
+                DataGridViewRow row = dgvDaftarBuku.Rows[e.RowIndex];
+                string ISBN = Convert.ToString(row.Cells["isbn"].Value);
+
+                // Set IdAdmin property of user control
+                ucUpdateBuku1.ISBN = isbn;
+
+                // Load the admin data into the UserControl
+                ucUpdateBuku1.LoadDataBuku(isbn);
+
+                // Ensure the UserControl is visible and brought to the front
+                ucUpdateBuku1.BringToFront();
                 ucUpdateBuku1.Show();
             }
         }
@@ -469,11 +482,6 @@ namespace Project_PBO_03
                 }
 
             }
-        }
-
-        private void ucUpdateBuku1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void ucPenulisTambahBukuAdmin2_Load_1(object sender, EventArgs e)
@@ -606,5 +614,14 @@ namespace Project_PBO_03
             }
         }
 
+        private void ucUpdateBuku1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ucUpdateBuku1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

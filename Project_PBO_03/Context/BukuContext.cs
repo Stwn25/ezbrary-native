@@ -130,6 +130,39 @@ namespace Project_PBO_03.Context
             commandExecutor(query, parameters);
         }
 
+        public static void update(m_Buku editBuku, string isbn1)
+        {
+            string query = $"UPDATE {table} SET " +
+                           $"isbn = @isbn," +
+                           $"namabuku = @namabuku, " +
+                           $"sinopsis = @sinopsis, " +
+                           $"thnterbit = @thnterbit, " +
+                           $"jenisbuku_idjenis = @jenisbuku, " +
+                           $"stokbuku = @stokbuku, " +
+                           $"penerbit_idpenerbit = @penerbit, " +
+                           $"penulis_idpenulis = @penulis, " +
+                           $"posisirak = @posisirak " +
+                           $"WHERE isbn = @isbn1";
+
+            NpgsqlParameter[] parameters =
+            {
+                new NpgsqlParameter("@namabuku", NpgsqlDbType.Varchar) { Value = editBuku.nama_buku },
+                new NpgsqlParameter("@sinopsis", NpgsqlDbType.Text) { Value = editBuku.sinopsis },
+                new NpgsqlParameter("@thnterbit", NpgsqlDbType.Varchar) { Value = editBuku.thn_terbit },
+                new NpgsqlParameter("@jenisbuku", NpgsqlDbType.Integer) { Value = editBuku.jenis_id },
+                new NpgsqlParameter("@stokbuku", NpgsqlDbType.Integer) { Value = editBuku.stok_buku },
+                new NpgsqlParameter("@penerbit", NpgsqlDbType.Integer) { Value = editBuku.penerbit_id },
+                new NpgsqlParameter("@penulis", NpgsqlDbType.Integer) { Value = editBuku.penulis_id },
+                new NpgsqlParameter("@posisirak", NpgsqlDbType.Varchar) { Value = editBuku.posisi_rak },
+                new NpgsqlParameter("@isbn", NpgsqlDbType.Varchar) { Value = editBuku.isbn },
+                new NpgsqlParameter("@isbn1", NpgsqlDbType.Varchar) { Value = isbn1 }
+            };
+
+            commandExecutor(query, parameters);
+        }
+
+
+
         public static void delete(string isbn)
         {
             string query = $"DELETE FROM {table} WHERE isbn = @isbn";

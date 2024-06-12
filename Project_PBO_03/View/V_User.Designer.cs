@@ -354,6 +354,7 @@ namespace Project_PBO_03
             dgvPeminjamanUser.Columns.AddRange(new DataGridViewColumn[] { detailBuku });
             dgvPeminjamanUser.Location = new Point(22, 125);
             dgvPeminjamanUser.Name = "dgvPeminjamanUser";
+            dgvPeminjamanUser.ReadOnly = true;
             dgvPeminjamanUser.RowHeadersWidth = 51;
             dgvPeminjamanUser.Size = new Size(1461, 625);
             dgvPeminjamanUser.TabIndex = 11;
@@ -364,6 +365,7 @@ namespace Project_PBO_03
             detailBuku.HeaderText = "Detail";
             detailBuku.MinimumWidth = 6;
             detailBuku.Name = "detailBuku";
+            detailBuku.ReadOnly = true;
             detailBuku.Text = "Detail";
             detailBuku.UseColumnTextForButtonValue = true;
             // 
@@ -392,6 +394,7 @@ namespace Project_PBO_03
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(23, 88);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1461, 687);
             dataGridView1.TabIndex = 11;
@@ -421,6 +424,7 @@ namespace Project_PBO_03
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Location = new Point(23, 88);
             dataGridView2.Name = "dataGridView2";
+            dataGridView2.ReadOnly = true;
             dataGridView2.RowHeadersWidth = 51;
             dataGridView2.Size = new Size(1461, 687);
             dataGridView2.TabIndex = 11;
@@ -923,11 +927,11 @@ namespace Project_PBO_03
             Controls.Add(lblHaiUser);
             Controls.Add(pictureBoxPerpusUser);
             Controls.Add(pnlUser);
-            Controls.Add(pnlProfileUser);
             Controls.Add(pnlRiwayatUser);
             Controls.Add(pnlBukuFavUser);
             Controls.Add(pnlDetailBuku);
             Controls.Add(pnlPeminjamanUser);
+            Controls.Add(pnlProfileUser);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_User";
             Text = "V_User";

@@ -57,17 +57,17 @@ namespace Project_PBO_03.Context
             commandExecutor(query, parameters);
         }
 
-        public static void update(m_Pengguna pengguna)
+        public static void update(m_Pengguna editpengguna)
         {
             string query = $"UPDATE {table} SET namauser = @namauser, usrnmeuser = @usrnmeuser, pwuser = @pwuser, telpuser = @telpuser, emailuser = @emailuser WHERE iduser = @iduser";
             NpgsqlParameter[] parameters =
             {
-                new NpgsqlParameter("@iduser", NpgsqlDbType.Integer) { Value = pengguna.id_pengguna },
-                new NpgsqlParameter("@namauser", NpgsqlDbType.Varchar) { Value = pengguna.nama_pengguna },
-                new NpgsqlParameter("@usrnmeuser", NpgsqlDbType.Varchar) { Value = pengguna.username_pengguna },
-                new NpgsqlParameter("@pwuser", NpgsqlDbType.Varchar) { Value = pengguna.pass_pengguna },
-                new NpgsqlParameter("@telpuser", NpgsqlDbType.Varchar) { Value = pengguna.telp_pengguna },
-                new NpgsqlParameter("@emailuser", NpgsqlDbType.Varchar) { Value = pengguna.email_pengguna }
+                new NpgsqlParameter("@iduser", NpgsqlDbType.Integer) { Value = editpengguna.id_pengguna },
+                new NpgsqlParameter("@namauser", NpgsqlDbType.Varchar) { Value = editpengguna.nama_pengguna },
+                new NpgsqlParameter("@usrnmeuser", NpgsqlDbType.Varchar) { Value = editpengguna.username_pengguna },
+                new NpgsqlParameter("@pwuser", NpgsqlDbType.Varchar) { Value = editpengguna.pass_pengguna },
+                new NpgsqlParameter("@telpuser", NpgsqlDbType.Varchar) { Value = editpengguna.telp_pengguna },
+                new NpgsqlParameter("@emailuser", NpgsqlDbType.Varchar) { Value = editpengguna.email_pengguna }
             };
             commandExecutor(query, parameters);
         }
