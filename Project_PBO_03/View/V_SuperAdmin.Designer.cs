@@ -69,7 +69,6 @@
             tbNamaSA = new TextBox();
             tbUsernameSA = new TextBox();
             label3 = new Label();
-            ucUpdateAdmin1 = new ucUpdateAdmin();
             pnlSA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxVectorUser).BeginInit();
             pnlAdminSA.SuspendLayout();
@@ -218,6 +217,7 @@
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { HapusAdmin, UpdateAdmin });
             dataGridView1.Location = new Point(23, 127);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1461, 591);
             dataGridView1.TabIndex = 11;
@@ -228,6 +228,7 @@
             HapusAdmin.HeaderText = "Hapus Admin";
             HapusAdmin.MinimumWidth = 6;
             HapusAdmin.Name = "HapusAdmin";
+            HapusAdmin.ReadOnly = true;
             HapusAdmin.Text = "Hapus";
             HapusAdmin.UseColumnTextForButtonValue = true;
             // 
@@ -236,6 +237,7 @@
             UpdateAdmin.HeaderText = "Update Admin";
             UpdateAdmin.MinimumWidth = 6;
             UpdateAdmin.Name = "UpdateAdmin";
+            UpdateAdmin.ReadOnly = true;
             UpdateAdmin.Text = "Update";
             UpdateAdmin.UseColumnTextForButtonValue = true;
             // 
@@ -351,6 +353,7 @@
             dataGridView2.Columns.AddRange(new DataGridViewColumn[] { HapusUser });
             dataGridView2.Location = new Point(23, 127);
             dataGridView2.Name = "dataGridView2";
+            dataGridView2.ReadOnly = true;
             dataGridView2.RowHeadersWidth = 51;
             dataGridView2.Size = new Size(1461, 591);
             dataGridView2.TabIndex = 11;
@@ -361,6 +364,7 @@
             HapusUser.HeaderText = "Hapus User";
             HapusUser.MinimumWidth = 6;
             HapusUser.Name = "HapusUser";
+            HapusUser.ReadOnly = true;
             HapusUser.Text = "Hapus";
             HapusUser.UseColumnTextForButtonValue = true;
             // 
@@ -567,30 +571,19 @@
             label3.TabIndex = 10;
             label3.Text = "Daftar Admin";
             // 
-            // ucUpdateAdmin1
-            // 
-            ucUpdateAdmin1.BorderStyle = BorderStyle.FixedSingle;
-            ucUpdateAdmin1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ucUpdateAdmin1.IdAdmin = 0;
-            ucUpdateAdmin1.Location = new Point(772, 230);
-            ucUpdateAdmin1.Name = "ucUpdateAdmin1";
-            ucUpdateAdmin1.Size = new Size(840, 726);
-            ucUpdateAdmin1.TabIndex = 15;
-            // 
             // V_SuperAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1942, 1102);
-            Controls.Add(ucUpdateAdmin1);
-            Controls.Add(pnlDaftarAdminSA);
             Controls.Add(nightControlBox1);
             Controls.Add(lblHai1SA);
             Controls.Add(lblHaiSA);
             Controls.Add(pnlSA);
             Controls.Add(pictureBoxPerpusSA);
-            Controls.Add(pnlAdminSA);
             Controls.Add(pnlUserSA);
+            Controls.Add(pnlDaftarAdminSA);
+            Controls.Add(pnlAdminSA);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_SuperAdmin";
             Text = "V_SuperAdmin";

@@ -14,6 +14,11 @@ namespace Project_PBO_03.View
 {
     public partial class ucUpdateBuku : UserControl
     {
+        public string ISBN { get; set; }
+
+        public event EventHandler UpdateBukuSuccess;
+
+
         public ucUpdateBuku()
         {
             InitializeComponent();
@@ -21,6 +26,7 @@ namespace Project_PBO_03.View
 
         public void LoadDataBuku(string isbn)
         {
+            this.ISBN = isbn;
             DataTable dataBuku = BukuContext.read(isbn);
             if (dataBuku.Rows.Count > 0)
             {
@@ -32,7 +38,7 @@ namespace Project_PBO_03.View
                 tbStokBukuuc.Text = row["stokbuku"].ToString();
                 tbPosisiRakuc.Text = row["posisirak"].ToString();
 
-                cbPenerbituc.DataSource = PenerbitContext.comboBox();
+                cbPenerbituc.DataSource = PenerbitContext.all();
                 cbPenerbituc.DisplayMember = "namapenerbit";
                 cbPenerbituc.ValueMember = "idpenerbit";
 
@@ -60,5 +66,53 @@ namespace Project_PBO_03.View
         {
 
         }
+
+        private void btTBAdminuc_Click(object sender, EventArgs e)
+        {
+            if (ISBN != null)
+            {
+                DataTable dt = BukuContext.read(ISBN);
+                if (dt.Rows.Count > 0)
+                {
+                    DataRow row = dt.Rows[0];
+
+                    m_Buku updatedBuku = new m_Buku
+                    {
+                        isbn = tbISBNuc.Text,
+                        nama_buku = tbNamaBukuuc.Text,
+                        sinopsis = tbSinopsisBukuuc.Text,
+                        thn_terbit = tbTahunTerbituc.Text,
+                        stok_buku = Convert.ToInt16(tbStokBukuuc.Text),
+                        penerbit_id = Convert.ToInt16(cbPenerbituc.SelectedValue),
+                        penulis_id = Convert.ToInt16(cbPenulisuc.SelectedValue),
+                        jenis_id = Convert.ToInt16(cbJenisBukuuc.SelectedValue),
+                        posisi_rak = tbPosisiRakuc.Text
+                    };
+
+                    try
+                    {
+                        BukuContext.update(updatedBuku, ISBN);
+                        MessageBox.Show("Data buku berhasil diperbarui!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        UpdateBukuSuccess?.Invoke(this, EventArgs.Empty);
+                        this.Hide();
+                        
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Gagal memperbarui data buku: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Data buku tidak ditemukan.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("ISBN buku tidak valid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }

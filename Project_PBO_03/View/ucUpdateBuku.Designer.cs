@@ -237,6 +237,7 @@
             btTBAdminuc.TabIndex = 52;
             btTBAdminuc.Text = "Update";
             btTBAdminuc.UseVisualStyleBackColor = false;
+            btTBAdminuc.Click += btTBAdminuc_Click;
             // 
             // panel1
             // 
