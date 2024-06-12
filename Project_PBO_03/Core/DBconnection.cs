@@ -13,7 +13,7 @@ namespace Project_PBO_03.Core
         private static readonly string DB_HOST = "localhost";
         private static readonly string DB_DATABASE = "PBObarulagi";
         private static readonly string DB_USERNAME = "postgres";
-        private static readonly string DB_PASSWORD = "Raffi20005..";
+        private static readonly string DB_PASSWORD = "iwanganteng";
         private static readonly string DB_PORT = "5432";
 
         private static NpgsqlCommand command;

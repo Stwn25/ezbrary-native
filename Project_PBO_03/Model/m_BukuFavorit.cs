@@ -13,5 +13,6 @@ namespace Project_PBO_03.Model
         public string isbn_buku { get; set; }
         [Key]
         public int id_pengguna { get; set; }
+        public int id_status { get; set; }
     }
 }

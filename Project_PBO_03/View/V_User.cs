@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -54,8 +55,6 @@ namespace Project_PBO_03
             cbJenis.DataSource = JenisBukuContext.all();
             cbJenis.DisplayMember = "namajenis";
             cbJenis.ValueMember = "namajenis";
-
-
 
             dgvPeminjamanUser.DataSource = BukuContext.buku();
 
@@ -201,27 +200,67 @@ namespace Project_PBO_03
 
             if (e.ColumnIndex == dgvPeminjamanUser.Columns["detailBuku"].Index && e.RowIndex >= 0)
             {
-                DataGridViewRow row = dgvPeminjamanUser.Rows[e.RowIndex];
-                string namabuku = row.Cells["namabuku"].Value.ToString();
+                DataGridViewRow baris = dgvPeminjamanUser.Rows[e.RowIndex];
+                string isbnBuku1 = baris.Cells["isbn"].Value.ToString();
 
-                DataTable dataTable = BukuContext.detailbuku(namabuku);
-                if (dataTable.Rows.Count > 0)
+                DataTable dataBukuFav = BukuFavoritContext.read(isbnBuku1, idpengguna);
+
+                if (dataBukuFav.Rows.Count > 0)
                 {
+                    pbStarKosong.Hide();
+                    pbStarKuning.Show();
 
-                    DataRow dataRow = dataTable.Rows[0];
-                    string isbn = dataRow["isbn"].ToString();
-                    string Namabuku = dataRow["namabuku"].ToString();
-                    string sinopsis = dataRow["sinopsis"].ToString();
-                    string thnterbit = dataRow["thnterbit"].ToString();
-                    string namajenis = dataRow["namajenis"].ToString();
-                    int stokbuku = Int32.Parse(dataRow["stokbuku"].ToString());
-                    string namapenerbit = dataRow["namapenerbit"].ToString();
-                    string namapenulis = dataRow["namapenulis"].ToString();
-                    string posisirak = dataRow["posisirak"].ToString();
+                    DataGridViewRow row = dgvPeminjamanUser.Rows[e.RowIndex];
+                    string namabuku = row.Cells["namabuku"].Value.ToString();
 
-                    this.pnlDetailBuku.Show();
-                    UpdateDetail(isbn, Namabuku, sinopsis, thnterbit, namajenis, stokbuku, namapenerbit, namapenulis, posisirak, input);
+                    DataTable dataBuku = BukuContext.detailbuku(namabuku);
+                    if (dataBuku.Rows.Count > 0)
+                    {
+
+                        DataRow dataRow = dataBuku.Rows[0];
+                        string isbn = dataRow["isbn"].ToString();
+                        string Namabuku = dataRow["namabuku"].ToString();
+                        string sinopsis = dataRow["sinopsis"].ToString();
+                        string thnterbit = dataRow["thnterbit"].ToString();
+                        string namajenis = dataRow["namajenis"].ToString();
+                        int stokbuku = Int32.Parse(dataRow["stokbuku"].ToString());
+                        string namapenerbit = dataRow["namapenerbit"].ToString();
+                        string namapenulis = dataRow["namapenulis"].ToString();
+                        string posisirak = dataRow["posisirak"].ToString();
+
+                        this.pnlDetailBuku.Show();
+                        UpdateDetail(isbn, Namabuku, sinopsis, thnterbit, namajenis, stokbuku, namapenerbit, namapenulis, posisirak, input);
+                    }
                 }
+                else
+                {
+                    pbStarKosong.Show();
+                    pbStarKuning.Hide();
+
+                    DataGridViewRow row = dgvPeminjamanUser.Rows[e.RowIndex];
+                    string namabuku = row.Cells["namabuku"].Value.ToString();
+
+                    DataTable dataBuku = BukuContext.detailbuku(namabuku);
+                    if (dataBuku.Rows.Count > 0)
+                    {
+
+                        DataRow dataRow = dataBuku.Rows[0];
+                        string isbn = dataRow["isbn"].ToString();
+                        string Namabuku = dataRow["namabuku"].ToString();
+                        string sinopsis = dataRow["sinopsis"].ToString();
+                        string thnterbit = dataRow["thnterbit"].ToString();
+                        string namajenis = dataRow["namajenis"].ToString();
+                        int stokbuku = Int32.Parse(dataRow["stokbuku"].ToString());
+                        string namapenerbit = dataRow["namapenerbit"].ToString();
+                        string namapenulis = dataRow["namapenulis"].ToString();
+                        string posisirak = dataRow["posisirak"].ToString();
+
+                        this.pnlDetailBuku.Show();
+                        UpdateDetail(isbn, Namabuku, sinopsis, thnterbit, namajenis, stokbuku, namapenerbit, namapenulis, posisirak, input);
+                    }
+                }
+
+                
             }
         }
 
@@ -334,7 +373,7 @@ namespace Project_PBO_03
                     {
                         PenggunaContext.update(updatedPengguna);
                         MessageBox.Show("Data anda berhasil diperbarui!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        
+
                         this.pnlProfileUser.Show();
 
                         lblEmailUser.Text = tbEmailU.Text;
@@ -369,6 +408,35 @@ namespace Project_PBO_03
             string pencarian = tbPeminjamanUser.Text;
             DataTable search = BukuContext.showBySearch(pencarian);
             dgvPeminjamanUser.DataSource = search;
+        }
+
+        private void pbStarKosong_Click(object sender, EventArgs e)
+        {
+            pbStarKosong.Hide();
+            pbStarKuning.Show();
+
+            m_BukuFavorit bukuFavorit = new m_BukuFavorit()
+            {
+                isbn_buku = isbn1,
+                id_pengguna = idpengguna,
+                id_status = 1
+            };
+
+            BukuFavoritContext.tambahBukuFavorit(bukuFavorit);
+        }
+
+        private void pbStarKuning_Click(object sender, EventArgs e)
+        {
+            pbStarKosong.Show();
+            pbStarKuning.Hide();
+
+            m_BukuFavorit bukuFavorit = new m_BukuFavorit()
+            {
+                isbn_buku = isbn1,
+                id_pengguna = idpengguna
+            };
+
+            BukuFavoritContext.deleteBukuFavorit(isbn1, idpengguna);
         }
     }
 }

@@ -200,14 +200,17 @@ namespace Project_PBO_03
             cbPenerbit.DataSource = PenerbitContext.comboBox();
             cbPenerbit.DisplayMember = "namapenerbit";
             cbPenerbit.ValueMember = "idpenerbit";
+            cbPenerbit.Text = default;
 
             cbPenulis.DataSource = PenulisContext.all();
             cbPenulis.DisplayMember = "namapenulis";
             cbPenulis.ValueMember = "idpenulis";
+            cbPenulis.Text = default;
 
             cbJenisBuku.DataSource = JenisBukuContext.all();
             cbJenisBuku.DisplayMember = "namajenis";
             cbJenisBuku.ValueMember = "idjenis";
+            cbJenisBuku.Text = default;
         }
 
 

@@ -71,6 +71,7 @@ namespace Project_PBO_03
             label3 = new Label();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             pnlDetailBuku = new Panel();
+            pbStarKosong = new PictureBox();
             isbnBuku = new Label();
             btkeluar = new Button();
             label12 = new Label();
@@ -90,7 +91,6 @@ namespace Project_PBO_03
             lbpenerbit = new Label();
             lbtahunterbit = new Label();
             lbisbnBuku = new Label();
-            pbStarKosong = new PictureBox();
             pictureBox1 = new PictureBox();
             namabuku = new Label();
             panel3 = new Panel();
@@ -106,9 +106,9 @@ namespace Project_PBO_03
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             pnlProfileUser.SuspendLayout();
             pnlDetailBuku.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbStarKosong).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbStarKuning).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbStarKosong).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -618,6 +618,7 @@ namespace Project_PBO_03
             // 
             // pnlDetailBuku
             // 
+            pnlDetailBuku.Controls.Add(pbStarKosong);
             pnlDetailBuku.Controls.Add(isbnBuku);
             pnlDetailBuku.Controls.Add(btkeluar);
             pnlDetailBuku.Controls.Add(label12);
@@ -637,7 +638,6 @@ namespace Project_PBO_03
             pnlDetailBuku.Controls.Add(lbpenerbit);
             pnlDetailBuku.Controls.Add(lbtahunterbit);
             pnlDetailBuku.Controls.Add(lbisbnBuku);
-            pnlDetailBuku.Controls.Add(pbStarKosong);
             pnlDetailBuku.Controls.Add(pictureBox1);
             pnlDetailBuku.Controls.Add(namabuku);
             pnlDetailBuku.Controls.Add(panel3);
@@ -647,6 +647,19 @@ namespace Project_PBO_03
             pnlDetailBuku.Size = new Size(1507, 805);
             pnlDetailBuku.TabIndex = 16;
             pnlDetailBuku.Paint += pnlDetailBuku_Paint;
+            // 
+            // pbStarKosong
+            // 
+            pbStarKosong.Cursor = Cursors.Hand;
+            pbStarKosong.Image = Properties.Resources.Favorite;
+            pbStarKosong.Location = new Point(326, 80);
+            pbStarKosong.Margin = new Padding(3, 4, 3, 4);
+            pbStarKosong.Name = "pbStarKosong";
+            pbStarKosong.Size = new Size(42, 46);
+            pbStarKosong.SizeMode = PictureBoxSizeMode.Zoom;
+            pbStarKosong.TabIndex = 45;
+            pbStarKosong.TabStop = false;
+            pbStarKosong.Click += pbStarKosong_Click;
             // 
             // isbnBuku
             // 
@@ -783,13 +796,14 @@ namespace Project_PBO_03
             // 
             pbStarKuning.Cursor = Cursors.Hand;
             pbStarKuning.Image = Properties.Resources.star_276049;
-            pbStarKuning.Location = new Point(326, 79);
+            pbStarKuning.Location = new Point(326, 80);
             pbStarKuning.Margin = new Padding(3, 4, 3, 4);
             pbStarKuning.Name = "pbStarKuning";
             pbStarKuning.Size = new Size(42, 46);
             pbStarKuning.SizeMode = PictureBoxSizeMode.Zoom;
             pbStarKuning.TabIndex = 53;
             pbStarKuning.TabStop = false;
+            pbStarKuning.Click += pbStarKuning_Click;
             // 
             // lbposisirak
             // 
@@ -861,18 +875,6 @@ namespace Project_PBO_03
             lbisbnBuku.TabIndex = 46;
             lbisbnBuku.Text = "ISBN :";
             // 
-            // pbStarKosong
-            // 
-            pbStarKosong.Cursor = Cursors.Hand;
-            pbStarKosong.Image = Properties.Resources.Favorite;
-            pbStarKosong.Location = new Point(326, 79);
-            pbStarKosong.Margin = new Padding(3, 4, 3, 4);
-            pbStarKosong.Name = "pbStarKosong";
-            pbStarKosong.Size = new Size(42, 46);
-            pbStarKosong.SizeMode = PictureBoxSizeMode.Zoom;
-            pbStarKosong.TabIndex = 45;
-            pbStarKosong.TabStop = false;
-            // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Favorite__1_;
@@ -923,11 +925,11 @@ namespace Project_PBO_03
             Controls.Add(lblHaiUser);
             Controls.Add(pictureBoxPerpusUser);
             Controls.Add(pnlUser);
+            Controls.Add(pnlDetailBuku);
+            Controls.Add(pnlPeminjamanUser);
             Controls.Add(pnlProfileUser);
             Controls.Add(pnlRiwayatUser);
             Controls.Add(pnlBukuFavUser);
-            Controls.Add(pnlDetailBuku);
-            Controls.Add(pnlPeminjamanUser);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_User";
             Text = "V_User";
@@ -949,9 +951,9 @@ namespace Project_PBO_03
             pnlProfileUser.PerformLayout();
             pnlDetailBuku.ResumeLayout(false);
             pnlDetailBuku.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbStarKosong).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbStarKuning).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbStarKosong).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
