@@ -648,10 +648,10 @@ namespace Project_PBO_03
             // isbnBuku
             // 
             isbnBuku.AutoSize = true;
-            isbnBuku.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            isbnBuku.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             isbnBuku.Location = new Point(385, 138);
             isbnBuku.Name = "isbnBuku";
-            isbnBuku.Size = new Size(17, 28);
+            isbnBuku.Size = new Size(18, 25);
             isbnBuku.TabIndex = 64;
             isbnBuku.Text = ".";
             // 
@@ -670,10 +670,10 @@ namespace Project_PBO_03
             // label12
             // 
             label12.AutoSize = true;
-            label12.Font = new Font("Nunito", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label12.Location = new Point(788, 407);
             label12.Name = "label12";
-            label12.Size = new Size(244, 32);
+            label12.Size = new Size(268, 29);
             label12.TabIndex = 62;
             label12.Text = "Tangal Pengambilan :";
             // 
@@ -689,7 +689,7 @@ namespace Project_PBO_03
             // 
             btBookingBuku.BackColor = SystemColors.HotTrack;
             btBookingBuku.FlatStyle = FlatStyle.Popup;
-            btBookingBuku.Font = new Font("Nunito", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btBookingBuku.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btBookingBuku.ForeColor = Color.White;
             btBookingBuku.Location = new Point(788, 484);
             btBookingBuku.Name = "btBookingBuku";
@@ -702,10 +702,10 @@ namespace Project_PBO_03
             // label11
             // 
             label11.AutoSize = true;
-            label11.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label11.Location = new Point(84, 555);
             label11.Name = "label11";
-            label11.Size = new Size(120, 28);
+            label11.Size = new Size(123, 25);
             label11.TabIndex = 59;
             label11.Text = "Beri Ulasan";
             // 
@@ -734,7 +734,7 @@ namespace Project_PBO_03
             materialMultiLineTextBoxEdit1.BackgroundImageLayout = ImageLayout.None;
             materialMultiLineTextBoxEdit1.CharacterCasing = CharacterCasing.Normal;
             materialMultiLineTextBoxEdit1.Depth = 0;
-            materialMultiLineTextBoxEdit1.Font = new Font("Nunito", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            materialMultiLineTextBoxEdit1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             materialMultiLineTextBoxEdit1.HideSelection = true;
             materialMultiLineTextBoxEdit1.Location = new Point(45, 597);
             materialMultiLineTextBoxEdit1.MaxLength = 32767;
@@ -769,10 +769,10 @@ namespace Project_PBO_03
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.Location = new Point(45, 369);
             label10.Name = "label10";
-            label10.Size = new Size(101, 28);
+            label10.Size = new Size(108, 25);
             label10.TabIndex = 54;
             label10.Text = "Sinopsis :";
             // 
@@ -791,70 +791,70 @@ namespace Project_PBO_03
             // lbposisirak
             // 
             lbposisirak.AutoSize = true;
-            lbposisirak.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbposisirak.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbposisirak.Location = new Point(319, 299);
             lbposisirak.Name = "lbposisirak";
-            lbposisirak.Size = new Size(118, 28);
+            lbposisirak.Size = new Size(126, 25);
             lbposisirak.TabIndex = 52;
             lbposisirak.Text = "Posisi Rak :";
             // 
             // lbjenisbuku
             // 
             lbjenisbuku.AutoSize = true;
-            lbjenisbuku.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbjenisbuku.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbjenisbuku.Location = new Point(319, 265);
             lbjenisbuku.Name = "lbjenisbuku";
-            lbjenisbuku.Size = new Size(121, 28);
+            lbjenisbuku.Size = new Size(132, 25);
             lbjenisbuku.TabIndex = 51;
             lbjenisbuku.Text = "Jenis Buku :";
             // 
             // lbstok
             // 
             lbstok.AutoSize = true;
-            lbstok.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbstok.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbstok.Location = new Point(319, 336);
             lbstok.Name = "lbstok";
-            lbstok.Size = new Size(66, 28);
+            lbstok.Size = new Size(69, 25);
             lbstok.TabIndex = 50;
             lbstok.Text = "Stok :";
             // 
             // lbpenulis
             // 
             lbpenulis.AutoSize = true;
-            lbpenulis.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbpenulis.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbpenulis.Location = new Point(319, 233);
             lbpenulis.Name = "lbpenulis";
-            lbpenulis.Size = new Size(91, 28);
+            lbpenulis.Size = new Size(96, 25);
             lbpenulis.TabIndex = 49;
             lbpenulis.Text = "Penulis :";
             // 
             // lbpenerbit
             // 
             lbpenerbit.AutoSize = true;
-            lbpenerbit.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbpenerbit.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbpenerbit.Location = new Point(319, 202);
             lbpenerbit.Name = "lbpenerbit";
-            lbpenerbit.Size = new Size(102, 28);
+            lbpenerbit.Size = new Size(105, 25);
             lbpenerbit.TabIndex = 48;
             lbpenerbit.Text = "Penerbit :";
             // 
             // lbtahunterbit
             // 
             lbtahunterbit.AutoSize = true;
-            lbtahunterbit.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbtahunterbit.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbtahunterbit.Location = new Point(320, 171);
             lbtahunterbit.Name = "lbtahunterbit";
-            lbtahunterbit.Size = new Size(145, 28);
+            lbtahunterbit.Size = new Size(155, 25);
             lbtahunterbit.TabIndex = 47;
             lbtahunterbit.Text = "Tahun Terbit : ";
             // 
             // lbisbnBuku
             // 
             lbisbnBuku.AutoSize = true;
-            lbisbnBuku.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbisbnBuku.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbisbnBuku.Location = new Point(319, 138);
             lbisbnBuku.Name = "lbisbnBuku";
-            lbisbnBuku.Size = new Size(70, 28);
+            lbisbnBuku.Size = new Size(75, 25);
             lbisbnBuku.TabIndex = 46;
             lbisbnBuku.Text = "ISBN :";
             // 
@@ -884,10 +884,10 @@ namespace Project_PBO_03
             // namabuku
             // 
             namabuku.AutoSize = true;
-            namabuku.Font = new Font("Nunito", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            namabuku.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             namabuku.Location = new Point(374, 81);
             namabuku.Name = "namabuku";
-            namabuku.Size = new Size(177, 41);
+            namabuku.Size = new Size(178, 36);
             namabuku.TabIndex = 43;
             namabuku.Text = "Nama Buku";
             // 
@@ -902,11 +902,11 @@ namespace Project_PBO_03
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Nunito", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.Black;
             label9.Location = new Point(23, 13);
             label9.Name = "label9";
-            label9.Size = new Size(182, 41);
+            label9.Size = new Size(178, 36);
             label9.TabIndex = 10;
             label9.Text = "Detail Buku";
             // 

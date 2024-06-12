@@ -377,7 +377,7 @@ namespace Project_PBO_03
             // 
             button1.BackColor = SystemColors.Highlight;
             button1.FlatStyle = FlatStyle.Popup;
-            button1.Font = new Font("Nunito ExtraBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.Black;
             button1.Location = new Point(1091, 76);
             button1.Name = "button1";
@@ -884,7 +884,7 @@ namespace Project_PBO_03
             label2.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(71, 552);
             label2.Name = "label2";
-            label2.Size = new Size(127, 28);
+            label2.Size = new Size(136, 25);
             label2.TabIndex = 15;
             label2.Text = "Tahun Terbit";
             // 
@@ -976,7 +976,6 @@ namespace Project_PBO_03
             btBooking1.TabIndex = 8;
             btBooking1.Text = "Booking";
             btBooking1.UseVisualStyleBackColor = false;
-            btBooking1.Click += button2_Click;
             // 
             // dgvBooking
             // 
@@ -990,10 +989,10 @@ namespace Project_PBO_03
             // label12
             // 
             label12.AutoSize = true;
-            label12.Font = new Font("Nunito Black", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label12.Location = new Point(23, 12);
             label12.Name = "label12";
-            label12.Size = new Size(152, 32);
+            label12.Size = new Size(157, 29);
             label12.TabIndex = 5;
             label12.Text = "Peminjaman";
             // 
@@ -1047,10 +1046,10 @@ namespace Project_PBO_03
             // label13
             // 
             label13.AutoSize = true;
-            label13.Font = new Font("Nunito Black", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label13.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label13.Location = new Point(23, 12);
             label13.Name = "label13";
-            label13.Size = new Size(152, 32);
+            label13.Size = new Size(157, 29);
             label13.TabIndex = 5;
             label13.Text = "Peminjaman";
             // 
@@ -1073,15 +1072,12 @@ namespace Project_PBO_03
             Controls.Add(pictureBoxVektoradmin);
             Controls.Add(pnlAdmin);
             Controls.Add(pnlPeminjamanAdmin1);
-            Controls.Add(pnlTambahBukuAdmin);
-            Controls.Add(pnlDaftarBukuAdmin);
-            Controls.Add(pnlPeminjaman2);
             Controls.Add(pnlPeminjaman1);
             Controls.Add(pnlRiwayatPeminjaman);
             Controls.Add(pnlProfileAdmin);
             Controls.Add(pnlTambahBukuAdmin);
-            Controls.Add(pnlTambahBukuAdmin);
-            Controls.Add(pnlTambahBukuAdmin);
+            Controls.Add(pnlDaftarBukuAdmin);
+            Controls.Add(pnlPeminjaman2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_Admin";
             Text = "V_Admin";

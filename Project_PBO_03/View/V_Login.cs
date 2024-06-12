@@ -18,6 +18,8 @@ namespace Project_PBO_03
     {
         public string username { get; set; }
 
+        
+
         public V_Login()
         {
 
@@ -163,14 +165,17 @@ namespace Project_PBO_03
 
                 if (dt.Rows.Count > 0)
                 {
-                    var Idadmin = Convert.ToInt32(dt.Rows[0]["idadmin"]);
-                    string usernameadmin= dt.Rows[0]["usrnmeadmin"].ToString();
-                    this.iduser = Idadmin;
-                    this.input = username_admin;
+                    this.pnlKodevAdmin.Show();
+                    this.pnlKodevAdmin.Dock = DockStyle.Left;
                     this.pnlMasuk.Hide();
-                    this.pnlAwal.Show();
-                    V_Admin admin = new V_Admin(input);
-                    admin.Show();
+                    if (tbKodevAdmin.Text == dt.Rows[0]["kodeverifikasi"].ToString())
+                    {
+                        var Idadmin = Convert.ToInt32(dt.Rows[0]["idadmin"]);
+                        string usernameadmin= dt.Rows[0]["usrnmeadmin"].ToString();
+                        this.pnlKodevAdmin.Show();
+                        V_Admin admin = new V_Admin(usernameadmin);
+                        admin.Show();
+                    }
                 }
                 else
                 {
@@ -186,13 +191,17 @@ namespace Project_PBO_03
 
         private void btSubmitAdmin_Click(object sender, EventArgs e)
         {
-            string kode_verif = "1234567890";
+            /*string kode_verif = "1234567890";*/
+            string username_admin = tbUsernameM.Text.Trim();
+            string pass_admin = tbPasswordD.Text.Trim();
+            DataTable dt = AdminContext.loginadmin(username_admin, pass_admin);
 
-            if (tbKodevAdmin.Text == kode_verif)
+            if (tbKodevAdmin.Text == dt.Rows[0]["kodeverifikasi"].ToString())
             {
                 tbKodevAdmin.Text = default;
                 this.pnlAwal.Show();
                 this.pnlKodevAdmin.Hide();
+                this.pnlMasuk.Hide();
                 V_Admin admin = new V_Admin(tbUsernameM.Text);
                 admin.Show();
             }
