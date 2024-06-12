@@ -14,8 +14,6 @@ namespace Project_PBO_03.Context
 {
     internal class PeminjamanBuku : DBconnection
     {
-        
-
         public static void create(m_PeminjamanBuku peminjamanBaru)
         {
             string query =  $"INSERT INTO peminjamanbuku (tglpengambilan, tglpengembalian, buku_isbn, pengguna_iduser, status_idstatus) " +

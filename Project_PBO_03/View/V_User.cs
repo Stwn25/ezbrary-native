@@ -34,6 +34,7 @@ namespace Project_PBO_03
         private string penulis1;
         private string posisiRak1;
         private string username1;
+        private string ulasanUser;
 
         public V_User(string input)
         {
@@ -237,6 +238,7 @@ namespace Project_PBO_03
 
                         this.pnlDetailBuku.Show();
                         UpdateDetail(isbn, Namabuku, sinopsis, thnterbit, namajenis, stokbuku, namapenerbit, namapenulis, posisirak, input);
+                        loadUlasan();
                     }
                 }
                 else
@@ -264,6 +266,7 @@ namespace Project_PBO_03
 
                         this.pnlDetailBuku.Show();
                         UpdateDetail(isbn, Namabuku, sinopsis, thnterbit, namajenis, stokbuku, namapenerbit, namapenulis, posisirak, input);
+                        loadUlasan();
                     }
                 }
 
@@ -353,8 +356,6 @@ namespace Project_PBO_03
                     this.pnlDetailBuku.Hide();
                     dgvPeminjamanUser.DataSource = BukuContext.buku();
 
-                    /*this.pnlDetailBuku.Show();
-                    UpdateDetail(isbn1, judul1, sinopsis1, thnTerbit1, jenis1, stok1, penerbit1, penulis1, posisiRak1, input);*/
                 }
             }
         }
@@ -499,4 +500,75 @@ namespace Project_PBO_03
             }
         }
     }
+
+        private void btBeriUlasan_Click(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrWhiteSpace(tbUlasan.Text))
+            {
+                MessageBox.Show("Masukkan ulasan!", "Pemberitahuan", MessageBoxButtons.OK);
+            }
+            else
+            {
+                m_UlasanBuku ulasanUser = new m_UlasanBuku()
+                {
+                    ulasan_buku = tbUlasan.Text,
+                    id_user = idpengguna,
+                    isbn = isbn1
+                };
+
+                UlasanContext.create(ulasanUser);
+                tbUlasan.Text = default;
+                loadUlasan();
+            };
+           
+
+        }
+
+        private void loadUlasan()
+        {
+            DataTable bukuData = UlasanContext.ulasanBuku(isbn1);
+            foreach (DataRow row in bukuData.Rows)
+            {
+                Panel panel = tambahPanelBuku(row);
+                this.flpUlasanBuku.Controls.Add(panel);
+                this.flpUlasanBuku.Controls.SetChildIndex(panel, 0);
+            }
+        }
+
+        private Panel tambahPanelBuku(DataRow row)
+        {
+            Panel panel = new Panel
+            {
+                Width = 600,
+                Height = 120,
+                BorderStyle = BorderStyle.FixedSingle,
+                Margin = new Padding(10),
+                Padding = new Padding(10)
+            };
+
+            string namauser = Convert.IsDBNull(row["namauser"]) ? "N/A" : row["namauser"].ToString();
+            string ulasan = Convert.IsDBNull(row["ulasan"]) ? "N/A" : row["ulasan"].ToString();
+            
+            Label labelNamaUser = new Label
+            {
+                Text = $"User: {namauser}",
+                AutoSize = true,
+                Location = new Point(30, 10)
+            };
+            Label labelUlasan = new Label
+            {
+                Text = $"Ulasan: {ulasan}",
+                AutoSize = true,
+                Location = new Point(30, 40)
+            };
+
+            panel.Controls.Add(labelNamaUser);  
+            panel.Controls.Add(labelUlasan);
+
+            return panel;
+        }
+
+
+        }
 }
