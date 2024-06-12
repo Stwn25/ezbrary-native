@@ -50,6 +50,13 @@ namespace Project_PBO_03
         {
             string Penerbit = tbNamaPenerbit.Text;
             string Alamat = tbAlamatPenerbit.Text;
+            // Pengecekan input kosong
+            if (string.IsNullOrWhiteSpace(tbNamaPenerbit.Text)||
+                string.IsNullOrWhiteSpace(tbAlamatPenerbit.Text))
+            {
+                MessageBox.Show("Tidak boleh ada yang kosong!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             m_Penerbit Penerbitnew = new m_Penerbit()
             {

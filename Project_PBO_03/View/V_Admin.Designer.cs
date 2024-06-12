@@ -46,9 +46,6 @@ namespace Project_PBO_03
             lblDaftarBuku = new Label();
             tbDaftarBukuAdmin = new TextBox();
             pnlDaftarBukuAdmin = new Panel();
-            ucPenulisTambahBukuAdmin2 = new ucPenulisTambahBukuAdmin();
-            ucPenerbitTambahBukuAdmin1 = new ucPenerbitTambahBukuAdmin();
-            ucJenisBukuTambahBukuAdmin1 = new ucJenisBukuTambahBukuAdmin();
             ucUpdateBuku1 = new View.ucUpdateBuku();
             cbJenisBukuAdmin = new ComboBox();
             button1 = new Button();
@@ -106,6 +103,9 @@ namespace Project_PBO_03
             btBooking1 = new Button();
             dgvBooking = new DataGridView();
             label12 = new Label();
+            ucPenulisTambahBukuAdmin2 = new ucPenulisTambahBukuAdmin();
+            ucPenerbitTambahBukuAdmin1 = new ucPenerbitTambahBukuAdmin();
+            ucJenisBukuTambahBukuAdmin1 = new ucJenisBukuTambahBukuAdmin();
             pnlPeminjaman2 = new Panel();
             btDipinjam2 = new Button();
             btBooking2 = new Button();
@@ -313,9 +313,6 @@ namespace Project_PBO_03
             // pnlDaftarBukuAdmin
             // 
             pnlDaftarBukuAdmin.BackColor = Color.White;
-            pnlDaftarBukuAdmin.Controls.Add(ucPenulisTambahBukuAdmin2);
-            pnlDaftarBukuAdmin.Controls.Add(ucPenerbitTambahBukuAdmin1);
-            pnlDaftarBukuAdmin.Controls.Add(ucJenisBukuTambahBukuAdmin1);
             pnlDaftarBukuAdmin.Controls.Add(ucUpdateBuku1);
             pnlDaftarBukuAdmin.Controls.Add(cbJenisBukuAdmin);
             pnlDaftarBukuAdmin.Controls.Add(button1);
@@ -330,33 +327,6 @@ namespace Project_PBO_03
             pnlDaftarBukuAdmin.Name = "pnlDaftarBukuAdmin";
             pnlDaftarBukuAdmin.Size = new Size(1507, 805);
             pnlDaftarBukuAdmin.TabIndex = 7;
-            // 
-            // ucPenulisTambahBukuAdmin2
-            // 
-            ucPenulisTambahBukuAdmin2.BackColor = Color.White;
-            ucPenulisTambahBukuAdmin2.BorderStyle = BorderStyle.FixedSingle;
-            ucPenulisTambahBukuAdmin2.Location = new Point(429, 45);
-            ucPenulisTambahBukuAdmin2.Name = "ucPenulisTambahBukuAdmin2";
-            ucPenulisTambahBukuAdmin2.Size = new Size(498, 729);
-            ucPenulisTambahBukuAdmin2.TabIndex = 21;
-            // 
-            // ucPenerbitTambahBukuAdmin1
-            // 
-            ucPenerbitTambahBukuAdmin1.BackColor = Color.White;
-            ucPenerbitTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
-            ucPenerbitTambahBukuAdmin1.Location = new Point(425, 17);
-            ucPenerbitTambahBukuAdmin1.Name = "ucPenerbitTambahBukuAdmin1";
-            ucPenerbitTambahBukuAdmin1.Size = new Size(502, 808);
-            ucPenerbitTambahBukuAdmin1.TabIndex = 20;
-            // 
-            // ucJenisBukuTambahBukuAdmin1
-            // 
-            ucJenisBukuTambahBukuAdmin1.BackColor = Color.White;
-            ucJenisBukuTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
-            ucJenisBukuTambahBukuAdmin1.Location = new Point(463, 8);
-            ucJenisBukuTambahBukuAdmin1.Name = "ucJenisBukuTambahBukuAdmin1";
-            ucJenisBukuTambahBukuAdmin1.Size = new Size(495, 726);
-            ucJenisBukuTambahBukuAdmin1.TabIndex = 19;
             // 
             // ucUpdateBuku1
             // 
@@ -751,7 +721,7 @@ namespace Project_PBO_03
             tbPosisiRak.Location = new Point(786, 590);
             tbPosisiRak.Margin = new Padding(3, 4, 3, 4);
             tbPosisiRak.Name = "tbPosisiRak";
-            tbPosisiRak.Size = new Size(284, 24);
+            tbPosisiRak.Size = new Size(284, 28);
             tbPosisiRak.TabIndex = 32;
             // 
             // label11
@@ -760,7 +730,7 @@ namespace Project_PBO_03
             label11.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label11.Location = new Point(786, 549);
             label11.Name = "label11";
-            label11.Size = new Size(113, 25);
+            label11.Size = new Size(106, 28);
             label11.TabIndex = 31;
             label11.Text = "Posisi Rak";
             // 
@@ -771,7 +741,7 @@ namespace Project_PBO_03
             tbStokBuku.Location = new Point(786, 127);
             tbStokBuku.Margin = new Padding(3, 4, 3, 4);
             tbStokBuku.Name = "tbStokBuku";
-            tbStokBuku.Size = new Size(284, 24);
+            tbStokBuku.Size = new Size(284, 28);
             tbStokBuku.TabIndex = 30;
             // 
             // label10
@@ -780,7 +750,7 @@ namespace Project_PBO_03
             label10.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.Location = new Point(786, 86);
             label10.Name = "label10";
-            label10.Size = new Size(111, 25);
+            label10.Size = new Size(103, 28);
             label10.TabIndex = 29;
             label10.Text = "Stok Buku";
             // 
@@ -792,7 +762,7 @@ namespace Project_PBO_03
             tbISBN.Margin = new Padding(3, 4, 3, 4);
             tbISBN.MaxLength = 20;
             tbISBN.Name = "tbISBN";
-            tbISBN.Size = new Size(618, 28);
+            tbISBN.Size = new Size(618, 24);
             tbISBN.TabIndex = 28;
             // 
             // label9
@@ -832,7 +802,7 @@ namespace Project_PBO_03
             tbNamaBuku.Location = new Point(68, 232);
             tbNamaBuku.Margin = new Padding(3, 4, 3, 4);
             tbNamaBuku.Name = "tbNamaBuku";
-            tbNamaBuku.Size = new Size(619, 28);
+            tbNamaBuku.Size = new Size(619, 24);
             tbNamaBuku.TabIndex = 24;
             // 
             // cbJenisBuku
@@ -889,7 +859,7 @@ namespace Project_PBO_03
             label8.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.Location = new Point(786, 448);
             label8.Name = "label8";
-            label8.Size = new Size(119, 25);
+            label8.Size = new Size(108, 28);
             label8.TabIndex = 17;
             label8.Text = "Jenis Buku";
             // 
@@ -909,7 +879,7 @@ namespace Project_PBO_03
             label3.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(786, 187);
             label3.Name = "label3";
-            label3.Size = new Size(92, 25);
+            label3.Size = new Size(90, 28);
             label3.TabIndex = 13;
             label3.Text = "Penerbit";
             label3.Click += label3_Click;
@@ -920,7 +890,7 @@ namespace Project_PBO_03
             label4.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.Location = new Point(786, 325);
             label4.Name = "label4";
-            label4.Size = new Size(83, 25);
+            label4.Size = new Size(80, 28);
             label4.TabIndex = 11;
             label4.Text = "Penulis";
             // 
@@ -1011,6 +981,33 @@ namespace Project_PBO_03
             label12.TabIndex = 5;
             label12.Text = "Peminjaman";
             // 
+            // ucPenulisTambahBukuAdmin2
+            // 
+            ucPenulisTambahBukuAdmin2.BackColor = Color.White;
+            ucPenulisTambahBukuAdmin2.BorderStyle = BorderStyle.FixedSingle;
+            ucPenulisTambahBukuAdmin2.Location = new Point(825, 256);
+            ucPenulisTambahBukuAdmin2.Name = "ucPenulisTambahBukuAdmin2";
+            ucPenulisTambahBukuAdmin2.Size = new Size(502, 729);
+            ucPenulisTambahBukuAdmin2.TabIndex = 12;
+            // 
+            // ucPenerbitTambahBukuAdmin1
+            // 
+            ucPenerbitTambahBukuAdmin1.BackColor = Color.White;
+            ucPenerbitTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
+            ucPenerbitTambahBukuAdmin1.Location = new Point(696, 212);
+            ucPenerbitTambahBukuAdmin1.Name = "ucPenerbitTambahBukuAdmin1";
+            ucPenerbitTambahBukuAdmin1.Size = new Size(497, 808);
+            ucPenerbitTambahBukuAdmin1.TabIndex = 11;
+            // 
+            // ucJenisBukuTambahBukuAdmin1
+            // 
+            ucJenisBukuTambahBukuAdmin1.BackColor = Color.White;
+            ucJenisBukuTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
+            ucJenisBukuTambahBukuAdmin1.Location = new Point(868, 202);
+            ucJenisBukuTambahBukuAdmin1.Name = "ucJenisBukuTambahBukuAdmin1";
+            ucJenisBukuTambahBukuAdmin1.Size = new Size(497, 726);
+            ucJenisBukuTambahBukuAdmin1.TabIndex = 10;
+            // 
             // pnlPeminjaman2
             // 
             pnlPeminjaman2.Controls.Add(btDipinjam2);
@@ -1080,6 +1077,9 @@ namespace Project_PBO_03
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1920, 1080);
+            Controls.Add(ucPenerbitTambahBukuAdmin1);
+            Controls.Add(ucPenulisTambahBukuAdmin2);
+            Controls.Add(ucJenisBukuTambahBukuAdmin1);
             Controls.Add(nightControlBox1);
             Controls.Add(lblhai1Admin);
             Controls.Add(lblhaiAdmin);
@@ -1224,7 +1224,9 @@ namespace Project_PBO_03
         private Panel pnlPeminjamanAdmin1;
         private ucPenulisTambahBukuAdmin ucPenulisTambahBukuAdmin2;
         private ucPenerbitTambahBukuAdmin ucPenerbitTambahBukuAdmin1;
-        private ucJenisBukuTambahBukuAdmin ucJenisBukuTambahBukuAdmin1;
+        
         private Button button2;
+        private ucJenisBukuTambahBukuAdmin ucJenisBukuTambahBukuAdmin1;
+       
     }
 }
