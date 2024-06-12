@@ -102,6 +102,7 @@ namespace Project_PBO_03
             btDipinjam1 = new Button();
             btBooking1 = new Button();
             dgvBooking = new DataGridView();
+            acceptButton = new DataGridViewButtonColumn();
             label12 = new Label();
             pnlPeminjaman2 = new Panel();
             btDipinjam2 = new Button();
@@ -112,7 +113,6 @@ namespace Project_PBO_03
             ucJenisBukuTambahBukuAdmin1 = new ucJenisBukuTambahBukuAdmin();
             ucPenerbitTambahBukuAdmin1 = new ucPenerbitTambahBukuAdmin();
             ucPenulisTambahBukuAdmin2 = new ucPenulisTambahBukuAdmin();
-            acceptButton = new DataGridViewButtonColumn();
             pnlAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxVektoradmin).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPerpusAdmin).BeginInit();
@@ -983,6 +983,15 @@ namespace Project_PBO_03
             dgvBooking.Size = new Size(1461, 656);
             dgvBooking.TabIndex = 7;
             // 
+            // acceptButton
+            // 
+            acceptButton.HeaderText = "Accept";
+            acceptButton.MinimumWidth = 6;
+            acceptButton.Name = "acceptButton";
+            acceptButton.ReadOnly = true;
+            acceptButton.Text = "Accept";
+            acceptButton.UseColumnTextForButtonValue = true;
+            // 
             // label12
             // 
             label12.AutoSize = true;
@@ -1062,43 +1071,34 @@ namespace Project_PBO_03
             // 
             ucJenisBukuTambahBukuAdmin1.BackColor = Color.White;
             ucJenisBukuTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
-            ucJenisBukuTambahBukuAdmin1.Location = new Point(917, 247);
+            ucJenisBukuTambahBukuAdmin1.Location = new Point(629, 191);
             ucJenisBukuTambahBukuAdmin1.Name = "ucJenisBukuTambahBukuAdmin1";
-            ucJenisBukuTambahBukuAdmin1.Size = new Size(496, 584);
-            ucJenisBukuTambahBukuAdmin1.TabIndex = 19;
+            ucJenisBukuTambahBukuAdmin1.Size = new Size(494, 726);
+            ucJenisBukuTambahBukuAdmin1.TabIndex = 10;
             // 
             // ucPenerbitTambahBukuAdmin1
             // 
             ucPenerbitTambahBukuAdmin1.BackColor = Color.White;
             ucPenerbitTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
-            ucPenerbitTambahBukuAdmin1.Location = new Point(915, 258);
+            ucPenerbitTambahBukuAdmin1.Location = new Point(882, 212);
             ucPenerbitTambahBukuAdmin1.Name = "ucPenerbitTambahBukuAdmin1";
-            ucPenerbitTambahBukuAdmin1.Size = new Size(498, 642);
-            ucPenerbitTambahBukuAdmin1.TabIndex = 20;
+            ucPenerbitTambahBukuAdmin1.Size = new Size(499, 808);
+            ucPenerbitTambahBukuAdmin1.TabIndex = 10;
             // 
             // ucPenulisTambahBukuAdmin2
             // 
             ucPenulisTambahBukuAdmin2.BackColor = Color.White;
             ucPenulisTambahBukuAdmin2.BorderStyle = BorderStyle.FixedSingle;
-            ucPenulisTambahBukuAdmin2.Location = new Point(917, 274);
+            ucPenulisTambahBukuAdmin2.Location = new Point(1001, 234);
             ucPenulisTambahBukuAdmin2.Name = "ucPenulisTambahBukuAdmin2";
-            ucPenulisTambahBukuAdmin2.Size = new Size(499, 568);
-            ucPenulisTambahBukuAdmin2.TabIndex = 21;
-            // 
-            // acceptButton
-            // 
-            acceptButton.HeaderText = "Accept";
-            acceptButton.MinimumWidth = 6;
-            acceptButton.Name = "acceptButton";
-            acceptButton.Text = "Accept";
-            acceptButton.UseColumnTextForButtonValue = true;
+            ucPenulisTambahBukuAdmin2.Size = new Size(501, 729);
+            ucPenulisTambahBukuAdmin2.TabIndex = 10;
             // 
             // V_Admin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1920, 1080);
-            Controls.Add(ucUpdateBuku1);
             Controls.Add(ucPenulisTambahBukuAdmin2);
             Controls.Add(ucPenerbitTambahBukuAdmin1);
             Controls.Add(ucJenisBukuTambahBukuAdmin1);
@@ -1109,12 +1109,13 @@ namespace Project_PBO_03
             Controls.Add(pictureBoxVektoradmin);
             Controls.Add(pnlAdmin);
             Controls.Add(pnlPeminjamanAdmin1);
-            Controls.Add(pnlPeminjaman1);
+            Controls.Add(ucUpdateBuku1);
             Controls.Add(pnlRiwayatPeminjaman);
             Controls.Add(pnlProfileAdmin);
             Controls.Add(pnlTambahBukuAdmin);
             Controls.Add(pnlDaftarBukuAdmin);
             Controls.Add(pnlPeminjaman2);
+            Controls.Add(pnlPeminjaman1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_Admin";
             Text = "V_Admin";
@@ -1248,5 +1249,6 @@ namespace Project_PBO_03
         private View.ucUpdateBuku ucUpdateBuku1;
         private ucJenisBukuTambahBukuAdmin ucJenisBukuTambahBukuAdmin1;
         private DataGridViewButtonColumn acceptButton;
+        private ucPenulisTambahBukuAdmin ucPenulisTambahBukuAdmin2;
     }
 }
