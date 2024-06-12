@@ -102,6 +102,7 @@ namespace Project_PBO_03
             btDipinjam1 = new Button();
             btBooking1 = new Button();
             dgvBooking = new DataGridView();
+            acceptButton = new DataGridViewButtonColumn();
             label12 = new Label();
             pnlPeminjaman2 = new Panel();
             btDipinjam2 = new Button();
@@ -112,7 +113,6 @@ namespace Project_PBO_03
             ucJenisBukuTambahBukuAdmin1 = new ucJenisBukuTambahBukuAdmin();
             ucPenerbitTambahBukuAdmin1 = new ucPenerbitTambahBukuAdmin();
             ucPenulisTambahBukuAdmin2 = new ucPenulisTambahBukuAdmin();
-            acceptButton = new DataGridViewButtonColumn();
             pnlAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxVektoradmin).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPerpusAdmin).BeginInit();
@@ -976,6 +976,14 @@ namespace Project_PBO_03
             dgvBooking.Size = new Size(1461, 656);
             dgvBooking.TabIndex = 7;
             // 
+            // acceptButton
+            // 
+            acceptButton.HeaderText = "Accept";
+            acceptButton.MinimumWidth = 6;
+            acceptButton.Name = "acceptButton";
+            acceptButton.Text = "Accept";
+            acceptButton.UseColumnTextForButtonValue = true;
+            // 
             // label12
             // 
             label12.AutoSize = true;
@@ -1076,14 +1084,6 @@ namespace Project_PBO_03
             ucPenulisTambahBukuAdmin2.Name = "ucPenulisTambahBukuAdmin2";
             ucPenulisTambahBukuAdmin2.Size = new Size(499, 568);
             ucPenulisTambahBukuAdmin2.TabIndex = 21;
-            // 
-            // acceptButton
-            // 
-            acceptButton.HeaderText = "Accept";
-            acceptButton.MinimumWidth = 6;
-            acceptButton.Name = "acceptButton";
-            acceptButton.Text = "Accept";
-            acceptButton.UseColumnTextForButtonValue = true;
             // 
             // V_Admin
             // 

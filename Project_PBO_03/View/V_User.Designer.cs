@@ -72,6 +72,7 @@ namespace Project_PBO_03
             label3 = new Label();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             pnlDetailBuku = new Panel();
+            btBeriUlasan = new PictureBox();
             label13 = new Label();
             pbStarKosong = new PictureBox();
             isbnBuku = new Label();
@@ -81,8 +82,8 @@ namespace Project_PBO_03
             btBookingBuku = new Button();
             label11 = new Label();
             pictureBox3 = new PictureBox();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            materialMultiLineTextBoxEdit1 = new ReaLTaiizor.Controls.MaterialMultiLineTextBoxEdit();
+            flpUlasanBuku = new FlowLayoutPanel();
+            tbUlasan = new ReaLTaiizor.Controls.MaterialMultiLineTextBoxEdit();
             tbSinopsis = new TextBox();
             label10 = new Label();
             pbStarKuning = new PictureBox();
@@ -116,6 +117,7 @@ namespace Project_PBO_03
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             pnlProfileUser.SuspendLayout();
             pnlDetailBuku.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btBeriUlasan).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbStarKosong).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbStarKuning).BeginInit();
@@ -651,6 +653,7 @@ namespace Project_PBO_03
             // pnlDetailBuku
             // 
             pnlDetailBuku.BackColor = Color.White;
+            pnlDetailBuku.Controls.Add(btBeriUlasan);
             pnlDetailBuku.Controls.Add(label13);
             pnlDetailBuku.Controls.Add(pbStarKosong);
             pnlDetailBuku.Controls.Add(isbnBuku);
@@ -660,8 +663,8 @@ namespace Project_PBO_03
             pnlDetailBuku.Controls.Add(btBookingBuku);
             pnlDetailBuku.Controls.Add(label11);
             pnlDetailBuku.Controls.Add(pictureBox3);
-            pnlDetailBuku.Controls.Add(flowLayoutPanel1);
-            pnlDetailBuku.Controls.Add(materialMultiLineTextBoxEdit1);
+            pnlDetailBuku.Controls.Add(flpUlasanBuku);
+            pnlDetailBuku.Controls.Add(tbUlasan);
             pnlDetailBuku.Controls.Add(tbSinopsis);
             pnlDetailBuku.Controls.Add(label10);
             pnlDetailBuku.Controls.Add(pbStarKuning);
@@ -682,13 +685,25 @@ namespace Project_PBO_03
             pnlDetailBuku.TabIndex = 16;
             pnlDetailBuku.Paint += pnlDetailBuku_Paint;
             // 
+            // btBeriUlasan
+            // 
+            btBeriUlasan.Cursor = Cursors.Hand;
+            btBeriUlasan.Image = Properties.Resources.arrow_right;
+            btBeriUlasan.Location = new Point(684, 725);
+            btBeriUlasan.Name = "btBeriUlasan";
+            btBeriUlasan.Size = new Size(54, 36);
+            btBeriUlasan.SizeMode = PictureBoxSizeMode.Zoom;
+            btBeriUlasan.TabIndex = 65;
+            btBeriUlasan.TabStop = false;
+            btBeriUlasan.Click += btBeriUlasan_Click;
+            // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Font = new Font("Nunito", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label13.Location = new Point(788, 274);
+            label13.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label13.Location = new Point(788, 257);
             label13.Name = "label13";
-            label13.Size = new Size(143, 32);
+            label13.Size = new Size(126, 28);
             label13.TabIndex = 60;
             label13.Text = "Ulasan User";
             // 
@@ -762,57 +777,58 @@ namespace Project_PBO_03
             // label11
             // 
             label11.AutoSize = true;
-            label11.Font = new Font("Nunito", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(81, 548);
+            label11.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.Location = new Point(75, 560);
             label11.Name = "label11";
-            label11.Size = new Size(137, 32);
+            label11.Size = new Size(120, 28);
             label11.TabIndex = 59;
             label11.Text = "Beri Ulasan";
             // 
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.mail;
-            pictureBox3.Location = new Point(44, 548);
+            pictureBox3.Location = new Point(44, 559);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(29, 32);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 58;
             pictureBox3.TabStop = false;
             // 
-            // flowLayoutPanel1
+            // flpUlasanBuku
             // 
-            flowLayoutPanel1.BackColor = SystemColors.Control;
-            flowLayoutPanel1.BorderStyle = BorderStyle.FixedSingle;
-            flowLayoutPanel1.Location = new Point(788, 323);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(652, 438);
-            flowLayoutPanel1.TabIndex = 57;
+            flpUlasanBuku.AutoScroll = true;
+            flpUlasanBuku.BackColor = SystemColors.Control;
+            flpUlasanBuku.BorderStyle = BorderStyle.FixedSingle;
+            flpUlasanBuku.Location = new Point(788, 288);
+            flpUlasanBuku.Name = "flpUlasanBuku";
+            flpUlasanBuku.Size = new Size(652, 473);
+            flpUlasanBuku.TabIndex = 57;
             // 
-            // materialMultiLineTextBoxEdit1
+            // tbUlasan
             // 
-            materialMultiLineTextBoxEdit1.AnimateReadOnly = false;
-            materialMultiLineTextBoxEdit1.BackgroundImageLayout = ImageLayout.None;
-            materialMultiLineTextBoxEdit1.CharacterCasing = CharacterCasing.Normal;
-            materialMultiLineTextBoxEdit1.Cursor = Cursors.IBeam;
-            materialMultiLineTextBoxEdit1.Depth = 0;
-            materialMultiLineTextBoxEdit1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            materialMultiLineTextBoxEdit1.HideSelection = true;
-            materialMultiLineTextBoxEdit1.Location = new Point(45, 597);
-            materialMultiLineTextBoxEdit1.MaxLength = 32767;
-            materialMultiLineTextBoxEdit1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            materialMultiLineTextBoxEdit1.Name = "materialMultiLineTextBoxEdit1";
-            materialMultiLineTextBoxEdit1.PasswordChar = '\0';
-            materialMultiLineTextBoxEdit1.ReadOnly = false;
-            materialMultiLineTextBoxEdit1.ScrollBars = ScrollBars.None;
-            materialMultiLineTextBoxEdit1.SelectedText = "";
-            materialMultiLineTextBoxEdit1.SelectionLength = 0;
-            materialMultiLineTextBoxEdit1.SelectionStart = 0;
-            materialMultiLineTextBoxEdit1.ShortcutsEnabled = true;
-            materialMultiLineTextBoxEdit1.Size = new Size(633, 164);
-            materialMultiLineTextBoxEdit1.TabIndex = 56;
-            materialMultiLineTextBoxEdit1.TabStop = false;
-            materialMultiLineTextBoxEdit1.TextAlign = HorizontalAlignment.Left;
-            materialMultiLineTextBoxEdit1.UseSystemPasswordChar = false;
+            tbUlasan.AnimateReadOnly = false;
+            tbUlasan.BackgroundImageLayout = ImageLayout.None;
+            tbUlasan.CharacterCasing = CharacterCasing.Normal;
+            tbUlasan.Cursor = Cursors.IBeam;
+            tbUlasan.Depth = 0;
+            tbUlasan.Font = new Font("Nunito", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbUlasan.HideSelection = true;
+            tbUlasan.Location = new Point(45, 597);
+            tbUlasan.MaxLength = 32767;
+            tbUlasan.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            tbUlasan.Name = "tbUlasan";
+            tbUlasan.PasswordChar = '\0';
+            tbUlasan.ReadOnly = false;
+            tbUlasan.ScrollBars = ScrollBars.None;
+            tbUlasan.SelectedText = "";
+            tbUlasan.SelectionLength = 0;
+            tbUlasan.SelectionStart = 0;
+            tbUlasan.ShortcutsEnabled = true;
+            tbUlasan.Size = new Size(633, 164);
+            tbUlasan.TabIndex = 56;
+            tbUlasan.TabStop = false;
+            tbUlasan.TextAlign = HorizontalAlignment.Left;
+            tbUlasan.UseSystemPasswordChar = false;
             // 
             // tbSinopsis
             // 
@@ -831,7 +847,7 @@ namespace Project_PBO_03
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(45, 369);
+            label10.Location = new Point(45, 379);
             label10.Name = "label10";
             label10.Size = new Size(101, 28);
             label10.TabIndex = 54;
@@ -1062,12 +1078,12 @@ namespace Project_PBO_03
             Controls.Add(lblHaiUser);
             Controls.Add(pictureBoxPerpusUser);
             Controls.Add(pnlUser);
+            Controls.Add(pnlDetailBuku);
+            Controls.Add(pnlPeminjamanUser2);
             Controls.Add(pnlPeminjamanUser);
             Controls.Add(pnlProfileUser);
             Controls.Add(pnlRiwayatUser);
             Controls.Add(pnlBukuFavUser);
-            Controls.Add(pnlDetailBuku);
-            Controls.Add(pnlPeminjamanUser2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_User";
             Text = "V_User";
@@ -1089,6 +1105,7 @@ namespace Project_PBO_03
             pnlProfileUser.PerformLayout();
             pnlDetailBuku.ResumeLayout(false);
             pnlDetailBuku.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)btBeriUlasan).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbStarKosong).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbStarKuning).EndInit();
@@ -1198,8 +1215,8 @@ namespace Project_PBO_03
         private Label namabuku;
         private TextBox tbSinopsis;
         private Label label10;
-        private ReaLTaiizor.Controls.MaterialMultiLineTextBoxEdit materialMultiLineTextBoxEdit1;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private ReaLTaiizor.Controls.MaterialMultiLineTextBoxEdit tbUlasan;
+        private FlowLayoutPanel flpUlasanBuku;
         private Label label11;
         private PictureBox pictureBox3;
         private Label label12;
@@ -1219,5 +1236,6 @@ namespace Project_PBO_03
         private Label label15;
         private Label label14;
         private DataGridView dataGridView3;
+        private PictureBox btBeriUlasan;
     }
 }
