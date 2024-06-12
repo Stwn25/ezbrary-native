@@ -127,7 +127,8 @@ namespace Project_PBO_03
             this.pnlPeminjamanAdmin1.Hide();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Show();
-
+            this.pnlPeminjaman1.Hide();
+            this.pnlPeminjaman2.Hide();
         }
 
         private void btRiwayatPeminjaman_Click(object sender, EventArgs e)
@@ -198,18 +199,23 @@ namespace Project_PBO_03
             this.pnlPeminjamanAdmin1.Hide();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Hide();
+            this.pnlPeminjaman1.Hide();
+            this.pnlPeminjaman2.Hide();
 
             cbPenerbit.DataSource = PenerbitContext.comboBox();
             cbPenerbit.DisplayMember = "namapenerbit";
             cbPenerbit.ValueMember = "idpenerbit";
+            cbPenerbit.Text = default;
 
             cbPenulis.DataSource = PenulisContext.all();
             cbPenulis.DisplayMember = "namapenulis";
             cbPenulis.ValueMember = "idpenulis";
+            cbPenulis.Text = default;
 
             cbJenisBuku.DataSource = JenisBukuContext.all();
             cbJenisBuku.DisplayMember = "namajenis";
             cbJenisBuku.ValueMember = "idjenis";
+            cbJenisBuku.Text = default;
         }
 
 

@@ -15,25 +15,14 @@ namespace Project_PBO_03.Context
     {
         private static string table = "buku";
       
-        public static void bukufavorit(m_BukuFavorit bukufavorite)
-        {
-            string query = $"INSERT INTO bukufavorite (buku_isbn, pengguna_iduser) VALUES (@isbn, @namabuku, @sinopsis, @tahunterbit, @jenisbuku, @stokbuku, @penerbit, @penulis, @posisirak)";
-            NpgsqlParameter[] parameters =
-            {
-                new NpgsqlParameter ("@isbn", NpgsqlDbType.Varchar){Value = bukufavorite.isbn_buku},
-                new NpgsqlParameter ("@namabuku", NpgsqlDbType.Varchar){Value=bukufavorite.id_pengguna},
-              
-
-            };
-            commandExecutor(query, parameters);
-        }
         public static DataTable buku()
         {
             string query = $"select b.namabuku, b.isbn, b.posisirak, jb.namajenis, b.stokbuku" +
                            $"\r\nfrom buku b join jenisbuku jb \r\nON jb.idjenis = b.jenisbuku_idjenis" +
                            $"\r\njoin penulis ps \r\nON ps.idpenulis = b.penulis_idpenulis" +
                            $"\r\njoin penerbit pt\r\nON pt.idpenerbit = b.penerbit_idpenerbit " +
-                           $"join statusbuku sb on sb.idstatusbuku = b.statusbuku_idstatusbuku where b.statusbuku_idstatusbuku = 1";
+                           $"join statusbuku sb on sb.idstatusbuku = b.statusbuku_idstatusbuku " +
+                           $"where b.statusbuku_idstatusbuku = 1";
             DataTable dataBuku = queryExecutor(query);
             return dataBuku;
         }
@@ -96,7 +85,7 @@ namespace Project_PBO_03.Context
             return dataBuku;
         }
 
-
+        /*public static DataTable*/
 
         public static DataTable showBySearch(string pencarian)
         {
