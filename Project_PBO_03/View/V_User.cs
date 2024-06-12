@@ -47,6 +47,7 @@ namespace Project_PBO_03
             btKeluarUser.BackColor = Color.CornflowerBlue;
 
             this.pnlPeminjamanUser.Show();
+            this.pnlPeminjamanUser2.Hide();
             this.pnlBukuFavUser.Hide();
             this.pnlRiwayatUser.Hide();
             this.pnlProfileUser.Hide();
@@ -105,6 +106,7 @@ namespace Project_PBO_03
             btProfileUser.BackColor = Color.CornflowerBlue;
             btKeluarUser.BackColor = Color.CornflowerBlue;
             this.pnlPeminjamanUser.Hide();
+            this.pnlPeminjamanUser2.Hide();
             this.pnlBukuFavUser.Show();
             this.pnlRiwayatUser.Hide();
             this.pnlProfileUser.Hide();
@@ -119,6 +121,7 @@ namespace Project_PBO_03
             btProfileUser.BackColor = Color.CornflowerBlue;
             btKeluarUser.BackColor = Color.CornflowerBlue;
             this.pnlPeminjamanUser.Hide();
+            this.pnlPeminjamanUser2.Hide();
             this.pnlBukuFavUser.Hide();
             this.pnlRiwayatUser.Show();
             this.pnlProfileUser.Hide();
@@ -132,6 +135,7 @@ namespace Project_PBO_03
             btProfileUser.BackColor = Color.Black;
             btKeluarUser.BackColor = Color.CornflowerBlue;
             this.pnlPeminjamanUser.Hide();
+            this.pnlPeminjamanUser2.Hide();
             this.pnlBukuFavUser.Hide();
             this.pnlRiwayatUser.Hide();
             this.pnlProfileUser.Show();
@@ -260,7 +264,7 @@ namespace Project_PBO_03
                     }
                 }
 
-                
+
             }
         }
 
@@ -437,6 +441,18 @@ namespace Project_PBO_03
             };
 
             BukuFavoritContext.deleteBukuFavorit(isbn1, idpengguna);
+        }
+
+        private void btDipinjam1_Click(object sender, EventArgs e)
+        {
+            this.pnlPeminjamanUser.Hide();
+            this.pnlPeminjamanUser2.Show();
+        }
+
+        private void btDaftarUser2_Click(object sender, EventArgs e)
+        {
+            this.pnlPeminjamanUser.Show();
+            this.pnlPeminjamanUser2.Hide();
         }
     }
 }

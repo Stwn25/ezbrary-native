@@ -43,13 +43,14 @@ namespace Project_PBO_03
             lblHaiUser = new Label();
             lblHai1User = new Label();
             pnlPeminjamanUser = new Panel();
+            btDipinjam1 = new Button();
+            btDaftarUser1 = new Button();
             panel1 = new Panel();
             button1 = new Button();
             cbJenis = new ReaLTaiizor.Controls.DungeonComboBox();
             tbPeminjamanUser = new TextBox();
             dgvPeminjamanUser = new DataGridView();
             detailBuku = new DataGridViewButtonColumn();
-            lblPeminjamanUser = new Label();
             pnlBukuFavUser = new Panel();
             dataGridView1 = new DataGridView();
             label1 = new Label();
@@ -71,6 +72,7 @@ namespace Project_PBO_03
             label3 = new Label();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             pnlDetailBuku = new Panel();
+            label13 = new Label();
             pbStarKosong = new PictureBox();
             isbnBuku = new Label();
             btkeluar = new Button();
@@ -95,6 +97,14 @@ namespace Project_PBO_03
             namabuku = new Label();
             panel3 = new Panel();
             label9 = new Label();
+            pnlPeminjamanUser2 = new Panel();
+            label15 = new Label();
+            label14 = new Label();
+            dataGridView3 = new DataGridView();
+            dgvSedangBooking = new DataGridView();
+            btDipinjam2 = new Button();
+            btDaftarUser2 = new Button();
+            panel4 = new Panel();
             pnlUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxVectorUser).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPerpusUser).BeginInit();
@@ -110,6 +120,9 @@ namespace Project_PBO_03
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbStarKuning).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            pnlPeminjamanUser2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSedangBooking).BeginInit();
             SuspendLayout();
             // 
             // pnlUser
@@ -273,17 +286,46 @@ namespace Project_PBO_03
             // 
             // pnlPeminjamanUser
             // 
+            pnlPeminjamanUser.BackColor = Color.White;
+            pnlPeminjamanUser.Controls.Add(btDipinjam1);
+            pnlPeminjamanUser.Controls.Add(btDaftarUser1);
             pnlPeminjamanUser.Controls.Add(panel1);
             pnlPeminjamanUser.Controls.Add(button1);
             pnlPeminjamanUser.Controls.Add(cbJenis);
             pnlPeminjamanUser.Controls.Add(tbPeminjamanUser);
             pnlPeminjamanUser.Controls.Add(dgvPeminjamanUser);
-            pnlPeminjamanUser.Controls.Add(lblPeminjamanUser);
             pnlPeminjamanUser.Location = new Point(416, 275);
             pnlPeminjamanUser.Name = "pnlPeminjamanUser";
             pnlPeminjamanUser.Size = new Size(1507, 805);
             pnlPeminjamanUser.TabIndex = 9;
             pnlPeminjamanUser.Paint += pnlPeminjamanUser_Paint_1;
+            // 
+            // btDipinjam1
+            // 
+            btDipinjam1.BackColor = Color.CornflowerBlue;
+            btDipinjam1.FlatStyle = FlatStyle.Popup;
+            btDipinjam1.Font = new Font("Nunito", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btDipinjam1.ForeColor = Color.White;
+            btDipinjam1.Location = new Point(142, 25);
+            btDipinjam1.Name = "btDipinjam1";
+            btDipinjam1.Size = new Size(120, 37);
+            btDipinjam1.TabIndex = 17;
+            btDipinjam1.Text = "Peminjaman";
+            btDipinjam1.UseVisualStyleBackColor = false;
+            btDipinjam1.Click += btDipinjam1_Click;
+            // 
+            // btDaftarUser1
+            // 
+            btDaftarUser1.BackColor = Color.Black;
+            btDaftarUser1.FlatStyle = FlatStyle.Popup;
+            btDaftarUser1.Font = new Font("Nunito", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btDaftarUser1.ForeColor = Color.White;
+            btDaftarUser1.Location = new Point(22, 25);
+            btDaftarUser1.Name = "btDaftarUser1";
+            btDaftarUser1.Size = new Size(120, 37);
+            btDaftarUser1.TabIndex = 16;
+            btDaftarUser1.Text = "Daftar Buku";
+            btDaftarUser1.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
@@ -339,7 +381,7 @@ namespace Project_PBO_03
             tbPeminjamanUser.BackColor = Color.White;
             tbPeminjamanUser.BorderStyle = BorderStyle.FixedSingle;
             tbPeminjamanUser.Cursor = Cursors.IBeam;
-            tbPeminjamanUser.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbPeminjamanUser.Font = new Font("Nunito", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbPeminjamanUser.Location = new Point(377, 72);
             tbPeminjamanUser.Multiline = true;
             tbPeminjamanUser.Name = "tbPeminjamanUser";
@@ -350,6 +392,7 @@ namespace Project_PBO_03
             // dgvPeminjamanUser
             // 
             dgvPeminjamanUser.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvPeminjamanUser.BackgroundColor = SystemColors.ControlLight;
             dgvPeminjamanUser.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPeminjamanUser.Columns.AddRange(new DataGridViewColumn[] { detailBuku });
             dgvPeminjamanUser.Location = new Point(22, 125);
@@ -366,17 +409,6 @@ namespace Project_PBO_03
             detailBuku.Name = "detailBuku";
             detailBuku.Text = "Detail";
             detailBuku.UseColumnTextForButtonValue = true;
-            // 
-            // lblPeminjamanUser
-            // 
-            lblPeminjamanUser.AutoSize = true;
-            lblPeminjamanUser.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPeminjamanUser.ForeColor = Color.Black;
-            lblPeminjamanUser.Location = new Point(23, 29);
-            lblPeminjamanUser.Name = "lblPeminjamanUser";
-            lblPeminjamanUser.Size = new Size(130, 25);
-            lblPeminjamanUser.TabIndex = 10;
-            lblPeminjamanUser.Text = "Peminjaman";
             // 
             // pnlBukuFavUser
             // 
@@ -618,6 +650,8 @@ namespace Project_PBO_03
             // 
             // pnlDetailBuku
             // 
+            pnlDetailBuku.BackColor = Color.White;
+            pnlDetailBuku.Controls.Add(label13);
             pnlDetailBuku.Controls.Add(pbStarKosong);
             pnlDetailBuku.Controls.Add(isbnBuku);
             pnlDetailBuku.Controls.Add(btkeluar);
@@ -648,6 +682,16 @@ namespace Project_PBO_03
             pnlDetailBuku.TabIndex = 16;
             pnlDetailBuku.Paint += pnlDetailBuku_Paint;
             // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Nunito", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label13.Location = new Point(788, 274);
+            label13.Name = "label13";
+            label13.Size = new Size(143, 32);
+            label13.TabIndex = 60;
+            label13.Text = "Ulasan User";
+            // 
             // pbStarKosong
             // 
             pbStarKosong.Cursor = Cursors.Hand;
@@ -664,10 +708,10 @@ namespace Project_PBO_03
             // isbnBuku
             // 
             isbnBuku.AutoSize = true;
-            isbnBuku.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            isbnBuku.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             isbnBuku.Location = new Point(385, 138);
             isbnBuku.Name = "isbnBuku";
-            isbnBuku.Size = new Size(18, 25);
+            isbnBuku.Size = new Size(17, 28);
             isbnBuku.TabIndex = 64;
             isbnBuku.Text = ".";
             // 
@@ -686,18 +730,18 @@ namespace Project_PBO_03
             // label12
             // 
             label12.AutoSize = true;
-            label12.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.Location = new Point(788, 407);
+            label12.Font = new Font("Nunito", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.Location = new Point(788, 125);
             label12.Name = "label12";
-            label12.Size = new Size(268, 29);
+            label12.Size = new Size(244, 32);
             label12.TabIndex = 62;
             label12.Text = "Tangal Pengambilan :";
             // 
             // tglPengambilanBooking
             // 
-            tglPengambilanBooking.Location = new Point(1054, 412);
+            tglPengambilanBooking.Location = new Point(788, 163);
             tglPengambilanBooking.Name = "tglPengambilanBooking";
-            tglPengambilanBooking.Size = new Size(386, 27);
+            tglPengambilanBooking.Size = new Size(261, 27);
             tglPengambilanBooking.TabIndex = 61;
             tglPengambilanBooking.ValueChanged += tglPengambilanBooking_ValueChanged;
             // 
@@ -707,9 +751,9 @@ namespace Project_PBO_03
             btBookingBuku.FlatStyle = FlatStyle.Popup;
             btBookingBuku.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btBookingBuku.ForeColor = Color.White;
-            btBookingBuku.Location = new Point(788, 484);
+            btBookingBuku.Location = new Point(1074, 138);
             btBookingBuku.Name = "btBookingBuku";
-            btBookingBuku.Size = new Size(652, 45);
+            btBookingBuku.Size = new Size(366, 52);
             btBookingBuku.TabIndex = 60;
             btBookingBuku.Text = "Booking";
             btBookingBuku.UseVisualStyleBackColor = false;
@@ -718,17 +762,17 @@ namespace Project_PBO_03
             // label11
             // 
             label11.AutoSize = true;
-            label11.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(84, 555);
+            label11.Font = new Font("Nunito", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.Location = new Point(81, 548);
             label11.Name = "label11";
-            label11.Size = new Size(123, 25);
+            label11.Size = new Size(137, 32);
             label11.TabIndex = 59;
             label11.Text = "Beri Ulasan";
             // 
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.mail;
-            pictureBox3.Location = new Point(49, 551);
+            pictureBox3.Location = new Point(44, 548);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(29, 32);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -739,9 +783,9 @@ namespace Project_PBO_03
             // 
             flowLayoutPanel1.BackColor = SystemColors.Control;
             flowLayoutPanel1.BorderStyle = BorderStyle.FixedSingle;
-            flowLayoutPanel1.Location = new Point(788, 555);
+            flowLayoutPanel1.Location = new Point(788, 323);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(652, 206);
+            flowLayoutPanel1.Size = new Size(652, 438);
             flowLayoutPanel1.TabIndex = 57;
             // 
             // materialMultiLineTextBoxEdit1
@@ -749,6 +793,7 @@ namespace Project_PBO_03
             materialMultiLineTextBoxEdit1.AnimateReadOnly = false;
             materialMultiLineTextBoxEdit1.BackgroundImageLayout = ImageLayout.None;
             materialMultiLineTextBoxEdit1.CharacterCasing = CharacterCasing.Normal;
+            materialMultiLineTextBoxEdit1.Cursor = Cursors.IBeam;
             materialMultiLineTextBoxEdit1.Depth = 0;
             materialMultiLineTextBoxEdit1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             materialMultiLineTextBoxEdit1.HideSelection = true;
@@ -763,7 +808,7 @@ namespace Project_PBO_03
             materialMultiLineTextBoxEdit1.SelectionLength = 0;
             materialMultiLineTextBoxEdit1.SelectionStart = 0;
             materialMultiLineTextBoxEdit1.ShortcutsEnabled = true;
-            materialMultiLineTextBoxEdit1.Size = new Size(663, 164);
+            materialMultiLineTextBoxEdit1.Size = new Size(633, 164);
             materialMultiLineTextBoxEdit1.TabIndex = 56;
             materialMultiLineTextBoxEdit1.TabStop = false;
             materialMultiLineTextBoxEdit1.TextAlign = HorizontalAlignment.Left;
@@ -778,17 +823,17 @@ namespace Project_PBO_03
             tbSinopsis.Multiline = true;
             tbSinopsis.Name = "tbSinopsis";
             tbSinopsis.ReadOnly = true;
-            tbSinopsis.Size = new Size(716, 120);
+            tbSinopsis.Size = new Size(664, 120);
             tbSinopsis.TabIndex = 55;
             tbSinopsis.Text = "\r\n\r\nSinopsis";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.Location = new Point(45, 369);
             label10.Name = "label10";
-            label10.Size = new Size(108, 25);
+            label10.Size = new Size(101, 28);
             label10.TabIndex = 54;
             label10.Text = "Sinopsis :";
             // 
@@ -808,70 +853,70 @@ namespace Project_PBO_03
             // lbposisirak
             // 
             lbposisirak.AutoSize = true;
-            lbposisirak.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbposisirak.Font = new Font("Nunito", 11.999999F, FontStyle.Bold);
             lbposisirak.Location = new Point(319, 299);
             lbposisirak.Name = "lbposisirak";
-            lbposisirak.Size = new Size(126, 25);
+            lbposisirak.Size = new Size(118, 28);
             lbposisirak.TabIndex = 52;
             lbposisirak.Text = "Posisi Rak :";
             // 
             // lbjenisbuku
             // 
             lbjenisbuku.AutoSize = true;
-            lbjenisbuku.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbjenisbuku.Font = new Font("Nunito", 11.999999F, FontStyle.Bold);
             lbjenisbuku.Location = new Point(319, 265);
             lbjenisbuku.Name = "lbjenisbuku";
-            lbjenisbuku.Size = new Size(132, 25);
+            lbjenisbuku.Size = new Size(121, 28);
             lbjenisbuku.TabIndex = 51;
             lbjenisbuku.Text = "Jenis Buku :";
             // 
             // lbstok
             // 
             lbstok.AutoSize = true;
-            lbstok.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbstok.Font = new Font("Nunito", 11.999999F, FontStyle.Bold);
             lbstok.Location = new Point(319, 336);
             lbstok.Name = "lbstok";
-            lbstok.Size = new Size(69, 25);
+            lbstok.Size = new Size(66, 28);
             lbstok.TabIndex = 50;
             lbstok.Text = "Stok :";
             // 
             // lbpenulis
             // 
             lbpenulis.AutoSize = true;
-            lbpenulis.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbpenulis.Font = new Font("Nunito", 11.999999F, FontStyle.Bold);
             lbpenulis.Location = new Point(319, 233);
             lbpenulis.Name = "lbpenulis";
-            lbpenulis.Size = new Size(96, 25);
+            lbpenulis.Size = new Size(91, 28);
             lbpenulis.TabIndex = 49;
             lbpenulis.Text = "Penulis :";
             // 
             // lbpenerbit
             // 
             lbpenerbit.AutoSize = true;
-            lbpenerbit.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbpenerbit.Font = new Font("Nunito", 11.999999F, FontStyle.Bold);
             lbpenerbit.Location = new Point(319, 202);
             lbpenerbit.Name = "lbpenerbit";
-            lbpenerbit.Size = new Size(105, 25);
+            lbpenerbit.Size = new Size(102, 28);
             lbpenerbit.TabIndex = 48;
             lbpenerbit.Text = "Penerbit :";
             // 
             // lbtahunterbit
             // 
             lbtahunterbit.AutoSize = true;
-            lbtahunterbit.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbtahunterbit.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbtahunterbit.Location = new Point(320, 171);
             lbtahunterbit.Name = "lbtahunterbit";
-            lbtahunterbit.Size = new Size(155, 25);
+            lbtahunterbit.Size = new Size(145, 28);
             lbtahunterbit.TabIndex = 47;
             lbtahunterbit.Text = "Tahun Terbit : ";
             // 
             // lbisbnBuku
             // 
             lbisbnBuku.AutoSize = true;
-            lbisbnBuku.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbisbnBuku.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbisbnBuku.Location = new Point(319, 138);
             lbisbnBuku.Name = "lbisbnBuku";
-            lbisbnBuku.Size = new Size(75, 25);
+            lbisbnBuku.Size = new Size(70, 28);
             lbisbnBuku.TabIndex = 46;
             lbisbnBuku.Text = "ISBN :";
             // 
@@ -889,10 +934,10 @@ namespace Project_PBO_03
             // namabuku
             // 
             namabuku.AutoSize = true;
-            namabuku.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            namabuku.Font = new Font("Nunito", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             namabuku.Location = new Point(374, 81);
             namabuku.Name = "namabuku";
-            namabuku.Size = new Size(178, 36);
+            namabuku.Size = new Size(177, 41);
             namabuku.TabIndex = 43;
             namabuku.Text = "Nama Buku";
             // 
@@ -907,13 +952,105 @@ namespace Project_PBO_03
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.Font = new Font("Nunito Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.Black;
             label9.Location = new Point(23, 13);
             label9.Name = "label9";
-            label9.Size = new Size(178, 36);
+            label9.Size = new Size(190, 41);
             label9.TabIndex = 10;
             label9.Text = "Detail Buku";
+            // 
+            // pnlPeminjamanUser2
+            // 
+            pnlPeminjamanUser2.BackColor = Color.White;
+            pnlPeminjamanUser2.Controls.Add(label15);
+            pnlPeminjamanUser2.Controls.Add(label14);
+            pnlPeminjamanUser2.Controls.Add(dataGridView3);
+            pnlPeminjamanUser2.Controls.Add(dgvSedangBooking);
+            pnlPeminjamanUser2.Controls.Add(btDipinjam2);
+            pnlPeminjamanUser2.Controls.Add(btDaftarUser2);
+            pnlPeminjamanUser2.Controls.Add(panel4);
+            pnlPeminjamanUser2.Location = new Point(416, 275);
+            pnlPeminjamanUser2.Name = "pnlPeminjamanUser2";
+            pnlPeminjamanUser2.Size = new Size(1507, 805);
+            pnlPeminjamanUser2.TabIndex = 18;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Nunito Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.ForeColor = Color.Black;
+            label15.Location = new Point(49, 441);
+            label15.Name = "label15";
+            label15.Size = new Size(262, 41);
+            label15.TabIndex = 21;
+            label15.Text = "Sedang dipinjam";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Nunito Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label14.ForeColor = Color.Black;
+            label14.Location = new Point(50, 95);
+            label14.Name = "label14";
+            label14.Size = new Size(281, 41);
+            label14.TabIndex = 20;
+            label14.Text = "Sedang dibooking";
+            // 
+            // dataGridView3
+            // 
+            dataGridView3.BackgroundColor = SystemColors.ControlLight;
+            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView3.Location = new Point(49, 485);
+            dataGridView3.Name = "dataGridView3";
+            dataGridView3.RowHeadersWidth = 51;
+            dataGridView3.Size = new Size(1408, 265);
+            dataGridView3.TabIndex = 19;
+            // 
+            // dgvSedangBooking
+            // 
+            dgvSedangBooking.BackgroundColor = SystemColors.ControlLight;
+            dgvSedangBooking.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvSedangBooking.Location = new Point(49, 139);
+            dgvSedangBooking.Name = "dgvSedangBooking";
+            dgvSedangBooking.RowHeadersWidth = 51;
+            dgvSedangBooking.Size = new Size(1408, 265);
+            dgvSedangBooking.TabIndex = 18;
+            // 
+            // btDipinjam2
+            // 
+            btDipinjam2.BackColor = Color.Black;
+            btDipinjam2.FlatStyle = FlatStyle.Popup;
+            btDipinjam2.Font = new Font("Nunito", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btDipinjam2.ForeColor = Color.White;
+            btDipinjam2.Location = new Point(142, 25);
+            btDipinjam2.Name = "btDipinjam2";
+            btDipinjam2.Size = new Size(120, 37);
+            btDipinjam2.TabIndex = 17;
+            btDipinjam2.Text = "Peminjaman";
+            btDipinjam2.UseVisualStyleBackColor = false;
+            // 
+            // btDaftarUser2
+            // 
+            btDaftarUser2.BackColor = Color.CornflowerBlue;
+            btDaftarUser2.FlatStyle = FlatStyle.Popup;
+            btDaftarUser2.Font = new Font("Nunito", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btDaftarUser2.ForeColor = Color.White;
+            btDaftarUser2.Location = new Point(22, 25);
+            btDaftarUser2.Name = "btDaftarUser2";
+            btDaftarUser2.Size = new Size(120, 37);
+            btDaftarUser2.TabIndex = 16;
+            btDaftarUser2.Text = "Daftar Buku";
+            btDaftarUser2.UseVisualStyleBackColor = false;
+            btDaftarUser2.Click += btDaftarUser2_Click;
+            // 
+            // panel4
+            // 
+            panel4.Location = new Point(123, 43);
+            panel4.Margin = new Padding(3, 4, 3, 4);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(0, 0);
+            panel4.TabIndex = 15;
             // 
             // V_User
             // 
@@ -926,6 +1063,7 @@ namespace Project_PBO_03
             Controls.Add(pictureBoxPerpusUser);
             Controls.Add(pnlUser);
             Controls.Add(pnlDetailBuku);
+            Controls.Add(pnlPeminjamanUser2);
             Controls.Add(pnlPeminjamanUser);
             Controls.Add(pnlProfileUser);
             Controls.Add(pnlRiwayatUser);
@@ -955,6 +1093,10 @@ namespace Project_PBO_03
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbStarKuning).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            pnlPeminjamanUser2.ResumeLayout(false);
+            pnlPeminjamanUser2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSedangBooking).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1016,7 +1158,6 @@ namespace Project_PBO_03
         private Panel pnlPeminjamanUser;
         private TextBox tbPeminjamanUser;
         private DataGridView dgvPeminjamanUser;
-        private Label lblPeminjamanUser;
         private Panel pnlBukuFavUser;
         private DataGridView dataGridView1;
         private Label label1;
@@ -1066,5 +1207,17 @@ namespace Project_PBO_03
         private Button btBookingBuku;
         private Button btkeluar;
         private Label isbnBuku;
+        private Label label13;
+        private Button button4;
+        private Button btDaftarUser1;
+        private Button btDipinjam1;
+        private Panel pnlPeminjamanUser2;
+        private Button btDipinjam2;
+        private Button btDaftarUser2;
+        private Panel panel4;
+        private DataGridView dgvSedangBooking;
+        private Label label15;
+        private Label label14;
+        private DataGridView dataGridView3;
     }
 }
