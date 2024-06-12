@@ -30,6 +30,8 @@ namespace Project_PBO_03
             this.pnlPeminjamanAdmin1.Hide();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Hide();
+            this.pnlPeminjaman1.Hide();
+            this.pnlPeminjaman2.Hide();
 
             ucJenisBukuTambahBukuAdmin1.Hide();
             ucPenerbitTambahBukuAdmin1.Hide();
@@ -102,6 +104,8 @@ namespace Project_PBO_03
             this.pnlPeminjamanAdmin1.Hide();
             this.pnlRiwayatPeminjaman.Show();
             this.pnlProfileAdmin.Hide();
+            this.pnlPeminjaman1.Hide();
+            this.pnlPeminjaman2.Hide();
 
         }
 
@@ -154,7 +158,6 @@ namespace Project_PBO_03
             this.pnlTambahBukuAdmin.Show();
             this.pnlDaftarBukuAdmin.Hide();
             this.pnlPeminjamanAdmin1.Hide();
-            this.pnlPeminjamanAdmin.Hide();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Hide();
 
@@ -451,64 +454,44 @@ namespace Project_PBO_03
         {
             btPeminjaman.BackColor = Color.Black;
             btKeluarAdmin.BackColor = Color.CornflowerBlue;
-            btBooking.BackColor = Color.Black;
-            btBooking1.BackColor = Color.Black;
-            btSedangDipinjam.BackColor = Color.CornflowerBlue;
-            btSedangDipinjam1.BackColor = Color.CornflowerBlue;
             pnlDaftarBukuAdmin.Hide();
             pnlProfileAdmin.Hide();
             pnlRiwayatPeminjaman.Hide();
             pnlTambahBuku.Hide();
             pnlPeminjamanAdmin1.Show();
-            pnlPeminjamanAdmin.Hide();
         }
 
         private void btSedangDipinjam1_Click(object sender, EventArgs e)
         {
             btPeminjaman.BackColor = Color.Black;
             btKeluarAdmin.BackColor = Color.CornflowerBlue;
-            btBooking.BackColor = Color.CornflowerBlue;
-            btBooking1.BackColor = Color.CornflowerBlue;
-            btSedangDipinjam.BackColor = Color.Black;
-            btSedangDipinjam1.BackColor = Color.Black;
             pnlDaftarBukuAdmin.Hide();
             pnlProfileAdmin.Hide();
             pnlRiwayatPeminjaman.Hide();
             pnlTambahBuku.Hide();
             pnlPeminjamanAdmin1.Hide();
-            pnlPeminjamanAdmin.Show();
         }
 
         private void btBooking_Click(object sender, EventArgs e)
         {
             btPeminjaman.BackColor = Color.Black;
             btKeluarAdmin.BackColor = Color.CornflowerBlue;
-            btBooking.BackColor = Color.Black;
-            btBooking1.BackColor = Color.Black;
-            btSedangDipinjam.BackColor = Color.CornflowerBlue;
-            btSedangDipinjam1.BackColor = Color.CornflowerBlue;
             pnlDaftarBukuAdmin.Hide();
             pnlProfileAdmin.Hide();
             pnlRiwayatPeminjaman.Hide();
             pnlTambahBuku.Hide();
             pnlPeminjamanAdmin1.Show();
-            pnlPeminjamanAdmin.Hide();
         }
 
         private void btSedangDipinjam_Click(object sender, EventArgs e)
         {
             btPeminjaman.BackColor = Color.Black;
             btKeluarAdmin.BackColor = Color.CornflowerBlue;
-            btBooking.BackColor = Color.CornflowerBlue;
-            btBooking1.BackColor = Color.CornflowerBlue;
-            btSedangDipinjam.BackColor = Color.Black;
-            btSedangDipinjam1.BackColor = Color.Black;
             pnlDaftarBukuAdmin.Hide();
             pnlProfileAdmin.Hide();
             pnlRiwayatPeminjaman.Hide();
             pnlTambahBuku.Hide();
             pnlPeminjamanAdmin1.Hide();
-            pnlPeminjamanAdmin.Show();
         }
 
         private void pnlPeminjamanAdmin_Paint(object sender, PaintEventArgs e)
@@ -525,6 +508,23 @@ namespace Project_PBO_03
         {
             this.pnlTambahBukuAdmin.Hide();
             this.pnlDaftarBukuAdmin.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btDipinjam1_Click(object sender, EventArgs e)
+        {
+            this.pnlPeminjaman1.Hide();
+            this.pnlPeminjaman2.Show();
+        }
+
+        private void btBooking2_Click(object sender, EventArgs e)
+        {
+            this.pnlPeminjaman2.Hide();
+            this.pnlPeminjaman1.Show();
         }
     }
 }

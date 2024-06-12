@@ -244,7 +244,7 @@
             label1.ForeColor = Color.Black;
             label1.Location = new Point(23, 29);
             label1.Name = "label1";
-            label1.Size = new Size(171, 28);
+            label1.Size = new Size(172, 28);
             label1.TabIndex = 10;
             label1.Text = "Daftar Pengguna";
             // 
@@ -369,7 +369,7 @@
             lblDaftarPenggunaSA.ForeColor = Color.Black;
             lblDaftarPenggunaSA.Location = new Point(23, 29);
             lblDaftarPenggunaSA.Name = "lblDaftarPenggunaSA";
-            lblDaftarPenggunaSA.Size = new Size(171, 28);
+            lblDaftarPenggunaSA.Size = new Size(172, 28);
             lblDaftarPenggunaSA.TabIndex = 10;
             lblDaftarPenggunaSA.Text = "Daftar Pengguna";
             // 
@@ -438,7 +438,7 @@
             label7.ForeColor = Color.Black;
             label7.Location = new Point(58, 379);
             label7.Name = "label7";
-            label7.Size = new Size(121, 28);
+            label7.Size = new Size(122, 28);
             label7.TabIndex = 20;
             label7.Text = "No. Telepon";
             // 
@@ -537,7 +537,7 @@
             label3.ForeColor = Color.Black;
             label3.Location = new Point(23, 29);
             label3.Name = "label3";
-            label3.Size = new Size(138, 28);
+            label3.Size = new Size(139, 28);
             label3.TabIndex = 10;
             label3.Text = "Daftar Admin";
             // 
