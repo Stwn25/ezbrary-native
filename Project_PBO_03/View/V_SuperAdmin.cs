@@ -264,7 +264,6 @@ namespace Project_PBO_03.View
             pnlUserSA.Hide();
             pnlAdminSA.Hide();
             pnlDaftarAdminSA.Show();
-            pnlDaftarAdminSA.Dock = DockStyle.Bottom;
         }
 
         private void pnlDaftarAdminSA_Paint(object sender, PaintEventArgs e)
@@ -280,6 +279,12 @@ namespace Project_PBO_03.View
         private void ucUpdateAdmin1_Load(object sender, EventArgs e)
         {
             this.ucUpdateAdmin1.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            pnlDaftarAdminSA.Hide();
+            pnlAdminSA.Show();
         }
     }
 }

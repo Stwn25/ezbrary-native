@@ -54,6 +54,7 @@
             HapusUser = new DataGridViewButtonColumn();
             lblDaftarPenggunaSA = new Label();
             pnlDaftarAdminSA = new Panel();
+            button1 = new Button();
             btDaftarSA = new Button();
             label8 = new Label();
             label7 = new Label();
@@ -243,7 +244,7 @@
             label1.ForeColor = Color.Black;
             label1.Location = new Point(23, 29);
             label1.Name = "label1";
-            label1.Size = new Size(172, 28);
+            label1.Size = new Size(171, 28);
             label1.TabIndex = 10;
             label1.Text = "Daftar Pengguna";
             // 
@@ -368,12 +369,13 @@
             lblDaftarPenggunaSA.ForeColor = Color.Black;
             lblDaftarPenggunaSA.Location = new Point(23, 29);
             lblDaftarPenggunaSA.Name = "lblDaftarPenggunaSA";
-            lblDaftarPenggunaSA.Size = new Size(172, 28);
+            lblDaftarPenggunaSA.Size = new Size(171, 28);
             lblDaftarPenggunaSA.TabIndex = 10;
             lblDaftarPenggunaSA.Text = "Daftar Pengguna";
             // 
             // pnlDaftarAdminSA
             // 
+            pnlDaftarAdminSA.Controls.Add(button1);
             pnlDaftarAdminSA.Controls.Add(btDaftarSA);
             pnlDaftarAdminSA.Controls.Add(label8);
             pnlDaftarAdminSA.Controls.Add(label7);
@@ -391,6 +393,17 @@
             pnlDaftarAdminSA.Size = new Size(1526, 826);
             pnlDaftarAdminSA.TabIndex = 17;
             pnlDaftarAdminSA.Paint += pnlDaftarAdminSA_Paint;
+            // 
+            // button1
+            // 
+            button1.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(1452, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(41, 29);
+            button1.TabIndex = 22;
+            button1.Text = "X";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // btDaftarSA
             // 
@@ -425,7 +438,7 @@
             label7.ForeColor = Color.Black;
             label7.Location = new Point(58, 379);
             label7.Name = "label7";
-            label7.Size = new Size(122, 28);
+            label7.Size = new Size(121, 28);
             label7.TabIndex = 20;
             label7.Text = "No. Telepon";
             // 
@@ -524,7 +537,7 @@
             label3.ForeColor = Color.Black;
             label3.Location = new Point(23, 29);
             label3.Name = "label3";
-            label3.Size = new Size(139, 28);
+            label3.Size = new Size(138, 28);
             label3.TabIndex = 10;
             label3.Text = "Daftar Admin";
             // 
@@ -532,12 +545,10 @@
             // 
             ucUpdateAdmin1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ucUpdateAdmin1.IdAdmin = 0;
-            ucUpdateAdmin1.Location = new Point(616, 194);
-            ucUpdateAdmin1.Margin = new Padding(3, 4, 3, 4);
+            ucUpdateAdmin1.Location = new Point(758, 218);
             ucUpdateAdmin1.Name = "ucUpdateAdmin1";
-            ucUpdateAdmin1.Size = new Size(836, 667);
+            ucUpdateAdmin1.Size = new Size(840, 840);
             ucUpdateAdmin1.TabIndex = 15;
-            ucUpdateAdmin1.Load += ucUpdateAdmin1_Load;
             // 
             // V_SuperAdmin
             // 
@@ -545,14 +556,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1942, 1102);
             Controls.Add(ucUpdateAdmin1);
-            Controls.Add(pnlDaftarAdminSA);
-            Controls.Add(pnlAdminSA);
-            Controls.Add(pnlUserSA);
             Controls.Add(nightControlBox1);
             Controls.Add(lblHai1SA);
             Controls.Add(lblHaiSA);
             Controls.Add(pnlSA);
             Controls.Add(pictureBoxPerpusSA);
+            Controls.Add(pnlAdminSA);
+            Controls.Add(pnlUserSA);
+            Controls.Add(pnlDaftarAdminSA);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_SuperAdmin";
             Text = "V_SuperAdmin";
@@ -611,6 +622,8 @@
         private DataGridViewButtonColumn HapusUser;
         private DataGridViewButtonColumn HapusAdmin;
         private DataGridViewButtonColumn UpdateAdmin;
+        
+        private Button button1;
         private ucUpdateAdmin ucUpdateAdmin1;
     }
 }

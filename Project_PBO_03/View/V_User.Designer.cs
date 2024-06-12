@@ -43,6 +43,7 @@ namespace Project_PBO_03
             lblHaiUser = new Label();
             lblHai1User = new Label();
             pnlPeminjamanUser = new Panel();
+            ucDetailBukuUser1 = new View.ucDetailBukuUser();
             panel1 = new Panel();
             button1 = new Button();
             cbJenis = new ReaLTaiizor.Controls.DungeonComboBox();
@@ -273,6 +274,7 @@ namespace Project_PBO_03
             // 
             // pnlPeminjamanUser
             // 
+            pnlPeminjamanUser.Controls.Add(ucDetailBukuUser1);
             pnlPeminjamanUser.Controls.Add(panel1);
             pnlPeminjamanUser.Controls.Add(button1);
             pnlPeminjamanUser.Controls.Add(cbJenis);
@@ -284,6 +286,17 @@ namespace Project_PBO_03
             pnlPeminjamanUser.Size = new Size(1507, 805);
             pnlPeminjamanUser.TabIndex = 9;
             pnlPeminjamanUser.Paint += pnlPeminjamanUser_Paint_1;
+            // 
+            // ucDetailBukuUser1
+            // 
+            ucDetailBukuUser1.BackColor = Color.White;
+            ucDetailBukuUser1.BorderStyle = BorderStyle.FixedSingle;
+            ucDetailBukuUser1.id_pengguna = 0;
+            ucDetailBukuUser1.Location = new Point(253, 0);
+            ucDetailBukuUser1.Margin = new Padding(3, 4, 3, 4);
+            ucDetailBukuUser1.Name = "ucDetailBukuUser1";
+            ucDetailBukuUser1.Size = new Size(907, 781);
+            ucDetailBukuUser1.TabIndex = 16;
             // 
             // panel1
             // 
