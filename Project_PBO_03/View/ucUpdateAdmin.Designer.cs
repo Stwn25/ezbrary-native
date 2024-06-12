@@ -41,6 +41,8 @@
             tbTeleponSAuc = new TextBox();
             tbEmailSAuc = new TextBox();
             tbNamaSAuc = new TextBox();
+            label1 = new Label();
+            tbKodeVSAuc = new TextBox();
             SuspendLayout();
             // 
             // label8
@@ -61,7 +63,7 @@
             label7.ForeColor = Color.Black;
             label7.Location = new Point(84, 380);
             label7.Name = "label7";
-            label7.Size = new Size(121, 28);
+            label7.Size = new Size(122, 28);
             label7.TabIndex = 31;
             label7.Text = "No. Telepon";
             // 
@@ -150,7 +152,7 @@
             btUpdateSAuc.FlatStyle = FlatStyle.Popup;
             btUpdateSAuc.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btUpdateSAuc.ForeColor = Color.White;
-            btUpdateSAuc.Location = new Point(274, 554);
+            btUpdateSAuc.Location = new Point(282, 667);
             btUpdateSAuc.Name = "btUpdateSAuc";
             btUpdateSAuc.Size = new Size(268, 49);
             btUpdateSAuc.TabIndex = 35;
@@ -194,10 +196,34 @@
             tbNamaSAuc.Size = new Size(697, 34);
             tbNamaSAuc.TabIndex = 24;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(84, 556);
+            label1.Name = "label1";
+            label1.Size = new Size(148, 28);
+            label1.TabIndex = 37;
+            label1.Text = "Kode Verifikasi";
+            // 
+            // tbKodeVSAuc
+            // 
+            tbKodeVSAuc.BackColor = Color.White;
+            tbKodeVSAuc.BorderStyle = BorderStyle.FixedSingle;
+            tbKodeVSAuc.Font = new Font("Nunito SemiBold", 10.2F, FontStyle.Bold);
+            tbKodeVSAuc.Location = new Point(84, 587);
+            tbKodeVSAuc.Multiline = true;
+            tbKodeVSAuc.Name = "tbKodeVSAuc";
+            tbKodeVSAuc.Size = new Size(697, 34);
+            tbKodeVSAuc.TabIndex = 36;
+            // 
             // ucUpdateAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(label1);
+            Controls.Add(tbKodeVSAuc);
             Controls.Add(btUpdateSAuc);
             Controls.Add(Bbtkeluarucupdateadmin);
             Controls.Add(label8);
@@ -213,7 +239,7 @@
             Controls.Add(label3);
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Name = "ucUpdateAdmin";
-            Size = new Size(841, 672);
+            Size = new Size(841, 768);
             Load += ucUpdateAdmin_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -234,5 +260,7 @@
         private TextBox tbTeleponSAuc;
         private TextBox tbEmailSAuc;
         private TextBox tbNamaSAuc;
+        private Label label1;
+        private TextBox tbKodeVSAuc;
     }
 }

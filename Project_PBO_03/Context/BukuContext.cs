@@ -133,6 +133,24 @@ namespace Project_PBO_03.Context
             commandExecutor(query, parameters);
         }
 
-        
+        public static void kurangistok(string isbn)
+        {
+            string query = $"UPDATE {table} SET stokbuku = stokbuku - 1 WHERE isbn = @isbn";
+            NpgsqlParameter[] param =
+            {
+                new NpgsqlParameter("@isbn", NpgsqlDbType.Varchar){Value = isbn}
+            };
+            commandExecutor(query, param);
+        }
+
+        public static void tambahstok(string isbn)
+        {
+            string query = $"UPDATE {table} SET stokbuku = stokbuku + 1 WHERE isbn = @isbn";
+            NpgsqlParameter[] param =
+            {
+                new NpgsqlParameter("@isbn", NpgsqlDbType.Varchar){Value = isbn}
+            };
+            commandExecutor(query, param);
+        }
     }
 }

@@ -13,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 
 namespace Project_PBO_03
@@ -22,6 +23,16 @@ namespace Project_PBO_03
         private string input;
         private int idpengguna;
         DateTime currentDate = DateTime.Now.Date;
+        private string isbn1;
+        private string judul1;
+        private string sinopsis1;
+        private string thnTerbit1;
+        private string jenis1;
+        private int stok1;
+        private string penerbit1;
+        private string penulis1;
+        private string posisiRak1;
+        private string username1;
 
         public V_User(string input)
         {
@@ -96,6 +107,7 @@ namespace Project_PBO_03
             this.pnlBukuFavUser.Show();
             this.pnlRiwayatUser.Hide();
             this.pnlProfileUser.Hide();
+            this.pnlDetailBuku.Hide();
         }
 
         private void btRiwayatPeminjamanUser_Click(object sender, EventArgs e)
@@ -200,7 +212,7 @@ namespace Project_PBO_03
                     string sinopsis = dataRow["sinopsis"].ToString();
                     string thnterbit = dataRow["thnterbit"].ToString();
                     string namajenis = dataRow["namajenis"].ToString();
-                    string stokbuku = dataRow["stokbuku"].ToString();
+                    int stokbuku = Int32.Parse(dataRow["stokbuku"].ToString());
                     string namapenerbit = dataRow["namapenerbit"].ToString();
                     string namapenulis = dataRow["namapenulis"].ToString();
                     string posisirak = dataRow["posisirak"].ToString();
@@ -234,17 +246,28 @@ namespace Project_PBO_03
             }
         }
 
-        public void UpdateDetail(string isbn, string judul, string sinopsis, string thnTerbit, string jenis, string stok, string penerbit, string penulis, string posisiRak, string username)
+        public void UpdateDetail(string isbn, string judul, string sinopsis, string thnTerbit, string jenis, int stok, string penerbit, string penulis, string posisiRak, string username)
         {
-            isbnBuku.Text = isbn;
-            namabuku.Text = $"Judul: {judul}";
-            tbSinopsis.Text = $"Sinopsis: {sinopsis}";
-            lbtahunterbit.Text = $"Tahun Terbit: {thnTerbit}";
-            lbjenisbuku.Text = $"Jenis Buku: {jenis}";
-            lbstok.Text = $"Stok: {stok}";
-            lbpenerbit.Text = $"Penerbit: {penerbit}";
-            lbpenulis.Text = $"Penulis: {penulis}";
-            lbposisirak.Text = $"Posisi Rak: {posisiRak}";
+            this.isbn1 = isbn;
+            this.judul1 = judul;
+            this.sinopsis1 = sinopsis;
+            this.thnTerbit1 = thnTerbit;
+            this.jenis1 = jenis;
+            this.stok1 = stok;
+            this.penerbit1 = penerbit;
+            this.penulis1 = penulis;
+            this.posisiRak1 = posisiRak;
+            this.username1 = username;
+
+            isbnBuku.Text = isbn1;
+            namabuku.Text = $"Judul: {judul1}";
+            tbSinopsis.Text = $"Sinopsis: {sinopsis1}";
+            lbtahunterbit.Text = $"Tahun Terbit: {thnTerbit1}";
+            lbjenisbuku.Text = $"Jenis Buku: {jenis1}";
+            lbstok.Text = $"Stok: {stok1}";
+            lbpenerbit.Text = $"Penerbit: {penerbit1}";
+            lbpenulis.Text = $"Penulis: {penulis1}";
+            lbposisirak.Text = $"Posisi Rak: {posisiRak1}";
         }
 
         public void pnlDetailBuku_Paint(object sender, PaintEventArgs e)
@@ -272,7 +295,63 @@ namespace Project_PBO_03
                 };
 
                 PeminjamanBuku.create(peminjaman);
+                BukuContext.kurangistok(isbn1);
+
                 MessageBox.Show($"Booking buku berhasil, jangan lupa ambil buku sesuai tanggal pengambilan", "Berhasil", MessageBoxButtons.OK);
+                if (message == DialogResult.OK)
+                {
+                    this.pnlDetailBuku.Hide();
+                    dgvPeminjamanUser.DataSource = BukuContext.buku();
+
+                    /*this.pnlDetailBuku.Show();
+                    UpdateDetail(isbn1, judul1, sinopsis1, thnTerbit1, jenis1, stok1, penerbit1, penulis1, posisiRak1, input);*/
+                }
+            }
+        }
+
+        private void btSimpanPerubahanU_Click(object sender, EventArgs e)
+        {
+            if (idpengguna != 0)
+            {
+                DataTable dt = PenggunaContext.read(idpengguna.ToString(), false); // Memanggil metode read dengan ID
+                if (dt.Rows.Count > 0)
+                {
+                    DataRow row = dt.Rows[0];
+
+                    m_Pengguna updatedPengguna = new m_Pengguna
+                    {
+                        id_pengguna = idpengguna,
+                        username_pengguna = tbUsernameProfileU.Text,
+                        nama_pengguna = tbNamaProfileU.Text,
+                        email_pengguna = tbEmailU.Text,
+                        telp_pengguna = tbTeleponU.Text,
+                        pass_pengguna = tbPassU.Text
+                    };
+
+                    try
+                    {
+                        PenggunaContext.update(updatedPengguna);
+                        MessageBox.Show("Data anda berhasil diperbarui!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        
+                        this.pnlProfileUser.Show();
+
+                        lblEmailUser.Text = tbEmailU.Text;
+                        lblHai1User.Text = tbUsernameProfileU.Text;
+                        lblUsernameUser.Text = tbUsernameProfileU.Text;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Gagal memperbarui data anda: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Data anda tidak ditemukan.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("ID anda tidak valid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

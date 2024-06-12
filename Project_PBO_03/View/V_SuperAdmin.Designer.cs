@@ -54,6 +54,8 @@
             HapusUser = new DataGridViewButtonColumn();
             lblDaftarPenggunaSA = new Label();
             pnlDaftarAdminSA = new Panel();
+            label2 = new Label();
+            tbKodeVerifikasi = new TextBox();
             button1 = new Button();
             btDaftarSA = new Button();
             label8 = new Label();
@@ -298,7 +300,7 @@
             pictureBoxPerpusSA.Image = (Image)resources.GetObject("pictureBoxPerpusSA.Image");
             pictureBoxPerpusSA.Location = new Point(416, 0);
             pictureBoxPerpusSA.Name = "pictureBoxPerpusSA";
-            pictureBoxPerpusSA.Size = new Size(1507, 276);
+            pictureBoxPerpusSA.Size = new Size(1526, 276);
             pictureBoxPerpusSA.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxPerpusSA.TabIndex = 9;
             pictureBoxPerpusSA.TabStop = false;
@@ -375,6 +377,8 @@
             // 
             // pnlDaftarAdminSA
             // 
+            pnlDaftarAdminSA.Controls.Add(label2);
+            pnlDaftarAdminSA.Controls.Add(tbKodeVerifikasi);
             pnlDaftarAdminSA.Controls.Add(button1);
             pnlDaftarAdminSA.Controls.Add(btDaftarSA);
             pnlDaftarAdminSA.Controls.Add(label8);
@@ -394,12 +398,34 @@
             pnlDaftarAdminSA.TabIndex = 17;
             pnlDaftarAdminSA.Paint += pnlDaftarAdminSA_Paint;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(56, 531);
+            label2.Name = "label2";
+            label2.Size = new Size(148, 28);
+            label2.TabIndex = 24;
+            label2.Text = "Kode Verifikasi";
+            // 
+            // tbKodeVerifikasi
+            // 
+            tbKodeVerifikasi.BackColor = Color.White;
+            tbKodeVerifikasi.BorderStyle = BorderStyle.FixedSingle;
+            tbKodeVerifikasi.Font = new Font("Nunito", 10.2F, FontStyle.Bold);
+            tbKodeVerifikasi.Location = new Point(56, 563);
+            tbKodeVerifikasi.Multiline = true;
+            tbKodeVerifikasi.Name = "tbKodeVerifikasi";
+            tbKodeVerifikasi.Size = new Size(1401, 33);
+            tbKodeVerifikasi.TabIndex = 23;
+            // 
             // button1
             // 
             button1.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(1452, 3);
+            button1.Location = new Point(1432, 13);
             button1.Name = "button1";
-            button1.Size = new Size(41, 29);
+            button1.Size = new Size(52, 44);
             button1.TabIndex = 22;
             button1.Text = "X";
             button1.UseVisualStyleBackColor = true;
@@ -407,12 +433,12 @@
             // 
             // btDaftarSA
             // 
-            btDaftarSA.BackColor = Color.CornflowerBlue;
+            btDaftarSA.BackColor = SystemColors.HotTrack;
             btDaftarSA.Cursor = Cursors.Hand;
             btDaftarSA.FlatStyle = FlatStyle.Popup;
             btDaftarSA.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btDaftarSA.ForeColor = Color.White;
-            btDaftarSA.Location = new Point(549, 573);
+            btDaftarSA.Location = new Point(549, 671);
             btDaftarSA.Name = "btDaftarSA";
             btDaftarSA.Size = new Size(267, 49);
             btDaftarSA.TabIndex = 15;
@@ -425,7 +451,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold);
             label8.ForeColor = Color.Black;
-            label8.Location = new Point(58, 464);
+            label8.Location = new Point(56, 436);
             label8.Name = "label8";
             label8.Size = new Size(103, 28);
             label8.TabIndex = 21;
@@ -436,7 +462,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold);
             label7.ForeColor = Color.Black;
-            label7.Location = new Point(58, 379);
+            label7.Location = new Point(56, 351);
             label7.Name = "label7";
             label7.Size = new Size(122, 28);
             label7.TabIndex = 20;
@@ -447,7 +473,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold);
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(58, 288);
+            label6.Location = new Point(56, 262);
             label6.Name = "label6";
             label6.Size = new Size(63, 28);
             label6.TabIndex = 19;
@@ -458,7 +484,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(58, 204);
+            label5.Location = new Point(56, 178);
             label5.Name = "label5";
             label5.Size = new Size(66, 28);
             label5.TabIndex = 18;
@@ -469,7 +495,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(58, 124);
+            label4.Location = new Point(56, 96);
             label4.Name = "label4";
             label4.Size = new Size(106, 28);
             label4.TabIndex = 16;
@@ -480,7 +506,7 @@
             tbPasswordSA.BackColor = Color.White;
             tbPasswordSA.BorderStyle = BorderStyle.FixedSingle;
             tbPasswordSA.Font = new Font("Nunito", 10.2F, FontStyle.Bold);
-            tbPasswordSA.Location = new Point(58, 496);
+            tbPasswordSA.Location = new Point(56, 468);
             tbPasswordSA.Multiline = true;
             tbPasswordSA.Name = "tbPasswordSA";
             tbPasswordSA.Size = new Size(1401, 33);
@@ -491,7 +517,7 @@
             tbTeleponSA.BackColor = Color.White;
             tbTeleponSA.BorderStyle = BorderStyle.FixedSingle;
             tbTeleponSA.Font = new Font("Nunito", 10.2F, FontStyle.Bold);
-            tbTeleponSA.Location = new Point(58, 409);
+            tbTeleponSA.Location = new Point(56, 381);
             tbTeleponSA.Multiline = true;
             tbTeleponSA.Name = "tbTeleponSA";
             tbTeleponSA.Size = new Size(1401, 33);
@@ -502,7 +528,7 @@
             tbEmailSA.BackColor = Color.White;
             tbEmailSA.BorderStyle = BorderStyle.FixedSingle;
             tbEmailSA.Font = new Font("Nunito", 10.2F, FontStyle.Bold);
-            tbEmailSA.Location = new Point(58, 323);
+            tbEmailSA.Location = new Point(56, 295);
             tbEmailSA.Multiline = true;
             tbEmailSA.Name = "tbEmailSA";
             tbEmailSA.Size = new Size(1401, 33);
@@ -513,7 +539,7 @@
             tbNamaSA.BackColor = Color.White;
             tbNamaSA.BorderStyle = BorderStyle.FixedSingle;
             tbNamaSA.Font = new Font("Nunito", 10.2F, FontStyle.Bold);
-            tbNamaSA.Location = new Point(58, 237);
+            tbNamaSA.Location = new Point(56, 209);
             tbNamaSA.Multiline = true;
             tbNamaSA.Name = "tbNamaSA";
             tbNamaSA.Size = new Size(1401, 33);
@@ -524,7 +550,7 @@
             tbUsernameSA.BackColor = Color.White;
             tbUsernameSA.BorderStyle = BorderStyle.FixedSingle;
             tbUsernameSA.Font = new Font("Nunito", 10.2F, FontStyle.Bold);
-            tbUsernameSA.Location = new Point(58, 156);
+            tbUsernameSA.Location = new Point(56, 128);
             tbUsernameSA.Multiline = true;
             tbUsernameSA.Name = "tbUsernameSA";
             tbUsernameSA.Size = new Size(1401, 33);
@@ -535,7 +561,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(23, 29);
+            label3.Location = new Point(23, 19);
             label3.Name = "label3";
             label3.Size = new Size(139, 28);
             label3.TabIndex = 10;
@@ -543,11 +569,12 @@
             // 
             // ucUpdateAdmin1
             // 
+            ucUpdateAdmin1.BorderStyle = BorderStyle.FixedSingle;
             ucUpdateAdmin1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ucUpdateAdmin1.IdAdmin = 0;
-            ucUpdateAdmin1.Location = new Point(758, 218);
+            ucUpdateAdmin1.Location = new Point(772, 230);
             ucUpdateAdmin1.Name = "ucUpdateAdmin1";
-            ucUpdateAdmin1.Size = new Size(840, 840);
+            ucUpdateAdmin1.Size = new Size(840, 726);
             ucUpdateAdmin1.TabIndex = 15;
             // 
             // V_SuperAdmin
@@ -556,6 +583,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1942, 1102);
             Controls.Add(ucUpdateAdmin1);
+            Controls.Add(pnlDaftarAdminSA);
             Controls.Add(nightControlBox1);
             Controls.Add(lblHai1SA);
             Controls.Add(lblHaiSA);
@@ -563,7 +591,6 @@
             Controls.Add(pictureBoxPerpusSA);
             Controls.Add(pnlAdminSA);
             Controls.Add(pnlUserSA);
-            Controls.Add(pnlDaftarAdminSA);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_SuperAdmin";
             Text = "V_SuperAdmin";
@@ -625,5 +652,7 @@
         
         private Button button1;
         private ucUpdateAdmin ucUpdateAdmin1;
+        private Label label2;
+        private TextBox tbKodeVerifikasi;
     }
 }

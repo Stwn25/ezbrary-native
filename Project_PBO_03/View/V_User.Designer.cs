@@ -467,6 +467,7 @@ namespace Project_PBO_03
             btSimpanPerubahanU.TabIndex = 22;
             btSimpanPerubahanU.Text = "Simpan Perubahan";
             btSimpanPerubahanU.UseVisualStyleBackColor = false;
+            btSimpanPerubahanU.Click += btSimpanPerubahanU_Click;
             // 
             // label8
             // 
@@ -920,11 +921,11 @@ namespace Project_PBO_03
             Controls.Add(lblHaiUser);
             Controls.Add(pictureBoxPerpusUser);
             Controls.Add(pnlUser);
-            Controls.Add(pnlDetailBuku);
-            Controls.Add(pnlPeminjamanUser);
             Controls.Add(pnlProfileUser);
             Controls.Add(pnlRiwayatUser);
             Controls.Add(pnlBukuFavUser);
+            Controls.Add(pnlDetailBuku);
+            Controls.Add(pnlPeminjamanUser);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_User";
             Text = "V_User";
@@ -965,7 +966,7 @@ namespace Project_PBO_03
             this.pnlBukuFavUser.Hide();
             this.pnlRiwayatUser.Show();
             this.pnlProfileUser.Hide();
-           
+           this.pnlDetailBuku.Hide();
         }
 
        

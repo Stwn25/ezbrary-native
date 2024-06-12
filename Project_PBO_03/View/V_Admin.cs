@@ -526,5 +526,11 @@ namespace Project_PBO_03
             this.pnlPeminjaman2.Hide();
             this.pnlPeminjaman1.Show();
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            this.pnlTambahBukuAdmin.Hide();
+            this.pnlDaftarBukuAdmin.Show();
+        }
     }
 }

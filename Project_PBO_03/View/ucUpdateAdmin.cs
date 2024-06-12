@@ -53,7 +53,7 @@ namespace Project_PBO_03.View
                     m_Administrator updatedAdmin = new m_Administrator
                     {
                         id_admin = IdAdmin,
-                        kode_verif = row["kodeverifikasi"].ToString(),
+                        kode_verif = tbKodeVSAuc.Text,
                         username_admin = tbUsernameSAuc.Text,
                         nama_admin = tbNamaSAuc.Text,
                         email_admin = tbEmailSAuc.Text,

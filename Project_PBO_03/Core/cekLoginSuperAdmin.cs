@@ -14,7 +14,7 @@ namespace Project_PBO_03.Core
         {
             try
             {
-                string query = "SELECT * FROM superadmin WHERE usrnmesa = @username AND passwordsa = @password";
+                string query = "SELECT * FROM superadmin WHERE username = @username AND pwsuper = @password";
 
                 NpgsqlParameter[] parameters = new NpgsqlParameter[]
                 {

@@ -789,15 +789,15 @@ namespace Project_PBO_03
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1920, 1080);
-            Controls.Add(pnlMasukSA);
             Controls.Add(nightControlBox1);
-            Controls.Add(pnlKodevSA);
             Controls.Add(pnlDaftar);
             Controls.Add(pnlMasuk);
             Controls.Add(pnlAwal);
-            Controls.Add(pnlKodevAdmin);
             Controls.Add(pbDekorText);
             Controls.Add(pbDekor);
+            Controls.Add(pnlKodevAdmin);
+            Controls.Add(pnlMasukSA);
+            Controls.Add(pnlKodevSA);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_Login";
             StartPosition = FormStartPosition.CenterScreen;

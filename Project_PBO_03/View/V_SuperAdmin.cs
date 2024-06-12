@@ -150,7 +150,8 @@ namespace Project_PBO_03.View
                     string.IsNullOrWhiteSpace(tbNamaSA.Text) ||
                     string.IsNullOrWhiteSpace(tbEmailSA.Text) ||
                     string.IsNullOrWhiteSpace(tbTeleponSA.Text) ||
-                    string.IsNullOrWhiteSpace(tbPasswordSA.Text))
+                    string.IsNullOrWhiteSpace(tbPasswordSA.Text) ||
+                    string.IsNullOrWhiteSpace(tbKodeVerifikasi.Text))
                 {
                     MessageBox.Show("Tidak boleh ada yang kosong!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -159,7 +160,7 @@ namespace Project_PBO_03.View
                 // Membuat objek admin baru
                 m_Administrator newAdmin = new m_Administrator
                 {
-                    kode_verif = "123456",
+                    kode_verif = tbKodeVerifikasi.Text,
                     username_admin = tbUsernameSA.Text,
                     nama_admin = tbNamaSA.Text,
                     email_admin = tbEmailSA.Text,
@@ -199,6 +200,7 @@ namespace Project_PBO_03.View
             tbEmailSA.Text = "";
             tbTeleponSA.Text = "";
             tbPasswordSA.Text = "";
+            tbKodeVerifikasi.Text = "";
         }
 
 
