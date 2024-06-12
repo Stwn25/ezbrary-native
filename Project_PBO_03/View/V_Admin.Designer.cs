@@ -60,8 +60,7 @@ namespace Project_PBO_03
             btPenulis = new Button();
             btPenerbit = new Button();
             btTambahBukuAdmin = new Button();
-            pnlPeminjamanAdmin = new Panel();
-            dataGridView1 = new DataGridView();
+            dgvSedangDipinjam = new DataGridView();
             lblBookingAdmin = new Label();
             pnlRiwayatPeminjaman = new Panel();
             dataGridView2 = new DataGridView();
@@ -101,17 +100,31 @@ namespace Project_PBO_03
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
+            pnlPeminjaman1 = new Panel();
+            btDipinjam1 = new Button();
+            btBooking1 = new Button();
+            dgvBooking = new DataGridView();
+            label12 = new Label();
+            pnlPeminjaman2 = new Panel();
+            btDipinjam2 = new Button();
+            btBooking2 = new Button();
+            dgvDipinjam = new DataGridView();
+            label13 = new Label();
+            pnlPeminjamanAdmin1 = new Panel();
             pnlAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxVektoradmin).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPerpusAdmin).BeginInit();
             pnlDaftarBukuAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDaftarBuku).BeginInit();
-            pnlPeminjamanAdmin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSedangDipinjam).BeginInit();
             pnlRiwayatPeminjaman.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             pnlProfileAdmin.SuspendLayout();
             pnlTambahBukuAdmin.SuspendLayout();
+            pnlPeminjaman1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvBooking).BeginInit();
+            pnlPeminjaman2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvDipinjam).BeginInit();
             SuspendLayout();
             // 
             // pnlAdmin
@@ -320,7 +333,7 @@ namespace Project_PBO_03
             // 
             ucPenulisTambahBukuAdmin2.BackColor = Color.White;
             ucPenulisTambahBukuAdmin2.BorderStyle = BorderStyle.FixedSingle;
-            ucPenulisTambahBukuAdmin2.Location = new Point(533, 45);
+            ucPenulisTambahBukuAdmin2.Location = new Point(429, 45);
             ucPenulisTambahBukuAdmin2.Name = "ucPenulisTambahBukuAdmin2";
             ucPenulisTambahBukuAdmin2.Size = new Size(498, 729);
             ucPenulisTambahBukuAdmin2.TabIndex = 21;
@@ -329,30 +342,27 @@ namespace Project_PBO_03
             // 
             ucPenerbitTambahBukuAdmin1.BackColor = Color.White;
             ucPenerbitTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
-            ucPenerbitTambahBukuAdmin1.Location = new Point(533, 29);
+            ucPenerbitTambahBukuAdmin1.Location = new Point(425, 17);
             ucPenerbitTambahBukuAdmin1.Name = "ucPenerbitTambahBukuAdmin1";
-            ucPenerbitTambahBukuAdmin1.Size = new Size(499, 808);
+            ucPenerbitTambahBukuAdmin1.Size = new Size(502, 808);
             ucPenerbitTambahBukuAdmin1.TabIndex = 20;
             // 
             // ucJenisBukuTambahBukuAdmin1
             // 
             ucJenisBukuTambahBukuAdmin1.BackColor = Color.White;
             ucJenisBukuTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
-            ucJenisBukuTambahBukuAdmin1.Location = new Point(533, 18);
+            ucJenisBukuTambahBukuAdmin1.Location = new Point(463, 8);
             ucJenisBukuTambahBukuAdmin1.Name = "ucJenisBukuTambahBukuAdmin1";
             ucJenisBukuTambahBukuAdmin1.Size = new Size(495, 726);
             ucJenisBukuTambahBukuAdmin1.TabIndex = 19;
             // 
             // ucUpdateBuku1
             // 
-            ucUpdateBuku1.AllowDrop = true;
             ucUpdateBuku1.BorderStyle = BorderStyle.FixedSingle;
-            ucUpdateBuku1.Location = new Point(247, 80);
-            ucUpdateBuku1.Margin = new Padding(3, 4, 3, 4);
+            ucUpdateBuku1.Location = new Point(279, 32);
             ucUpdateBuku1.Name = "ucUpdateBuku1";
-            ucUpdateBuku1.Size = new Size(943, 620);
+            ucUpdateBuku1.Size = new Size(944, 650);
             ucUpdateBuku1.TabIndex = 18;
-            ucUpdateBuku1.Load += ucUpdateBuku1_Load;
             // 
             // cbJenisBukuAdmin
             // 
@@ -367,7 +377,8 @@ namespace Project_PBO_03
             // 
             button1.BackColor = SystemColors.Highlight;
             button1.FlatStyle = FlatStyle.Popup;
-            button1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Font = new Font("Nunito ExtraBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.Black;
             button1.Location = new Point(1091, 76);
             button1.Name = "button1";
             button1.Size = new Size(72, 35);
@@ -471,23 +482,14 @@ namespace Project_PBO_03
             btTambahBukuAdmin.UseVisualStyleBackColor = false;
             btTambahBukuAdmin.Click += btTambahBukuAdmin_Click;
             // 
-            // pnlPeminjamanAdmin
+            // dgvSedangDipinjam
             // 
-            pnlPeminjamanAdmin.Controls.Add(dataGridView1);
-            pnlPeminjamanAdmin.Controls.Add(lblBookingAdmin);
-            pnlPeminjamanAdmin.Location = new Point(417, 275);
-            pnlPeminjamanAdmin.Name = "pnlPeminjamanAdmin";
-            pnlPeminjamanAdmin.Size = new Size(1507, 805);
-            pnlPeminjamanAdmin.TabIndex = 8;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(23, 88);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1461, 687);
-            dataGridView1.TabIndex = 7;
+            dgvSedangDipinjam.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvSedangDipinjam.Location = new Point(23, 112);
+            dgvSedangDipinjam.Name = "dgvSedangDipinjam";
+            dgvSedangDipinjam.RowHeadersWidth = 51;
+            dgvSedangDipinjam.Size = new Size(1461, 663);
+            dgvSedangDipinjam.TabIndex = 7;
             // 
             // lblBookingAdmin
             // 
@@ -882,7 +884,7 @@ namespace Project_PBO_03
             label2.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(71, 552);
             label2.Name = "label2";
-            label2.Size = new Size(136, 25);
+            label2.Size = new Size(127, 28);
             label2.TabIndex = 15;
             label2.Text = "Tahun Terbit";
             // 
@@ -937,6 +939,128 @@ namespace Project_PBO_03
             label7.TabIndex = 5;
             label7.Text = "Tambah Buku";
             // 
+            // pnlPeminjaman1
+            // 
+            pnlPeminjaman1.Controls.Add(btDipinjam1);
+            pnlPeminjaman1.Controls.Add(btBooking1);
+            pnlPeminjaman1.Controls.Add(dgvBooking);
+            pnlPeminjaman1.Controls.Add(label12);
+            pnlPeminjaman1.Location = new Point(416, 275);
+            pnlPeminjaman1.Name = "pnlPeminjaman1";
+            pnlPeminjaman1.Size = new Size(1507, 805);
+            pnlPeminjaman1.TabIndex = 10;
+            // 
+            // btDipinjam1
+            // 
+            btDipinjam1.BackColor = Color.CornflowerBlue;
+            btDipinjam1.FlatStyle = FlatStyle.Popup;
+            btDipinjam1.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btDipinjam1.ForeColor = Color.White;
+            btDipinjam1.Location = new Point(148, 84);
+            btDipinjam1.Name = "btDipinjam1";
+            btDipinjam1.Size = new Size(126, 36);
+            btDipinjam1.TabIndex = 9;
+            btDipinjam1.Text = "Dipinjam";
+            btDipinjam1.UseVisualStyleBackColor = false;
+            btDipinjam1.Click += btDipinjam1_Click;
+            // 
+            // btBooking1
+            // 
+            btBooking1.BackColor = Color.Black;
+            btBooking1.FlatStyle = FlatStyle.Popup;
+            btBooking1.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btBooking1.ForeColor = Color.White;
+            btBooking1.Location = new Point(23, 84);
+            btBooking1.Name = "btBooking1";
+            btBooking1.Size = new Size(126, 36);
+            btBooking1.TabIndex = 8;
+            btBooking1.Text = "Booking";
+            btBooking1.UseVisualStyleBackColor = false;
+            btBooking1.Click += button2_Click;
+            // 
+            // dgvBooking
+            // 
+            dgvBooking.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvBooking.Location = new Point(23, 119);
+            dgvBooking.Name = "dgvBooking";
+            dgvBooking.RowHeadersWidth = 51;
+            dgvBooking.Size = new Size(1461, 656);
+            dgvBooking.TabIndex = 7;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Nunito Black", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.Location = new Point(23, 12);
+            label12.Name = "label12";
+            label12.Size = new Size(152, 32);
+            label12.TabIndex = 5;
+            label12.Text = "Peminjaman";
+            // 
+            // pnlPeminjaman2
+            // 
+            pnlPeminjaman2.Controls.Add(btDipinjam2);
+            pnlPeminjaman2.Controls.Add(btBooking2);
+            pnlPeminjaman2.Controls.Add(dgvDipinjam);
+            pnlPeminjaman2.Controls.Add(label13);
+            pnlPeminjaman2.Location = new Point(416, 275);
+            pnlPeminjaman2.Name = "pnlPeminjaman2";
+            pnlPeminjaman2.Size = new Size(1507, 805);
+            pnlPeminjaman2.TabIndex = 11;
+            // 
+            // btDipinjam2
+            // 
+            btDipinjam2.BackColor = Color.Black;
+            btDipinjam2.FlatStyle = FlatStyle.Popup;
+            btDipinjam2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btDipinjam2.ForeColor = Color.White;
+            btDipinjam2.Location = new Point(148, 84);
+            btDipinjam2.Name = "btDipinjam2";
+            btDipinjam2.Size = new Size(126, 36);
+            btDipinjam2.TabIndex = 9;
+            btDipinjam2.Text = "Dipinjam";
+            btDipinjam2.UseVisualStyleBackColor = false;
+            // 
+            // btBooking2
+            // 
+            btBooking2.BackColor = Color.CornflowerBlue;
+            btBooking2.FlatStyle = FlatStyle.Popup;
+            btBooking2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btBooking2.ForeColor = Color.White;
+            btBooking2.Location = new Point(23, 84);
+            btBooking2.Name = "btBooking2";
+            btBooking2.Size = new Size(126, 36);
+            btBooking2.TabIndex = 8;
+            btBooking2.Text = "Booking";
+            btBooking2.UseVisualStyleBackColor = false;
+            btBooking2.Click += btBooking2_Click;
+            // 
+            // dgvDipinjam
+            // 
+            dgvDipinjam.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDipinjam.Location = new Point(23, 119);
+            dgvDipinjam.Name = "dgvDipinjam";
+            dgvDipinjam.RowHeadersWidth = 51;
+            dgvDipinjam.Size = new Size(1461, 656);
+            dgvDipinjam.TabIndex = 7;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Nunito Black", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label13.Location = new Point(23, 12);
+            label13.Name = "label13";
+            label13.Size = new Size(152, 32);
+            label13.TabIndex = 5;
+            label13.Text = "Peminjaman";
+            // 
+            // pnlPeminjamanAdmin1
+            // 
+            pnlPeminjamanAdmin1.Location = new Point(0, 0);
+            pnlPeminjamanAdmin1.Name = "pnlPeminjamanAdmin1";
+            pnlPeminjamanAdmin1.Size = new Size(200, 100);
+            pnlPeminjamanAdmin1.TabIndex = 12;
+            // 
             // V_Admin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -948,11 +1072,16 @@ namespace Project_PBO_03
             Controls.Add(pictureBoxPerpusAdmin);
             Controls.Add(pictureBoxVektoradmin);
             Controls.Add(pnlAdmin);
-            Controls.Add(pnlProfileAdmin);
+            Controls.Add(pnlPeminjamanAdmin1);
             Controls.Add(pnlTambahBukuAdmin);
             Controls.Add(pnlDaftarBukuAdmin);
-            Controls.Add(pnlPeminjamanAdmin);
+            Controls.Add(pnlPeminjaman2);
+            Controls.Add(pnlPeminjaman1);
             Controls.Add(pnlRiwayatPeminjaman);
+            Controls.Add(pnlProfileAdmin);
+            Controls.Add(pnlTambahBukuAdmin);
+            Controls.Add(pnlTambahBukuAdmin);
+            Controls.Add(pnlTambahBukuAdmin);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_Admin";
             Text = "V_Admin";
@@ -964,9 +1093,7 @@ namespace Project_PBO_03
             pnlDaftarBukuAdmin.ResumeLayout(false);
             pnlDaftarBukuAdmin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDaftarBuku).EndInit();
-            pnlPeminjamanAdmin.ResumeLayout(false);
-            pnlPeminjamanAdmin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSedangDipinjam).EndInit();
             pnlRiwayatPeminjaman.ResumeLayout(false);
             pnlRiwayatPeminjaman.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
@@ -974,6 +1101,12 @@ namespace Project_PBO_03
             pnlProfileAdmin.PerformLayout();
             pnlTambahBukuAdmin.ResumeLayout(false);
             pnlTambahBukuAdmin.PerformLayout();
+            pnlPeminjaman1.ResumeLayout(false);
+            pnlPeminjaman1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvBooking).EndInit();
+            pnlPeminjaman2.ResumeLayout(false);
+            pnlPeminjaman2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvDipinjam).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -991,8 +1124,7 @@ namespace Project_PBO_03
             btProfileAdmin.BackColor = Color.CornflowerBlue;
             btKeluarAdmin.BackColor = Color.CornflowerBlue;
             this.pnlTambahBukuAdmin.Hide();
-            this.pnlPeminjamanAdmin.Show();
-            /*this.pnlPeminjamanAdmin.Dock = DockStyle.Bottom;*/
+            this.pnlPeminjaman1.Show();
             this.pnlDaftarBukuAdmin.Hide();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Hide();
@@ -1017,8 +1149,7 @@ namespace Project_PBO_03
         private Label lblDaftarBuku;
         private TextBox tbDaftarBukuAdmin;
         private Panel pnlDaftarBukuAdmin;
-        private Panel pnlPeminjamanAdmin;
-        private DataGridView dataGridView1;
+        private DataGridView dgvSedangDipinjam;
         private Label lblBookingAdmin;
         private Panel pnlRiwayatPeminjaman;
         private DataGridView dataGridView2;
@@ -1049,7 +1180,6 @@ namespace Project_PBO_03
         private ComboBox cbJenisBuku;
         private ComboBox cbPenerbit;
         private ComboBox cbPenulis;
-        private ucPenulisTambahBukuAdmin ucPenulisTambahBukuAdmin2;
         private Button btSimpanPerubahanA;
         private TextBox tbNamaBuku;
         private RichTextBox tbSinopsisBuku;
@@ -1057,8 +1187,6 @@ namespace Project_PBO_03
         private Button btJenisBuku;
         private Button btPenulis;
         private Button btPenerbit;
-        private ucPenerbitTambahBukuAdmin ucPenerbitTambahBukuAdmin1;
-        private ucJenisBukuTambahBukuAdmin ucJenisBukuTambahBukuAdmin1;
         private DataGridView dgvDaftarBuku;
         private ComboBox cbJenisBukuAdmin;
         private Button button1;
@@ -1072,8 +1200,19 @@ namespace Project_PBO_03
         private DataGridViewButtonColumn hapusButton;
         private DataGridViewButtonColumn statusButton;
         private DataGridViewButtonColumn updateButton;
-        private ucPenulisTambahBukuAdmin ucPenulisTambahBukuAdmin1;
-        private ucPenerbitTambahBukuAdmin ucPenerbitTambahBukuAdmin2;
-        private ucJenisBukuTambahBukuAdmin ucJenisBukuTambahBukuAdmin2;
+        private Panel pnlPeminjaman1;
+        private Button btBooking1;
+        private DataGridView dgvBooking;
+        private Label label12;
+        private Button btDipinjam1;
+        private Panel pnlPeminjaman2;
+        private Button btDipinjam2;
+        private Button btBooking2;
+        private DataGridView dgvDipinjam;
+        private Label label13;
+        private Panel pnlPeminjamanAdmin1;
+        private ucPenulisTambahBukuAdmin ucPenulisTambahBukuAdmin2;
+        private ucPenerbitTambahBukuAdmin ucPenerbitTambahBukuAdmin1;
+        private ucJenisBukuTambahBukuAdmin ucJenisBukuTambahBukuAdmin1;
     }
 }

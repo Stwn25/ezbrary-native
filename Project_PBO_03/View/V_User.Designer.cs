@@ -70,7 +70,31 @@ namespace Project_PBO_03
             tbUsernameProfileU = new TextBox();
             label3 = new Label();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
-            ucDetailBukuUser1 = new View.ucDetailBukuUser();
+            pnlDetailBuku = new Panel();
+            isbnBuku = new Label();
+            btkeluar = new Button();
+            label12 = new Label();
+            tglPengambilanBooking = new DateTimePicker();
+            btBookingBuku = new Button();
+            label11 = new Label();
+            pictureBox3 = new PictureBox();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            materialMultiLineTextBoxEdit1 = new ReaLTaiizor.Controls.MaterialMultiLineTextBoxEdit();
+            tbSinopsis = new TextBox();
+            label10 = new Label();
+            pbStarKuning = new PictureBox();
+            lbposisirak = new Label();
+            lbjenisbuku = new Label();
+            lbstok = new Label();
+            lbpenulis = new Label();
+            lbpenerbit = new Label();
+            lbtahunterbit = new Label();
+            lbisbnBuku = new Label();
+            pbStarKosong = new PictureBox();
+            pictureBox1 = new PictureBox();
+            namabuku = new Label();
+            panel3 = new Panel();
+            label9 = new Label();
             pnlUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxVectorUser).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPerpusUser).BeginInit();
@@ -81,6 +105,11 @@ namespace Project_PBO_03
             pnlRiwayatUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             pnlProfileUser.SuspendLayout();
+            pnlDetailBuku.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbStarKuning).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbStarKosong).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // pnlUser
@@ -321,7 +350,7 @@ namespace Project_PBO_03
             dgvPeminjamanUser.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvPeminjamanUser.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPeminjamanUser.Columns.AddRange(new DataGridViewColumn[] { detailBuku });
-            dgvPeminjamanUser.Location = new Point(23, 149);
+            dgvPeminjamanUser.Location = new Point(22, 125);
             dgvPeminjamanUser.Name = "dgvPeminjamanUser";
             dgvPeminjamanUser.RowHeadersWidth = 51;
             dgvPeminjamanUser.Size = new Size(1461, 625);
@@ -584,33 +613,318 @@ namespace Project_PBO_03
             nightControlBox1.TabIndex = 7;
             nightControlBox1.Click += nightControlBox1_Click;
             // 
-            // ucDetailBukuUser1
+            // pnlDetailBuku
             // 
-            ucDetailBukuUser1.BackColor = Color.White;
-            ucDetailBukuUser1.BorderStyle = BorderStyle.FixedSingle;
-            ucDetailBukuUser1.id_pengguna = 0;
-            ucDetailBukuUser1.Location = new Point(763, 244);
-            ucDetailBukuUser1.Margin = new Padding(3, 5, 3, 5);
-            ucDetailBukuUser1.Name = "ucDetailBukuUser1";
-            ucDetailBukuUser1.Size = new Size(904, 627);
-            ucDetailBukuUser1.TabIndex = 16;
-            ucDetailBukuUser1.Load += ucDetailBukuUser1_Load;
+            pnlDetailBuku.Controls.Add(isbnBuku);
+            pnlDetailBuku.Controls.Add(btkeluar);
+            pnlDetailBuku.Controls.Add(label12);
+            pnlDetailBuku.Controls.Add(tglPengambilanBooking);
+            pnlDetailBuku.Controls.Add(btBookingBuku);
+            pnlDetailBuku.Controls.Add(label11);
+            pnlDetailBuku.Controls.Add(pictureBox3);
+            pnlDetailBuku.Controls.Add(flowLayoutPanel1);
+            pnlDetailBuku.Controls.Add(materialMultiLineTextBoxEdit1);
+            pnlDetailBuku.Controls.Add(tbSinopsis);
+            pnlDetailBuku.Controls.Add(label10);
+            pnlDetailBuku.Controls.Add(pbStarKuning);
+            pnlDetailBuku.Controls.Add(lbposisirak);
+            pnlDetailBuku.Controls.Add(lbjenisbuku);
+            pnlDetailBuku.Controls.Add(lbstok);
+            pnlDetailBuku.Controls.Add(lbpenulis);
+            pnlDetailBuku.Controls.Add(lbpenerbit);
+            pnlDetailBuku.Controls.Add(lbtahunterbit);
+            pnlDetailBuku.Controls.Add(lbisbnBuku);
+            pnlDetailBuku.Controls.Add(pbStarKosong);
+            pnlDetailBuku.Controls.Add(pictureBox1);
+            pnlDetailBuku.Controls.Add(namabuku);
+            pnlDetailBuku.Controls.Add(panel3);
+            pnlDetailBuku.Controls.Add(label9);
+            pnlDetailBuku.Location = new Point(421, 275);
+            pnlDetailBuku.Name = "pnlDetailBuku";
+            pnlDetailBuku.Size = new Size(1507, 805);
+            pnlDetailBuku.TabIndex = 16;
+            pnlDetailBuku.Paint += pnlDetailBuku_Paint;
+            // 
+            // isbnBuku
+            // 
+            isbnBuku.AutoSize = true;
+            isbnBuku.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            isbnBuku.Location = new Point(385, 138);
+            isbnBuku.Name = "isbnBuku";
+            isbnBuku.Size = new Size(17, 28);
+            isbnBuku.TabIndex = 64;
+            isbnBuku.Text = ".";
+            // 
+            // btkeluar
+            // 
+            btkeluar.BackColor = Color.White;
+            btkeluar.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btkeluar.Location = new Point(1394, 21);
+            btkeluar.Name = "btkeluar";
+            btkeluar.Size = new Size(46, 41);
+            btkeluar.TabIndex = 63;
+            btkeluar.Text = "X";
+            btkeluar.UseVisualStyleBackColor = false;
+            btkeluar.Click += btkeluar_Click;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Nunito", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.Location = new Point(788, 407);
+            label12.Name = "label12";
+            label12.Size = new Size(244, 32);
+            label12.TabIndex = 62;
+            label12.Text = "Tangal Pengambilan :";
+            // 
+            // tglPengambilanBooking
+            // 
+            tglPengambilanBooking.Location = new Point(1054, 412);
+            tglPengambilanBooking.Name = "tglPengambilanBooking";
+            tglPengambilanBooking.Size = new Size(386, 27);
+            tglPengambilanBooking.TabIndex = 61;
+            tglPengambilanBooking.ValueChanged += tglPengambilanBooking_ValueChanged;
+            // 
+            // btBookingBuku
+            // 
+            btBookingBuku.BackColor = SystemColors.HotTrack;
+            btBookingBuku.FlatStyle = FlatStyle.Popup;
+            btBookingBuku.Font = new Font("Nunito", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btBookingBuku.ForeColor = Color.White;
+            btBookingBuku.Location = new Point(788, 484);
+            btBookingBuku.Name = "btBookingBuku";
+            btBookingBuku.Size = new Size(652, 45);
+            btBookingBuku.TabIndex = 60;
+            btBookingBuku.Text = "Booking";
+            btBookingBuku.UseVisualStyleBackColor = false;
+            btBookingBuku.Click += btBookingBuku_Click;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.Location = new Point(84, 555);
+            label11.Name = "label11";
+            label11.Size = new Size(120, 28);
+            label11.TabIndex = 59;
+            label11.Text = "Beri Ulasan";
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = Properties.Resources.mail;
+            pictureBox3.Location = new Point(49, 551);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(29, 32);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 58;
+            pictureBox3.TabStop = false;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.BackColor = SystemColors.Control;
+            flowLayoutPanel1.BorderStyle = BorderStyle.FixedSingle;
+            flowLayoutPanel1.Location = new Point(788, 555);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(652, 206);
+            flowLayoutPanel1.TabIndex = 57;
+            // 
+            // materialMultiLineTextBoxEdit1
+            // 
+            materialMultiLineTextBoxEdit1.AnimateReadOnly = false;
+            materialMultiLineTextBoxEdit1.BackgroundImageLayout = ImageLayout.None;
+            materialMultiLineTextBoxEdit1.CharacterCasing = CharacterCasing.Normal;
+            materialMultiLineTextBoxEdit1.Depth = 0;
+            materialMultiLineTextBoxEdit1.Font = new Font("Nunito", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            materialMultiLineTextBoxEdit1.HideSelection = true;
+            materialMultiLineTextBoxEdit1.Location = new Point(45, 597);
+            materialMultiLineTextBoxEdit1.MaxLength = 32767;
+            materialMultiLineTextBoxEdit1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            materialMultiLineTextBoxEdit1.Name = "materialMultiLineTextBoxEdit1";
+            materialMultiLineTextBoxEdit1.PasswordChar = '\0';
+            materialMultiLineTextBoxEdit1.ReadOnly = false;
+            materialMultiLineTextBoxEdit1.ScrollBars = ScrollBars.None;
+            materialMultiLineTextBoxEdit1.SelectedText = "";
+            materialMultiLineTextBoxEdit1.SelectionLength = 0;
+            materialMultiLineTextBoxEdit1.SelectionStart = 0;
+            materialMultiLineTextBoxEdit1.ShortcutsEnabled = true;
+            materialMultiLineTextBoxEdit1.Size = new Size(663, 164);
+            materialMultiLineTextBoxEdit1.TabIndex = 56;
+            materialMultiLineTextBoxEdit1.TabStop = false;
+            materialMultiLineTextBoxEdit1.TextAlign = HorizontalAlignment.Left;
+            materialMultiLineTextBoxEdit1.UseSystemPasswordChar = false;
+            // 
+            // tbSinopsis
+            // 
+            tbSinopsis.BackColor = Color.White;
+            tbSinopsis.BorderStyle = BorderStyle.FixedSingle;
+            tbSinopsis.Location = new Point(44, 409);
+            tbSinopsis.Margin = new Padding(3, 4, 3, 4);
+            tbSinopsis.Multiline = true;
+            tbSinopsis.Name = "tbSinopsis";
+            tbSinopsis.ReadOnly = true;
+            tbSinopsis.Size = new Size(716, 120);
+            tbSinopsis.TabIndex = 55;
+            tbSinopsis.Text = "\r\n\r\nSinopsis";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.Location = new Point(45, 369);
+            label10.Name = "label10";
+            label10.Size = new Size(101, 28);
+            label10.TabIndex = 54;
+            label10.Text = "Sinopsis :";
+            // 
+            // pbStarKuning
+            // 
+            pbStarKuning.Cursor = Cursors.Hand;
+            pbStarKuning.Image = Properties.Resources.star_276049;
+            pbStarKuning.Location = new Point(326, 79);
+            pbStarKuning.Margin = new Padding(3, 4, 3, 4);
+            pbStarKuning.Name = "pbStarKuning";
+            pbStarKuning.Size = new Size(42, 46);
+            pbStarKuning.SizeMode = PictureBoxSizeMode.Zoom;
+            pbStarKuning.TabIndex = 53;
+            pbStarKuning.TabStop = false;
+            // 
+            // lbposisirak
+            // 
+            lbposisirak.AutoSize = true;
+            lbposisirak.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbposisirak.Location = new Point(319, 299);
+            lbposisirak.Name = "lbposisirak";
+            lbposisirak.Size = new Size(118, 28);
+            lbposisirak.TabIndex = 52;
+            lbposisirak.Text = "Posisi Rak :";
+            // 
+            // lbjenisbuku
+            // 
+            lbjenisbuku.AutoSize = true;
+            lbjenisbuku.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbjenisbuku.Location = new Point(319, 265);
+            lbjenisbuku.Name = "lbjenisbuku";
+            lbjenisbuku.Size = new Size(121, 28);
+            lbjenisbuku.TabIndex = 51;
+            lbjenisbuku.Text = "Jenis Buku :";
+            // 
+            // lbstok
+            // 
+            lbstok.AutoSize = true;
+            lbstok.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbstok.Location = new Point(319, 336);
+            lbstok.Name = "lbstok";
+            lbstok.Size = new Size(66, 28);
+            lbstok.TabIndex = 50;
+            lbstok.Text = "Stok :";
+            // 
+            // lbpenulis
+            // 
+            lbpenulis.AutoSize = true;
+            lbpenulis.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbpenulis.Location = new Point(319, 233);
+            lbpenulis.Name = "lbpenulis";
+            lbpenulis.Size = new Size(91, 28);
+            lbpenulis.TabIndex = 49;
+            lbpenulis.Text = "Penulis :";
+            // 
+            // lbpenerbit
+            // 
+            lbpenerbit.AutoSize = true;
+            lbpenerbit.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbpenerbit.Location = new Point(319, 202);
+            lbpenerbit.Name = "lbpenerbit";
+            lbpenerbit.Size = new Size(102, 28);
+            lbpenerbit.TabIndex = 48;
+            lbpenerbit.Text = "Penerbit :";
+            // 
+            // lbtahunterbit
+            // 
+            lbtahunterbit.AutoSize = true;
+            lbtahunterbit.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbtahunterbit.Location = new Point(320, 171);
+            lbtahunterbit.Name = "lbtahunterbit";
+            lbtahunterbit.Size = new Size(145, 28);
+            lbtahunterbit.TabIndex = 47;
+            lbtahunterbit.Text = "Tahun Terbit : ";
+            // 
+            // lbisbnBuku
+            // 
+            lbisbnBuku.AutoSize = true;
+            lbisbnBuku.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbisbnBuku.Location = new Point(319, 138);
+            lbisbnBuku.Name = "lbisbnBuku";
+            lbisbnBuku.Size = new Size(70, 28);
+            lbisbnBuku.TabIndex = 46;
+            lbisbnBuku.Text = "ISBN :";
+            // 
+            // pbStarKosong
+            // 
+            pbStarKosong.Cursor = Cursors.Hand;
+            pbStarKosong.Image = Properties.Resources.Favorite;
+            pbStarKosong.Location = new Point(326, 79);
+            pbStarKosong.Margin = new Padding(3, 4, 3, 4);
+            pbStarKosong.Name = "pbStarKosong";
+            pbStarKosong.Size = new Size(42, 46);
+            pbStarKosong.SizeMode = PictureBoxSizeMode.Zoom;
+            pbStarKosong.TabIndex = 45;
+            pbStarKosong.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.Favorite__1_;
+            pictureBox1.Location = new Point(44, 79);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(211, 285);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 44;
+            pictureBox1.TabStop = false;
+            // 
+            // namabuku
+            // 
+            namabuku.AutoSize = true;
+            namabuku.Font = new Font("Nunito", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            namabuku.Location = new Point(374, 81);
+            namabuku.Name = "namabuku";
+            namabuku.Size = new Size(177, 41);
+            namabuku.TabIndex = 43;
+            namabuku.Text = "Nama Buku";
+            // 
+            // panel3
+            // 
+            panel3.Location = new Point(123, 43);
+            panel3.Margin = new Padding(3, 4, 3, 4);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(0, 0);
+            panel3.TabIndex = 15;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Nunito", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.Black;
+            label9.Location = new Point(23, 13);
+            label9.Name = "label9";
+            label9.Size = new Size(182, 41);
+            label9.TabIndex = 10;
+            label9.Text = "Detail Buku";
             // 
             // V_User
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1920, 1080);
-            Controls.Add(ucDetailBukuUser1);
-            Controls.Add(pnlPeminjamanUser);
             Controls.Add(nightControlBox1);
-            Controls.Add(pnlProfileUser);
-            Controls.Add(pnlRiwayatUser);
-            Controls.Add(pnlBukuFavUser);
             Controls.Add(lblHai1User);
             Controls.Add(lblHaiUser);
             Controls.Add(pictureBoxPerpusUser);
             Controls.Add(pnlUser);
+            Controls.Add(pnlDetailBuku);
+            Controls.Add(pnlPeminjamanUser);
+            Controls.Add(pnlProfileUser);
+            Controls.Add(pnlRiwayatUser);
+            Controls.Add(pnlBukuFavUser);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_User";
             Text = "V_User";
@@ -630,6 +944,12 @@ namespace Project_PBO_03
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             pnlProfileUser.ResumeLayout(false);
             pnlProfileUser.PerformLayout();
+            pnlDetailBuku.ResumeLayout(false);
+            pnlDetailBuku.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbStarKuning).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbStarKosong).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -661,7 +981,7 @@ namespace Project_PBO_03
             this.pnlBukuFavUser.Hide();
             this.pnlRiwayatUser.Hide();
             this.pnlProfileUser.Hide();
-            
+            this.pnlDetailBuku.Hide();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -716,6 +1036,30 @@ namespace Project_PBO_03
         private ReaLTaiizor.Controls.DungeonComboBox cbJenis;
         private DataGridViewButtonColumn detailBuku;
         private Panel panel1;
-        private View.ucDetailBukuUser ucDetailBukuUser1;
+        private Panel pnlDetailBuku;
+        private Panel panel3;
+        private Label label9;
+        private PictureBox pbStarKuning;
+        private Label lbposisirak;
+        private Label lbjenisbuku;
+        private Label lbstok;
+        private Label lbpenulis;
+        private Label lbpenerbit;
+        private Label lbtahunterbit;
+        private Label lbisbnBuku;
+        private PictureBox pbStarKosong;
+        private PictureBox pictureBox1;
+        private Label namabuku;
+        private TextBox tbSinopsis;
+        private Label label10;
+        private ReaLTaiizor.Controls.MaterialMultiLineTextBoxEdit materialMultiLineTextBoxEdit1;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Label label11;
+        private PictureBox pictureBox3;
+        private Label label12;
+        private DateTimePicker tglPengambilanBooking;
+        private Button btBookingBuku;
+        private Button btkeluar;
+        private Label isbnBuku;
     }
 }

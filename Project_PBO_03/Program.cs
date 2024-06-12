@@ -4,6 +4,7 @@ namespace Project_PBO_03
 {
     internal static class Program
     {
+
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>

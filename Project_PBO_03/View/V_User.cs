@@ -2,6 +2,7 @@
 using Npgsql;
 using Project_PBO_03.Context;
 using Project_PBO_03.Core;
+using Project_PBO_03.Model;
 using Project_PBO_03.View;
 using System;
 using System.Collections.Generic;
@@ -13,20 +14,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Project_PBO_03
 {
     public partial class V_User : Form
     {
         private string input;
-        public int idpengguna;
+        private int idpengguna;
+        DateTime currentDate = DateTime.Now.Date;
 
-        public V_User(string getnama)
+        public V_User(string input)
         {
-            InitializeComponent();  
-            this.input = getnama;
-
-            ucDetailBukuUser1.Hide();
-
+            InitializeComponent();
+            this.input = input;
 
             btPeminjamanUser.BackColor = Color.Black;
             btBukuFavUser.BackColor = Color.CornflowerBlue;
@@ -38,54 +38,13 @@ namespace Project_PBO_03
             this.pnlBukuFavUser.Hide();
             this.pnlRiwayatUser.Hide();
             this.pnlProfileUser.Hide();
+            this.pnlDetailBuku.Hide();
 
             cbJenis.DataSource = JenisBukuContext.all();
             cbJenis.DisplayMember = "namajenis";
             cbJenis.ValueMember = "namajenis";
-            
 
             dgvPeminjamanUser.DataSource = BukuContext.buku();
-
-
-            V_Login login = new V_Login();
-
-            /* if (login != null)
-             {
-                 string data = "Host=localhost;Port=5432;Database=PBO;User Id=postgres;Password=iwanganteng";
-
-                 using (NpgsqlConnection conn = new NpgsqlConnection(data))
-                 {
-                     conn.Open();
-                     using (NpgsqlCommand command = new NpgsqlCommand($"SELECT * FROM pengguna where usrnmeuser = '{getnama}'", conn))
-                     {
-                         using (NpgsqlDataReader reader = command.ExecuteReader())
-                         {
-
-                             if (reader.Read())
-                             {
-                                 tbNamaProfileU.Text = reader["namauser"].ToString();
-                                 tbUsernameProfileU.Text = reader["usrnmeuser"].ToString();
-                                 tbPassU.Text = reader["pwuser"].ToString();
-                                 tbTeleponU.Text = reader["telpuser"].ToString();
-                                 tbEmailU.Text = reader["emailuser"].ToString();
-                                 lblEmailUser.Text = reader["emailuser"].ToString();
-                                 lblHai1User.Text = reader["usrnmeuser"].ToString();
-                                 lblUsernameUser.Text = reader["usrnmeuser"].ToString();
-                             }
-
-                         }
-                     }
-                 }
-             }*/
-
-
-
-            /*DataTable du = PenggunaContext.read(input);
-            if (du != null )
-            {
-                int iduser = Convert.ToInt32(du.Rows[0]["iduser"]);
-                MessageBox.Show($"User : {iduser}", "Plis", MessageBoxButtons.OK);
-            }*/
 
             DataTable dt = PenggunaContext.datauser(input);
             if (dt != null)
@@ -225,7 +184,8 @@ namespace Project_PBO_03
 
         private void dgvPeminjamanUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+
+            if (e.ColumnIndex == dgvPeminjamanUser.Columns["detailBuku"].Index && e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgvPeminjamanUser.Rows[e.RowIndex];
                 string namabuku = row.Cells["namabuku"].Value.ToString();
@@ -233,6 +193,7 @@ namespace Project_PBO_03
                 DataTable dataTable = BukuContext.detailbuku(namabuku);
                 if (dataTable.Rows.Count > 0)
                 {
+
                     DataRow dataRow = dataTable.Rows[0];
                     string isbn = dataRow["isbn"].ToString();
                     string Namabuku = dataRow["namabuku"].ToString();
@@ -244,9 +205,8 @@ namespace Project_PBO_03
                     string namapenulis = dataRow["namapenulis"].ToString();
                     string posisirak = dataRow["posisirak"].ToString();
 
-                    ucDetailBukuUser1.UpdateLabels(isbn, Namabuku, sinopsis, thnterbit, namajenis, stokbuku, namapenerbit, namapenulis, posisirak);
-                    ucDetailBukuUser1.Show();
-
+                    this.pnlDetailBuku.Show();
+                    UpdateDetail(isbn, Namabuku, sinopsis, thnterbit, namajenis, stokbuku, namapenerbit, namapenulis, posisirak, input);
                 }
             }
         }
@@ -254,6 +214,66 @@ namespace Project_PBO_03
         private void ucDetailBukuUser1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void tglPengambilanBooking_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime bookingDate = tglPengambilanBooking.Value;
+
+            if ((bookingDate - currentDate).TotalDays > 2)
+            {
+                MessageBox.Show("Tanggal pengambilan tidak boleh lebih dari dua hari dari hari ini.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tglPengambilanBooking.Value = currentDate;
+                return;
+            }
+            if ((bookingDate - currentDate).TotalDays < 0)
+            {
+                MessageBox.Show("Tentukan tanggal pengambilan dengan tepat.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tglPengambilanBooking.Value = currentDate;
+                return;
+            }
+        }
+
+        public void UpdateDetail(string isbn, string judul, string sinopsis, string thnTerbit, string jenis, string stok, string penerbit, string penulis, string posisiRak, string username)
+        {
+            isbnBuku.Text = isbn;
+            namabuku.Text = $"Judul: {judul}";
+            tbSinopsis.Text = $"Sinopsis: {sinopsis}";
+            lbtahunterbit.Text = $"Tahun Terbit: {thnTerbit}";
+            lbjenisbuku.Text = $"Jenis Buku: {jenis}";
+            lbstok.Text = $"Stok: {stok}";
+            lbpenerbit.Text = $"Penerbit: {penerbit}";
+            lbpenulis.Text = $"Penulis: {penulis}";
+            lbposisirak.Text = $"Posisi Rak: {posisiRak}";
+        }
+
+        public void pnlDetailBuku_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btkeluar_Click(object sender, EventArgs e)
+        {
+            this.pnlDetailBuku.Hide();
+        }
+
+        private void btBookingBuku_Click(object sender, EventArgs e)
+        {
+            DialogResult message = MessageBox.Show($"Pengambilan dilakukan pada tanggal {tglPengambilanBooking.Value},\ndan dikembalikan pada tanggal {tglPengambilanBooking.Value.AddDays(7)}", "Pemberitahuan", MessageBoxButtons.YesNo);
+            if (message == DialogResult.Yes)
+            {
+                m_PeminjamanBuku peminjaman = new m_PeminjamanBuku
+                {
+                    isbn_buku = isbnBuku.Text,
+                    tgl_pengambilan = tglPengambilanBooking.Value,
+                    tgl_pengembalian = tglPengambilanBooking.Value.AddDays(7),
+                    id_status = 1,
+                    id_pengguna = idpengguna
+                };
+
+                PeminjamanBuku.create(peminjaman);
+                MessageBox.Show($"Booking buku berhasil, jangan lupa ambil buku sesuai tanggal pengambilan", "Berhasil", MessageBoxButtons.OK);
+            }
         }
     }
 }
