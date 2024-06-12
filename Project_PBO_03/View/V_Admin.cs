@@ -560,5 +560,54 @@ namespace Project_PBO_03
             this.pnlTambahBukuAdmin.Hide();
             this.pnlDaftarBukuAdmin.Show();
         }
+
+        private void btSimpanPerubahanA_Click(object sender, EventArgs e)
+        {
+            if (idadmin != 0)
+            {
+                DataTable dt = AdminContext.read(idadmin);
+                if (dt.Rows.Count > 0)
+                {
+                    DataRow row = dt.Rows[0];
+                    string kode_verif_database = row["kodeverifikasi"].ToString();
+
+                    m_Administrator updatedAdmin = new m_Administrator
+                    {
+                        id_admin = idadmin,
+                        username_admin = tbUsernameAdmin.Text,
+                        nama_admin = tbNamaProfileAdmin.Text,
+                        email_admin = tbEmailProfileAdmin.Text,
+                        telp_admin = tbNoTeleponProfileAdmin.Text,
+                        pass_admin = btPasswordProfileAdmin.Text,
+                        kode_verif = kode_verif_database
+                    };
+
+                    try
+                    {
+                        AdminContext.update(updatedAdmin);
+                        MessageBox.Show("Data anda berhasil diperbarui!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        this.pnlProfileAdmin.Show();
+
+                        lblGmail.Text = tbEmailProfileAdmin.Text;
+                        lblhai1Admin.Text = tbUsernameAdmin.Text;
+                        lblUsername.Text = tbUsernameAdmin.Text;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Gagal memperbarui data anda: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Data anda tidak ditemukan.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("ID anda tidak valid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }

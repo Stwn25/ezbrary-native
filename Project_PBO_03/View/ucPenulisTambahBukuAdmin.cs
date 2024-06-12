@@ -49,23 +49,25 @@ namespace Project_PBO_03
 
         private void btSimpanPenulis_Click(object sender, EventArgs e)
         {
+            string Penulis = tbNamaPenulis.Text;
+            // Pengecekan input kosong
+            if (string.IsNullOrWhiteSpace(tbNamaPenulis.Text))
             {
-                string Penulis = tbNamaPenulis.Text;
+                MessageBox.Show("Tidak boleh ada yang kosong!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-                m_Penulis penulisBaru = new m_Penulis()
+            m_Penulis penulisBaru = new m_Penulis()
                 {
-                    nama_penulis = Penulis,
+                nama_penulis = Penulis,
+            };
 
-                };
-
-                PenulisContext.create(penulisBaru);
-                DialogResult message = MessageBox.Show("Data berhasil ditambahkan", "Sukses", MessageBoxButtons.OK);
-                if (message == DialogResult.OK)
-                {
-                    dgvPenulis.DataSource = PenulisContext.all();
-                    tbNamaPenulis.Text = default;
-
-                }
+            PenulisContext.create(penulisBaru);
+            DialogResult message = MessageBox.Show("Data berhasil ditambahkan", "Sukses", MessageBoxButtons.OK);
+            if (message == DialogResult.OK)
+            {
+                dgvPenulis.DataSource = PenulisContext.all();
+                tbNamaPenulis.Text = default;
             }
         }
 

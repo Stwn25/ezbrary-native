@@ -28,7 +28,12 @@ namespace Project_PBO_03
         private void btSimpanJenisBuku_Click(object sender, EventArgs e)
         {
             string namanovel = tbJenisBuku.Text;
-
+            // Pengecekan input kosong
+            if (string.IsNullOrWhiteSpace(tbJenisBuku.Text))
+            {
+                MessageBox.Show("Tidak boleh ada yang kosong!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             m_JenisBuku jenisBaru = new m_JenisBuku()
             {
@@ -42,8 +47,6 @@ namespace Project_PBO_03
                 dgvJenisBuku.DataSource = JenisBukuContext.all();
                 tbJenisBuku.Text = default;
             }
-
-
         }
 
         private void dgvJenisBuku_CellContentClick(object sender, DataGridViewCellEventArgs e)

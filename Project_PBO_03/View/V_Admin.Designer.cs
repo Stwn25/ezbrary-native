@@ -106,6 +106,9 @@ namespace Project_PBO_03
             btBooking1 = new Button();
             dgvBooking = new DataGridView();
             label12 = new Label();
+            ucPenulisTambahBukuAdmin2 = new ucPenulisTambahBukuAdmin();
+            ucPenerbitTambahBukuAdmin1 = new ucPenerbitTambahBukuAdmin();
+            ucJenisBukuTambahBukuAdmin1 = new ucJenisBukuTambahBukuAdmin();
             pnlPeminjaman2 = new Panel();
             btDipinjam2 = new Button();
             btBooking2 = new Button();
@@ -564,6 +567,7 @@ namespace Project_PBO_03
             btSimpanPerubahanA.TabIndex = 16;
             btSimpanPerubahanA.Text = "Simpan Perubahan";
             btSimpanPerubahanA.UseVisualStyleBackColor = false;
+            btSimpanPerubahanA.Click += btSimpanPerubahanA_Click;
             // 
             // lblPasswordProfileAdmin
             // 
@@ -1011,6 +1015,33 @@ namespace Project_PBO_03
             label12.TabIndex = 5;
             label12.Text = "Peminjaman";
             // 
+            // ucPenulisTambahBukuAdmin2
+            // 
+            ucPenulisTambahBukuAdmin2.BackColor = Color.White;
+            ucPenulisTambahBukuAdmin2.BorderStyle = BorderStyle.FixedSingle;
+            ucPenulisTambahBukuAdmin2.Location = new Point(1251, 199);
+            ucPenulisTambahBukuAdmin2.Name = "ucPenulisTambahBukuAdmin2";
+            ucPenulisTambahBukuAdmin2.Size = new Size(502, 729);
+            ucPenulisTambahBukuAdmin2.TabIndex = 12;
+            // 
+            // ucPenerbitTambahBukuAdmin1
+            // 
+            ucPenerbitTambahBukuAdmin1.BackColor = Color.White;
+            ucPenerbitTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
+            ucPenerbitTambahBukuAdmin1.Location = new Point(1288, 232);
+            ucPenerbitTambahBukuAdmin1.Name = "ucPenerbitTambahBukuAdmin1";
+            ucPenerbitTambahBukuAdmin1.Size = new Size(497, 808);
+            ucPenerbitTambahBukuAdmin1.TabIndex = 11;
+            // 
+            // ucJenisBukuTambahBukuAdmin1
+            // 
+            ucJenisBukuTambahBukuAdmin1.BackColor = Color.White;
+            ucJenisBukuTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
+            ucJenisBukuTambahBukuAdmin1.Location = new Point(1265, 174);
+            ucJenisBukuTambahBukuAdmin1.Name = "ucJenisBukuTambahBukuAdmin1";
+            ucJenisBukuTambahBukuAdmin1.Size = new Size(497, 726);
+            ucJenisBukuTambahBukuAdmin1.TabIndex = 10;
+            // 
             // pnlPeminjaman2
             // 
             pnlPeminjaman2.Controls.Add(btDipinjam2);
@@ -1080,6 +1111,9 @@ namespace Project_PBO_03
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1920, 1080);
+            Controls.Add(ucPenerbitTambahBukuAdmin1);
+            Controls.Add(ucPenulisTambahBukuAdmin2);
+            Controls.Add(ucJenisBukuTambahBukuAdmin1);
             Controls.Add(nightControlBox1);
             Controls.Add(lblhai1Admin);
             Controls.Add(lblhaiAdmin);
@@ -1224,7 +1258,9 @@ namespace Project_PBO_03
         private Panel pnlPeminjamanAdmin1;
         private ucPenulisTambahBukuAdmin ucPenulisTambahBukuAdmin2;
         private ucPenerbitTambahBukuAdmin ucPenerbitTambahBukuAdmin1;
-        private ucJenisBukuTambahBukuAdmin ucJenisBukuTambahBukuAdmin1;
+        
         private Button button2;
+        private ucJenisBukuTambahBukuAdmin ucJenisBukuTambahBukuAdmin1;
+       
     }
 }

@@ -28,6 +28,7 @@ namespace Project_PBO_03.View
                 tbEmailSAuc.Text = row["emailadmin"].ToString();
                 tbTeleponSAuc.Text = row["telpadmin"].ToString();
                 tbPasswordSAuc.Text = row["pwadmin"].ToString();
+                tbKodeVSAuc.Text = row["kodeverifikasi"].ToString();
             }
         }
 
