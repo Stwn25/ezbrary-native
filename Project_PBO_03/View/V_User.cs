@@ -499,11 +499,10 @@ namespace Project_PBO_03
                 }
             }
         }
-    }
+
 
         private void btBeriUlasan_Click(object sender, EventArgs e)
         {
-
             if (string.IsNullOrWhiteSpace(tbUlasan.Text))
             {
                 MessageBox.Show("Masukkan ulasan!", "Pemberitahuan", MessageBoxButtons.OK);
@@ -518,15 +517,15 @@ namespace Project_PBO_03
                 };
 
                 UlasanContext.create(ulasanUser);
-                tbUlasan.Text = default;
+                tbUlasan.Text = null;
                 loadUlasan();
-            };
-           
-
+            }
         }
 
         private void loadUlasan()
         {
+            this.flpUlasanBuku.Controls.Clear();
+
             DataTable bukuData = UlasanContext.ulasanBuku(isbn1);
             foreach (DataRow row in bukuData.Rows)
             {
@@ -535,6 +534,7 @@ namespace Project_PBO_03
                 this.flpUlasanBuku.Controls.SetChildIndex(panel, 0);
             }
         }
+
 
         private Panel tambahPanelBuku(DataRow row)
         {
@@ -570,5 +570,5 @@ namespace Project_PBO_03
         }
 
 
-        }
+    }
 }
