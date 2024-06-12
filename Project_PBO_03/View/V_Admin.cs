@@ -16,9 +16,12 @@ namespace Project_PBO_03
 {
     public partial class V_Admin : Form
     {
-        public V_Admin()
+        private string input;
+        public int idadmin;
+        public V_Admin(string getnama)
         {
             InitializeComponent();
+            this.input = getnama;
             btKelolaBuku.BackColor = Color.Black;
             btPeminjaman.BackColor = Color.CornflowerBlue;
             btRiwayatPeminjaman.BackColor = Color.CornflowerBlue;
@@ -27,7 +30,6 @@ namespace Project_PBO_03
 
             this.pnlDaftarBukuAdmin.Show();
             this.pnlTambahBukuAdmin.Hide();
-            this.pnlPeminjamanAdmin1.Hide();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Hide();
             this.pnlPeminjaman1.Hide();
@@ -55,6 +57,40 @@ namespace Project_PBO_03
             cbJenisBuku.DataSource = JenisBukuContext.all();
             cbJenisBuku.DisplayMember = "namajenis";
             cbJenisBuku.ValueMember = "idjenis";
+
+            /*MessageBox.Show($"Admin : {input}", "Plis", MessageBoxButtons.OK);*/
+            /*V_Login login = new V_Login();*/
+
+
+            DataTable dt = AdminContext.dataadmin(input);
+            if (dt != null && input != null)
+            {
+                MessageBox.Show($"Admin : {input}", "Plis", MessageBoxButtons.OK);
+
+                int idadmins = Convert.ToInt32(dt.Rows[0]["idadmin"]);
+                string namaadmin = dt.Rows[0]["namaadmin"].ToString();
+                string telpadmin = dt.Rows[0]["telpadmin"].ToString();
+                string usrnmeadmin = dt.Rows[0]["usrnmeadmin"].ToString();
+                string pwadmin = dt.Rows[0]["pwadmin"].ToString();
+                string emailadmin = dt.Rows[0]["emailadmin"].ToString();
+                idadmin = idadmins;
+
+                MessageBox.Show($"Admin : {idadmin}", "Plis", MessageBoxButtons.OK);
+
+                tbNamaProfileAdmin.Text = namaadmin;
+                tbUsernameAdmin.Text = usrnmeadmin;
+                btPasswordProfileAdmin.Text = pwadmin;
+                tbNoTeleponProfileAdmin.Text = telpadmin;
+                tbEmailProfileAdmin.Text = emailadmin;
+                lblGmail.Text = emailadmin;
+                lblUsername.Text = usrnmeadmin;
+                lblhai1Admin.Text = usrnmeadmin;
+            }
+            else
+            {
+                MessageBox.Show($"Admin : {input}", "Plis", MessageBoxButtons.OK);
+            }
+
 
         }
 
@@ -450,69 +486,50 @@ namespace Project_PBO_03
 
         }
 
-        private void btBooking1_Click(object sender, EventArgs e)
-        {
-            btPeminjaman.BackColor = Color.Black;
-            btKeluarAdmin.BackColor = Color.CornflowerBlue;
-            pnlDaftarBukuAdmin.Hide();
-            pnlProfileAdmin.Hide();
-            pnlRiwayatPeminjaman.Hide();
-            pnlTambahBuku.Hide();
-            pnlPeminjamanAdmin1.Show();
-        }
-
-        private void btSedangDipinjam1_Click(object sender, EventArgs e)
-        {
-            btPeminjaman.BackColor = Color.Black;
-            btKeluarAdmin.BackColor = Color.CornflowerBlue;
-            pnlDaftarBukuAdmin.Hide();
-            pnlProfileAdmin.Hide();
-            pnlRiwayatPeminjaman.Hide();
-            pnlTambahBuku.Hide();
-            pnlPeminjamanAdmin1.Hide();
-        }
-
-        private void btBooking_Click(object sender, EventArgs e)
-        {
-            btPeminjaman.BackColor = Color.Black;
-            btKeluarAdmin.BackColor = Color.CornflowerBlue;
-            pnlDaftarBukuAdmin.Hide();
-            pnlProfileAdmin.Hide();
-            pnlRiwayatPeminjaman.Hide();
-            pnlTambahBuku.Hide();
-            pnlPeminjamanAdmin1.Show();
-        }
-
-        private void btSedangDipinjam_Click(object sender, EventArgs e)
-        {
-            btPeminjaman.BackColor = Color.Black;
-            btKeluarAdmin.BackColor = Color.CornflowerBlue;
-            pnlDaftarBukuAdmin.Hide();
-            pnlProfileAdmin.Hide();
-            pnlRiwayatPeminjaman.Hide();
-            pnlTambahBuku.Hide();
-            pnlPeminjamanAdmin1.Hide();
-        }
-
-        private void pnlPeminjamanAdmin_Paint(object sender, PaintEventArgs e)
+        private void lblUsernameProfileAdmin_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void ucJenisBukuTambahBukuAdmin1_Load_1(object sender, EventArgs e)
+        private void tbNamaProfileAdmin_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void btkeluartambahbuku_Click(object sender, EventArgs e)
+        private void btPasswordProfileAdmin_TextChanged(object sender, EventArgs e)
         {
-            this.pnlTambahBukuAdmin.Hide();
-            this.pnlDaftarBukuAdmin.Show();
+
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void tbNoTeleponProfileAdmin_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void tbEmailProfileAdmin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblUsername_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblGmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblhai1Admin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btBooking2_Click(object sender, EventArgs e)
+        {
+            this.pnlPeminjaman1.Show();
+            this.pnlPeminjaman2.Hide();
         }
 
         private void btDipinjam1_Click(object sender, EventArgs e)
@@ -521,10 +538,18 @@ namespace Project_PBO_03
             this.pnlPeminjaman2.Show();
         }
 
-        private void btBooking2_Click(object sender, EventArgs e)
+        private void tbDaftarBukuAdmin_TextChanged(object sender, EventArgs e)
         {
-            this.pnlPeminjaman2.Hide();
-            this.pnlPeminjaman1.Show();
+            string pencarian = tbDaftarBukuAdmin.Text;
+            DataTable search = BukuContext.showBySearch(pencarian);
+            dgvDaftarBuku.DataSource = search;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string pencarian = tbDaftarBukuAdmin.Text;
+            DataTable search = BukuContext.showBySearch(pencarian);
+            dgvDaftarBuku.DataSource = search;
         }
 
         private void button2_Click_1(object sender, EventArgs e)

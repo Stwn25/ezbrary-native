@@ -55,6 +55,8 @@ namespace Project_PBO_03
             cbJenis.DisplayMember = "namajenis";
             cbJenis.ValueMember = "namajenis";
 
+
+
             dgvPeminjamanUser.DataSource = BukuContext.buku();
 
             DataTable dt = PenggunaContext.datauser(input);
@@ -353,6 +355,20 @@ namespace Project_PBO_03
             {
                 MessageBox.Show("ID anda tidak valid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void tbPeminjamanUser_TextChanged(object sender, EventArgs e)
+        {
+            string pencarian = tbPeminjamanUser.Text;
+            DataTable search = BukuContext.showBySearch(pencarian);
+            dgvPeminjamanUser.DataSource = search;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string pencarian = tbPeminjamanUser.Text;
+            DataTable search = BukuContext.showBySearch(pencarian);
+            dgvPeminjamanUser.DataSource = search;
         }
     }
 }
