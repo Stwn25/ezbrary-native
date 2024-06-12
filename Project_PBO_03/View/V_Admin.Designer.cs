@@ -534,6 +534,7 @@ namespace Project_PBO_03
             btSimpanPerubahanA.TabIndex = 16;
             btSimpanPerubahanA.Text = "Simpan Perubahan";
             btSimpanPerubahanA.UseVisualStyleBackColor = false;
+            btSimpanPerubahanA.Click += btSimpanPerubahanA_Click;
             // 
             // lblPasswordProfileAdmin
             // 
@@ -985,7 +986,7 @@ namespace Project_PBO_03
             // 
             ucPenulisTambahBukuAdmin2.BackColor = Color.White;
             ucPenulisTambahBukuAdmin2.BorderStyle = BorderStyle.FixedSingle;
-            ucPenulisTambahBukuAdmin2.Location = new Point(825, 256);
+            ucPenulisTambahBukuAdmin2.Location = new Point(1251, 199);
             ucPenulisTambahBukuAdmin2.Name = "ucPenulisTambahBukuAdmin2";
             ucPenulisTambahBukuAdmin2.Size = new Size(502, 729);
             ucPenulisTambahBukuAdmin2.TabIndex = 12;
@@ -994,7 +995,7 @@ namespace Project_PBO_03
             // 
             ucPenerbitTambahBukuAdmin1.BackColor = Color.White;
             ucPenerbitTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
-            ucPenerbitTambahBukuAdmin1.Location = new Point(696, 212);
+            ucPenerbitTambahBukuAdmin1.Location = new Point(1288, 232);
             ucPenerbitTambahBukuAdmin1.Name = "ucPenerbitTambahBukuAdmin1";
             ucPenerbitTambahBukuAdmin1.Size = new Size(497, 808);
             ucPenerbitTambahBukuAdmin1.TabIndex = 11;
@@ -1003,7 +1004,7 @@ namespace Project_PBO_03
             // 
             ucJenisBukuTambahBukuAdmin1.BackColor = Color.White;
             ucJenisBukuTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
-            ucJenisBukuTambahBukuAdmin1.Location = new Point(868, 202);
+            ucJenisBukuTambahBukuAdmin1.Location = new Point(1265, 174);
             ucJenisBukuTambahBukuAdmin1.Name = "ucJenisBukuTambahBukuAdmin1";
             ucJenisBukuTambahBukuAdmin1.Size = new Size(497, 726);
             ucJenisBukuTambahBukuAdmin1.TabIndex = 10;
@@ -1087,12 +1088,12 @@ namespace Project_PBO_03
             Controls.Add(pictureBoxVektoradmin);
             Controls.Add(pnlAdmin);
             Controls.Add(pnlPeminjamanAdmin1);
-            Controls.Add(pnlPeminjaman1);
-            Controls.Add(pnlRiwayatPeminjaman);
             Controls.Add(pnlProfileAdmin);
             Controls.Add(pnlTambahBukuAdmin);
             Controls.Add(pnlDaftarBukuAdmin);
             Controls.Add(pnlPeminjaman2);
+            Controls.Add(pnlPeminjaman1);
+            Controls.Add(pnlRiwayatPeminjaman);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_Admin";
             Text = "V_Admin";
