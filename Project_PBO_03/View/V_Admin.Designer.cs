@@ -218,6 +218,7 @@ namespace Project_PBO_03
             lblGmail.Size = new Size(197, 20);
             lblGmail.TabIndex = 1;
             lblGmail.Text = "Jamaludin@gmail.com";
+            lblGmail.Click += lblGmail_Click;
             // 
             // lblUsername
             // 
@@ -229,6 +230,7 @@ namespace Project_PBO_03
             lblUsername.Size = new Size(110, 25);
             lblUsername.TabIndex = 0;
             lblUsername.Text = "Username";
+            lblUsername.Click += lblUsername_Click;
             // 
             // pictureBoxVektoradmin
             // 
@@ -271,6 +273,7 @@ namespace Project_PBO_03
             lblhai1Admin.Size = new Size(73, 25);
             lblhai1Admin.TabIndex = 4;
             lblhai1Admin.Text = "Admin";
+            lblhai1Admin.Click += lblhai1Admin_Click;
             // 
             // lblDaftarBuku
             // 
@@ -364,7 +367,7 @@ namespace Project_PBO_03
             // 
             button1.BackColor = SystemColors.Highlight;
             button1.FlatStyle = FlatStyle.Popup;
-            button1.Font = new Font("Nunito ExtraBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.Location = new Point(1091, 76);
             button1.Name = "button1";
             button1.Size = new Size(72, 35);
@@ -576,6 +579,7 @@ namespace Project_PBO_03
             btPasswordProfileAdmin.Name = "btPasswordProfileAdmin";
             btPasswordProfileAdmin.Size = new Size(1400, 34);
             btPasswordProfileAdmin.TabIndex = 14;
+            btPasswordProfileAdmin.TextChanged += btPasswordProfileAdmin_TextChanged;
             // 
             // lblNoteleponProfileAdmin
             // 
@@ -596,6 +600,7 @@ namespace Project_PBO_03
             tbNoTeleponProfileAdmin.Name = "tbNoTeleponProfileAdmin";
             tbNoTeleponProfileAdmin.Size = new Size(1400, 34);
             tbNoTeleponProfileAdmin.TabIndex = 12;
+            tbNoTeleponProfileAdmin.TextChanged += tbNoTeleponProfileAdmin_TextChanged;
             // 
             // lblEmailProfileAdmin
             // 
@@ -616,6 +621,7 @@ namespace Project_PBO_03
             tbEmailProfileAdmin.Name = "tbEmailProfileAdmin";
             tbEmailProfileAdmin.Size = new Size(1400, 34);
             tbEmailProfileAdmin.TabIndex = 10;
+            tbEmailProfileAdmin.TextChanged += tbEmailProfileAdmin_TextChanged;
             // 
             // lblNamaProfileAdmin
             // 
@@ -636,6 +642,7 @@ namespace Project_PBO_03
             tbNamaProfileAdmin.Name = "tbNamaProfileAdmin";
             tbNamaProfileAdmin.Size = new Size(1400, 34);
             tbNamaProfileAdmin.TabIndex = 8;
+            tbNamaProfileAdmin.TextChanged += tbNamaProfileAdmin_TextChanged;
             // 
             // lblUsernameProfileAdmin
             // 
@@ -646,6 +653,7 @@ namespace Project_PBO_03
             lblUsernameProfileAdmin.Size = new Size(110, 25);
             lblUsernameProfileAdmin.TabIndex = 7;
             lblUsernameProfileAdmin.Text = "Username";
+            lblUsernameProfileAdmin.Click += lblUsernameProfileAdmin_Click;
             // 
             // tbUsernameAdmin
             // 
@@ -722,61 +730,61 @@ namespace Project_PBO_03
             // tbPosisiRak
             // 
             tbPosisiRak.BorderStyle = BorderStyle.FixedSingle;
-            tbPosisiRak.Font = new Font("Nunito", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbPosisiRak.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbPosisiRak.Location = new Point(838, 589);
             tbPosisiRak.Margin = new Padding(3, 4, 3, 4);
             tbPosisiRak.Name = "tbPosisiRak";
-            tbPosisiRak.Size = new Size(284, 28);
+            tbPosisiRak.Size = new Size(284, 24);
             tbPosisiRak.TabIndex = 32;
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label11.Location = new Point(838, 548);
             label11.Name = "label11";
-            label11.Size = new Size(106, 28);
+            label11.Size = new Size(113, 25);
             label11.TabIndex = 31;
             label11.Text = "Posisi Rak";
             // 
             // tbStokBuku
             // 
             tbStokBuku.BorderStyle = BorderStyle.FixedSingle;
-            tbStokBuku.Font = new Font("Nunito", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbStokBuku.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbStokBuku.Location = new Point(838, 127);
             tbStokBuku.Margin = new Padding(3, 4, 3, 4);
             tbStokBuku.Name = "tbStokBuku";
-            tbStokBuku.Size = new Size(284, 28);
+            tbStokBuku.Size = new Size(284, 24);
             tbStokBuku.TabIndex = 30;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.Location = new Point(838, 86);
             label10.Name = "label10";
-            label10.Size = new Size(103, 28);
+            label10.Size = new Size(111, 25);
             label10.TabIndex = 29;
             label10.Text = "Stok Buku";
             // 
             // tbISBN
             // 
             tbISBN.BorderStyle = BorderStyle.FixedSingle;
-            tbISBN.Font = new Font("Nunito", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbISBN.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbISBN.Location = new Point(69, 127);
             tbISBN.Margin = new Padding(3, 4, 3, 4);
             tbISBN.MaxLength = 20;
             tbISBN.Name = "tbISBN";
-            tbISBN.Size = new Size(707, 28);
+            tbISBN.Size = new Size(707, 24);
             tbISBN.TabIndex = 28;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Nunito SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.Location = new Point(69, 86);
             label9.Name = "label9";
-            label9.Size = new Size(51, 23);
+            label9.Size = new Size(52, 20);
             label9.TabIndex = 27;
             label9.Text = "ISBN\r\n";
             // 
@@ -792,7 +800,7 @@ namespace Project_PBO_03
             // tbSinopsisBuku
             // 
             tbSinopsisBuku.BorderStyle = BorderStyle.FixedSingle;
-            tbSinopsisBuku.Font = new Font("Nunito", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbSinopsisBuku.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbSinopsisBuku.Location = new Point(68, 340);
             tbSinopsisBuku.Margin = new Padding(3, 4, 3, 4);
             tbSinopsisBuku.Name = "tbSinopsisBuku";
@@ -803,44 +811,44 @@ namespace Project_PBO_03
             // tbNamaBuku
             // 
             tbNamaBuku.BorderStyle = BorderStyle.FixedSingle;
-            tbNamaBuku.Font = new Font("Nunito", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbNamaBuku.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbNamaBuku.Location = new Point(68, 232);
             tbNamaBuku.Margin = new Padding(3, 4, 3, 4);
             tbNamaBuku.Name = "tbNamaBuku";
-            tbNamaBuku.Size = new Size(707, 28);
+            tbNamaBuku.Size = new Size(707, 24);
             tbNamaBuku.TabIndex = 24;
             // 
             // cbJenisBuku
             // 
-            cbJenisBuku.Font = new Font("Nunito", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbJenisBuku.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbJenisBuku.FormattingEnabled = true;
             cbJenisBuku.Location = new Point(838, 484);
             cbJenisBuku.Margin = new Padding(3, 4, 3, 4);
             cbJenisBuku.Name = "cbJenisBuku";
-            cbJenisBuku.Size = new Size(618, 28);
+            cbJenisBuku.Size = new Size(618, 26);
             cbJenisBuku.TabIndex = 23;
             cbJenisBuku.SelectedIndexChanged += cbJenisBuku_SelectedIndexChanged;
             cbJenisBuku.SelectionChangeCommitted += cbJenisBuku_SelectionChangeCommitted;
             // 
             // cbPenerbit
             // 
-            cbPenerbit.Font = new Font("Nunito", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbPenerbit.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbPenerbit.FormattingEnabled = true;
             cbPenerbit.Location = new Point(838, 231);
             cbPenerbit.Margin = new Padding(3, 4, 3, 4);
             cbPenerbit.Name = "cbPenerbit";
-            cbPenerbit.Size = new Size(618, 28);
+            cbPenerbit.Size = new Size(618, 26);
             cbPenerbit.TabIndex = 21;
             cbPenerbit.SelectedIndexChanged += cbPenerbit_SelectedIndexChanged;
             // 
             // cbPenulis
             // 
-            cbPenulis.Font = new Font("Nunito", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbPenulis.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbPenulis.FormattingEnabled = true;
             cbPenulis.Location = new Point(838, 362);
             cbPenulis.Margin = new Padding(3, 4, 3, 4);
             cbPenulis.Name = "cbPenulis";
-            cbPenulis.Size = new Size(618, 28);
+            cbPenulis.Size = new Size(618, 26);
             cbPenulis.TabIndex = 20;
             cbPenulis.SelectedIndexChanged += cbPenulis_SelectedIndexChanged;
             // 
@@ -861,30 +869,30 @@ namespace Project_PBO_03
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.Location = new Point(838, 447);
             label8.Name = "label8";
-            label8.Size = new Size(108, 28);
+            label8.Size = new Size(119, 25);
             label8.TabIndex = 17;
             label8.Text = "Jenis Buku";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(71, 552);
             label2.Name = "label2";
-            label2.Size = new Size(125, 28);
+            label2.Size = new Size(136, 25);
             label2.TabIndex = 15;
             label2.Text = "Tahun Terbit";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(838, 186);
             label3.Name = "label3";
-            label3.Size = new Size(90, 28);
+            label3.Size = new Size(92, 25);
             label3.TabIndex = 13;
             label3.Text = "Penerbit";
             label3.Click += label3_Click;
@@ -892,30 +900,30 @@ namespace Project_PBO_03
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.Location = new Point(838, 324);
             label4.Name = "label4";
-            label4.Size = new Size(80, 28);
+            label4.Size = new Size(83, 25);
             label4.TabIndex = 11;
             label4.Text = "Penulis";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.Location = new Point(68, 303);
             label5.Name = "label5";
-            label5.Size = new Size(89, 28);
+            label5.Size = new Size(95, 25);
             label5.TabIndex = 9;
             label5.Text = "Sinopsis";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Nunito SemiBold", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.Location = new Point(68, 191);
             label6.Name = "label6";
-            label6.Size = new Size(117, 28);
+            label6.Size = new Size(123, 25);
             label6.TabIndex = 7;
             label6.Text = "Nama Buku";
             // 
@@ -940,11 +948,11 @@ namespace Project_PBO_03
             Controls.Add(pictureBoxPerpusAdmin);
             Controls.Add(pictureBoxVektoradmin);
             Controls.Add(pnlAdmin);
+            Controls.Add(pnlProfileAdmin);
+            Controls.Add(pnlTambahBukuAdmin);
             Controls.Add(pnlDaftarBukuAdmin);
             Controls.Add(pnlPeminjamanAdmin);
             Controls.Add(pnlRiwayatPeminjaman);
-            Controls.Add(pnlProfileAdmin);
-            Controls.Add(pnlTambahBukuAdmin);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_Admin";
             Text = "V_Admin";

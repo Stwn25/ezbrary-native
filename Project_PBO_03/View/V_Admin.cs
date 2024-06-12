@@ -16,9 +16,12 @@ namespace Project_PBO_03
 {
     public partial class V_Admin : Form
     {
-        public V_Admin()
+        private string input;
+        public int idadmin;
+        public V_Admin(string getnama)
         {
             InitializeComponent();
+            this.input = getnama;
             btKelolaBuku.BackColor = Color.Black;
             btPeminjaman.BackColor = Color.CornflowerBlue;
             btRiwayatPeminjaman.BackColor = Color.CornflowerBlue;
@@ -53,6 +56,40 @@ namespace Project_PBO_03
             cbJenisBuku.DataSource = JenisBukuContext.all();
             cbJenisBuku.DisplayMember = "namajenis";
             cbJenisBuku.ValueMember = "idjenis";
+
+            /*MessageBox.Show($"Admin : {input}", "Plis", MessageBoxButtons.OK);*/
+            /*V_Login login = new V_Login();*/
+
+
+            DataTable dt = AdminContext.dataadmin(input);
+            if (dt != null && input != null)
+            {
+                MessageBox.Show($"Admin : {input}", "Plis", MessageBoxButtons.OK);
+
+                int idadmins = Convert.ToInt32(dt.Rows[0]["idadmin"]);
+                string namaadmin = dt.Rows[0]["namaadmin"].ToString();
+                string telpadmin = dt.Rows[0]["telpadmin"].ToString();
+                string usrnmeadmin = dt.Rows[0]["usrnmeadmin"].ToString();
+                string pwadmin = dt.Rows[0]["pwadmin"].ToString();
+                string emailadmin = dt.Rows[0]["emailadmin"].ToString();
+                idadmin = idadmins;
+
+                MessageBox.Show($"Admin : {idadmin}", "Plis", MessageBoxButtons.OK);
+
+                tbNamaProfileAdmin.Text = namaadmin;
+                tbUsernameAdmin.Text = usrnmeadmin;
+                btPasswordProfileAdmin.Text = pwadmin;
+                tbNoTeleponProfileAdmin.Text = telpadmin;
+                tbEmailProfileAdmin.Text = emailadmin;
+                lblGmail.Text = emailadmin;
+                lblUsername.Text = usrnmeadmin;
+                lblhai1Admin.Text = usrnmeadmin;
+            }
+            else
+            {
+                MessageBox.Show($"Admin : {input}", "Plis", MessageBoxButtons.OK);
+            }
+
 
         }
 
@@ -366,7 +403,7 @@ namespace Project_PBO_03
                         DialogResult messageHapus = MessageBox.Show("Buku berhasil diaktifkan", "Sukses", MessageBoxButtons.OK);
                     }
                 }
-                
+
 
                 // Kemudian, perbarui DataGridView dengan data yang telah diperbarui
                 dgvDaftarBuku.DataSource = null;
@@ -440,6 +477,46 @@ namespace Project_PBO_03
         }
 
         private void pnlRiwayatPeminjaman_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblUsernameProfileAdmin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbNamaProfileAdmin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btPasswordProfileAdmin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbNoTeleponProfileAdmin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbEmailProfileAdmin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblUsername_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblGmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblhai1Admin_Click(object sender, EventArgs e)
         {
 
         }
