@@ -427,6 +427,7 @@ namespace Project_PBO_03
             // dgvBukuFavUser
             // 
             dgvBukuFavUser.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvBukuFavUser.BackgroundColor = SystemColors.ControlLight;
             dgvBukuFavUser.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvBukuFavUser.Columns.AddRange(new DataGridViewColumn[] { Detail });
             dgvBukuFavUser.Location = new Point(23, 88);
@@ -1100,12 +1101,12 @@ namespace Project_PBO_03
             Controls.Add(lblHaiUser);
             Controls.Add(pictureBoxPerpusUser);
             Controls.Add(pnlUser);
-            Controls.Add(pnlRiwayatUser);
-            Controls.Add(pnlBukuFavUser);
             Controls.Add(pnlDetailBuku);
             Controls.Add(pnlPeminjamanUser2);
             Controls.Add(pnlPeminjamanUser);
             Controls.Add(pnlProfileUser);
+            Controls.Add(pnlRiwayatUser);
+            Controls.Add(pnlBukuFavUser);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_User";
             Text = "V_User";

@@ -38,7 +38,7 @@ namespace Project_PBO_03.Context
                            $"ON ps.idpenulis = b.penulis_idpenulis " +
                            $"join penerbit pt " +
                            $"ON pt.idpenerbit = b.penerbit_idpenerbit " +
-                           $"where jb.namajenis = @namajenis";
+                           $"where jb.namajenis = @namajenis and b.stokbuku > 0";
             NpgsqlParameter[] parameters =
             {
                 new NpgsqlParameter("@namajenis", NpgsqlDbType.Varchar) {Value = namajenis},

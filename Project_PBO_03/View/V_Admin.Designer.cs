@@ -59,8 +59,8 @@ namespace Project_PBO_03
             dgvSedangDipinjam = new DataGridView();
             lblBookingAdmin = new Label();
             pnlRiwayatPeminjaman = new Panel();
-            dgvRiwayatPeminjamanAdmin = new DataGridView();
             label1 = new Label();
+            dgvRiwayatPeminjamanAdmin = new DataGridView();
             pnlProfileAdmin = new Panel();
             btSimpanPerubahanA = new Button();
             lblPasswordProfileAdmin = new Label();
@@ -473,12 +473,22 @@ namespace Project_PBO_03
             // 
             // pnlRiwayatPeminjaman
             // 
-            pnlRiwayatPeminjaman.Controls.Add(dgvRiwayatPeminjamanAdmin);
             pnlRiwayatPeminjaman.Controls.Add(label1);
+            pnlRiwayatPeminjaman.Controls.Add(dgvRiwayatPeminjamanAdmin);
             pnlRiwayatPeminjaman.Location = new Point(416, 275);
             pnlRiwayatPeminjaman.Name = "pnlRiwayatPeminjaman";
             pnlRiwayatPeminjaman.Size = new Size(1507, 805);
             pnlRiwayatPeminjaman.TabIndex = 9;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(23, 29);
+            label1.Name = "label1";
+            label1.Size = new Size(211, 25);
+            label1.TabIndex = 5;
+            label1.Text = "Riwayat Peminjaman";
             // 
             // dgvRiwayatPeminjamanAdmin
             // 
@@ -491,16 +501,7 @@ namespace Project_PBO_03
             dgvRiwayatPeminjamanAdmin.RowHeadersWidth = 51;
             dgvRiwayatPeminjamanAdmin.Size = new Size(1461, 687);
             dgvRiwayatPeminjamanAdmin.TabIndex = 7;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(23, 29);
-            label1.Name = "label1";
-            label1.Size = new Size(211, 25);
-            label1.TabIndex = 5;
-            label1.Text = "Riwayat Peminjaman";
+            dgvRiwayatPeminjamanAdmin.CellContentClick += dgvRiwayatPeminjamanAdmin_CellContentClick;
             // 
             // pnlProfileAdmin
             // 
@@ -1127,12 +1128,12 @@ namespace Project_PBO_03
             Controls.Add(pictureBoxVektoradmin);
             Controls.Add(pnlAdmin);
             Controls.Add(pnlPeminjamanAdmin1);
+            Controls.Add(pnlDaftarBukuAdmin);
+            Controls.Add(pnlPeminjaman2);
             Controls.Add(pnlPeminjaman1);
             Controls.Add(pnlRiwayatPeminjaman);
             Controls.Add(pnlProfileAdmin);
             Controls.Add(pnlTambahBukuAdmin);
-            Controls.Add(pnlDaftarBukuAdmin);
-            Controls.Add(pnlPeminjaman2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_Admin";
             Text = "V_Admin";

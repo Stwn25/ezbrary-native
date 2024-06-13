@@ -66,7 +66,6 @@ namespace Project_PBO_03
             DataTable dt = AdminContext.dataadmin(input);
             if (dt != null && input != null)
             {
-                MessageBox.Show($"Admin : {input}", "Plis", MessageBoxButtons.OK);
 
                 int idadmins = Convert.ToInt32(dt.Rows[0]["idadmin"]);
                 string namaadmin = dt.Rows[0]["namaadmin"].ToString();
@@ -76,7 +75,6 @@ namespace Project_PBO_03
                 string emailadmin = dt.Rows[0]["emailadmin"].ToString();
                 idadmin = idadmins;
 
-                MessageBox.Show($"Admin : {idadmin}", "Plis", MessageBoxButtons.OK);
 
                 tbNamaProfileAdmin.Text = namaadmin;
                 tbUsernameAdmin.Text = usrnmeadmin;
@@ -112,6 +110,8 @@ namespace Project_PBO_03
             this.pnlDaftarBukuAdmin.Show();
             this.pnlTambahBukuAdmin.Hide();
             this.pnlPeminjamanAdmin1.Hide();
+            this.pnlPeminjaman1.Hide();
+            this.pnlPeminjaman2.Hide();
             this.pnlRiwayatPeminjaman.Hide();
             this.pnlProfileAdmin.Hide();
 
@@ -478,7 +478,7 @@ namespace Project_PBO_03
 
         private void cbJenisBukuAdmin_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbJenisBuku.SelectedItem != null)
+            if (cbJenisBukuAdmin.SelectedItem != null)
             {
                 DataRowView selectedRow = cbJenisBukuAdmin.SelectedItem as DataRowView;
                 if (selectedRow != null)
@@ -645,8 +645,6 @@ namespace Project_PBO_03
                 string isbn = Convert.ToString(row.Cells["isbn"].Value);
                 int iduser = Convert.ToInt32(row.Cells["iduser"].Value);
 
-                MessageBox.Show($"{idpeminjaman}, {isbn}, {iduser}");
-
                 PeminjamanBukuContext.ubahStatusDipinjam(idpeminjaman, iduser, isbn);
 
                 DialogResult message = MessageBox.Show("Booking telah di accept", "Pemberitahuan", MessageBoxButtons.OK);
@@ -666,8 +664,6 @@ namespace Project_PBO_03
                 string isbn = Convert.ToString(row.Cells["isbn"].Value);
                 int iduser = Convert.ToInt32(row.Cells["iduser"].Value);
 
-                MessageBox.Show($"{idpeminjaman}, {isbn}, {iduser}");
-
                 PeminjamanBukuContext.ubahStatusRiwayat(idpeminjaman, iduser, isbn);
 
                 DialogResult message = MessageBox.Show("Peminjaman telah dikembalikan", "Pemberitahuan", MessageBoxButtons.OK);
@@ -675,8 +671,14 @@ namespace Project_PBO_03
                 {
                     dgvDipinjam.DataSource = PeminjamanBukuContext.Dipinjam();
                     dgvRiwayatPeminjamanAdmin.DataSource = PeminjamanBukuContext.Riwayat();
+                    BukuContext.tambahstok(isbn);
                 }
             }
+        }
+
+        private void dgvRiwayatPeminjamanAdmin_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

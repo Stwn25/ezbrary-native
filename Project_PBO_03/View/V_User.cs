@@ -66,7 +66,6 @@ namespace Project_PBO_03
             DataTable dt = PenggunaContext.datauser(input);
             if (dt != null)
             {
-                MessageBox.Show($"User : {input}", "Plis", MessageBoxButtons.OK);
 
                 int iduser = Convert.ToInt32(dt.Rows[0]["iduser"]);
                 string nama = dt.Rows[0]["namauser"].ToString();
@@ -76,7 +75,6 @@ namespace Project_PBO_03
                 string email = dt.Rows[0]["emailuser"].ToString();
                 this.idpengguna = iduser;
 
-                MessageBox.Show($"User : {idpengguna}", "Plis", MessageBoxButtons.OK);
                 dgvSedangBooking.DataSource = PeminjamanBukuContext.bookingUser(idpengguna);
                 dgvSedangDipinjam.DataSource = PeminjamanBukuContext.dipinjamUser(idpengguna);
                 dgvRiwayatPeminjamanUser.DataSource = PeminjamanBukuContext.riwayatUser(idpengguna);
@@ -107,6 +105,7 @@ namespace Project_PBO_03
 
         private void btBukuFavUser_Click(object sender, EventArgs e)
         {
+            dgvBukuFavUser.DataSource = BukuFavoritContext.all(idpengguna);
             btPeminjamanUser.BackColor = Color.CornflowerBlue;
             btBukuFavUser.BackColor = Color.Black;
             btRiwayatPeminjamanUser.BackColor = Color.CornflowerBlue;
@@ -146,7 +145,7 @@ namespace Project_PBO_03
             this.pnlBukuFavUser.Hide();
             this.pnlRiwayatUser.Hide();
             this.pnlProfileUser.Show();
-
+            this.pnlDetailBuku.Hide();
         }
 
 
@@ -357,8 +356,8 @@ namespace Project_PBO_03
                 if (message == DialogResult.OK)
                 {
                     this.pnlDetailBuku.Hide();
-                    dgvPeminjamanUser.DataSource = BukuContext.buku();
-
+                    dgvPeminjamanUser.DataSource = JenisBukuContext.comboBox();
+                    dgvSedangBooking.DataSource = PeminjamanBukuContext.bookingUser(idpengguna);
                 }
             }
         }
@@ -436,6 +435,7 @@ namespace Project_PBO_03
             };
 
             BukuFavoritContext.tambahBukuFavorit(bukuFavorit);
+            dgvBukuFavUser.DataSource = BukuFavoritContext.all(idpengguna);
         }
 
         private void pbStarKuning_Click(object sender, EventArgs e)
@@ -450,12 +450,14 @@ namespace Project_PBO_03
             };
 
             BukuFavoritContext.deleteBukuFavorit(isbn1, idpengguna);
+            dgvBukuFavUser.DataSource = BukuFavoritContext.all(idpengguna);
         }
 
         private void btDipinjam1_Click(object sender, EventArgs e)
         {
             this.pnlPeminjamanUser.Hide();
             this.pnlPeminjamanUser2.Show();
+            dgvSedangBooking.DataSource = PeminjamanBukuContext.bookingUser(idpengguna);
         }
 
         private void btDaftarUser2_Click(object sender, EventArgs e)

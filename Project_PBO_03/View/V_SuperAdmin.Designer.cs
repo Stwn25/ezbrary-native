@@ -48,6 +48,7 @@
             lblHaiSA = new Label();
             pictureBoxPerpusSA = new PictureBox();
             pnlUserSA = new Panel();
+            ucUpdateAdmin1 = new ucUpdateAdmin();
             btAdminSA = new Button();
             btUserSA = new Button();
             dataGridView2 = new DataGridView();
@@ -318,6 +319,17 @@
             pnlUserSA.Size = new Size(1507, 804);
             pnlUserSA.TabIndex = 17;
             // 
+            // ucUpdateAdmin1
+            // 
+            ucUpdateAdmin1.BorderStyle = BorderStyle.FixedSingle;
+            ucUpdateAdmin1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ucUpdateAdmin1.IdAdmin = 0;
+            ucUpdateAdmin1.Location = new Point(729, 245);
+            ucUpdateAdmin1.Name = "ucUpdateAdmin1";
+            ucUpdateAdmin1.Size = new Size(887, 960);
+            ucUpdateAdmin1.TabIndex = 14;
+            ucUpdateAdmin1.Load += ucUpdateAdmin2_Load;
+            // 
             // btAdminSA
             // 
             btAdminSA.BackColor = Color.CornflowerBlue;
@@ -576,6 +588,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1942, 1102);
+            Controls.Add(ucUpdateAdmin1);
             Controls.Add(nightControlBox1);
             Controls.Add(lblHai1SA);
             Controls.Add(lblHaiSA);

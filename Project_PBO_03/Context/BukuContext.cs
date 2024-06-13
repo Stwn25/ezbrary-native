@@ -85,7 +85,6 @@ namespace Project_PBO_03.Context
             return dataBuku;
         }
 
-        /*public static DataTable*/
 
         public static DataTable showBySearch(string pencarian)
         {

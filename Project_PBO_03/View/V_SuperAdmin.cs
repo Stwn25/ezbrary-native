@@ -288,5 +288,10 @@ namespace Project_PBO_03.View
             pnlDaftarAdminSA.Hide();
             pnlAdminSA.Show();
         }
+
+        private void ucUpdateAdmin2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
