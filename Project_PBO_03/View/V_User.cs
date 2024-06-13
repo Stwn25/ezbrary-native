@@ -58,9 +58,6 @@ namespace Project_PBO_03
             cbJenis.DisplayMember = "namajenis";
             cbJenis.ValueMember = "namajenis";
 
-            dgvSedangBooking.DataSource = PeminjamanBukuContext.booking();
-            dgvSedangDipinjam.DataSource = PeminjamanBukuContext.Dipinjam();
-
             DataTable id1 = PenggunaContext.datauser(input);
             int id2 = Int16.Parse(id1.Rows[0]["iduser"].ToString());
             dgvPeminjamanUser.DataSource = BukuContext.buku();
@@ -80,6 +77,9 @@ namespace Project_PBO_03
                 this.idpengguna = iduser;
 
                 MessageBox.Show($"User : {idpengguna}", "Plis", MessageBoxButtons.OK);
+                dgvSedangBooking.DataSource = PeminjamanBukuContext.bookingUser(idpengguna);
+                dgvSedangDipinjam.DataSource = PeminjamanBukuContext.dipinjamUser(idpengguna);
+                dgvRiwayatPeminjamanUser.DataSource = PeminjamanBukuContext.riwayatUser(idpengguna);
 
                 tbNamaProfileU.Text = nama;
                 tbUsernameProfileU.Text = usernameuser;
@@ -552,7 +552,7 @@ namespace Project_PBO_03
 
             string namauser = Convert.IsDBNull(row["namauser"]) ? "N/A" : row["namauser"].ToString();
             string ulasan = Convert.IsDBNull(row["ulasan"]) ? "N/A" : row["ulasan"].ToString();
-            
+
             Label labelNamaUser = new Label
             {
                 Text = $"User: {namauser}",
@@ -566,12 +566,15 @@ namespace Project_PBO_03
                 Location = new Point(30, 40)
             };
 
-            panel.Controls.Add(labelNamaUser);  
+            panel.Controls.Add(labelNamaUser);
             panel.Controls.Add(labelUlasan);
 
             return panel;
         }
 
+        private void pnlPeminjamanUser2_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }

@@ -22,7 +22,7 @@ namespace Project_PBO_03.Context
                            $"\r\njoin penulis ps \r\nON ps.idpenulis = b.penulis_idpenulis" +
                            $"\r\njoin penerbit pt\r\nON pt.idpenerbit = b.penerbit_idpenerbit " +
                            $"join statusbuku sb on sb.idstatusbuku = b.statusbuku_idstatusbuku " +
-                           $"where b.statusbuku_idstatusbuku = 1";
+                           $"where b.statusbuku_idstatusbuku = 1 and b.stokbuku > 0";
             DataTable dataBuku = queryExecutor(query);
             return dataBuku;
         }

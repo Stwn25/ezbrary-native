@@ -44,6 +44,7 @@ namespace Project_PBO_03
             dgvDaftarBuku.DataSource = BukuContext.all();
             dgvBooking.DataSource = PeminjamanBukuContext.booking();
             dgvDipinjam.DataSource = PeminjamanBukuContext.Dipinjam();
+            dgvRiwayatPeminjamanAdmin.DataSource = PeminjamanBukuContext.Riwayat();
 
             cbJenisBukuAdmin.DataSource = JenisBukuContext.comboBox();
             cbJenisBukuAdmin.DisplayMember = "namajenis";
@@ -547,12 +548,14 @@ namespace Project_PBO_03
         {
             this.pnlPeminjaman1.Show();
             this.pnlPeminjaman2.Hide();
+            dgvBooking.DataSource = PeminjamanBukuContext.booking();
         }
 
         private void btDipinjam1_Click(object sender, EventArgs e)
         {
             this.pnlPeminjaman1.Hide();
             this.pnlPeminjaman2.Show();
+            dgvDipinjam.DataSource = PeminjamanBukuContext.Dipinjam();
         }
 
         private void tbDaftarBukuAdmin_TextChanged(object sender, EventArgs e)
@@ -656,9 +659,23 @@ namespace Project_PBO_03
 
         private void dgvDipinjam_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dgvBooking.Columns["buttonKembali"].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == dgvDipinjam.Columns["buttonPengembalian"].Index && e.RowIndex >= 0)
             {
+                DataGridViewRow row = dgvDipinjam.Rows[e.RowIndex];
+                int idpeminjaman = Convert.ToInt32(row.Cells["idpeminjaman"].Value);
+                string isbn = Convert.ToString(row.Cells["isbn"].Value);
+                int iduser = Convert.ToInt32(row.Cells["iduser"].Value);
 
+                MessageBox.Show($"{idpeminjaman}, {isbn}, {iduser}");
+
+                PeminjamanBukuContext.ubahStatusRiwayat(idpeminjaman, iduser, isbn);
+
+                DialogResult message = MessageBox.Show("Peminjaman telah dikembalikan", "Pemberitahuan", MessageBoxButtons.OK);
+                if (message == DialogResult.OK)
+                {
+                    dgvDipinjam.DataSource = PeminjamanBukuContext.Dipinjam();
+                    dgvRiwayatPeminjamanAdmin.DataSource = PeminjamanBukuContext.Riwayat();
+                }
             }
         }
     }

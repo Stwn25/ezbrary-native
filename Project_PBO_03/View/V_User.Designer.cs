@@ -56,7 +56,7 @@ namespace Project_PBO_03
             Detail = new DataGridViewButtonColumn();
             label1 = new Label();
             pnlRiwayatUser = new Panel();
-            dataGridView2 = new DataGridView();
+            dgvRiwayatPeminjamanUser = new DataGridView();
             label2 = new Label();
             pnlProfileUser = new Panel();
             btSimpanPerubahanU = new Button();
@@ -115,7 +115,7 @@ namespace Project_PBO_03
             pnlBukuFavUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBukuFavUser).BeginInit();
             pnlRiwayatUser.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvRiwayatPeminjamanUser).BeginInit();
             pnlProfileUser.SuspendLayout();
             pnlDetailBuku.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btBeriUlasan).BeginInit();
@@ -459,22 +459,24 @@ namespace Project_PBO_03
             // 
             // pnlRiwayatUser
             // 
-            pnlRiwayatUser.Controls.Add(dataGridView2);
+            pnlRiwayatUser.Controls.Add(dgvRiwayatPeminjamanUser);
             pnlRiwayatUser.Controls.Add(label2);
             pnlRiwayatUser.Location = new Point(415, 275);
             pnlRiwayatUser.Name = "pnlRiwayatUser";
             pnlRiwayatUser.Size = new Size(1507, 805);
             pnlRiwayatUser.TabIndex = 14;
             // 
-            // dataGridView2
+            // dgvRiwayatPeminjamanUser
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(23, 88);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.ReadOnly = true;
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(1461, 687);
-            dataGridView2.TabIndex = 11;
+            dgvRiwayatPeminjamanUser.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvRiwayatPeminjamanUser.BackgroundColor = SystemColors.ControlLight;
+            dgvRiwayatPeminjamanUser.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvRiwayatPeminjamanUser.Location = new Point(23, 88);
+            dgvRiwayatPeminjamanUser.Name = "dgvRiwayatPeminjamanUser";
+            dgvRiwayatPeminjamanUser.ReadOnly = true;
+            dgvRiwayatPeminjamanUser.RowHeadersWidth = 51;
+            dgvRiwayatPeminjamanUser.Size = new Size(1461, 687);
+            dgvRiwayatPeminjamanUser.TabIndex = 11;
             // 
             // label2
             // 
@@ -765,7 +767,7 @@ namespace Project_PBO_03
             label12.Font = new Font("Nunito", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label12.Location = new Point(788, 125);
             label12.Name = "label12";
-            label12.Size = new Size(243, 32);
+            label12.Size = new Size(244, 32);
             label12.TabIndex = 62;
             label12.Text = "Tangal Pengambilan :";
             // 
@@ -939,7 +941,7 @@ namespace Project_PBO_03
             lbtahunterbit.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbtahunterbit.Location = new Point(320, 171);
             lbtahunterbit.Name = "lbtahunterbit";
-            lbtahunterbit.Size = new Size(143, 28);
+            lbtahunterbit.Size = new Size(145, 28);
             lbtahunterbit.TabIndex = 47;
             lbtahunterbit.Text = "Tahun Terbit : ";
             // 
@@ -1007,6 +1009,7 @@ namespace Project_PBO_03
             pnlPeminjamanUser2.Name = "pnlPeminjamanUser2";
             pnlPeminjamanUser2.Size = new Size(1507, 805);
             pnlPeminjamanUser2.TabIndex = 18;
+            pnlPeminjamanUser2.Paint += pnlPeminjamanUser2_Paint;
             // 
             // label15
             // 
@@ -1097,12 +1100,12 @@ namespace Project_PBO_03
             Controls.Add(lblHaiUser);
             Controls.Add(pictureBoxPerpusUser);
             Controls.Add(pnlUser);
-            Controls.Add(pnlPeminjamanUser2);
-            Controls.Add(pnlPeminjamanUser);
-            Controls.Add(pnlProfileUser);
             Controls.Add(pnlRiwayatUser);
             Controls.Add(pnlBukuFavUser);
             Controls.Add(pnlDetailBuku);
+            Controls.Add(pnlPeminjamanUser2);
+            Controls.Add(pnlPeminjamanUser);
+            Controls.Add(pnlProfileUser);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_User";
             Text = "V_User";
@@ -1119,7 +1122,7 @@ namespace Project_PBO_03
             ((System.ComponentModel.ISupportInitialize)dgvBukuFavUser).EndInit();
             pnlRiwayatUser.ResumeLayout(false);
             pnlRiwayatUser.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvRiwayatPeminjamanUser).EndInit();
             pnlProfileUser.ResumeLayout(false);
             pnlProfileUser.PerformLayout();
             pnlDetailBuku.ResumeLayout(false);
@@ -1257,5 +1260,6 @@ namespace Project_PBO_03
         private DataGridView dgvSedangDipinjam;
         private PictureBox btBeriUlasan;
         private DataGridViewButtonColumn Detail;
+        private DataGridView dgvRiwayatPeminjamanUser;
     }
 }
