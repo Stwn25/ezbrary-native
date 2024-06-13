@@ -61,7 +61,10 @@ namespace Project_PBO_03
             dgvSedangBooking.DataSource = PeminjamanBukuContext.booking();
             dgvSedangDipinjam.DataSource = PeminjamanBukuContext.Dipinjam();
 
+            DataTable id1 = PenggunaContext.datauser(input);
+            int id2 = Int16.Parse(id1.Rows[0]["iduser"].ToString());
             dgvPeminjamanUser.DataSource = BukuContext.buku();
+            dgvBukuFavUser.DataSource = BukuFavoritContext.all(id2);
 
             DataTable dt = PenggunaContext.datauser(input);
             if (dt != null)
@@ -74,7 +77,7 @@ namespace Project_PBO_03
                 string pwuser = dt.Rows[0]["pwuser"].ToString();
                 string telpuser = dt.Rows[0]["telpuser"].ToString();
                 string email = dt.Rows[0]["emailuser"].ToString();
-                idpengguna = iduser;
+                this.idpengguna = iduser;
 
                 MessageBox.Show($"User : {idpengguna}", "Plis", MessageBoxButtons.OK);
 
@@ -329,6 +332,8 @@ namespace Project_PBO_03
         private void btkeluar_Click(object sender, EventArgs e)
         {
             this.pnlDetailBuku.Hide();
+            dgvBukuFavUser.DataSource = BukuFavoritContext.all(idpengguna);
+            this.pnlPeminjamanUser.Show();
         }
 
         private void btBookingBuku_Click(object sender, EventArgs e)
@@ -459,9 +464,48 @@ namespace Project_PBO_03
             this.pnlPeminjamanUser2.Hide();
         }
 
+        private void dgvBukuFavUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgvBukuFavUser.Columns["Detail"].Index && e.RowIndex >= 0)
+            {
+                DataGridViewRow baris = dgvBukuFavUser.Rows[e.RowIndex];
+                string isbnBuku1 = baris.Cells["isbn"].Value.ToString();
+
+                DataTable dataBukuFav = BukuFavoritContext.read(isbnBuku1, idpengguna);
+
+                if (dataBukuFav.Rows.Count > 0)
+                {
+                    pbStarKosong.Hide();
+                    pbStarKuning.Show();
+
+                    DataGridViewRow row = dgvBukuFavUser.Rows[e.RowIndex];
+                    string namabuku = row.Cells["namabuku"].Value.ToString();
+
+                    DataTable dataBuku = BukuContext.detailbuku(namabuku);
+                    if (dataBuku.Rows.Count > 0)
+                    {
+
+                        DataRow dataRow = dataBuku.Rows[0];
+                        string isbn = dataRow["isbn"].ToString();
+                        string Namabuku = dataRow["namabuku"].ToString();
+                        string sinopsis = dataRow["sinopsis"].ToString();
+                        string thnterbit = dataRow["thnterbit"].ToString();
+                        string namajenis = dataRow["namajenis"].ToString();
+                        int stokbuku = Int32.Parse(dataRow["stokbuku"].ToString());
+                        string namapenerbit = dataRow["namapenerbit"].ToString();
+                        string namapenulis = dataRow["namapenulis"].ToString();
+                        string posisirak = dataRow["posisirak"].ToString();
+
+                        this.pnlDetailBuku.Show();
+                        UpdateDetail(isbn, Namabuku, sinopsis, thnterbit, namajenis, stokbuku, namapenerbit, namapenulis, posisirak, input);
+                    }
+                }
+            }
+        }
+
+
         private void btBeriUlasan_Click(object sender, EventArgs e)
         {
-
             if (string.IsNullOrWhiteSpace(tbUlasan.Text))
             {
                 MessageBox.Show("Masukkan ulasan!", "Pemberitahuan", MessageBoxButtons.OK);
@@ -476,15 +520,15 @@ namespace Project_PBO_03
                 };
 
                 UlasanContext.create(ulasanUser);
-                tbUlasan.Text = default;
+                tbUlasan.Text = null;
                 loadUlasan();
-            };
-           
-
+            }
         }
 
         private void loadUlasan()
         {
+            this.flpUlasanBuku.Controls.Clear();
+
             DataTable bukuData = UlasanContext.ulasanBuku(isbn1);
             foreach (DataRow row in bukuData.Rows)
             {
@@ -493,6 +537,7 @@ namespace Project_PBO_03
                 this.flpUlasanBuku.Controls.SetChildIndex(panel, 0);
             }
         }
+
 
         private Panel tambahPanelBuku(DataRow row)
         {
@@ -528,5 +573,5 @@ namespace Project_PBO_03
         }
 
 
-        }
+    }
 }

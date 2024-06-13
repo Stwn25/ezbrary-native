@@ -28,6 +28,22 @@ namespace Project_PBO_03.Context
             return dataFavorite;
         }
 
+        public static DataTable all(int id)
+        {
+            string query = $"select b.isbn, b.namabuku, jb.namajenis, b.stokbuku, b.posisirak" +
+                           $"\r\nfrom bukufavorit bf" +
+                           $"\r\njoin buku b \r\nON b.isbn = bf.buku_isbn" +
+                           $"\r\njoin jenisbuku jb \r\nON jb.idjenis = b.jenisbuku_idjenis " +
+                           $"where bf.pengguna_iduser = @iduser and bf.statusfavorit_idstatusfavorit = 1";
+            NpgsqlParameter[] parameters =
+            {
+                new NpgsqlParameter ("@iduser", NpgsqlDbType.Integer){Value = id}
+            };
+            DataTable dataBukuFavorit = queryExecutor(query, parameters);
+            return dataBukuFavorit;
+        }
+
+
         public static void tambahBukuFavorit(m_BukuFavorit bukufavorite)
         {
             string query = $"INSERT INTO {table} (buku_isbn, pengguna_iduser, statusfavorit_idstatusfavorit) " +

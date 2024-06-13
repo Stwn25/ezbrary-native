@@ -1099,8 +1099,8 @@ namespace Project_PBO_03
             ucJenisBukuTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
             ucJenisBukuTambahBukuAdmin1.Location = new Point(917, 227);
             ucJenisBukuTambahBukuAdmin1.Name = "ucJenisBukuTambahBukuAdmin1";
-            ucJenisBukuTambahBukuAdmin1.Size = new Size(496, 584);
-            ucJenisBukuTambahBukuAdmin1.TabIndex = 19;
+            ucJenisBukuTambahBukuAdmin1.Size = new Size(494, 726);
+            ucJenisBukuTambahBukuAdmin1.TabIndex = 10;
             // 
             // ucPenerbitTambahBukuAdmin1
             // 
@@ -1108,14 +1108,24 @@ namespace Project_PBO_03
             ucPenerbitTambahBukuAdmin1.BorderStyle = BorderStyle.FixedSingle;
             ucPenerbitTambahBukuAdmin1.Location = new Point(915, 238);
             ucPenerbitTambahBukuAdmin1.Name = "ucPenerbitTambahBukuAdmin1";
-            ucPenerbitTambahBukuAdmin1.Size = new Size(498, 642);
-            ucPenerbitTambahBukuAdmin1.TabIndex = 20;
+            ucPenerbitTambahBukuAdmin1.Size = new Size(499, 808);
+            ucPenerbitTambahBukuAdmin1.TabIndex = 10;
+            // 
+            // ucPenulisTambahBukuAdmin2
+            // 
+            ucPenulisTambahBukuAdmin2.BackColor = Color.White;
+            ucPenulisTambahBukuAdmin2.BorderStyle = BorderStyle.FixedSingle;
+            ucPenulisTambahBukuAdmin2.Location = new Point(1001, 234);
+            ucPenulisTambahBukuAdmin2.Name = "ucPenulisTambahBukuAdmin2";
+            ucPenulisTambahBukuAdmin2.Size = new Size(501, 729);
+            ucPenulisTambahBukuAdmin2.TabIndex = 10;
             // 
             // V_Admin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1920, 1080);
+            Controls.Add(ucPenulisTambahBukuAdmin2);
             Controls.Add(ucPenerbitTambahBukuAdmin1);
             Controls.Add(ucJenisBukuTambahBukuAdmin1);
             Controls.Add(nightControlBox1);
@@ -1127,10 +1137,13 @@ namespace Project_PBO_03
             Controls.Add(pnlPeminjamanAdmin1);
             Controls.Add(pnlPeminjaman2);
             Controls.Add(pnlPeminjaman1);
+            Controls.Add(ucUpdateBuku1);
             Controls.Add(pnlRiwayatPeminjaman);
             Controls.Add(pnlProfileAdmin);
             Controls.Add(pnlTambahBukuAdmin);
             Controls.Add(pnlDaftarBukuAdmin);
+            Controls.Add(pnlPeminjaman2);
+            Controls.Add(pnlPeminjaman1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_Admin";
             Text = "V_Admin";
