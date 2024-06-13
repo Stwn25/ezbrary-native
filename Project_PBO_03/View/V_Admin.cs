@@ -42,6 +42,9 @@ namespace Project_PBO_03
             ucUpdateBuku1.Hide();
 
             dgvDaftarBuku.DataSource = BukuContext.all();
+            dgvBooking.DataSource = PeminjamanBukuContext.booking();
+            dgvDipinjam.DataSource = PeminjamanBukuContext.Dipinjam();
+
             cbJenisBukuAdmin.DataSource = JenisBukuContext.comboBox();
             cbJenisBukuAdmin.DisplayMember = "namajenis";
             cbJenisBukuAdmin.ValueMember = "namajenis";
@@ -628,6 +631,35 @@ namespace Project_PBO_03
         private void ucUpdateBuku1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvBooking_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgvBooking.Columns["acceptButton"].Index && e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvBooking.Rows[e.RowIndex];
+                int idpeminjaman = Convert.ToInt32(row.Cells["idpeminjaman"].Value);
+                string isbn = Convert.ToString(row.Cells["isbn"].Value);
+                int iduser = Convert.ToInt32(row.Cells["iduser"].Value);
+
+                MessageBox.Show($"{idpeminjaman}, {isbn}, {iduser}");
+
+                PeminjamanBukuContext.ubahStatusDipinjam(idpeminjaman, iduser, isbn);
+
+                DialogResult message = MessageBox.Show("Booking telah di accept", "Pemberitahuan", MessageBoxButtons.OK);
+                if (message == DialogResult.OK)
+                {
+                    dgvBooking.DataSource = PeminjamanBukuContext.booking();
+                }
+            }
+        }
+
+        private void dgvDipinjam_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgvBooking.Columns["buttonKembali"].Index && e.RowIndex >= 0)
+            {
+
+            }
         }
     }
 }

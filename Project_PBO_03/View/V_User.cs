@@ -58,6 +58,9 @@ namespace Project_PBO_03
             cbJenis.DisplayMember = "namajenis";
             cbJenis.ValueMember = "namajenis";
 
+            dgvSedangBooking.DataSource = PeminjamanBukuContext.booking();
+            dgvSedangDipinjam.DataSource = PeminjamanBukuContext.Dipinjam();
+
             dgvPeminjamanUser.DataSource = BukuContext.buku();
 
             DataTable dt = PenggunaContext.datauser(input);
@@ -342,7 +345,7 @@ namespace Project_PBO_03
                     id_pengguna = idpengguna
                 };
 
-                PeminjamanBuku.create(peminjaman);
+                PeminjamanBukuContext.create(peminjaman);
                 BukuContext.kurangistok(isbn1);
 
                 MessageBox.Show($"Booking buku berhasil, jangan lupa ambil buku sesuai tanggal pengambilan", "Berhasil", MessageBoxButtons.OK);

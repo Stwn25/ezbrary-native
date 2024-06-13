@@ -101,7 +101,7 @@ namespace Project_PBO_03
             pnlPeminjamanUser2 = new Panel();
             label15 = new Label();
             label14 = new Label();
-            dataGridView3 = new DataGridView();
+            dgvSedangDipinjam = new DataGridView();
             dgvSedangBooking = new DataGridView();
             btDipinjam2 = new Button();
             btDaftarUser2 = new Button();
@@ -123,7 +123,7 @@ namespace Project_PBO_03
             ((System.ComponentModel.ISupportInitialize)pbStarKuning).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlPeminjamanUser2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSedangDipinjam).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvSedangBooking).BeginInit();
             SuspendLayout();
             // 
@@ -985,7 +985,7 @@ namespace Project_PBO_03
             pnlPeminjamanUser2.BackColor = Color.White;
             pnlPeminjamanUser2.Controls.Add(label15);
             pnlPeminjamanUser2.Controls.Add(label14);
-            pnlPeminjamanUser2.Controls.Add(dataGridView3);
+            pnlPeminjamanUser2.Controls.Add(dgvSedangDipinjam);
             pnlPeminjamanUser2.Controls.Add(dgvSedangBooking);
             pnlPeminjamanUser2.Controls.Add(btDipinjam2);
             pnlPeminjamanUser2.Controls.Add(btDaftarUser2);
@@ -998,37 +998,39 @@ namespace Project_PBO_03
             // label15
             // 
             label15.AutoSize = true;
-            label15.Font = new Font("Nunito Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.Font = new Font("Nunito", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label15.ForeColor = Color.Black;
-            label15.Location = new Point(49, 441);
+            label15.Location = new Point(49, 421);
             label15.Name = "label15";
-            label15.Size = new Size(262, 41);
+            label15.Size = new Size(193, 32);
             label15.TabIndex = 21;
             label15.Text = "Sedang dipinjam";
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Font = new Font("Nunito Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label14.Font = new Font("Nunito", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label14.ForeColor = Color.Black;
-            label14.Location = new Point(50, 95);
+            label14.Location = new Point(49, 104);
             label14.Name = "label14";
-            label14.Size = new Size(281, 41);
+            label14.Size = new Size(206, 32);
             label14.TabIndex = 20;
             label14.Text = "Sedang dibooking";
             // 
-            // dataGridView3
+            // dgvSedangDipinjam
             // 
-            dataGridView3.BackgroundColor = SystemColors.ControlLight;
-            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Location = new Point(49, 485);
-            dataGridView3.Name = "dataGridView3";
-            dataGridView3.RowHeadersWidth = 51;
-            dataGridView3.Size = new Size(1408, 265);
-            dataGridView3.TabIndex = 19;
+            dgvSedangDipinjam.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvSedangDipinjam.BackgroundColor = SystemColors.ControlLight;
+            dgvSedangDipinjam.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvSedangDipinjam.Location = new Point(49, 456);
+            dgvSedangDipinjam.Name = "dgvSedangDipinjam";
+            dgvSedangDipinjam.RowHeadersWidth = 51;
+            dgvSedangDipinjam.Size = new Size(1408, 265);
+            dgvSedangDipinjam.TabIndex = 19;
             // 
             // dgvSedangBooking
             // 
+            dgvSedangBooking.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvSedangBooking.BackgroundColor = SystemColors.ControlLight;
             dgvSedangBooking.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvSedangBooking.Location = new Point(49, 139);
@@ -1082,12 +1084,12 @@ namespace Project_PBO_03
             Controls.Add(lblHaiUser);
             Controls.Add(pictureBoxPerpusUser);
             Controls.Add(pnlUser);
-            Controls.Add(pnlDetailBuku);
             Controls.Add(pnlPeminjamanUser2);
             Controls.Add(pnlPeminjamanUser);
             Controls.Add(pnlProfileUser);
             Controls.Add(pnlRiwayatUser);
             Controls.Add(pnlBukuFavUser);
+            Controls.Add(pnlDetailBuku);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_User";
             Text = "V_User";
@@ -1116,7 +1118,7 @@ namespace Project_PBO_03
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             pnlPeminjamanUser2.ResumeLayout(false);
             pnlPeminjamanUser2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSedangDipinjam).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvSedangBooking).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -1239,7 +1241,7 @@ namespace Project_PBO_03
         private DataGridView dgvSedangBooking;
         private Label label15;
         private Label label14;
-        private DataGridView dataGridView3;
+        private DataGridView dgvSedangDipinjam;
         private PictureBox btBeriUlasan;
     }
 }
