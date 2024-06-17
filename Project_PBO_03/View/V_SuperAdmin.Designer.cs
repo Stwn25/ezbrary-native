@@ -48,12 +48,12 @@
             lblHaiSA = new Label();
             pictureBoxPerpusSA = new PictureBox();
             pnlUserSA = new Panel();
-            ucUpdateAdmin1 = new ucUpdateAdmin();
             btAdminSA = new Button();
             btUserSA = new Button();
             dataGridView2 = new DataGridView();
             HapusUser = new DataGridViewButtonColumn();
             lblDaftarPenggunaSA = new Label();
+            ucUpdateAdmin1 = new ucUpdateAdmin();
             pnlDaftarAdminSA = new Panel();
             label2 = new Label();
             tbKodeVerifikasi = new TextBox();
@@ -319,17 +319,6 @@
             pnlUserSA.Size = new Size(1507, 804);
             pnlUserSA.TabIndex = 17;
             // 
-            // ucUpdateAdmin1
-            // 
-            ucUpdateAdmin1.BorderStyle = BorderStyle.FixedSingle;
-            ucUpdateAdmin1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ucUpdateAdmin1.IdAdmin = 0;
-            ucUpdateAdmin1.Location = new Point(729, 245);
-            ucUpdateAdmin1.Name = "ucUpdateAdmin1";
-            ucUpdateAdmin1.Size = new Size(887, 960);
-            ucUpdateAdmin1.TabIndex = 14;
-            ucUpdateAdmin1.Load += ucUpdateAdmin2_Load;
-            // 
             // btAdminSA
             // 
             btAdminSA.BackColor = Color.CornflowerBlue;
@@ -390,6 +379,17 @@
             lblDaftarPenggunaSA.Size = new Size(174, 25);
             lblDaftarPenggunaSA.TabIndex = 10;
             lblDaftarPenggunaSA.Text = "Daftar Pengguna";
+            // 
+            // ucUpdateAdmin1
+            // 
+            ucUpdateAdmin1.BorderStyle = BorderStyle.FixedSingle;
+            ucUpdateAdmin1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ucUpdateAdmin1.IdAdmin = 0;
+            ucUpdateAdmin1.Location = new Point(729, 245);
+            ucUpdateAdmin1.Name = "ucUpdateAdmin1";
+            ucUpdateAdmin1.Size = new Size(887, 960);
+            ucUpdateAdmin1.TabIndex = 14;
+            ucUpdateAdmin1.Load += ucUpdateAdmin2_Load;
             // 
             // pnlDaftarAdminSA
             // 

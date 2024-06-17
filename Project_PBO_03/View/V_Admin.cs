@@ -63,6 +63,8 @@ namespace Project_PBO_03
             cbJenisBuku.DisplayMember = "namajenis";
             cbJenisBuku.ValueMember = "idjenis";
 
+            PeminjamanBukuContext.hapusBooking();
+
             DataTable dt = AdminContext.dataadmin(input);
             if (dt != null && input != null)
             {
@@ -421,7 +423,6 @@ namespace Project_PBO_03
                     }
                 }
 
-
                 // Kemudian, perbarui DataGridView dengan data yang telah diperbarui
                 dgvDaftarBuku.DataSource = null;
                 dgvDaftarBuku.DataSource = JenisBukuContext.Jenis(namajenis);
@@ -432,11 +433,8 @@ namespace Project_PBO_03
                 DataGridViewRow row = dgvDaftarBuku.Rows[e.RowIndex];
                 string ISBN = Convert.ToString(row.Cells["isbn"].Value);
 
-                // Set IdAdmin property of user control
-                ucUpdateBuku1.ISBN = isbn;
-
                 // Load the admin data into the UserControl
-                ucUpdateBuku1.LoadDataBuku(isbn);
+                ucUpdateBuku1.LoadDataBuku(ISBN);
 
                 // Ensure the UserControl is visible and brought to the front
                 ucUpdateBuku1.BringToFront();

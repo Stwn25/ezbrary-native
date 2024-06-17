@@ -323,6 +323,23 @@ namespace Project_PBO_03
             lbposisirak.Text = $"Posisi Rak: {posisiRak1}";
         }
 
+        private void btPeminjamanUser_Click(object sender, EventArgs e)
+        {
+            string namajenis = Convert.ToString(cbJenis.SelectedValue);
+
+            dgvPeminjamanUser.DataSource = JenisBukuContext.comboBoxUser(namajenis);
+            btPeminjamanUser.BackColor = Color.Black;
+            btBukuFavUser.BackColor = Color.CornflowerBlue;
+            btRiwayatPeminjamanUser.BackColor = Color.CornflowerBlue;
+            btProfileUser.BackColor = Color.CornflowerBlue;
+            btKeluarUser.BackColor = Color.CornflowerBlue;
+            this.pnlPeminjamanUser.Show();
+            this.pnlBukuFavUser.Hide();
+            this.pnlRiwayatUser.Hide();
+            this.pnlProfileUser.Hide();
+            this.pnlDetailBuku.Hide();
+        }
+
         public void pnlDetailBuku_Paint(object sender, PaintEventArgs e)
         {
 
@@ -330,8 +347,12 @@ namespace Project_PBO_03
 
         private void btkeluar_Click(object sender, EventArgs e)
         {
-            this.pnlDetailBuku.Hide();
+            string namajenis = Convert.ToString(cbJenis.SelectedValue);
+
+            dgvPeminjamanUser.DataSource = JenisBukuContext.comboBoxUser(namajenis);
             dgvBukuFavUser.DataSource = BukuFavoritContext.all(idpengguna);
+
+            this.pnlDetailBuku.Hide();
             this.pnlPeminjamanUser.Show();
         }
 
@@ -356,8 +377,12 @@ namespace Project_PBO_03
                 if (message == DialogResult.OK)
                 {
                     this.pnlDetailBuku.Hide();
-                    dgvPeminjamanUser.DataSource = JenisBukuContext.comboBox();
                     dgvSedangBooking.DataSource = PeminjamanBukuContext.bookingUser(idpengguna);
+
+                    string namajenis = Convert.ToString(cbJenis.SelectedValue);
+
+                    dgvPeminjamanUser.DataSource = JenisBukuContext.comboBoxUser(namajenis);
+                    
                 }
             }
         }

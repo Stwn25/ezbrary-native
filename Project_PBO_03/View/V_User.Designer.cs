@@ -1,4 +1,6 @@
 ﻿
+using Project_PBO_03.Context;
+
 namespace Project_PBO_03
 {
     partial class V_User
@@ -1153,22 +1155,6 @@ namespace Project_PBO_03
             this.pnlRiwayatUser.Show();
             this.pnlProfileUser.Hide();
            this.pnlDetailBuku.Hide();
-        }
-
-       
-
-        private void btPeminjamanUser_Click(object sender, EventArgs e)
-        {
-            btPeminjamanUser.BackColor = Color.Black;
-            btBukuFavUser.BackColor = Color.CornflowerBlue;
-            btRiwayatPeminjamanUser.BackColor = Color.CornflowerBlue;
-            btProfileUser.BackColor = Color.CornflowerBlue;
-            btKeluarUser.BackColor = Color.CornflowerBlue;
-            this.pnlPeminjamanUser.Show();
-            this.pnlBukuFavUser.Hide();
-            this.pnlRiwayatUser.Hide();
-            this.pnlProfileUser.Hide();
-            this.pnlDetailBuku.Hide();
         }
 
         private void label1_Click(object sender, EventArgs e)

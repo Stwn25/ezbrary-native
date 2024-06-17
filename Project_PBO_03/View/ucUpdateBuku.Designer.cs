@@ -46,7 +46,7 @@
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            btTBAdminuc = new Button();
+            btUpdateBuku = new Button();
             panel1 = new Panel();
             button1 = new Button();
             panel1.SuspendLayout();
@@ -225,19 +225,19 @@
             label6.TabIndex = 34;
             label6.Text = "Nama Buku";
             // 
-            // btTBAdminuc
+            // btUpdateBuku
             // 
-            btTBAdminuc.BackColor = SystemColors.HotTrack;
-            btTBAdminuc.FlatStyle = FlatStyle.Popup;
-            btTBAdminuc.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btTBAdminuc.ForeColor = Color.White;
-            btTBAdminuc.Location = new Point(326, 537);
-            btTBAdminuc.Name = "btTBAdminuc";
-            btTBAdminuc.Size = new Size(286, 56);
-            btTBAdminuc.TabIndex = 52;
-            btTBAdminuc.Text = "Update";
-            btTBAdminuc.UseVisualStyleBackColor = false;
-            btTBAdminuc.Click += btTBAdminuc_Click;
+            btUpdateBuku.BackColor = SystemColors.HotTrack;
+            btUpdateBuku.FlatStyle = FlatStyle.Popup;
+            btUpdateBuku.Font = new Font("Nunito", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btUpdateBuku.ForeColor = Color.White;
+            btUpdateBuku.Location = new Point(326, 537);
+            btUpdateBuku.Name = "btUpdateBuku";
+            btUpdateBuku.Size = new Size(286, 56);
+            btUpdateBuku.TabIndex = 52;
+            btUpdateBuku.Text = "Update";
+            btUpdateBuku.UseVisualStyleBackColor = false;
+            btUpdateBuku.Click += btUpdateBuku_Click;
             // 
             // panel1
             // 
@@ -268,7 +268,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(panel1);
-            Controls.Add(btTBAdminuc);
+            Controls.Add(btUpdateBuku);
             Controls.Add(tbPosisiRakuc);
             Controls.Add(label11);
             Controls.Add(tbStokBukuuc);
@@ -315,7 +315,7 @@
         private Label label4;
         private Label label5;
         private Label label6;
-        private Button btTBAdminuc;
+        private Button btUpdateBuku;
         private Panel panel1;
         private Button button1;
     }

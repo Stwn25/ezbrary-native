@@ -67,7 +67,7 @@ namespace Project_PBO_03.View
 
         }
 
-        private void btTBAdminuc_Click(object sender, EventArgs e)
+        private void btUpdateBuku_Click(object sender, EventArgs e)
         {
             if (ISBN != null)
             {

@@ -14,6 +14,7 @@ namespace Project_PBO_03.Context
 {
     internal class PeminjamanBukuContext : DBconnection
     {
+
         public static void create(m_PeminjamanBuku peminjamanBaru)
         {
             string query =  $"INSERT INTO peminjamanbuku (tglpengambilan, tglpengembalian, buku_isbn, pengguna_iduser, status_idstatus) " +
@@ -143,6 +144,14 @@ namespace Project_PBO_03.Context
                 new NpgsqlParameter("@isbn", NpgsqlDbType.Varchar) {Value = isbn}
             };
             commandExecutor(query, parameters);
+        }
+
+        public static DataTable hapusBooking()
+        {
+            string query =  $"delete from peminjamanbuku " +
+                            $"where now() > tglpengambilan and status_idstatus = 1";
+            DataTable dataTable = queryExecutor(query);
+            return dataTable;
         }
     }
 }
