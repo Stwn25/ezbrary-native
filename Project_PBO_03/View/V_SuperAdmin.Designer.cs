@@ -389,7 +389,7 @@
             ucUpdateAdmin1.Name = "ucUpdateAdmin1";
             ucUpdateAdmin1.Size = new Size(887, 960);
             ucUpdateAdmin1.TabIndex = 14;
-            ucUpdateAdmin1.Load += ucUpdateAdmin2_Load;
+            ucUpdateAdmin1.Load += ucUpdateAdmin1_Load;
             // 
             // pnlDaftarAdminSA
             // 

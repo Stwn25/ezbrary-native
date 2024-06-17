@@ -20,63 +20,16 @@ namespace Project_PBO_03.View
             pnlUserSA.Show();
             pnlAdminSA.Hide();
             pnlDaftarAdminSA.Hide();
-            ucUpdateAdmin1.Hide(); // Pastikan kontrol di-hide pada awalnya
+            ucUpdateAdmin1.Hide();
 
             dataGridView1.DataSource = AdminContext.all();
             dataGridView2.DataSource = PenggunaContext.all();
-
-            // Hapus kolom "Hapus" yang ada jika sebelumnya telah ditambahkan
-            if (dataGridView2.Columns.Contains("HapusUser"))
-            {
-                dataGridView2.Columns.Remove("HapusUser");
-            }
-
-            if (dataGridView1.Columns.Contains("HapusAdmin"))
-            {
-                dataGridView1.Columns.Remove("HapusAdmin");
-            }
-
-            if (dataGridView1.Columns.Contains("UpdateAdmin"))
-            {
-                dataGridView1.Columns.Remove("UpdateAdmin");
-            }
-
-            // Tambahkan kolom tombol hapus ke dataGridView2 di sebelah kiri
-            DataGridViewButtonColumn hapusUser = new DataGridViewButtonColumn
-            {
-                Name = "HapusUser",
-                HeaderText = "Hapus User",
-                Text = "Hapus",
-                UseColumnTextForButtonValue = true
-            };
-            dataGridView2.Columns.Insert(0, hapusUser);
-
-            // Tambahkan kolom tombol hapus ke dataGridView1 di sebelah kiri
-            DataGridViewButtonColumn hapusAdmin = new DataGridViewButtonColumn
-            {
-                Name = "HapusAdmin",
-                HeaderText = "Hapus Admin",
-                Text = "Hapus",
-                UseColumnTextForButtonValue = true
-            };
-            dataGridView1.Columns.Insert(0, hapusAdmin);
-
-            // Tambahkan kolom tombol update ke dataGridView1 di sebelah kiri
-            DataGridViewButtonColumn updateAdmin = new DataGridViewButtonColumn
-            {
-                Name = "UpdateAdmin",
-                HeaderText = "Update Admin",
-                Text = "Update",
-                UseColumnTextForButtonValue = true
-            };
-            dataGridView1.Columns.Insert(1, updateAdmin);
-
             ucUpdateAdmin1.UpdateAdminSuccess += UcUpdateAdmin1_UpdateAdminSuccess;
         }
 
         private void UcUpdateAdmin1_UpdateAdminSuccess(object sender, EventArgs e)
         {
-            // Refresh the DataGridView1 data source
+            // Refresh DataGridView1
             dataGridView1.DataSource = AdminContext.all();
         }
 
@@ -273,10 +226,6 @@ namespace Project_PBO_03.View
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void ucUpdateAdmin1_Load(object sender, EventArgs e)
         {
@@ -287,11 +236,6 @@ namespace Project_PBO_03.View
         {
             pnlDaftarAdminSA.Hide();
             pnlAdminSA.Show();
-        }
-
-        private void ucUpdateAdmin2_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
