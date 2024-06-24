@@ -14,11 +14,11 @@ namespace Project_PBO_03.Core
         {
             try
             {
-                string query = "SELECT * FROM pengguna WHERE usrnmeuser = @username or telpuser = @username or emailuser = @username AND pwuser = @password";
+                string query = "SELECT * FROM pengguna WHERE (usrnmeuser = @input OR telpuser = @input OR emailuser = @input) AND pwuser = @password";
 
                 NpgsqlParameter[] parameters = new NpgsqlParameter[]
                 {
-                    new NpgsqlParameter("@username", NpgsqlTypes.NpgsqlDbType.Varchar) { Value = input_pengguna },
+                    new NpgsqlParameter("@input", NpgsqlTypes.NpgsqlDbType.Varchar) { Value = input_pengguna },
                     new NpgsqlParameter("@password", NpgsqlTypes.NpgsqlDbType.Varchar) { Value = pass_pengguna },
                 };
 

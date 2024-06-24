@@ -40,7 +40,7 @@ namespace Project_PBO_03
             pbBuku = new PictureBox();
             pnlMasukSA = new Panel();
             pictureBox11 = new PictureBox();
-            button1 = new Button();
+            btMasukSA = new Button();
             pictureBox10 = new PictureBox();
             pictureBox9 = new PictureBox();
             tbPasswdMSA = new TextBox();
@@ -128,7 +128,7 @@ namespace Project_PBO_03
             pnlAwal.Controls.Add(label1);
             pnlAwal.Controls.Add(pbEzbrary);
             pnlAwal.Controls.Add(pbBuku);
-            pnlAwal.Location = new Point(658, 83);
+            pnlAwal.Location = new Point(638, 75);
             pnlAwal.Name = "pnlAwal";
             pnlAwal.Size = new Size(680, 935);
             pnlAwal.TabIndex = 0;
@@ -137,12 +137,13 @@ namespace Project_PBO_03
             // btDaftar
             // 
             btDaftar.BackColor = SystemColors.HotTrack;
+            btDaftar.Cursor = Cursors.Hand;
             btDaftar.FlatStyle = FlatStyle.Flat;
             btDaftar.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btDaftar.ForeColor = Color.White;
             btDaftar.Location = new Point(189, 668);
             btDaftar.Name = "btDaftar";
-            btDaftar.Size = new Size(292, 38);
+            btDaftar.Size = new Size(293, 37);
             btDaftar.TabIndex = 4;
             btDaftar.Text = "Daftar";
             btDaftar.UseVisualStyleBackColor = false;
@@ -151,12 +152,13 @@ namespace Project_PBO_03
             // btMasuk
             // 
             btMasuk.BackColor = SystemColors.HotTrack;
+            btMasuk.Cursor = Cursors.Hand;
             btMasuk.FlatStyle = FlatStyle.Flat;
             btMasuk.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btMasuk.ForeColor = Color.White;
             btMasuk.Location = new Point(189, 609);
             btMasuk.Name = "btMasuk";
-            btMasuk.Size = new Size(292, 38);
+            btMasuk.Size = new Size(293, 37);
             btMasuk.TabIndex = 3;
             btMasuk.Text = "Masuk";
             btMasuk.UseVisualStyleBackColor = false;
@@ -176,7 +178,7 @@ namespace Project_PBO_03
             // pbEzbrary
             // 
             pbEzbrary.Image = (Image)resources.GetObject("pbEzbrary.Image");
-            pbEzbrary.Location = new Point(176, 414);
+            pbEzbrary.Location = new Point(176, 413);
             pbEzbrary.Name = "pbEzbrary";
             pbEzbrary.Size = new Size(267, 71);
             pbEzbrary.TabIndex = 1;
@@ -187,7 +189,7 @@ namespace Project_PBO_03
             pbBuku.Image = (Image)resources.GetObject("pbBuku.Image");
             pbBuku.Location = new Point(176, 193);
             pbBuku.Name = "pbBuku";
-            pbBuku.Size = new Size(319, 210);
+            pbBuku.Size = new Size(319, 211);
             pbBuku.TabIndex = 0;
             pbBuku.TabStop = false;
             // 
@@ -195,46 +197,46 @@ namespace Project_PBO_03
             // 
             pnlMasukSA.BorderStyle = BorderStyle.FixedSingle;
             pnlMasukSA.Controls.Add(pictureBox11);
-            pnlMasukSA.Controls.Add(button1);
+            pnlMasukSA.Controls.Add(btMasukSA);
             pnlMasukSA.Controls.Add(pictureBox10);
             pnlMasukSA.Controls.Add(pictureBox9);
             pnlMasukSA.Controls.Add(tbPasswdMSA);
             pnlMasukSA.Controls.Add(tbUsernameMSA);
             pnlMasukSA.Controls.Add(pictureBox4);
-            pnlMasukSA.Location = new Point(12, 170);
+            pnlMasukSA.Location = new Point(43, 136);
             pnlMasukSA.Name = "pnlMasukSA";
-            pnlMasukSA.Size = new Size(620, 1080);
+            pnlMasukSA.Size = new Size(620, 1079);
             pnlMasukSA.TabIndex = 5;
             // 
             // pictureBox11
             // 
             pictureBox11.Image = (Image)resources.GetObject("pictureBox11.Image");
-            pictureBox11.Location = new Point(18, 14);
+            pictureBox11.Location = new Point(18, 13);
             pictureBox11.Name = "pictureBox11";
-            pictureBox11.Size = new Size(60, 50);
+            pictureBox11.Size = new Size(59, 51);
             pictureBox11.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox11.TabIndex = 14;
             pictureBox11.TabStop = false;
             pictureBox11.Click += pictureBox11_Click;
             // 
-            // button1
+            // btMasukSA
             // 
-            button1.BackColor = SystemColors.HotTrack;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(150, 576);
-            button1.Name = "button1";
-            button1.Size = new Size(292, 38);
-            button1.TabIndex = 13;
-            button1.Text = "Masuk Sebagai Super Admin";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += btMasukSA_Click;
+            btMasukSA.BackColor = SystemColors.HotTrack;
+            btMasukSA.FlatStyle = FlatStyle.Flat;
+            btMasukSA.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btMasukSA.ForeColor = Color.White;
+            btMasukSA.Location = new Point(150, 576);
+            btMasukSA.Name = "btMasukSA";
+            btMasukSA.Size = new Size(293, 37);
+            btMasukSA.TabIndex = 13;
+            btMasukSA.Text = "Masuk Sebagai Super Admin";
+            btMasukSA.UseVisualStyleBackColor = false;
+            btMasukSA.Click += btMasukSA_Click;
             // 
             // pictureBox10
             // 
             pictureBox10.Image = (Image)resources.GetObject("pictureBox10.Image");
-            pictureBox10.Location = new Point(154, 450);
+            pictureBox10.Location = new Point(154, 451);
             pictureBox10.Name = "pictureBox10";
             pictureBox10.Size = new Size(39, 44);
             pictureBox10.TabIndex = 10;
@@ -245,13 +247,13 @@ namespace Project_PBO_03
             pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
             pictureBox9.Location = new Point(153, 400);
             pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(44, 44);
+            pictureBox9.Size = new Size(43, 44);
             pictureBox9.TabIndex = 5;
             pictureBox9.TabStop = false;
             // 
             // tbPasswdMSA
             // 
-            tbPasswdMSA.Location = new Point(203, 450);
+            tbPasswdMSA.Location = new Point(203, 451);
             tbPasswdMSA.Multiline = true;
             tbPasswdMSA.Name = "tbPasswdMSA";
             tbPasswdMSA.PasswordChar = '*';
@@ -287,15 +289,16 @@ namespace Project_PBO_03
             pnlKodevAdmin.Controls.Add(tbKodevAdmin);
             pnlKodevAdmin.Controls.Add(label4);
             pnlKodevAdmin.Controls.Add(pictureBox12);
-            pnlKodevAdmin.Location = new Point(32, 212);
+            pnlKodevAdmin.Location = new Point(311, 37);
             pnlKodevAdmin.Name = "pnlKodevAdmin";
-            pnlKodevAdmin.Size = new Size(620, 1080);
+            pnlKodevAdmin.Size = new Size(620, 1079);
             pnlKodevAdmin.TabIndex = 3;
             pnlKodevAdmin.Paint += pnlKodevAdmin_Paint;
             // 
             // btSubmitAdmin
             // 
             btSubmitAdmin.BackColor = Color.DarkGray;
+            btSubmitAdmin.Cursor = Cursors.Hand;
             btSubmitAdmin.FlatStyle = FlatStyle.Flat;
             btSubmitAdmin.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btSubmitAdmin.ForeColor = Color.Black;
@@ -309,19 +312,19 @@ namespace Project_PBO_03
             // 
             // tbKodevAdmin
             // 
-            tbKodevAdmin.Location = new Point(201, 542);
+            tbKodevAdmin.Location = new Point(201, 541);
             tbKodevAdmin.Multiline = true;
             tbKodevAdmin.Name = "tbKodevAdmin";
+            tbKodevAdmin.PlaceholderText = "Masukkan Kode Verifikasi...";
             tbKodevAdmin.Size = new Size(247, 48);
             tbKodevAdmin.TabIndex = 2;
-            tbKodevAdmin.Text = "Masukkan Kode Verifikasi...";
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(248, 486);
+            label4.Location = new Point(248, 485);
             label4.Name = "label4";
             label4.Size = new Size(158, 25);
             label4.TabIndex = 1;
@@ -333,7 +336,7 @@ namespace Project_PBO_03
             pictureBox12.Image = (Image)resources.GetObject("pictureBox12.Image");
             pictureBox12.Location = new Point(0, 0);
             pictureBox12.Name = "pictureBox12";
-            pictureBox12.Size = new Size(620, 320);
+            pictureBox12.Size = new Size(620, 319);
             pictureBox12.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox12.TabIndex = 0;
             pictureBox12.TabStop = false;
@@ -352,10 +355,11 @@ namespace Project_PBO_03
             pnlMasuk.Controls.Add(tbPasswordD);
             pnlMasuk.Controls.Add(tbUsernameM);
             pnlMasuk.Controls.Add(pictureBox1);
-            pnlMasuk.Location = new Point(1084, 0);
+            pnlMasuk.Location = new Point(1008, 39);
             pnlMasuk.Name = "pnlMasuk";
-            pnlMasuk.Size = new Size(620, 1080);
+            pnlMasuk.Size = new Size(620, 1079);
             pnlMasuk.TabIndex = 1;
+            pnlMasuk.Paint += pnlMasuk_Paint;
             // 
             // pbSAM
             // 
@@ -370,9 +374,10 @@ namespace Project_PBO_03
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
+            linkLabel1.Cursor = Cursors.Hand;
             linkLabel1.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             linkLabel1.LinkColor = SystemColors.HotTrack;
-            linkLabel1.Location = new Point(272, 1010);
+            linkLabel1.Location = new Point(272, 1011);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(56, 20);
             linkLabel1.TabIndex = 8;
@@ -385,7 +390,7 @@ namespace Project_PBO_03
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.GrayText;
-            label2.Location = new Point(230, 990);
+            label2.Location = new Point(230, 989);
             label2.Name = "label2";
             label2.Size = new Size(140, 18);
             label2.TabIndex = 7;
@@ -394,12 +399,13 @@ namespace Project_PBO_03
             // btMasuksbgadmin
             // 
             btMasuksbgadmin.BackColor = SystemColors.HotTrack;
+            btMasuksbgadmin.Cursor = Cursors.Hand;
             btMasuksbgadmin.FlatStyle = FlatStyle.Flat;
             btMasuksbgadmin.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btMasuksbgadmin.ForeColor = Color.White;
             btMasuksbgadmin.Location = new Point(150, 633);
             btMasuksbgadmin.Name = "btMasuksbgadmin";
-            btMasuksbgadmin.Size = new Size(292, 38);
+            btMasuksbgadmin.Size = new Size(293, 37);
             btMasuksbgadmin.TabIndex = 6;
             btMasuksbgadmin.Text = "Masuk Sebagai Admin";
             btMasuksbgadmin.UseVisualStyleBackColor = false;
@@ -408,12 +414,13 @@ namespace Project_PBO_03
             // btMasukM
             // 
             btMasukM.BackColor = SystemColors.HotTrack;
+            btMasukM.Cursor = Cursors.Hand;
             btMasukM.FlatStyle = FlatStyle.Flat;
             btMasukM.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btMasukM.ForeColor = Color.White;
             btMasukM.Location = new Point(150, 576);
             btMasukM.Name = "btMasukM";
-            btMasukM.Size = new Size(292, 38);
+            btMasukM.Size = new Size(293, 37);
             btMasukM.TabIndex = 5;
             btMasukM.Text = "Masuk";
             btMasukM.UseVisualStyleBackColor = false;
@@ -433,7 +440,7 @@ namespace Project_PBO_03
             pbUsernameM.Image = (Image)resources.GetObject("pbUsernameM.Image");
             pbUsernameM.Location = new Point(145, 365);
             pbUsernameM.Name = "pbUsernameM";
-            pbUsernameM.Size = new Size(44, 44);
+            pbUsernameM.Size = new Size(43, 44);
             pbUsernameM.TabIndex = 3;
             pbUsernameM.TabStop = false;
             // 
@@ -455,6 +462,7 @@ namespace Project_PBO_03
             tbUsernameM.PlaceholderText = "Username/Email/No.Telepon";
             tbUsernameM.Size = new Size(249, 44);
             tbUsernameM.TabIndex = 1;
+            tbUsernameM.TextChanged += tbUsernameM_TextChanged;
             // 
             // pictureBox1
             // 
@@ -489,9 +497,9 @@ namespace Project_PBO_03
             pnlDaftar.Controls.Add(tbUsernameD);
             pnlDaftar.Controls.Add(pictureBox5);
             pnlDaftar.ForeColor = SystemColors.GrayText;
-            pnlDaftar.Location = new Point(1385, 149);
+            pnlDaftar.Location = new Point(1334, 12);
             pnlDaftar.Name = "pnlDaftar";
-            pnlDaftar.Size = new Size(620, 1080);
+            pnlDaftar.Size = new Size(620, 1079);
             pnlDaftar.TabIndex = 2;
             // 
             // pictureBox14
@@ -517,7 +525,7 @@ namespace Project_PBO_03
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(154, 630);
+            label5.Location = new Point(154, 629);
             label5.Name = "label5";
             label5.Size = new Size(0, 20);
             label5.TabIndex = 16;
@@ -526,7 +534,7 @@ namespace Project_PBO_03
             // pbSAD
             // 
             pbSAD.Image = (Image)resources.GetObject("pbSAD.Image");
-            pbSAD.Location = new Point(524, 993);
+            pbSAD.Location = new Point(523, 993);
             pbSAD.Name = "pbSAD";
             pbSAD.Size = new Size(43, 40);
             pbSAD.TabIndex = 15;
@@ -536,9 +544,10 @@ namespace Project_PBO_03
             // linkMasuk
             // 
             linkMasuk.AutoSize = true;
+            linkMasuk.Cursor = Cursors.Hand;
             linkMasuk.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             linkMasuk.LinkColor = SystemColors.HotTrack;
-            linkMasuk.Location = new Point(276, 1010);
+            linkMasuk.Location = new Point(277, 1011);
             linkMasuk.Name = "linkMasuk";
             linkMasuk.Size = new Size(58, 20);
             linkMasuk.TabIndex = 14;
@@ -551,7 +560,7 @@ namespace Project_PBO_03
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.GrayText;
-            label3.Location = new Point(230, 990);
+            label3.Location = new Point(230, 989);
             label3.Name = "label3";
             label3.Size = new Size(140, 18);
             label3.TabIndex = 13;
@@ -560,12 +569,13 @@ namespace Project_PBO_03
             // btDaftarD
             // 
             btDaftarD.BackColor = SystemColors.HotTrack;
+            btDaftarD.Cursor = Cursors.Hand;
             btDaftarD.FlatStyle = FlatStyle.Flat;
             btDaftarD.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btDaftarD.ForeColor = Color.White;
             btDaftarD.Location = new Point(150, 700);
             btDaftarD.Name = "btDaftarD";
-            btDaftarD.Size = new Size(292, 38);
+            btDaftarD.Size = new Size(293, 37);
             btDaftarD.TabIndex = 12;
             btDaftarD.Text = "Daftar";
             btDaftarD.UseVisualStyleBackColor = false;
@@ -603,7 +613,7 @@ namespace Project_PBO_03
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.Location = new Point(145, 365);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(44, 44);
+            pictureBox3.Size = new Size(43, 44);
             pictureBox3.TabIndex = 8;
             pictureBox3.TabStop = false;
             // 
@@ -641,7 +651,7 @@ namespace Project_PBO_03
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(145, 415);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(44, 44);
+            pictureBox2.Size = new Size(43, 44);
             pictureBox2.TabIndex = 4;
             pictureBox2.TabStop = false;
             // 
@@ -669,7 +679,7 @@ namespace Project_PBO_03
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
             pictureBox5.Location = new Point(-1, -40);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(620, 342);
+            pictureBox5.Size = new Size(619, 341);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 0;
             pictureBox5.TabStop = false;
@@ -682,14 +692,15 @@ namespace Project_PBO_03
             pnlKodevSA.Controls.Add(tbKodevSA);
             pnlKodevSA.Controls.Add(labelKodevSA);
             pnlKodevSA.Controls.Add(pictureBox13);
-            pnlKodevSA.Location = new Point(442, 110);
+            pnlKodevSA.Location = new Point(8, 149);
             pnlKodevSA.Name = "pnlKodevSA";
-            pnlKodevSA.Size = new Size(620, 1080);
+            pnlKodevSA.Size = new Size(620, 1079);
             pnlKodevSA.TabIndex = 16;
             // 
             // btSubmitSA
             // 
             btSubmitSA.BackColor = Color.DarkGray;
+            btSubmitSA.Cursor = Cursors.Hand;
             btSubmitSA.FlatStyle = FlatStyle.Flat;
             btSubmitSA.Font = new Font("Microsoft Sans Serif", 10.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btSubmitSA.ForeColor = Color.Black;
@@ -703,7 +714,7 @@ namespace Project_PBO_03
             // 
             // tbKodevSA
             // 
-            tbKodevSA.Location = new Point(201, 542);
+            tbKodevSA.Location = new Point(201, 541);
             tbKodevSA.Multiline = true;
             tbKodevSA.Name = "tbKodevSA";
             tbKodevSA.PlaceholderText = "Masukkan Kode Verifikasi...";
@@ -715,7 +726,7 @@ namespace Project_PBO_03
             labelKodevSA.AutoSize = true;
             labelKodevSA.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelKodevSA.ForeColor = Color.Black;
-            labelKodevSA.Location = new Point(248, 486);
+            labelKodevSA.Location = new Point(248, 485);
             labelKodevSA.Name = "labelKodevSA";
             labelKodevSA.Size = new Size(158, 25);
             labelKodevSA.TabIndex = 1;
@@ -726,7 +737,7 @@ namespace Project_PBO_03
             pictureBox13.Image = (Image)resources.GetObject("pictureBox13.Image");
             pictureBox13.Location = new Point(0, 0);
             pictureBox13.Name = "pictureBox13";
-            pictureBox13.Size = new Size(620, 320);
+            pictureBox13.Size = new Size(619, 320);
             pictureBox13.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox13.TabIndex = 0;
             pictureBox13.TabStop = false;
@@ -779,14 +790,14 @@ namespace Project_PBO_03
             BackColor = Color.White;
             ClientSize = new Size(1920, 1080);
             Controls.Add(nightControlBox1);
-            Controls.Add(pnlKodevSA);
             Controls.Add(pnlDaftar);
-            Controls.Add(pnlMasukSA);
             Controls.Add(pnlMasuk);
             Controls.Add(pnlAwal);
-            Controls.Add(pnlKodevAdmin);
             Controls.Add(pbDekorText);
             Controls.Add(pbDekor);
+            Controls.Add(pnlKodevAdmin);
+            Controls.Add(pnlMasukSA);
+            Controls.Add(pnlKodevSA);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_Login";
             StartPosition = FormStartPosition.CenterScreen;
@@ -848,7 +859,7 @@ namespace Project_PBO_03
 
             if (loginResult)
             {
-                V_Admin admin = new V_Admin();
+                V_Admin admin = new V_Admin(username_pengguna);
                 admin.Show();
             }
             else
@@ -899,7 +910,7 @@ namespace Project_PBO_03
         private TextBox tbPasswdMSA;
         private TextBox tbUsernameMSA;
         private PictureBox pictureBox11;
-        private Button button1;
+        private Button btMasukSA;
         private Panel pnlKodevAdmin;
         private PictureBox pictureBox12;
         private Button btSubmitAdmin;

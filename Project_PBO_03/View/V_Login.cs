@@ -16,10 +16,13 @@ namespace Project_PBO_03
 {
     public partial class V_Login : Form
     {
-        /*private object pbDekorTeks;*/
+        public string username { get; set; }
+
+        
 
         public V_Login()
         {
+
             InitializeComponent();
             this.pnlAwal.Show();
             this.pnlMasuk.Hide();
@@ -29,6 +32,7 @@ namespace Project_PBO_03
             this.pnlMasukSA.Hide();
 
         }
+
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
@@ -115,39 +119,68 @@ namespace Project_PBO_03
 
         private void btMasukM_Click(object sender, EventArgs e)
         {
-            string input_pengguna = tbUsernameM.Text;
-            string pass_pengguna = tbPasswordD.Text;
+            string input_pengguna = tbUsernameM.Text.Trim();
+            string pass_pengguna = tbPasswordD.Text.Trim();
 
-            bool loginResult = cekLoginPengguna.Login(input_pengguna, pass_pengguna);
-
-            if (loginResult)
+            if (string.IsNullOrWhiteSpace(input_pengguna) || string.IsNullOrWhiteSpace(pass_pengguna))
             {
-                V_User User = new V_User();
-                User.Show();
+                MessageBox.Show("Masukkan username dan password");
+                return;
             }
             else
             {
-                MessageBox.Show("Login gagal, harap cek username dan password", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DataTable dt = PenggunaContext.login(input_pengguna, pass_pengguna);
+                
+                if (dt.Rows.Count > 0)
+                {
+                    int Iduser = Convert.ToInt32(dt.Rows[0]["iduser"]);
+                    string username = dt.Rows[0]["usrnmeuser"].ToString();
+                    this.username = username;
+                    this.pnlMasuk.Hide();
+                    this.pnlAwal.Show();
+                    V_User User = new V_User(username);
+                    User.Show();
+                }
+                else
+                {
+                    MessageBox.Show($"username atau password salah, {dt.Rows.Count}");
+                }
             }
         }
 
         private void btMasuksbgadmin_Click(object sender, EventArgs e)
         {
-            string username_admin = tbUsernameM.Text;
-            string pass_admin = tbPasswordD.Text;
+            string username_admin = tbUsernameM.Text.Trim();
+            string pass_admin = tbPasswordD.Text.Trim();
 
 
-            bool loginResult = cekLoginAdmin.Login(username_admin, pass_admin);
-
-            if (loginResult)
+            if (string.IsNullOrWhiteSpace(username_admin) || string.IsNullOrWhiteSpace(pass_admin))
             {
-                this.pnlMasuk.Hide();
-                this.pnlKodevAdmin.Show();
-                this.pnlKodevAdmin.Dock = DockStyle.Left;
+                MessageBox.Show("Masukkan username dan password");
+                return;
             }
             else
             {
-                MessageBox.Show("Login gagal, harap cek username dan password", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DataTable dt = AdminContext.loginadmin(username_admin, pass_admin);
+
+                if (dt.Rows.Count > 0)
+                {
+                    this.pnlKodevAdmin.Show();
+                    this.pnlKodevAdmin.Dock = DockStyle.Left;
+                    this.pnlMasuk.Hide();
+                    if (tbKodevAdmin.Text == dt.Rows[0]["kodeverifikasi"].ToString())
+                    {
+                        var Idadmin = Convert.ToInt32(dt.Rows[0]["idadmin"]);
+                        string usernameadmin= dt.Rows[0]["usrnmeadmin"].ToString();
+                        this.pnlKodevAdmin.Show();
+                        V_Admin admin = new V_Admin(usernameadmin);
+                        admin.Show();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show($"username atau password salah, {dt.Rows.Count}");
+                }
             }
         }
 
@@ -158,11 +191,18 @@ namespace Project_PBO_03
 
         private void btSubmitAdmin_Click(object sender, EventArgs e)
         {
-            string kode_verif = "1234567890";
+            /*string kode_verif = "1234567890";*/
+            string username_admin = tbUsernameM.Text.Trim();
+            string pass_admin = tbPasswordD.Text.Trim();
+            DataTable dt = AdminContext.loginadmin(username_admin, pass_admin);
 
-            if (tbKodevAdmin.Text == kode_verif)
+            if (tbKodevAdmin.Text == dt.Rows[0]["kodeverifikasi"].ToString())
             {
-                V_Admin admin = new V_Admin();
+                tbKodevAdmin.Text = default;
+                this.pnlAwal.Show();
+                this.pnlKodevAdmin.Hide();
+                this.pnlMasuk.Hide();
+                V_Admin admin = new V_Admin(tbUsernameM.Text);
                 admin.Show();
             }
             else
@@ -241,6 +281,8 @@ namespace Project_PBO_03
 
             if (tbKodevSA.Text == kode_verif)
             {
+                this.pnlKodevSA.Hide();
+                this.pnlAwal.Show();
                 V_SuperAdmin superadmin = new V_SuperAdmin();
                 superadmin.Show();
             }
@@ -279,7 +321,8 @@ namespace Project_PBO_03
                 DialogResult message = MessageBox.Show("Data berhasil ditambahkan", "Sukses", MessageBoxButtons.OK);
                 if (message == DialogResult.OK)
                 {
-                    this.Close();
+                    this.pnlDaftar.Hide();
+                    this.pnlAwal.Show();
                 }
             }
             else
@@ -290,6 +333,16 @@ namespace Project_PBO_03
         }
 
         private void tbUsernameMSA_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlMasuk_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tbUsernameM_TextChanged(object sender, EventArgs e)
         {
 
         }

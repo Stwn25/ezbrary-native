@@ -1,10 +1,7 @@
-﻿using Project_PBO_03.Core;
+﻿    using Project_PBO_03.Core;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Npgsql;
 using NpgsqlTypes;
 using Project_PBO_03.Model;
@@ -15,9 +12,10 @@ namespace Project_PBO_03.Context
     {
         private static string table = "administrator";
 
+
         public static DataTable all()
         {
-            string query = $"SELECT * from {table}";
+            string query = $"SELECT * FROM {table}";
             DataTable dataAdministrator = queryExecutor(query);
             return dataAdministrator;
         }
@@ -27,7 +25,7 @@ namespace Project_PBO_03.Context
             string query = $"SELECT * FROM {table} WHERE idadmin = @idadmin";
             NpgsqlParameter[] parameters =
             {
-                new NpgsqlParameter("@id", NpgsqlDbType.Integer) { Value = idadmin }
+                new NpgsqlParameter("@idadmin", NpgsqlDbType.Integer) { Value = idadmin }
             };
             DataTable dataAdministrator = queryExecutor(query, parameters);
             return dataAdministrator;
@@ -35,10 +33,9 @@ namespace Project_PBO_03.Context
 
         public static void create(m_Administrator newAdmin)
         {
-            string query = $"INSERT INTO {table}(idadmin, kodeverifikasi, namaadmin, telpadmin, usrnmeadmin, pwadmin, emailadmin) VALUES(@idadmin, @kodeverifikasi, @namaadmin, @telpadmin, @usrnmeadmin, @pwadmin, @emailadmin)";
+            string query = $"INSERT INTO {table} (kodeverifikasi, namaadmin, telpadmin, usrnmeadmin, pwadmin, emailadmin) VALUES(@kodeverifikasi, @namaadmin, @telpadmin, @usrnmeadmin, @pwadmin, @emailadmin)";
             NpgsqlParameter[] parameters =
             {
-                new NpgsqlParameter("@idadmin", NpgsqlDbType.Integer){Value = newAdmin.id_admin},
                 new NpgsqlParameter("@kodeverifikasi", NpgsqlDbType.Varchar){Value = newAdmin.kode_verif},
                 new NpgsqlParameter("@namaadmin", NpgsqlDbType.Varchar){Value = newAdmin.nama_admin},
                 new NpgsqlParameter("@telpadmin", NpgsqlDbType.Varchar){Value = newAdmin.telp_admin},
@@ -48,6 +45,7 @@ namespace Project_PBO_03.Context
             };
             commandExecutor(query, parameters);
         }
+
 
         public static void delete(int id)
         {
@@ -59,20 +57,41 @@ namespace Project_PBO_03.Context
             commandExecutor(query, parameters);
         }
 
-        public static void update(m_Administrator editMahasiswa)
+        public static void update(m_Administrator editAdmin)
         {
-            string query = $"UPDATE {table} SET idadmin = @idadmin, kodeverifikasi = @kodeverifikasi, namaadmin = @namaadmin, telpadmin = @telpadmin, usrnmeadmin = @usrnmeadmin, pwadmin = @pwadmin, emailadmin = @emailadmin";
+            string query = $"UPDATE {table} SET kodeverifikasi = @kodeverifikasi, namaadmin = @namaadmin, telpadmin = @telpadmin, usrnmeadmin = @usrnmeadmin, pwadmin = @pwadmin, emailadmin = @emailadmin WHERE idadmin = @idadmin";
             NpgsqlParameter[] parameters =
             {
-                new NpgsqlParameter("@idadmin", NpgsqlDbType.Integer){Value = editMahasiswa.id_admin },
-                new NpgsqlParameter("@kodeverifikasi", NpgsqlDbType.Varchar){Value = editMahasiswa.kode_verif},
-                new NpgsqlParameter("@namaadmin", NpgsqlDbType.Varchar){Value = editMahasiswa.nama_admin},
-                new NpgsqlParameter("@telpadmin", NpgsqlDbType.Varchar){Value = editMahasiswa.telp_admin},
-                new NpgsqlParameter("@usrnmeadmin", NpgsqlDbType.Varchar){Value = editMahasiswa.username_admin},
-                new NpgsqlParameter("@pwadmin", NpgsqlDbType.Varchar){Value = editMahasiswa.pass_admin},
-                new NpgsqlParameter("@emailadmin", NpgsqlDbType.Varchar){Value = editMahasiswa.email_admin},
+                new NpgsqlParameter("@idadmin", NpgsqlDbType.Integer){Value = editAdmin.id_admin },
+                new NpgsqlParameter("@kodeverifikasi", NpgsqlDbType.Varchar){Value = editAdmin.kode_verif},
+                new NpgsqlParameter("@namaadmin", NpgsqlDbType.Varchar){Value = editAdmin.nama_admin},
+                new NpgsqlParameter("@telpadmin", NpgsqlDbType.Varchar){Value = editAdmin.telp_admin},
+                new NpgsqlParameter("@usrnmeadmin", NpgsqlDbType.Varchar){Value = editAdmin.username_admin},
+                new NpgsqlParameter("@pwadmin", NpgsqlDbType.Varchar){Value = editAdmin.pass_admin},
+                new NpgsqlParameter("@emailadmin", NpgsqlDbType.Varchar){Value = editAdmin .email_admin},
             };
             commandExecutor(query, parameters);
         }
+        public static DataTable dataadmin(string inputs)
+        {
+            string query = "SELECT * FROM administrator WHERE usrnmeadmin = @usrnmeadmin";
+            NpgsqlParameter[] parameters =
+            {
+                new NpgsqlParameter("@usrnmeadmin", inputs){NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar}
+            };
+            return queryExecutor(query, parameters);
+        }
+
+        public static DataTable loginadmin(string username_admin, string password_admin)
+        {
+            string query = "SELECT * FROM administrator WHERE usrnmeadmin = @inputs AND pwadmin =@pw";
+            NpgsqlParameter[] parameters =
+            {
+                    new NpgsqlParameter("@inputs", DbType.String) {Value = username_admin},
+                    new NpgsqlParameter("@pw", DbType.String) {Value = password_admin },
+                };
+            return queryExecutor(query, parameters);
+        }
+
     }
 }

@@ -16,9 +16,10 @@ namespace Project_PBO_03.Model
         public string sinopsis { get; set; }
         public string thn_terbit { get; set; }
         public int stok_buku { get; set; }
-        public string jenis_id { get; set; }
+        public int jenis_id { get; set; }
         public int penerbit_id { get; set; }
         public int penulis_id { get; set; }
         public string posisi_rak { get; set; }
+        public int status {  get; set; }
     }
 }

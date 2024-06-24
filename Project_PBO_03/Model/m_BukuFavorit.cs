@@ -10,8 +10,9 @@ namespace Project_PBO_03.Model
     internal class m_BukuFavorit
     {
         [Key]
-        public int isbn_buku { get; set; }
+        public string isbn_buku { get; set; }
         [Key]
         public int id_pengguna { get; set; }
+        public int id_status { get; set; }
     }
 }
